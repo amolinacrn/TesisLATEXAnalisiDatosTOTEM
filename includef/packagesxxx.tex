@@ -1,0 +1,188 @@
+\usepackage{amsmath}
+\usepackage{chngcntr}
+\counterwithout{footnote}{chapter}
+\usepackage{endnotes}
+%\usepackage{epsfig,bm,epsf,float}
+%\setlength{\parskip}{-1.5ex}
+\usepackage{mathrsfs}
+\usepackage[latin1]{inputenc}
+\usepackage{eqlist}
+%\setlength{\parindent}{0cm} 
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage{lettrine}
+%\usepackage{eso-pic}
+\usepackage[left=4cm,top=2.5cm,right=2.5cm,bottom=2.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage{fancybox}
+\usepackage{mathrsfs}
+\usepackage{amsfonts,amssymb,amsbsy}
+\usepackage{anyfontsize}
+\usepackage{fancyhdr}
+\usepackage{multirow} % para las tablas
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{upgreek} 
+\usepackage{lmodern}
+\usepackage{booktabs} % Horizontal rules in tables
+\usepackage{relsize} 
+\usepackage{eqparbox}
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername \thechapter. #1}{}}
+\titleformat{\chapter}[display]
+{\normalfont\Huge\bfseries}{\chaptertitlename\thechapter}{0pt}{\Huge}
+\titlespacing*{\chapter}{0cm}{1cm}{0.8cm}
+  \let\olditemize\itemize
+\def\itemize{\olditemize\itemsep=-1ex }
+%\renewcommand\thechapter{\large\arabic{chapter}}
+\titleformat{\chapter}[display]
+{\bfseries\Large}
+{\large\rmfamily\bfseries\selectfont\color{gris}
+\filleft\MakeUppercase{\chaptertitlename} \large\rmfamily\bfseries\thechapter}{0.8cm}
+{\Huge\bfseries\selectfont\scshape\color{black}
+\vspace{0ex}\filleft}
+[{\titlerule\vspace{2pt}\titlerule[2.0pt]}]
+%fin formato titulo
+
+\definecolor{gris}{gray}{0.4}
+
+%formato titulo
+
+\renewcommand{\LettrineFontHook}{\color{amarilloM}}
+
+
+\usepackage{titlesec, blindtext, color}  
+%----------------------------------------------------------------------------------------
+%	Numeración de las secciones -- en el margen
+%----------------------------------------------------------------------------------------
+ \definecolor{amarilloM}{gray}{0}%{RGB}{240,40,0}
+ 
+\makeatletter
+\renewcommand{\@seccntformat}[1]{\llap{\textcolor{gris}{\csname the#1\endcsname}\hspace{1em}}}                    
+\renewcommand{\section}{\@startsection{section}{1}{\z@}
+{-4ex \@plus -1ex \@minus -.4ex}
+{1ex \@plus.2ex }
+{\Large\sffamily\bfseries\selectfont\color{amarilloM}}}
+\renewcommand{\subsection}{\@startsection {subsection}{2}{\z@}
+{-3ex \@plus -0.1ex \@minus -.4ex}
+{0.5ex \@plus.2ex }
+{\Large\sffamily\bfseries\selectfont\color{amarilloM}}}
+\renewcommand{\subsubsection}{\@startsection {subsubsection}{3}{\z@}
+{-2ex \@plus -0.1ex \@minus -.2ex}
+{0.2ex \@plus.2ex }
+{\normalfont\small\sffamily\bfseries}}                        
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}
+{-2ex \@plus-.2ex \@minus .2ex}
+{0.1ex}
+{\normalfont\small\sffamily\bfseries}} 
+ \makeatletter
+ 
+ 
+ 
+\renewcommand{\@seccntformat}[1]{{\textcolor{gris}{\csname the#1\endcsname}\hspace{1em}}} 
+                   
+\renewcommand{\section}{\@startsection{section}{1}{\z@}
+{0.5cm \@plus 0.1cm \@minus 0.1cm}
+{0.4cm \@plus 0.1cm \@minus 0.1cm }
+{\Large\sffamily\bfseries\selectfont\color{amarilloM}}}
+
+\renewcommand{\subsection}{\@startsection {subsection}{2}{\z@}
+{0.5cm \@plus 0.1cm \@minus 0.1cm}
+{0.4cm \@plus 0.1cm \@minus 0.1cm }
+{\large\sffamily\bfseries\selectfont\color{amarilloM}}}
+
+\renewcommand{\subsubsection}{\@startsection {subsubsection}{3}{\z@}
+{0.1cmm \@plus -0.1ex \@minus -.2ex}
+{0.03 \@plus.2ex }
+{\normalfont\small\sffamily\bfseries\selectfont\color{amarilloM}}}                        
+
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}
+{-2ex \@plus-.2ex \@minus .2ex}
+{0.1ex}
+{\normalfont\small\sffamily\bfseries\selectfont\color{amarilloM}}}
+\makeatother
+
+% Fin numeración secciones
+\fancyhf{}
+%% Now begin customising things. See the fancyhdr docs for more info.
+\usepackage{titlesec, blindtext, color} 
+
+\fancyhead[R]{skd}
+%\setcounter{tocdepth}{2}
+%\fancyhead[LE]{}
+%\fancyhead[RE,LO]{}
+\fancyhead[RO]{
+%{\footnotesize\sffamily\thesection}\hspace{0.08cm}
+{\footnotesize \sffamily \rightmark}\hspace{0.3cm}
+{\footnotesize\sffamily\bfseries\thepage}}
+
+\renewcommand{\sectionmark}[1]{\markright{\sffamily{\thesection\ \ #1}}}
+\renewcommand{\chaptermark}[1]{\markboth{{\scriptsize\sffamily CAP\'ITULO\ \thechapter}  \scriptsize\sffamily{ \ #1}}{}} 
+
+%%barras para letras
+
+\makeatletter
+\newsavebox\myboxA
+\newsavebox\myboxB
+\newlength\mylenA
+
+\newcommand*\xoverline[2][0.6]{%
+    \sbox{\myboxA}{$\m@th#2$}%
+    \setbox\myboxB\null% Phantom box
+    \ht\myboxB=\ht\myboxA%
+    \dp\myboxB=\dp\myboxA%
+    \wd\myboxB=#1\wd\myboxA% Scale phantom
+    \sbox\myboxB{$\m@th\overline{\copy\myboxB}$}%  Overlined phantom
+    \setlength\mylenA{\the\wd\myboxA}%   calc width diff
+    \addtolength\mylenA{-\the\wd\myboxB}%
+    \ifdim\wd\myboxB<\wd\myboxA%
+       \rlap{\hskip 0.8\mylenA\usebox\myboxB}{\usebox\myboxA}%
+    \else
+        \hskip -0.5\mylenA\rlap{\usebox\myboxA}{\hskip 0.5\mylenA\usebox\myboxB}%
+    \fi}
+\makeatother
+
+\fancyfoot{}
+\usepackage{color}
+\definecolor{gray97}{gray}{0.95}
+\definecolor{gray75}{gray}{.65}
+\definecolor{gray45}{gray}{.45}
+
+\usepackage{listings}
+\lstset{ frame=Ltb,
+framerule=0pt,
+aboveskip=0.5cm,
+framextopmargin=3pt,
+framexbottommargin=3pt,
+framexleftmargin=0cm,
+framesep=0pt,
+rulesep=.4pt,
+backgroundcolor=\color{gray97},
+rulesepcolor=\color{black},
+%
+stringstyle=\ttfamily,
+showstringspaces = false,
+basicstyle=\small\ttfamily,
+commentstyle=\color{gray45},
+keywordstyle=\bfseries,
+%
+numbers=left,
+numbersep=0.1cm,
+numberstyle=\tiny,
+numberfirstline = false,
+breaklines=true,
+}
+
+% minimizar fragmentado de listados
+\lstnewenvironment{listing}[1][]
+{\lstset{#1}\pagebreak[0]}{\pagebreak[0]}
+
+\lstdefinestyle{consola}
+{basicstyle=\scriptsize\bf\ttfamily,
+backgroundcolor=\color{gray75},
+}
+
+\lstdefinestyle{C}{
+  language=C
+}
+

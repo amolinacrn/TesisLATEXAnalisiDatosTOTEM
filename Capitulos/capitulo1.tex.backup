@@ -1,0 +1,87 @@
+\chapter{detectores y aceleradores de part\'iculas}
+\lettrine[lines=3, loversize=-0.1, lraise=0.1]E\ n este capitulo hablaremos, sin entrar en demasiado detalle, de la maquina mas poderosa hasta ahora 
+creada por el hombre, el complejo acelerador en el CERN. Daremos a conocer los detectores y aceleradores 
+de partículas que lo componen mas relevantes para el desarrollo de este trabajo. Inicialmente mencionaremos  
+algunos aspectos relacionados con la organización Europea para la investigación nuclear (CERN) y sus objetivos,  
+después trataremos algunas generalidades  del funcionamiento de los detectores  y aceleradores de part\'iculas; destacare el 
+acelerador, gran colisionador de hadrones (LHC) y el experimento TOTEM.
+\section{Laboratorio CERN}
+El CERN, fundado en 1954, esta situado en la frontera entre Francia y suiza cerca de Ginebra,  
+es la organización Europea para la investigación nuclear, cuenta con muchas universidades y científicos de 
+todo el mundo que participan activamente en los distintos experimentos. La principal área de investigación del 
+CERN es la física de partículas: el estudio de los componentes fundamentales de la materia y las fuerzas que actúan
+entre ellos.\\
+
+\setlength{\parindent}{0.5cm}
+ Físicos e ingenieros investigan la estructura fundamental del universo;  utilizando los instrumentos 
+ científicos más grandes y complejos del mundo, estudian los componentes básicos de la materia, las  partículas
+ fundamentales. Los instrumentos utilizados en el CERN son los aceleradores de partículas: El acelerador lineal 2 
+ (Linac 2),  Proton Synchrotron Booster (PSB), Proton Synchrotron (PS), Super Proton Synchrotron (SPS), LHC, y los
+ detectores: ALICE, ATLAS, CMS y LHCb, diseñados específicamente. Los aceleradores aumentan la velocidad (cercana a 
+ la velocidad de la luz) y  la energía de los haces de partículas antes de que se hagan chocar entre sí. Los resultados
+ de estas colisiones (proporcionan pistas a los físicos sobre como interactúan las partículas) son registrados por
+ detectores ubicados en diferentes puntos de colisión.
+\subsection*{Aceleradores}\setlength{\parindent}{0cm}
+El complejo acelerador  en el CERN (Fig. \ref{figura1}) es una sucesión de máquinas que aceleran las partículas 
+a energías cada vez más altas. Cada máquina aumenta la energía de un haz de partículas, antes de ser inyectado a 
+la siguiente maquina. En el LHC los haces de partículas se aceleran hasta una energía de 7 TeV (y en junio de 2015
+empezó a operar a 13 TeV). La mayoría de los otros aceleradores se utilizan  para experimentos a energías más bajas.\\
+
+\setlength{\parindent}{0.5cm}
+La fuente de protones es un simple cilindro de gas hidrógeno. Un campo eléctrico ``desprende'' los electrones
+de los átomos de hidrógeno para producir protones. Linac 2, un acelerador lineal, el primer acelerador en la cadena, 
+acelera los protones a la energía de 50 MeV y luego  los inyecta en el  PSB, que acelera los protones a 1,4 GeV, 
+seguido por el PS, que empuja el haz a 25 GeV. Los protones se envían entonces al SPS, donde se aceleran a 450 GeV y
+finalmente transferidos a los dos tubos del LHC, donde son acelerados a una energía total en el punto de colisión de
+13 TeV.
+\begin{scajafig}
+\begin{figure}[H]
+\begin{center}
+ \includegraphics[width=14cm]{Imagenes/figurastesis/sistema_aceleradores.jpg}
+ %\includegraphics[width=8cm,height=6cm]{figuras/grafica_corrinte_i_carga.eps}
+\caption{El complejo de aceleradores en el CERN}
+\label{figura1}
+ % web6.eps: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=0 0 973 481
+   \end{center}
+\end{figure}
+\end{scajafig}
+\subsection{Experimentos}
+
+\subsection{Gran colisionador de hadrones} 
+El LHC  es el acelerador de partículas más grande y potente del mundo, cuenta con 7 detectores: 
+ATLAS, CMS,  ALICE, LHCb,  TOTEM y LHCf,  que anliza la gran
+cantidad (incontable) de particulas producidas por colisiones en el acelerador. 
+Entre los experimentos mas grandes; ATLAS y CMS, 
+  son utilizados para investigar el mayor rango de fisica posible, mientras que, ALICE y LHCb, se enfocan
+en fenonos mas especifocos. Los experimentos peque\~nos; TOTEM y LHCf,  .Se inició por primera vez el 10 de septiembre
+de 2008, es el ultimo acelerador de la gran cadena de aceleradores del CERN. El LHC consiste en un anillo de 27
+kilómetros de imanes superconductores con una serie de estructuras de aceleración para aumentar la energía de las 
+partículas a lo largo del camino.\\
+
+Dentro del acelerador, dos haces de partículas de alta energía viajan cerca de la velocidad de la luz antes de que se
+hagan colisionar. Los haces viajan en direcciones opuestas en tubos separados (dos tubos mantenidos en ultra  vacío, 
+del orden $10^{-11}$ mbar), guiándose alrededor del anillo del acelerador por un campo magnético fuerte mantenido por 
+los electroimanes superconductores. Los electroimanes están construidos a partir de bobinas de cable eléctrico especial
+que funciona en un estado superconductor, conduciendo eficientemente la electricidad sin resistencia ni pérdida de 
+energía. Esto requiere enfriar los imanes a $-$271.3 grados centígrados. Por esta razón, gran parte del acelerador
+está conectado a un sistema de distribución de helio líquido, que enfría los imanes. 
+\begin{scajafig}
+\begin{figure}[H]
+\begin{center}
+ \includegraphics[width=12cm]{Imagenes/figurastesis/LHC.jpg}
+ %\includegraphics[width=8cm,height=6cm]{figuras/grafica_corrinte_i_carga.eps}
+\caption{El complejo de aceleradores en el CERN}
+\label{figura2}
+ % web6.eps: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=0 0 973 481
+   \end{center}
+\end{figure}
+\end{scajafig}
+Miles de imanes se utilizan para dirigir los haces alrededor del acelerador. 1232 dipolos curvan los haces,
+ y 392 imanes cuadrupolos enfocan los haces. Justo antes de la colisión, otro tipo de imán se utiliza para ``apretar" mas las partículas para aumentar las posibilidades de colisiones.
+
+ 
+   \begin{scaja}
+hola
+\end{scaja}
+
+ 

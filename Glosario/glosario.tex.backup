@@ -1,0 +1,29 @@
+% Place the list of key words below.
+\begin{eqlist}[\def\makelabel#1{\hfill#1}\labelsep 1em]% NO BORRAR
+\item[\bf Funcional:] 
+integral definida sobre un contorno cerrado, de manera que el dominio de la funcional es un espacio de funciones, y su rango es el conjunto de números reales.
+Se denomina vínculo a una expresión que relaciona coordenadas del espacio de configuraciones o coordenadas del espacio de fase. 
+\item[\bf Coordenadas generalizadas:]
+conjunto de $N$ coordenadas curvilineas linealmente independientes que determinan el estado de un sistema físico con un número finito de grados de libertad.
+\item[\bf Fermion:]
+Partícula elemental que se caracteriza por tener espín semi-entero y cumplir el principio de exclusión de Pauli.
+\item[\bf Antiparticula:]
+A cada una de las partículas de la naturaleza le corresponde una antipartícula que posee la misma masa, el mismo espín, pero distinta carga eléctrica. 
+\item[\bf QED:]
+Acrónimo en ingles de electrodinámica cuántica.  Describe los fenómenos que implican las partículas eléctricamente cargadas que obran recíprocamente por medio de la fuerza electromagnética.
+\item[\bf Grados de libertad:]
+Es el número mínimo de coordenadas generalizadas necesarias definir el estado de un sistema físico.
+\item[\bf Campo:]
+Describe el comportamiento de magnitudes que se definen en todo punto de una región del espacio y del tiempo.
+Representa la distribución espacial de una magnitud física que muestra cierta variación en una región del espacio.
+\item[\bf Álgebra de Lie:] 
+Es la estructura algebraica definida sobre un espacio vectorial, asociada usualmete a los grupos de Lie y usadas  en el estudio geométrico de los propios grupos y de otras va\-rie\-da\-des di\-fe\-ren\-cia\-les.
+ \item[\bf Transformación de gauge:]
+Es una transformación de algún grado de libertad interno, que no modifica ninguna propiedad observable física.
+ \item[\bf Superespacio:]
+Es un espacio físico costruido con variables del álgebra conmutativa y del álgebra de Grassmann.
+
+
+
+\end{eqlist}% NO BORRAR
+

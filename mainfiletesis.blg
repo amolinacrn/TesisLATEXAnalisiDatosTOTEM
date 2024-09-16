@@ -1,0 +1,65 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: mainfiletesis.aux
+The style file: unsrt.bst
+A level-1 auxiliary file: Portada/portada.aux
+A level-1 auxiliary file: Capitulos/capitulo1.aux
+A level-1 auxiliary file: Capitulos/capitulo2.aux
+I found no \bibdata command---while reading file mainfiletesis.aux
+Warning--I didn't find a database entry for "Dunne"
+Warning--I didn't find a database entry for "Chinos"
+Warning--I didn't find a database entry for "Martinez"
+Warning--I didn't find a database entry for "Dirac"
+Warning--I didn't find a database entry for "Dirac2"
+Warning--I didn't find a database entry for "Goldstein"
+Warning--I didn't find a database entry for "Greiner"
+Warning--I didn't find a database entry for "Hassani"
+Warning--I didn't find a database entry for "Regge"
+Warning--I didn't find a database entry for "Merylin"
+Warning--I didn't find a database entry for "Sundermeyer"
+Warning--I didn't find a database entry for "[6]"
+Warning--I didn't find a database entry for "[8]"
+Warning--I didn't find a database entry for "[9]"
+Warning--I didn't find a database entry for "[7]"
+You've used 0 entries,
+            1791 wiz_defined-function locations,
+            473 strings with 3753 characters,
+and the built_in function-call counts, 18 in all, are:
+= -- 0
+> -- 0
+< -- 0
++ -- 0
+- -- 0
+* -- 2
+:= -- 7
+add.period$ -- 0
+call.type$ -- 0
+change.case$ -- 0
+chr.to.int$ -- 0
+cite$ -- 0
+duplicate$ -- 0
+empty$ -- 1
+format.name$ -- 0
+if$ -- 1
+int.to.chr$ -- 0
+int.to.str$ -- 0
+missing$ -- 0
+newline$ -- 3
+num.names$ -- 0
+pop$ -- 0
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 1
+stack$ -- 0
+substring$ -- 0
+swap$ -- 0
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 0
+width$ -- 0
+write$ -- 2
+(There was 1 error message)

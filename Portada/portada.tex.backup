@@ -1,0 +1,109 @@
+% -----------------------------------------------------------------------------------------------------------------
+% Portada
+% Cambiar los nombres...
+%-----------------------------------------------------------------------------------------------------------------
+
+% Nombre de tesis
+%\centering
+\title{Formulación de Hamilton Jacobi en teoría clásica de campos} 
+
+% Autor
+\author{LUIS ALFREDO BRAVO HUERTAS}
+% Mes
+\degreemonth{Abril}
+
+% Año
+\degreeyear{2013}
+
+% Título profesional
+\degree{Físico}
+
+% Nombre de la tesis en inglés
+\engtitle{Hamilton Jacobi formulation in classical field theory} 
+
+
+\maketitle%NO BORRAR
+
+% -----------------------------------------------------------------------------------------------------------------
+% Contraportada
+% Cambiar los nombres...
+%-----------------------------------------------------------------------------------------------------------------
+% Asesor
+\director{Germán Enriquez Ramos Zambrano}
+
+\maketitled%NO BORRAR
+%-------------------------------------
+
+\copyrightpage%NO BORRAR
+
+\aceptacion%NO BORRAR
+
+% #####################################################
+% OBS: Se modifican la parte de las 'xxx xxx xxxxx'   #
+% #####################################################
+
+% -----------------------------------------------------------------------------------------------------------------
+% Cambiar agradecimientos...
+% -----------------------------------------------------------------------------------------------------------------
+
+\begin{acknowledgments}
+Quiero expresar mis agradecimientos  a mi familia. Especialmente a mi abuela  Luz, mi madre Nelcy, mi padre Nolberto, mis hermanas Marcela, Lisbeth, mi sobrino Tawan, mi primo Fercho y mi tía Nancy, por su amor, confianza y el respaldo que me han brindado en todo momento de mi vida. En este periodo tan largo y en ocaciones tan dificil, han logrado que siguiera avanzando hacia mi objetivo.\\
+
+Le agradezco a mi director de trabajo de grado el profesor Germán Ramos por su dedicación y apoyo en todo momento, quien a corregido este trabajo con mucho esmero permitiendome elaborar un adecuado proyecto. Le agradezco también por haberme acogido en el grupo de investigación de Física teórica y abrirme las puertas a esta ciencia tan apasionante. \\
+
+A mi novia Jennyfer, mis amigos de San Francisco Rubén, Jamith, Cristian y mis amigos de la carrera de Física Alberto, Jairo, Victor, Daniel, Leydi, Johana y María Fernanda,  quienes me acompañaron en este camino de aprendizaje y conocimiento.
+\end{acknowledgments}
+
+
+% -----------------------------------------------------------------------------------------------------------------
+% Cambiar dedicatoria...
+% -----------------------------------------------------------------------------------------------------------------
+\dedication
+
+\begin{quote}
+\hsp \em \raggedleft
+A la memoria de mi hermano Nolberto Bravo Huertas\\[0.5cm]
+``Nunca consideres el estudio\\ como una obligación,\\ sino como una oportunidad\\ para penetrar en el bello\\ y maravilloso mundo del saber.''\\ Albert Einstein
+\end{quote}
+
+% -----------------------------------------------------------------------------------------------------------------
+% Cambiar resumen en español...
+% -----------------------------------------------------------------------------------------------------------------
+\begin{abstract}
+\begin{itshape} 
+\dsp
+En el presente trabajo se estudiará la formulación de Hamilton-Jacobi mediante el método de Lagrangianos equivalentes de Carathéodory. Se deducirán las ecuaciones de movimiento como ecuaciones diferenciales totales y se analizará las condiciones de integrabilidad para estas. Por medio de problemas prácticos se extenderá la formulación a sistemas con infinitos grados de libertad y descritos por variables de Grassmann. Finalmente se analizará por medio de este formalismo la estructura clásica de la electrodinámica cuántica (QED).   
+\end{itshape}
+\end{abstract}
+
+
+% -----------------------------------------------------------------------------------------------------------------
+% Cambiar resumen en inglés...
+% -----------------------------------------------------------------------------------------------------------------
+
+\begin{engabstract}
+\begin{itshape}
+In the present work will study the Hamilton-Jacobi formulation using the Carathéodory's Lagrangian equivalents method. The equations of motion as total differential equations will be deducted and will analyzed the integrability conditions. Through practical problems will extend the formulation to systems with infinite degrees of freedom and described by Grassmann variables. Finally, I will use this formalism to the classical structure of quantum electrodynamics (QED).
+\end{itshape}
+\end{engabstract}
+
+
+
+
+%\newpage
+%\addcontentsline{toc}{section}{Tabla de contenidos}
+
+\tableofcontents
+
+
+
+%\newpage
+% Generates the List of Symbols. The argument should point to
+% the file containing your List of Symbols. 
+\thesislistofsymbols{Glosario/glosario}
+%\listofappendix
+
+
+\newpage
+
+\startarabicpagination

@@ -1,0 +1,85 @@
+\chapter{PARAMETRIZACI\'ON PARA LA SECCI\'ON EFICAZ DIFERENCIAL EL\'ASTICA}\label{cappomeronelastic}
+\lettrine[lines=3, loversize=-0.1, lraise=0.1]A\ hora daremos inicio al estudio de un modelo de dispersión elástica de nucleones (y anti-nucleones) el cual se basa en una representación quark-diquark\footnote{El diquark un estado ligado hipotético de dos quarks. El diquark es a menudo tratado como una sola partícula subatómica con la que el tercer quark interactúa a través de la interacción fuerte.} ($qQ$) del nucleón con
+elasticidad del pomerón ($\alpha_p$) propuesto por Vladimir Grichine\footnote{En lo que resta del del texto nos limitamos únicamente a colisiones $p(\overline{p})-p$, este es el caso para el cual se tiene una mayor cantidad de datos. No obstante, el modelo \cite{grichine} es v\'alido para cualquier tipo de nucle\'on.} . Este nuevo modelo (que trata de describir datos de dispersión nuclear para el cual 0.005$<|t|<$1 GeV$^2$, región no perturbativa) trata de mejorar el trabajo de la referencia \cite{modeloqQ}  en donde se puede ver una fuerte sobre-estimación en el mínimo de difracción, esto se debe a que el valor de la parte real de la amplitud de dispersión $F(s,t)$ no es lo suficientemente grande \cite{grichine}. Los ajustes presentados en las referencias  \cite{modeloqQ} y \cite{ivan} incorporan dos parámetros libres: un coeficiente de pendiente nuclear y el radio del prot\'on. La nueva función  prototipo $F(s,t)$ presentada por Grichine en la cita \cite{grichine} es capaz de mejorar la descripción de los datos en el m\'inino de difracción incluyendo el nuevo parámetro empírico $\alpha_p$ que aumenta la parte real de $F(s,t)$. Sin embargo, en el siguiente cap\'itulo veremos que a pesar de que el modelo en la referencia \cite{grichine} mejora considerablemente los fits, este tiene sus limitaciones (como sucede con cualquier modelo fenomenológico), por lo que solo puede ser aplicado para datos correspondientes a ciertas energías. Este problema se debe a que la normalización global de $F(s,t)$ est\'a fija y el programa falla en determinar la posición del minino de difracción. Una modificación al modelo, es dejar como parámetro libre la normalización global, en consecuencia, los resultados obtenidos son muy satisfactorios, describiendo todos los datos existentes de sección eficaz diferencial protón-protón y protón-antiprotón en un rango amplio de energías ( 4 GeV a 7000 GeV). En lo que resta de este apartado, daremos a conocer las características del modelo $(qQ)$ con pomer\'on el\'astico.\newpage 
+\section{Modelo quark-diquark con pomer\'on el\'astico}
+La sección eficaz diferencial elástica ($\frac{d\sigma_{el}}{dt}$) para colisiones $p(\overline{p})-p$, puede expresarse en términos de la amplitud de dispersión $F(s,t)$ de la forma \cite{grichine}:
+\begin{equation}
+\frac{d\sigma_{el}}{dt}=\frac{\pi}{p^2}|F(s,t)|^2
+\end{equation}
+Donde $p$ es el momento del prot\'on en el sistema de centro de masa, y $t$ es una de las ya mencionadas variables de Mandelstam y representa como ya bien sabemos el cuadrimomento trasferido elevado al cuadrado. El modelo de la cita \cite{grichine} le da una extension al modelo \cite{modeloqQ}, el cual describe la dispersión elástica de dos protones ``diferentes''. El primer protón consta de un quark (1) y un diquark (2), el segundo consiste de un quark (3) y un diquark (4). El modelo de la referencia  \cite{modeloqQ} es limitado al caso de los protones, y considera las contribuciones debido a los intercambios de uno y dos pomerones, entre: quark-quark (1-3), diquark-diquark (2-4) y dos quark-diquark  (1-4, 2-3). En la cita \cite{grichine}  se extiende el modelo a interacción entre  nucleones, aunque en esta tesis se reduce el modelo al caso de los protones, y esto se debe a la limitación que tenemos para obtener los datos experimentales, como por ejemplo, a datos de interacción prot\'on-neutr\'on.  $F(s, t)$ se expresa como\footnote{El protón se considera como un objeto compuesto por un quark y un diquark} :
+\begin{equation}\label{amplitudFcap4}
+F(s,t)=F_1(s,t)-F_2(s,t)-F_3(s,t)
+\end{equation}
+Donde la amplitud $F_1 (s, t)$ corresponde al intercambio de un pomer\'on, $F_2 (s, t)$ al intercambio de dos  pomer\'on entre los constituyentes del prot\'on quark y diquark, y $F_3 (s, t)$ al intercambio de dos pomer\'on entre el quark (o diquark) de un protón y el quark y el diquark del otro protón al mismo tiempo. La amplitud $F_1(s, t)$ es \cite{grichine}:
+\begin{align} \label{eq1}
+ F_1(s,t)&=\frac{ip\sigma_{tot}(s)}{4\pi}[f_{13}+f_{14}+f_{23}+f_{24}],\ \ \ \textup{donde} \\
+\nonumber  f_{13}&=B_{13}\exp[(\xi_{13}+\beta^2 \lambda + \delta^2 \eta)t],\\
+ \nonumber f_{14}&=B_{14}\exp[(\xi_{14}+\beta^2 \lambda + \gamma^2 \eta)t],\\
+\nonumber f_{23}&=B_{23}\exp[(\xi_{23}+\alpha^2 \lambda + \delta^2 \eta)t],\\
+\nonumber f_{24}&=B_{24}\exp[(\xi_{24}+\alpha^2 \lambda + \gamma^2 \eta)t]
+\end{align}
+Donde $\sigma_{tot}(s)$ es la secci\'on eficaz total. Los coeficientes $B_{jk}$, parametrizan las secciones eficaces quark-quark, diquark-diquark y quark-diquark. Los coeficientes $\xi_{jk}$, $(j= 1, 2)$, ($k=3,4$) representan cada una de las interacciones entre quark-quark, diquark-diquark y quark-diquark:
+\begin{miscaja}
+%\centering
+\begin{tabular}[h!]{p{6cm}p{4cm}}
+\begin{minipage}[l]{6cm}
+\begin{tabular}{ll}
+$\sigma_{13}=B_{13}\sigma_{tot}$ &$\sigma_{24}=B_{24}\sigma_{tot}$\\
+$\sigma_{23}=B_{23}\sigma_{tot}$ &$\sigma_{14}=B_{14}\sigma_{tot}$\\
+ %\bottomrule
+\end{tabular}
+\end{minipage}
+&
+\begin{minipage}[r]{8.35cm}
+\begin{equation}
+\xi_{jk}= \frac{r^2_j+r^2_k}{16}+\alpha'\left[\ln\frac{s}{s_{o}}-\alpha_p\frac{i\pi}{2} \right]
+\end{equation}
+\end{minipage}
+\end{tabular}
+\end{miscaja}
+El modelo asume que: $\sigma_{23} = \sigma_{14} =\sqrt{\sigma_{13} \sigma_{24}}$. Los coeficientes $\alpha = \gamma = 1/3$ y $\beta = \delta = 2/3$ corresponden a las masas del quark y diquark de los protones \footnote{Los valores para $\delta$, $\beta$, $\gamma$, $\alpha$, pueden obtenerse  a partir de la ecuación (4) de la referencia \cite{modeloqQ}, para el caso particular en el cual $m_j=m_k=m$.}. Los parámetros $\lambda=\eta=r^2/4$, $r$ es el radio del prot\'on. Los radios:  quark ($r_{1}=r_{3}=0.173r$ \cite{grichine,modeloqQ}) y diquark ($r_{2}=r_4=0.316r$ \cite{grichine,modeloqQ}) pueden ser encontrados haciendo los fits a los datos experimentales. Además, el modelo supone que la constante $s_o=1$, aunque para intercambio de pomerones quizá sea preferible considerar $s_{o}=1/
+\alpha'$ \cite{donachie}, $\alpha'$ es la pendiente de la trayectoria del pomer\'on. Las amplitudes $F_2(s,t)$ y $F_3(s,t)$ son:
+\begin{equation}\label{eq2}
+F_2(s,t)=\frac{ip\sigma^2_{tot}(s)}{16\pi^2}[f_{13,24}+f_{14,23}]
+\end{equation}
+donde
+\begin{align}
+\nonumber  f_{13,24}&=\frac{B_{13}B_{24}}{\xi_{13}+\xi_{24}+\lambda+\eta}\exp\left\{\left[\xi_{24}+\alpha^2\lambda+\gamma^2\eta-\frac{(\xi_{24}+\alpha\lambda+\gamma\eta)^2}{\xi_{13}+\xi_{24}+\lambda+\eta}\right]t\right\},\\
+\nonumber  f_{14,23}&=\frac{B_{14}B_{23}}{\xi_{14}+\xi_{23}+\lambda+\eta}\exp\left\{\left[\xi_{23}+\alpha^2\lambda+\delta^2\eta-\frac{(\xi_{23}+\alpha\lambda+\delta\eta)^2}{\xi_{14}+\xi_{23}+\lambda+\eta}\right]t\right\},
+\end{align}
+y:
+\begin{align} \label{eq3}
+F_3(s,t)&=\frac{ip\sigma^2_{tot}(s)}{32\pi}[f_{13,14}+f_{23,24}+f_{13,23}+f_{14,24}],\ \ \ \textup{donde} \\\\
+\nonumber f_{13,14}&=\frac{B_{13}B_{14}}{\xi_{13}+\xi_{14}+\eta}
+\exp\left\{ \left[\xi_{14}+\beta^2\lambda+\gamma^2\eta-\frac{(\xi_{14}+\gamma\eta)^2}{\xi_{13}+\xi_{14}+\eta}\right]t\right\},\\
+\nonumber f_{23,24}&=\frac{B_{23}B_{24}}{\xi_{24}+\xi_{23}+\eta}
+\exp\left\{ \left[\xi_{24}+\alpha^2\lambda+\gamma^2\eta-\frac{(\xi_{24}+\gamma\eta)^2}{\xi_{23}+\xi_{24}+\eta}\right]t\right\},\\
+\nonumber f_{13,23}&=\frac{B_{13}B_{23}}{\xi_{13}+\xi_{23}+\lambda}
+\exp\left\{ \left[\xi_{23}+\alpha^2\lambda+\delta^2\eta-\frac{(\xi_{23}+\alpha\lambda)^2}{\xi_{13}+\xi_{23}+\lambda}\right]t\right\},\\
+\nonumber f_{14,24}&=\frac{B_{14}B_{24}}{\xi_{14}+\xi_{24}+\lambda}
+\exp\left\{ \left[\xi_{24}+\alpha^2\lambda+\beta^2\eta-\frac{(\xi_{24}+\alpha\lambda)^2}{\xi_{14}+\xi_{24}+\lambda}\right]t\right\},
+\end{align}
+respectivamente.\\
+
+Para simplificar
+ los cálculos, se puede suponer que las secciones eficaces 
+   quark-quark y diquark-diquark
+    no dependen de qué quarks
+         interactúan. Por otro lado, en el modelo se asumen tres parámetros libres: el radio del protón
+              $r$, la elasticidad
+               de Pomer\'on $\alpha_p$ y el coeficiente $B_{13}$ que parametriza la sección eficaz $\sigma_{13}$. El coeficiente $B_{24}$ puede expresarse en términos de $B_{13}$ mediante el teorema óptico, además, $B_{23}=B_{14}=\sqrt{B_{13}B_{24}}$, y surge como consecuencia de: \\
+               
+%\centering
+\begin{center}
+\begin{tabular}[h!]{p{6cm}}
+\begin{minipage}[l]{6cm}
+\begin{tabular}{ll}
+%\toprule
+%\midrule
+$\sigma_{13}=B_{13}\sigma_{tot}$ &$\sigma_{24}=B_{24}\sigma_{tot}$\\
+$\sigma_{23}=B_{23}\sigma_{tot}$ &$\sigma_{14}=B_{14}\sigma_{tot}$\\
+ %\bottomrule
+\end{tabular}
+\end{minipage}
+\end{tabular}
+\end{center}

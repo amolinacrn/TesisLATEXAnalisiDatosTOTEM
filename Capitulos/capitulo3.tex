@@ -1,0 +1,92 @@
+\chapter{TEORÍA DE REGGE Y EL POMER\'ON}\label{teoriareggepomeron}
+\lettrine[lines=3, loversize=-0.1, lraise=0.1]L\ a técnica  m\'as ``sencilla'' y a la vez genial con la que disponemos para poder describir los diferentes procesos de interacción entre partículas elementales son los diagramas de Feynman. Sin embargo, este método resulta inaplicable en colisiones elásticas entre protones, ya que después de la colisión, estas part\'iculas son dispersadas con peque\~nos ángulos ($\sim 10^{-4}$ rad para altas energías), esto conlleva a valores de $|t|<1$ GeV$^2$ de acuerdo a la ecuación (\ref{ecu2_19}). Como $\alpha_s$ es una función de $|t|$, existirá un valor en $|t|$ por debajo del cual $\alpha_s$ adquiere valores muy grandes (mayores  a 1). Los diagramas de Feynman se escriben como una serie perturbativa en términos de $\alpha_s$, y si $\alpha_s$ es mayor que 1, entonces la serie perturbativa diverge. Esto nos obliga a descartar por completo los métodos perturbativos de la cromodin\'amica cuántica (QCD) \cite{carlosavila,ferrer,constanteacoplo}. Por lo tanto, la única forma de poder entender la dinámica de los procesos elásticos es (como ya se mencion\'o en el cap\'itulo previo) a partir de observaciones experimentales y del uso de modelos fenomenológicos 
+basados en propiedades de la amplitud de dispersión y en algunas suposiciones adicionales sobre la estructura interna de los hadrones \cite{carlosavila}.
+\section{Modelos fenomenológicos}
+Dado que el estudio que estamos realizando se encuentra en regiones  de la QCD no perturbativa, no podemos explicar fenómenos de dispersión haciendo uso de los diagramas de Feyman. En este caso, lo que se hace es recurrir a los modelos fenomenológicos, esto implica expandir la amplitud de dispersión en ondas parciales dada por la ecuaci\'on (\ref{ecuqq2_1}). Además, la amplitud de dispersión debe satisfacer tres propiedades, estas son: 
+\begin{itemize}
+\item unitariedad
+\item analiticidad
+\item simetría de cruce
+\end{itemize}
+La propiedad de unitariedad  de la amplitud de dispersi\'on  ($f(s,t)$) garantiza que la suma de las secciones eficaces de dispersión $\sigma_l$ para $l=0,1,2,...$ nos debe dar como resultado la sección eficaz total, es decir, $\sigma_{tot}=\sum_l\sigma_l$, dicho de otro forma, la suma de todas las probabilidades de la amplitud de dispersión debe ser menor o igual a la unidad  \cite{carlosavila}. La propiedad de analiticidad dice que las amplitudes de dispersión, son funciones analíticas de las variables cinem\'aticas cuando estas se continúan a valores complejos. Las amplitudes físicas se recuperan cuando se asignan valores reales a las variables cinem\'aticas. La simetría de cruce sugiere que una misma amplitud de dispersión o combinaciones lineales de esta, es suficiente para describir los tres procesos de dispersión ($s$, $t$, y $u$), ya sea para  partículas o para antipart\'iculas. Esto implica que si la amplitud de dispersión es analítica en uno cualquiera de estos tres canales podemos, en principio, continuar analíticamente a cualquiera de los otros canales con la misma amplitud de dispersión \cite{varone}.
+\section{La idea del polo de Regge}
+Sabemos que para poder determinar la sección eficaz diferencial elástica, se debe conocer la expresión para la amplitud de dispersión, esto significa que debemos expandirla. Ahora bien, de la mecánica cuántica\footnote{En mecánica cuántica fue donde surgió toda esta idea del polo de Regge} sabemos que cuando un haz  de partículas incide e interactúa sobre un pozo de potencial esférico simétrico y atractivo, se pueden producir fenómenos de resonancias o estados ligados en el continuo. Estos estados confinados aparecen como polos en la amplitud de la onda parcial\footnote{Es de resaltar que para casos no relativistas la amplitud de onda parcial estar\'a representada por $a_l(k)$, si por el contrario, nos encontramos en casos relativistas se usara la notación $A_l(s)$ (en el canal s)} $a_l(k)$ (ecuacion (\ref{amplituddeondaparcial})) para un determinado valor entero de $l$. La idea de Regge era continuar con $a_l(k)$ para valores complejos de $l$ y obtener as\'i una función de interpolación $a(l,k)$ la cual se reducirá a $a_{l}(k)$ para $l=0,1,2,\ldots$ Ahora, las singularidades que se presentan en $a(l,k)$, son los polos de Regge, y cada uno de estos polos va a contribuir a la amplitud de dispersión en un t\'ermino que se comporta asint\'oticamente. Los polos para $a(l,k)$ est\'an situados en valores definidos por la relación \cite{varone}\cite{donachie}: \begin{equation}\label{ecu3_4}
+l=\alpha(k),
+\end{equation} donde  $\alpha(k)$ es una función de la energía llamada trayectoria de Regge. A cada familia de estados ligados o resonancias le pertenece una única trayectoria de Regge como (\ref{ecu3_4}). De manera similar, la amplitud relativista $A(l,s)$ tiene polos en:
+    \begin{equation}
+    l=\alpha(t),
+    \end{equation}donde la trayectoria de Regge $\alpha(t)$ es ahora función la variable invariante $t$. Note que esta variable tomar\'a diferentes roles dependiendo del canal en el que se est\'e trabajando, en el canal  $s$, $t$ ser\'a el cuadrado del cuadrimomento trasferido.    \section{El reggeon}
+En la teoría de Regge, se describen los procesos hadr\'onicos en términos de intercambio de ``algo''. Este ``algo'' es una partícula virtual. Así, por ejemplo, las fuerzas nucleares son usualmente atribuidas a intercambios de mesones ($\pi$, $\rho$, etc), del mismo modo que las interacciones electromagnéticas  se deben al intercambio de fotones virtuales entre los electrones. Sin embargo, a altas energías, la idea de intercambio de mesones en este tipo de interacciones  llega a ser inaplicable, puesto que la sección eficaz total crece m\'as rápido que $\ln^2(s)$ cuando $s\rightarrow\infty$,  
+violando así la restricción de Froissart \cite{varone}:
+\begin{equation}\label{ecu3_6}
+\sigma_{tot}<\frac{\pi}{m_{\pi}}\ln^2(s),
+\end{equation}
+el cual indica que para poder mantener la unitariedad, la sección eficaz total $\sigma_{tot}$ no puede crecer m\'as rápido que $\ln^2(s)$ \cite{carlosavila}.\\
+
+\sp Para solucionar este problema, la teoría de Regge supone que la interacción no se debe al intercambio de mesones, si no m\'as bien, al intercambio de trayectorias de Regge, a menudo llamados reggeones. El intercambio de reggeones en lugar de partículas conduce a una amplitud de dispersión de la forma\begin{equation}\label{ecu3_7}
+ A(s,t)\sim s^{\alpha(t)}\ \ \ \textup{cuando}\ \ \ s\rightarrow \infty,
+ \end{equation}
+que no viola la condición (\ref{ecu3_6}) si $\alpha(0)<1$ \cite{varone,donachie}. 
+\section{La representación de ${\pmb A\pmb(\pmb s\pmb ,\pmb t\pmb)}$ para {$\pmb l$} complejo }
+Como se mencion\'o anteriormente, la simetría de cruce afirma que si conocemos la amplitud de dispersión en un canal cualquiera,  esta es suficiente para describir el proceso de interacción en cada uno de los canales restantes. Pues bien,  para que una de las variables (la que sea), digamos $s$, converja  en un dominio lo suficientemente  grande como para contener al menos parte de las regiones físicas de  $t$ y $u$. se debe introducir un concepto poco físico del momento angular orbital, el momento angular orbital complejo, $l$, visto como un n\'umero complejo, permite obtener una representación para (\ref{ecuqq2_1}) como una integral de contorno  \cite{harveybyron}:
+\begin{equation} \label{ecud3_8}
+f(s,t(s,z))=\frac{1}{2i}\oint_{C}(2l+1)\frac{A(l,s)}{\textup{sen}(\pi l)}P(l,s,z)dl
+\end{equation}
+$C$ es un contorno que rodea el eje real positivo de $l$.  Las funciones $A(l,s)$ y $P(l,s,z)$ son las continuaciones de $A_l(s)$ y $P_l(z)$ al plano complejo $l$.
+Deformando el contorno $C$ en la integral (\ref{ecud3_8}) a un contorno $C'$ tal que, $C'$  encierre todos los polos de $A(l,s)$ (Fig. \ref{polosregge3}), la expresión para $f(s,t)$ en el canal $s$ es \cite{carlosavila,varone}:
+ \begin{eqnarray}\label{ecu3_8}
+\nonumber  f(s,t(s,z))=\sum_i\pi(2\alpha_{i}(s)+1)\beta_{i}(s)\frac{P(\alpha_{i},s,z)}{\textup{sen}\pi\alpha_{i}}\\
++\frac{1}{2i}\int^{-\frac{1}{2}+i\infty}_{-\frac{1}{2}-i\infty}(2l+1)A(l,s)\frac{P(l,s,z)}{\textup{sen}\pi l}dl,
+\end{eqnarray}
+donde $\alpha_{i}(s)$ es la posición del $l-$\'esimo polo de $A(l,s)$ (un polo de Regge) y $\beta_{i}(s)$ es el residuo en ese polo.
+Las ecuaciones (\ref{ecud3_8}) y (\ref{ecu3_8}) son:  la transformación   y la representación de Sommerfeld Watson para la amplitud de dispersión respectivamente,  en el plano complejo $l$ .\\
+
+\sp En el l\'imite cuando $t\rightarrow \infty$ la integral de  (\ref{ecu3_8}) se desvanece, por lo que únicamente los términos de la serie contribuyen a la amplitud de dispersión, por tanto, la amplitud $f(s,t)$ para $t\rightarrow \infty$ toma la forma:\newpage
+\begin{figure}[H]
+%\centering
+\begin{tabular}{p{10cm}p{6cm}}
+\begin{minipage}[l]{10cm}
+ \begin{equation}\label{ecu3_9}
+f(s,t)\simeq -\sum_{i}\beta_{i}(s)\frac{t^{\alpha_{i}(s)}}{\textup{sen}[\pi\alpha_i(s)]}\ \ \ \textup{cuando}\ \ \ t\rightarrow \infty
+\end{equation}
+En $\beta_{i}(s)$ se han agrupado todas las constantes y factores dependientes de $s$ que aparecen en (\ref{ecu3_8}). Nada puede decirse acerca del residuo de $\beta_i(s)$.\\
+ 
+\sp La ecuación (\ref{ecu3_9}) ha sido obtenida desarrollando las serie (\ref{ecuqq2_1}) escrita en en canal $s$. Escrita en el canal $t$,  $f(s,t)$ es:
+\begin{equation}\label{Ecu3_10}
+f(s,t)\simeq -\sum_{i}\beta_{i}(t)\frac{s^{\alpha_{i}(t)}}{\textup{sen}[\pi\alpha_i(t)]}\ \ \ \textup{cuando}\ \ \ s\rightarrow \infty
+\end{equation}
+\end{minipage}
+&
+\begin{minipage}[r]{6cm}
+\includegraphics[width=6cm]{Imagenes/figurastesis/polosregge.pdf}
+\caption{Contornos de integracion para la transformacion de Sommerfeld Watson. Los $\alpha_i$ son polos de Regge \cite{carlosavila}.}
+\label{polosregge3}
+\end{minipage}
+\end{tabular}
+\end{figure}
+ Debido a la simetría de cruce, se podría, en principio, poder trabajar con la ecuación (\ref{Ecu3_10}) en otro canal diferente al canal $t$. 
+\section{El pomer\'on}
+Para valores reales y positivos de $t$, los polos de Regge representan resonancias o estados ligados. La trayectoria de Regge (o regge\'on)  que interpola  estos estados ligados o resonancias se puede escribir como:
+\begin{equation}\label{ecupomeron}
+\alpha(t)= \alpha(0)+\alpha't
+\end{equation}
+donde $\alpha(0)$ y $\alpha'$ son el intercepto y la pendiente de la trayectoria, respectivamente.\\
+
+\sp Las predicciones de la teoría de Regge para $\alpha(0)<1$ son satisfactorias, en las referencias \cite{varone,donachie} se puede apreciar como las resonancias y algunos  números cuánticos se describen correctamente por una trayectoria de Regge mes\'onica de $\alpha(0)=$0.25. A pesar de los buenos resultados que se obtiene con valores de $\alpha(0)<1$, existen excepciones, veamos. Considerando el polo de mayor contribución, la ecuación (\ref{ecu3_10}) es de la forma \cite{varone}: 
+\begin{equation}\label{ecu3_10}
+f(s,t)\sim -\beta(t)\frac{s^{\alpha(t)}}{\textup{sen}[\pi\alpha(t)]}\ \ \ \textup{cuando}\ \ \ s\rightarrow \infty
+\end{equation}    
+Remplazando (\ref{ecupomeron}) en (\ref{ecu3_10}) y
+ haciendo uso del teorema óptico se tiene:
+  \begin{equation}\label{ecu3_11}
+ \sigma_{tot}\simeq\frac{1}{s}\textup{Im}(f(s,t=0))\sim s^{\alpha(0)-1}\ \ \ \textup{cuando}\ \ \ s\rightarrow \infty
+ \end{equation}
+ De la relación (\ref{ecu3_11}) se puede ver que si $\alpha(0)<1$ entonces la sección eficaz total ($\sigma_{tot}$) disminuye con la energía. Esto contradice las observaciones experimentales, el cual muestran que $\sigma_{tot}$ es m\'as bien plana en cierto intervalo \footnote{En colisiones $\bar{p}p$ se puede observar en la figura \ref{figcrossection} que $\sigma_{tot}$ disminuye hasta llegar a una región plana y después sigue aumentando }  (en colisiones $pp$) y luego sigue a aumentando a altas energías (Fig. \ref{figcrossection}). Para que la teoría de Regge concuerde con las observaciones experimentales, se hace necesario introducir una trayectoria de Regge (o regge\'on) con un intercepto mayor a 1 ($\alpha(0)>1$), a este regge\'on se le llama pomer\'on, y hasta el momento,  no corresponde a ninguna partícula; además, es un tema de estudio tanto a nivel teórico como experimental \cite{carlosavila,varone}.
+ \begin{figure}[H]
+ \centering
+\includegraphics[width=10cm]{Imagenes/figurastesis/crosssection.pdf}
+\caption{La sección eficaz total para colisiones protón-protón y protón-antiprotón, en ella se muestra como $\sigma_{tot}$ aumenta considerablemente conforme $\sqrt{s}$ aumenta.
+\cite{carlosavila}}
+\label{figcrossection}
+\end{figure}
+Un valor $\alpha(0)>1$ obviamente violaría la restricción de Froissart. Para salir de este problema se puede suponer que las energías alcanzadas actualmente aun están lejos de la asintótica, y por lo tanto, a\'un ser\'ia posible hacer unitarias las secciones eficaces \cite{varone}.  

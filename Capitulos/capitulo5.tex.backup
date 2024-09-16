@@ -1,0 +1,747 @@
+
+
+\chapter{Campos Fermiónicos}
+\section{Ecuación de Dirac} 
+En mecánica cuántica no relativista la ecuación de Schrödinger en la representación de las coordenadas se  obtiene al reemplazar por operadores la energía, y el momento de la siguiente manera \cite{gasirowicz}:
+\begin{equation}
+ E\Rightarrow\; \hat{E}\equiv i\hbar\frac{\partial}{\partial \tau}
+\label{cuantizacion1}
+\end{equation}
+\begin{equation}
+ p\Rightarrow\; \hat{p}\equiv -i\hbar\nabla
+\label{cuantizacion2}
+\end{equation}
+En la ecuación de autovalores:
+\begin{align}
+ \hat{H}\psi=\hat{E}\psi
+\end{align}
+En relatividad especial, se ha definido el cuadrivector momento de la siguiente manera \cite{aldrovandy1}:
+\begin{equation}
+ p^{\mu}=\left(\frac{E}{c},\pmb{p}\right)
+\end{equation}
+el cual satisface la siguiente propiedad:
+\begin{align*}
+ p^{\mu}p_{\mu}=\frac{E^2}{c^2}-p^2=m^2c^2
+\end{align*}
+Al exigir que la energía relativista sea positiva se deberá cumplir:
+\begin{equation}
+ E=\left[p^2c^2+m^2c^4\right]^{\frac{1}{2}}
+\label{energia}
+\end{equation}
+La ecuación de autovalores asociada al autovector $\psi$ se puede determinar, utilizando en \eqref{energia}, las condiciones de cuatización \eqref{cuantizacion1} y \eqref{cuantizacion2}, de tal manera se obtiene que:
+\begin{align}
+ \hat{E}\psi=\left[c^2\hat{p}^2+m^2c^4\right]^{\frac{1}{2}}\psi=mc^2\left[1+\frac{\hat{p}^2}{2m^2c^2}-\frac{\hat{p}^4}{8m^4c^4}+...\right]\psi,
+\end{align}
+lo que implica que se deben conocer derivadas de orden superior de la función de onda $\psi$. Dirac propuso que una manera de evitar este tipo de dificultades es linealizar la ecuación \eqref{energia}, asi que él formulo la siguiente expresión \cite{aldrovandy1}: 
+\begin{equation}
+ E=\left[p^2c^2+m^2c^4\right]^{\frac{1}{2}}=c\,\pmb{\alpha}\cdotp \pmb{p}+mc^2\beta
+\label{energia2}
+\end{equation}
+Donde  $\pmb{\alpha}=\left(\alpha_{1},\alpha_{2},\alpha_{3}\right)$ y $\beta$ son constantes desconocidas. Elevando al cuadrado \eqref{energia2} y escribiendo en notación de indices\footnote[1]{Se debe tener en cuenta que se esta sumando sobre indices repetidos.} \cite{Heinbockel}, se determina:
+\begin{align*}
+ p^2c^2+m^2c^4&=\left(c\,\alpha_{i}p_{i}+mc^2\beta\right)\left(c\,\alpha_{j}p_{j}+mc^2\beta\right)\\
+c^2p_{i}p_{i}+m^2c^4&=c^2\,\underbrace{\alpha_{i}\alpha_{j}}_{\mbox{simetrizando}}p_{i}p_{j}+mc^3\alpha_{i}p_{i}\beta+mc^3\beta\underbrace{\alpha_{j}p_{j}}_{j\rightarrow i}+m^2c^4\beta^2\\ 
+c^2p_{i}p_{j}\delta_{ij}+m^2c^4&=c^2\,\frac{1}{2}\left(\alpha_{i}\alpha_{j}+\alpha_{j}\alpha_{i}\right)p_{i}p_{j}+mc^3p_{i}\left(\alpha_{i}\beta+\beta\alpha_{i}\right)+m^2c^4\beta^2
+\end{align*}
+Comparando el lado izquierdo y derecho se debe cumplir:
+\begin{subequations}
+ \begin{equation}
+  \alpha_{i}\alpha_{j}+\alpha_{j}\alpha_{i}=2\delta_{ij}
+\label{1} 
+\end{equation}
+$$\mbox{si $ i=j \Rightarrow$}\; \alpha_{i}^2=1 \; \Longrightarrow \; \alpha_{1}^2=\alpha_{2}^2=\alpha_{3}^2=1$$
+$$\mbox{si $ i\neq j \Rightarrow$}\; \alpha_{i}\alpha_{j}+\alpha_{j}\alpha_{i}=0$$
+\begin{equation}
+ \alpha_{i}\beta+\beta\alpha_{i}=0
+\label{2a}
+\end{equation}
+\begin{equation}
+ \beta^2=1
+\label{3}
+\end{equation}
+\end{subequations}
+Las condiciones anteriores no se satisfacen si $\alpha_{i}$ y $\beta$ son simples números; por lo tanto, las relaciones \eqref{1}, \eqref{2a} y \eqref{3} se cumplen solo si $\alpha_{i}$ y $\beta$ son matrices, y donde 1 representará la matriz identidad.\\[0.4cm] 
+Las reglas de cuantización \eqref{cuantizacion1} y \eqref{cuantizacion2} permiten expresar la ecuación de autovalores $\hat{H}\psi=\hat{E}\psi$, de la forma:
+\begin{equation}
+ -ic\hbar\,\pmb{\alpha}\cdotp\nabla\psi+mc^2\beta\psi=i\hbar\frac{\partial \psi}{\partial t}
+\label{dirac}
+\end{equation}
+La ecuación \eqref{dirac} se conoce como ecuación de Dirac en forma Hamiltoniana \cite{aldrovandy1}, esta depende de cuatro matrices complejas $(\alpha_{i},\beta)$ de dimensión $(n\times n)$ y un vector columna $\psi$ de dimensión $n\times 1$, que se lo conoce como spinor de Dirac.  De la condición que el operador Hamiltoniano debe ser hermítico: $H^{\dagger}=H$, \cite{libof}, se deduce que las matrices $\alpha \;y\; \beta$ deben ser tambien hermiticas: $\alpha^{\dagger}=\alpha$ y $\beta^{\dagger}=\beta$ \cite{naturales}. \\[0.5cm]
+Considerando el adjunto Hermitiano de la ecuación de Dirac \eqref{dirac}:
+\begin{equation}
+ -i\hbar\frac{\partial \psi^{\dagger}}{\partial t}=i \hbar c\nabla\psi^{\dagger}\cdotp\pmb{\alpha}+mc^2\psi^{\dagger}\beta
+\label{adjunto}
+\end{equation}
+y ahora multiplicando \eqref{dirac} por $\psi^{\dagger}$ y \eqref{adjunto} por $\psi$ se tiene:
+\begin{equation}
+i\hbar\psi^{\dagger}\frac{\partial \psi}{\partial t}=-i\hbar c\psi^{\dagger}\pmb{\alpha}\cdotp\nabla\psi+mc^2\psi^{\dagger}\beta\psi
+\label{41c5}
+\end{equation} 
+\begin{equation}
+-i\hbar\frac{\partial \psi^{\dagger}}{\partial t}\psi=i\hbar c\nabla\psi^{\dagger}\cdotp\pmb{\alpha}\psi+mc^2\psi^{\dagger}\beta\psi
+\label{42c5}
+\end{equation}
+Considerando \eqref{41c5} menos \eqref{42c5}
+\begin{align}
+ i\hbar\psi^{\dagger}\frac{\partial \psi}{\partial t}+i\hbar\frac{\partial \psi^{\dagger}}{\partial t}\psi&=-i\hbar c\psi^{\dagger}\pmb{\alpha}\cdotp\nabla\psi-i\hbar c\nabla\psi^{\dagger}\cdotp\pmb{\alpha}\psi+mc^2\psi^{\dagger}\beta\psi-mc^2\psi^{\dagger}\beta\psi\\
+\nonumber i\hbar\left[\psi^{\dagger}\frac{\partial \psi}{\partial t}+\frac{\partial \psi^{\dagger}}{\partial t}\psi\right]&=-i\hbar c\left[\psi^{\dagger}\alpha_{i}\partial_{i}\psi+\partial_{i}\psi^{\dagger}\alpha_{i}\psi\right]\\
+-\frac{1}{c}\frac{\partial}{\partial t}\left(\psi^{\dagger}\psi\right)&=\partial_{i}\left(\psi^{\dagger}\alpha_{i}\psi\right)
+\end{align}
+Definiendo $\rho=\psi^{\dagger}\psi$: Densidad de probabilidad y $J_{i}=c\,\psi^{\dagger}\alpha_{i}\psi$: la componente i-ésima del vector corriente de probaliblidad, se llega a:
+\begin{equation}
+ \frac{\partial\rho}{\partial t}+\nabla\cdotp \pmb{J}=0
+\label{continuidad}
+\end{equation}
+Esta es la ecuación de continuidad de probabilidad  \cite{aldrovandy1}.\\[0.4cm]
+Es posible demostrar también que $Tr(\alpha_{i})=0$ y $Tr(\beta)=0$, y además, que los autovalores asociados a $\alpha_{i}$ y $\beta$ son $\pm1$,  \cite{aldrovandy1}. Estos hechos implican que $n$ debe ser par. La mas simple estructura matricial no trivial surge para n=2, es decir, cuando las matrices pueden ser de dimensión 2. Se conoce que las 3 matrices de Pauli junto con la matriz identidad definen una base completa para matrices $2\times2$  \cite{arfken}. De cualquier manera, ellas no satisfacen las relaciones álgebraicas \eqref{1},\eqref{2a} y \eqref{3}. De hecho se conoce que en 2 dimensiones, no pueden existir 4 matrices anticonmutantes \cite{hans}. La siguiente elección es $n=4$, para la cual las matrices sera de dimensión 4, (es decir, matrices $4 \times 4$). En este caso, se encuentra que un conjunto de 4 matrices constantes linealmente independientes que satisfacen las relaciones \eqref{1},\eqref{2a} y \eqref{3} se conocen como matrices gamma de Dirac \cite{hans,aldrovandy1}.
+\subsection{Matrices Gama de Dirac}
+Las matrices Gama de Dirac se definen de la siguiente manera:
+\begin{equation}
+ \gamma^0\equiv\beta
+\label{matriz1}
+\end{equation}
+\begin{equation}
+ \gamma^i\equiv\beta\alpha^i
+\label{matrizk}
+\end{equation}
+Multilplicando la ecuación \eqref{dirac} por $\beta$
+\begin{align*}
+ -i\hbar\,c\,\beta\pmb{\alpha}\cdotp\nabla\psi+mc^2\underbrace{\beta^2}_{I}\psi&=i\hbar\beta\frac{\partial \psi}{\partial t}\\
+i\hbar\frac{\gamma^0}{c}\frac{\partial \psi}{\partial t}+ i\hbar\gamma^i\partial_{i}\psi-mc\psi=&0
+\end{align*}
+Recordando que $\frac{1}{c}\frac{\partial}{\partial t}\equiv\frac{\partial}{\partial x^0}$, la expresión anterior se puede reescribir así:
+\begin{align*}
+i\hbar\left(\gamma^0\partial_{0}\psi+\gamma^i\partial_{i}\psi\right)-mc\psi&=0
+\end{align*}
+\begin{equation}
+ \left(i\hbar\gamma^{\mu}\partial_{\mu}-mc\right)\psi=0
+\label{dirac1}
+\end{equation}
+Esta ecuación es conocida como la forma covariante de la ecuación de Dirac \cite{aldrovandy1}. Las propiedades de las matrices $\alpha$ y $\beta$, se pueden reescribir en términos de las matrices ga\-mma de la siguiente manera \cite{aldrovandy1}:
+\begin{equation}
+   \gamma^{\mu}\gamma^{\nu}+\gamma^{\nu}\gamma^{\mu}=2\eta^{\mu\nu}
+\label{propiedadgama}
+ \end{equation}
+Las matrices $\gamma^{\mu}$ satisfacen la siguiente propiedad: bajo la operación de adjunto hermitiano
+\begin{equation}
+ \left(\gamma^{\mu}\right)^{\dagger}=\gamma^{0}\gamma^{\mu}\gamma^{0}
+\label{hermitiano}
+\end{equation}
+Multiplicando la ecuación de Dirac \eqref{dirac1} por $\left(i\hbar\gamma^{\nu}\partial_{\nu}+mc\right)$:
+\begin{align*}
+ \left(i\hbar\gamma^{\nu}\partial_{\nu}+mc\right)\left(i\hbar\gamma^{\mu}\partial_{\mu}-mc\right)\psi&=0\\
+\left(-\hbar^2\gamma^{\nu}\gamma^{\mu}\partial_{\nu}\partial_{\mu}-\cancel{imc\hbar\gamma^{\nu}\partial_{\nu}}+\cancel{imc\hbar\gamma^{\mu}\partial_{\mu}}-m^2c^2\right)\psi&=0
+\end{align*}
+\begin{equation}
+\left(\gamma^{\nu}\gamma^{\mu}\partial_{\nu}\partial_{\mu}+\frac{m^2c^2}{\hbar^2}\right)\psi=0
+\label{kgordon}
+\end{equation}
+Se calculara la expresión $\gamma^{\nu}\gamma^{\mu}\partial_{\nu}\partial_{\mu}$ que aparece en la relación anterior, para esto se escribira el producto matricial $\gamma^{\nu}\gamma^{\mu}$, en su parte simétrica y antisimétrica respectivamente, esto es:
+\begin{align}
+ \gamma^{\nu}\gamma^{\mu}=\frac{1}{2}\underbrace{(\gamma^{\nu}\gamma^{\mu}+\gamma^{\mu}\gamma^{\nu})}_{\mbox{simétrico}}+\frac{1}{2}\underbrace{\left(\gamma^{\nu}\gamma^{\mu}-\gamma^{\mu}\gamma^{\nu}\right)}_{\mbox{antisimétrico}}
+\end{align}
+Ahora, la expresión $\partial_{\nu}\partial_{\mu}$  es simétrica en los indices $\mu,\nu$. Se sabe que el producto de un tensor simétrico y un antisimétrico es cero, entonces, el producto que se busca utilizando la propiedad \eqref{propiedadgama} es:
+\begin{align}
+ \gamma^{\nu}\gamma^{\mu}\partial_{\nu}\partial_{\mu}&=\frac{1}{2}\left(\gamma^{\nu}\gamma^{\mu}+\gamma^{\mu}\gamma^{\nu}\right)\partial_{\nu}\partial_{\mu}=\eta^{\nu\mu}\partial_{\nu}\partial_{\mu}=\partial^{\mu}\partial_{\mu}
+\end{align}
+Esta propiedad permite expresar \eqref{kgordon}, así:
+\begin{align}
+ \left(\partial^{\mu}\partial_{\mu}+\frac{m^2c^2}{\hbar^2}\right)\psi&=0
+\end{align}
+Definiendo $\partial^{\mu}\partial_{\mu}\equiv \Box^2$, se determina que:
+\begin{equation}
+\left(\Box^2+\frac{m^2c^2}{\hbar^2}\right)\psi=0 
+\end{equation}
+lo que demuestra que cada componente del espinor $\psi(\pmb{x},t)$ satisface la ecuación de Klein-Gordon.\\[0.3cm]
+Calculando el adjunto hermitiano de la ecuación de Dirac \eqref{dirac1}, se obtiene:
+\begin{align*}
+ \left[\left(i\hbar\gamma^{\mu}\partial_{\mu}-mc\right)\psi\right]^{\dagger}&=0\\
+\psi^{\dagger}\left[-i\hbar\left(\gamma^{\mu}\right)^{\dagger}\overleftarrow{\partial_{\mu}}-mc\right]&=0
+\end{align*}
+La propiedad \eqref{hermitiano}, permite reescribir la ecuación anterior de la siguiente manera:
+\begin{align*}
+\psi^{\dagger}\left[-i\hbar\gamma^{0}\gamma^{\mu}\gamma^{0}\overleftarrow{\partial_{\mu}}-mc\right]&=0\\
+i\hbar\psi^{\dagger}\gamma^{0}\gamma^{\mu}\gamma^{0}\overleftarrow{\partial_{\mu}}+mc\psi^{\dagger}&=0\\
+i\hbar\psi^{\dagger}\gamma^{0}\gamma^{\mu}\underbrace{\gamma^{0}\gamma^{0}}_{I}\overleftarrow{\partial_{\mu}}+mc\psi^{\dagger}\gamma^{0}&=0
+\end{align*}
+Definiendo $\bar\psi\equiv\psi^{\dagger}\gamma^0$ como el espinor adjunto hermitiano de Dirac, la relación anterior se expresa en la forma:
+\begin{equation}
+ \bar{\psi}\left(i\hbar\gamma^{\mu}\overleftarrow{\partial_{\mu}}+mc\right)=0
+\label{dirac2}
+\end{equation}
+Esta expresión es conocida como la ecuación de Dirac para el campo $\bar{\psi}$. Multiplicando la ecuación Dirac \eqref{dirac1} por $\bar\psi$ por el lado izquierdo y  \eqref{dirac2} por $\psi$ por  la derecha da:
+\begin{equation}
+ i\hbar\bar\psi\gamma^{\mu}\partial_{\mu}\psi-mc\bar{\psi}\psi=0
+\end{equation}
+\begin{equation}
+ i\hbar\partial_{\mu}\bar\psi\gamma^{\mu}\psi+mc\bar{\psi}\psi=0
+\end{equation}
+Sumando estas dos expresiones se obtiene:
+\begin{equation}
+ \partial_{\mu}\left(\bar\psi\gamma^{\mu}\psi\right)=0
+\end{equation}
+Separando el indice temporal del espacial da:
+\begin{equation}
+ \partial_{0}\left(\bar\psi\gamma^{0}\psi\right)+\partial_{k}\left(\bar\psi\gamma^{k}\psi\right)=0
+\end{equation}
+con $k=1,2,3$, sustituyendo $\partial_{0}\equiv\frac{1}{c}\frac{\partial}{\partial t}$, se puede escribir la expresión anterior de la siguiente manera: 
+\begin{equation}
+ \frac{\partial}{\partial t}\left(\bar\psi\gamma^{0}\psi\right)+\partial_{k}\left(c\bar\psi\gamma^{k}\psi\right)=0
+\label{29}
+\end{equation}
+Se habia definido $\rho=\psi^{\dagger}\psi$ y $J^{k}=c\,\psi^{\dagger}\alpha^{k}\psi$, utilizando la propiedad $(\gamma^0)^2=I$, se puede verificar que:
+\begin{align}
+ \rho=\psi^{\dagger}(\gamma^0)^2\psi=\bar\psi\gamma^0\psi
+\end{align}
+también:
+\begin{align}
+ J^{k}=c\,\psi^{\dagger}(\gamma^0)^2\alpha^{k}\psi=c\,\bar\psi\gamma^0\alpha^{k}\psi=c\,\bar\psi\gamma^{k}\psi
+\end{align}
+Esto permite reconocer la ecuación \eqref{29} como la ecuación de continuidad, esta vez deducidas de las ecuaciones de Dirac en forma covariante.
+\section{Formalismo Lagrangiano}
+Clásicamente los campos fundamentales de Dirac $\psi$ y $\bar{\psi}$ son representados por campos Grassmannianos, donde sus componentes $\psi_{a}$ y $\bar{\psi}_{b}$ con $a,b=1,2,3,4$, deben satisfacer las siguientes relaciones de anticonmutación:
+\begin{subequations}
+\begin{equation}
+ \psi_{a}\psi_{b}+\psi_{b}\psi_{a}=0
+\end{equation}
+\begin{equation}
+ \psi_{a}\bar{\psi_{b}}+\bar{\psi_{b}}\psi_{a}=0
+\end{equation}
+\begin{equation}
+ \bar{\psi_{a}}\bar{\psi_{b}}+\bar{\psi_{b}}\bar{\psi_{a}}=0
+\end{equation}
+\end{subequations}
+Las ecuaciones de movimiento \eqref{dirac1} y \eqref{dirac2} asociados a los campos clásicos $\psi$ y $\bar{\psi}$ respectivamente se puede deducir de la siguiente densidad Lagrangiana \cite{sundermeyerc3}:
+\begin{equation}
+\mathscr{L}=\frac{i}{2}\left[\bar{\psi}\gamma^{\mu}\partial_{\mu}\psi-\partial_{\mu}\bar{\psi}\gamma^{\mu}\psi\right]-m\bar{\psi}\psi 
+\label{fermionico}
+\end{equation}
+La cual descrita en términos de las componentes de los campos: $\psi_{a}\;,\;\bar{\psi}_{a}$ y de las matrices $\gamma^{\mu}:\gamma_{ab}^{\mu}$, se expresa explicitamente así:
+\begin{equation}
+\mathscr{L}=\frac{i}{2}\left[\bar{\psi_{a}}\gamma_{ab}^{\mu}\partial_{\mu}\psi_{b}-\partial_{\mu}\bar{\psi_{a}}\gamma_{ab}^{\mu}\psi_{b}\right]-m\bar{\psi_{a}}\psi_{a} 
+\label{lagrangianoexplicito}
+\end{equation}
+Aqui se debe entender que se suma sobre índices matriciales repetidos. Extendiendo el principio de Hamilton, a los campos fermionicos es posible demostrar que $\psi_{a}$ y $\bar{\psi}_{a}$ deben satisfacer las siguientes ecuaciones de Euler-Lagrange \cite{sundermeyerc3}:
+\begin{equation}
+ \frac{\partial \mathscr{L}}{\partial \psi_{a}}-\partial_{\mu}\left(\frac{\partial \mathscr{L}}{\partial\left(\partial_{\mu}\psi_{a}\right)}\right)=0
+\label{campo1c5}
+\end{equation}
+\begin{equation}
+ \frac{\partial \mathscr{L}}{\partial \bar{\psi_{a}}}-\partial_{\mu}\left(\frac{\partial \mathscr{L}}{\partial\left(\partial_{\mu}\bar{\psi_{a}}\right)}\right)=0
+\label{campo2c5}
+\end{equation}
+Donde las derivadas calculadas respecto a los campos fermionicos se entenderán de ahora en adelante como izquierdas. De \eqref{lagrangianoexplicito} se deducirá la ecuación de campo asociada a $\psi$, \eqref{campo1c5}, para ello, se calcularan las correspondientes derivadas:
+\begin{align*}
+ \frac{\partial \mathscr{L}}{\partial \psi_{a}}&=\frac{\partial}{\partial \psi_{a}}\left[\frac{i}{2}\left(\bar{\psi_{c}}\gamma_{cb}^{\mu}\partial_{\mu}\psi_{b}-\partial_{\mu}\bar{\psi_{c}}\gamma_{cb}^{\mu}\psi_{b}\right)-m\bar{\psi_{b}}\psi_{b}\right]\\
+&=-\frac{i}{2}\frac{\partial}{\partial \psi_{a}}(\underbrace{\partial_{\mu}\bar{\psi_{c}}\gamma_{cb}^{\mu}\psi_{b}}_{-\psi_{b}\partial_{\mu}\bar{\psi_{c}}\gamma_{cb}^{\mu}})-m\frac{\partial}{\partial \psi_{a}}\underbrace{(\bar{\psi_{b}}\psi_{b})}_{-\psi_{b}\bar{\psi_{b}}}\\
+&=\frac{i}{2}\underbrace{\frac{\partial\psi_{b}}{\partial \psi_{a}}}_{\delta_{ba}}\partial_{\mu}\bar{\psi_{c}}\gamma_{cb}^{\mu}+m\underbrace{\frac{\partial\psi_{b}}{\partial \psi_{a}}}_{\delta_{ba}}\bar{\psi_{b}}
+\end{align*}
+\begin{equation}
+ \frac{\partial \mathscr{L}}{\partial \psi_{a}}=\frac{i}{2}\partial_{\mu}\bar{\psi_{c}}\gamma_{ca}^{\mu}+m\bar{\psi_{a}}
+\label{57c5}
+\end{equation}
+De igual manera:
+\begin{align*}
+ \frac{\partial \mathscr{L}}{\partial\left(\partial_{\mu}\psi_{a}\right)}&=\frac{i}{2}\frac{\partial}{\partial\left(\partial_{\mu}\psi_{a}\right)}\left[\bar{\psi_{c}}\gamma_{cb}^{\nu}\partial_{\nu}\psi_{b}\right]\\
+&=-\frac{i}{2}\frac{\partial\left(\partial_{\nu}\psi_{b}\right)}{\partial\left(\partial_{\mu}\psi_{a}\right)}\bar{\psi_{c}}\gamma_{cb}^{\nu}=-\frac{i}{2}\delta_{\nu}^{\mu}\delta_{ab}\bar{\psi_{c}}\gamma_{cb}^{\nu}
+\end{align*}
+\begin{equation}
+ \frac{\partial \mathscr{L}}{\partial\left(\partial_{\mu}\psi_{a}\right)}=-\frac{i}{2}\bar{\psi_{c}}\gamma_{ca}^{\mu}
+\label{58c5}
+\end{equation}
+Reemplazando \eqref{57c5} y \eqref{58c5} en \eqref{campo1c5} se obtiene:
+\begin{align*}
+ \frac{i}{2}\partial_{\mu}\bar{\psi_{c}}\gamma_{ca}^{\mu}+m\bar{\psi_{a}}-\partial_{\mu}\left[-\frac{i}{2}\bar{\psi_{c}}\gamma_{ca}^{\mu}\right]&=0\\
+\frac{i}{2}\partial_{\mu}\bar{\psi_{c}}\gamma_{ca}^{\mu}+m\bar{\psi_{a}}+\frac{i}{2}\partial_{\mu}\bar{\psi_{c}}\gamma_{ca}^{\mu}&=0\\
+i\partial_{\mu}\bar{\psi_{c}}\gamma_{ca}^{\mu}+m\delta_{ca}\bar{\psi_{c}}&=0\\
+ \bar{\psi_{c}}\left[i\gamma_{ca}^{\mu}\overleftarrow{\partial_{\mu}}+m\delta_{ca}\right]&=0
+\end{align*}
+\begin{equation}
+ \left[\bar{\psi}\left(i\gamma^{\mu}\overleftarrow{\partial_{\mu}}+m\right)\right]_{a}=0
+\end{equation}
+o en forma compacta:
+\begin{equation}
+ \bar{\psi}\left(i\gamma^{\mu}\overleftarrow{\partial_{\mu}}+m\right)=0
+\label{dirac22}
+\end{equation}
+La ecuación de campo asociada a $\psi$, \eqref{campo1c5}, determina la ecuación de Dirac para el campo $\bar\psi$, \eqref{dirac2}, expresada en unidades naturales $\hbar=c=1$, \cite{naturales}. De igual manera, la ecuación de campo asociada a $\bar\psi$, \eqref{campo2c5}, implica que:
+\begin{align*}
+ \frac{\partial \mathscr{L}}{\partial \bar{\psi_{a}}}&=\frac{\partial}{\partial \bar{\psi_{a}}}\left[\frac{i}{2}\left(\bar{\psi_{c}}\gamma_{cb}^{\mu}\partial_{\mu}\psi_{b}-\partial_{\mu}\bar{\psi_{c}}\gamma_{cb}^{\mu}\psi_{b}\right)-m\bar{\psi_{b}}\psi_{b}\right]\\
+&=\frac{i}{2}\frac{\partial \bar{\psi_{c}}}{\partial \bar{\psi_{a}}}\gamma_{cb}^{\mu}\partial_{\mu}\psi_{b}-m\frac{\partial \bar{\psi_{b}}}{\partial \bar{\psi_{a}}}\psi_{b}=\frac{i}{2}\delta_{ca}\gamma_{cb}^{\mu}\partial_{\mu}\psi_{b}-m\delta_{ba}\psi_{b}
+\end{align*}
+\begin{equation}
+ \frac{\partial \mathscr{L}}{\partial \bar{\psi_{a}}}=\frac{i}{2}\gamma_{ab}^{\mu}\partial_{\mu}\psi_{b}-m\psi_{a}
+\label{60c5}
+\end{equation}
+En forma similar
+\begin{align*}
+ \frac{\partial \mathscr{L}}{\partial\left(\partial_{\mu}\bar{\psi_{a}}\right)}&=\frac{i}{2}\frac{\partial}{\partial\left(\partial_{\mu}\bar{\psi_{a}}
+\right)}\left[-\partial_{\nu}\bar{\psi_{c}}\gamma_{cb}^{\nu}\psi_{b}\right]\\
+&=-\frac{i}{2}\frac{\partial\left(\partial_{\nu}\bar{\psi_{c}}\right)}{\partial\left(\partial_{\mu}\bar{\psi_{a}}\right)}\gamma_{cb}^{\nu}\psi_{b}=-\frac{i}{2}\delta_{\nu}^{\mu}\delta_{ca}\gamma_{cb}^{\nu}\psi_{b}
+\end{align*}
+\begin{equation}
+ \frac{\partial \mathscr{L}}{\partial\left(\partial_{\mu}\bar{\psi_{a}}\right)}=-\frac{i}{2}\gamma_{ab}^{\mu}\psi_{b}
+\label{61c5}
+\end{equation}
+Sustituyendo \eqref{60c5} y \eqref{61c5} en la ecuación de campo \eqref{campo2c5} se determina:
+\begin{align*}
+ \frac{i}{2}\gamma_{ab}^{\mu}\partial_{\mu}\psi_{b}-m\psi_{a}-\partial_{\mu}\left(-\frac{i}{2}\gamma_{ab}^{\mu}\psi_{b}\right)&=0\\
+\frac{i}{2}\gamma_{ab}^{\mu}\partial_{\mu}\psi_{b}-m\psi_{a}+\frac{i}{2}\gamma_{ab}^{\mu}\partial_{\mu}\psi_{b}&=0\\
+i\gamma_{ab}^{\mu}\partial_{\mu}\psi_{b}-m\delta_{ba}\psi_{b}=0
+\end{align*}
+\begin{equation}
+ \left[\left(i\gamma^{\mu}\partial_{\mu}-m\right)\psi\right]_{a}=0
+\end{equation}
+o en forma compacta:
+\begin{equation}
+ \left(i\gamma^{\mu}\partial_{\mu}-m\right)\psi=0
+\label{ecuacioncampo1c5}
+\end{equation}
+Que determina la ecuación de campo de Dirac asociada a $\psi$. Se procederá ahora a un estudio canónico de la teoría, para ello se definirá los momentos canónicos conjugandos a los campos de Dirac fundamentales de la siguiente manera:
+\begin{equation}
+ \pi_{a}\equiv\frac{\partial \mathscr{L}}{\partial\dot{\bar{\psi_{a}}}}
+\label{vinculoprimario1c5}
+\end{equation}
+\begin{equation}
+ \bar{\pi}_{a}\equiv\frac{\partial \mathscr{L}}{\partial\dot\psi_{a}}
+\label{vinculoprimario2c5}
+\end{equation}
+Donde $\pi_{a}$ se ha definido como el momento canónico asociado a $\bar{\psi}_{a}$ y $\bar{\pi}_{a}$  el momento canónico asociado a $\psi_{a}$.  Utilizando \eqref{61c5} y \eqref{58c5} con $\mu=0$, se deduce:
+\begin{align*}
+ \pi_{a}=\frac{\partial \mathscr{L}}{\partial\left(\partial_{0}{\bar{\psi_{a}}}\right)}=-\frac{i}{2}\gamma_{ab}^{0}\psi_{b}
+\end{align*}
+\begin{equation}
+ \pi_{a}=-\frac{i}{2}\gamma_{ab}^{0}\psi_{b}
+\label{momento1c5}
+\end{equation}
+\begin{align*}
+ \bar{\pi}_{a}=\frac{\partial \mathscr{L}}{\partial\left(\partial_{0}\psi_{a}\right)}=-\frac{i}{2}\bar{\psi_{b}}\gamma_{ba}^{0}
+\end{align*}
+\begin{equation}
+ \bar{\pi}_{a}=-\frac{i}{2}\bar{\psi_{b}}\gamma_{ba}^{0}
+\label{momento2c5}
+\end{equation}
+Las expresiones \eqref{momento1c5} y \eqref{momento2c5} relacionan los momentos canónicos con los campos, por lo tanto, son vínculos primarios y se los definirá de la siguiente manera:
+\begin{equation}
+ \phi_{a}\equiv\pi_{a}+\frac{i}{2}\gamma_{ab}^{0}\psi_{b}=0
+\label{vinculo1c5}
+\end{equation}
+\begin{equation}
+ \bar{\phi}_{a}\equiv\bar{\pi}_{a}+\frac{i}{2}\bar{\psi_{b}}\gamma_{ba}^{0}=0
+\label{vinculo2c5}
+\end{equation}
+Como el índice $a$ toma los valores $1,2,3,4$, se tiene en principio 8 vínculos primarios. El conjunto de variables $(\psi,\bar\psi,\pi,\bar\pi)$ definen el espacio de fase, en el que la densidad Hamiltoniana canónica bajo la definición de derivada izquierda, se define así:
+\begin{equation}
+\mathscr{H}\equiv\dot\psi_{a}\bar{\pi}_{a}+\dot{\bar{\psi}}_{a}\pi_{a}-\mathscr{L}
+\label{hamiltonianoc5}
+\end{equation}
+Utilizando \eqref{momento1c5} y \eqref{momento2c5} se obtiene:
+\begin{align}
+\nonumber \mathscr{H}&=\partial_{0}\psi_{a}\left(-\frac{i}{2}\bar{\psi_{b}}\gamma_{ba}^{0}\right)+\partial_{0}{\bar{\psi}}_{a}\left(-\frac{i}{2}\gamma_{ab}^{0}\psi_{b}\right)-\frac{i}{2}\left[\bar{\psi_{a}}\gamma_{ab}^{\mu}\partial_{\mu}\psi_{b}-\partial_{\mu}\bar{\psi_{a}}\gamma_{ab}^{\mu}\psi_{b}\right]+m\bar{\psi_{a}}\psi_{a}\\
+\nonumber&=\frac{i}{2}\underbrace{\bar{\psi_{b}}\gamma_{ba}^{0}\partial_{0}\psi_{a}}_{b\leftrightarrow a}-\frac{i}{2}\partial_{0}{\bar{\psi}}_{a}\gamma_{ab}^{0}\psi_{b}-\frac{i}{2}\bar{\psi_{a}}\gamma_{ab}^{0}\partial_{0}\psi_{b}-\frac{i}{2}\bar{\psi_{a}}\gamma_{ab}^{k}\partial_{k}\psi_{b}+\frac{i}{2}\partial_{0}\bar{\psi_{a}}\gamma_{ab}^{0}\psi_{b}+\frac{i}{2}\partial_{k}\bar{\psi_{a}}\gamma_{ab}^{k}\psi_{b}\\
+\nonumber &+m\bar{\psi_{a}}\psi_{a}\\
+\nonumber&=-\frac{i}{2}\bar{\psi_{a}}\gamma_{ab}^{k}\partial_{k}\psi_{b}+\frac{i}{2}\partial_{k}\bar{\psi_{a}}\gamma_{ab}^{k}\psi_{b}+m\bar{\psi_{a}}\psi_{a}
+\end{align}
+\begin{equation}
+ \mathscr{H}=\frac{i}{2}\left[\partial_{k}\bar{\psi_{a}}\gamma_{ab}^{k}\psi_{b}-\bar{\psi_{a}}\gamma_{ab}^{k}\partial_{k}\psi_{b}\right]+m\bar{\psi_{a}}\psi_{a}
+\label{densidadhamiltonianac5}
+\end{equation}
+Ahora como el espacio de fase $(\psi_{a},\bar\psi_{a},\pi_{a},\bar\pi_{a})$ son campos fermionicos, los paréntesis  de Bose-Fermi, se definen formalmente en términos de derivadas funcionales izquierdas de la siguiente manera:
+\begin{equation}
+ \{F_{1}(x),F_{2}(y)\}_{BF}\equiv-\int d^3z[\frac{\delta F_{1}(x)}{\delta \psi_{a}(z)}\frac{\delta F_{2}(y)}{\delta \bar{\pi}_{a}(z)}+\frac{\delta F_{1}(x)}{\delta \bar{\pi}_{a}(z)}\frac{\delta F_{2}(y)}{\delta \psi_{a}(z)}+\frac{\delta F_{1}(x)}{\delta \bar{\psi}_{a}(z)}\frac{\delta F_{2}(y)}{\delta \pi_{a}(z)}
+\label{bfc5}
+\end{equation}
+$$+\frac{\delta F_{1}(x)}{\delta \pi_{a}(z)}\frac{\delta F_{2}(y)}{\delta \bar{\psi}_{a}(z)}]$$
+De la expresión \eqref{bfc5} y del hecho que las variables en el espacio de fase son independientes, se deduce que los paréntesis de Bose-Fermi fundamentales de la teoría diferentes de cero son:
+\begin{align*}
+ \{\psi_{a}(x),\bar{\pi}_{b}(y)\}_{BF}&=-\int d^3z\left[\frac{\delta\psi_{a}(x)}{\delta \psi_{c}(z)}\frac{\delta \bar{\pi}_{b}(y)}{\delta \bar{\pi}_{c}(z)}\right]=-\int d^3z \delta_{ac}\delta^3(x-z)\delta_{bc}\delta^3(y-z)
+\end{align*}
+Por lo tanto:
+\begin{equation}
+ \{\psi_{a}(x),\bar{\pi}_{b}(y)\}_{BF}=-\delta_{ab}\delta^3(x-y)
+\label{fundamental1}
+\end{equation}
+\begin{align*}
+ \{\bar\psi_{a}(x),\pi_{b}(y)\}_{BF}&=-\int d^3z\left[\frac{\delta\bar\psi_{a}(x)}{\delta \bar\psi_{c}(z)}\frac{\delta \pi_{b}(y)}{\delta \pi_{c}(z)}\right]=-\int d^3z \delta_{ac}\delta^3(x-z)\delta_{bc}\delta^3(y-z)
+\end{align*}
+Finalmente se determina:
+\begin{equation}
+ \{\bar{\psi}_{a}(x),\pi_{b}(y)\}_{BF}=-\delta_{ab}\delta^3(x-y)
+\label{fundamental2}
+\end{equation}
+\section{Formalismo de Hamilton-Jacobi}
+La ecuación de Hamilton-Jacobi (HJ) asociada a la densidad hamiltoniana \eqref{densidadhamiltonianac5} es:
+\begin{equation}
+\phi^t\equiv p^t+\mathscr{H}=0
+\end{equation}
+Utilizando \eqref{densidadhamiltonianac5} la ecuación de HJ se puede escribir así:
+\begin{equation}
+ \phi^t=p^t+\frac{i}{2}\left[\partial_{k}\bar{\psi_{a}}\gamma_{ab}^{k}\psi_{b}-\bar{\psi_{a}}\gamma_{ab}^{k}\partial_{k}\psi_{b}\right]+m\bar{\psi_{a}}\psi_{a}=0
+\label{hj}
+\end{equation}
+Los vínculos primarios \eqref{vinculo1c5} y \eqref{vinculo2c5} son  ecuaciones diferenciales parciales (EDP) en el formalismo de HJ, con esto, el conjunto de ecuaciones diferenciales parciales de Hamilton Jacobi (EDPHJ) \cite{singular2c1}, son:
+\begin{align} 
+ \phi^t&\equiv p^t+\frac{i}{2}\left[\partial_{k}\bar{\psi_{a}}\gamma_{ab}^{k}\psi_{b}-\bar{\psi_{a}}\gamma_{ab}^{k}\partial_{k}\psi_{b}\right]+m\bar{\psi_{a}}\psi_{a}=0\\
+\phi_{a}&\equiv\pi_{a}+\frac{i}{2}\gamma_{ab}^{0}\psi_{b}=0\\
+\bar{\phi}_{a}&\equiv\bar{\pi}_{a}+\frac{i}{2}\bar{\psi_{b}}\gamma_{ba}^{0}=0
+\end{align}
+La ecuación diferencial (5.60) contiene la densidad hamiltoniana $\mathscr H$ que está relacionada con la dinámica del sistema, además,  $p^t$ se ha definido como la densidad de momento canónico conjugado a la variable $x^0=t$, asi que, se asociara a t como el parámetro independiente correspondiente a la EDPHJ (5.60). Las EDPHJ (5.61) y (5.62) surgen de la definición de los momentos $(\pi_{a},\bar\pi_{a})$ conjugados a las variables $(\bar\psi_{a},\psi_{a})$ respectivamente, por lo tanto, se relacionará a $(\bar\psi,\psi)$ como los parámetros independientes a las EDPHJ (60) y (61). De esta manera, la evolución dinámica de una variable definida en el espacio de fase $F\left(\psi,\bar\psi,\pi,\bar\pi\right)$ asociada al sistema, está dada por el diferencial:
+\begin{equation}
+ dF(x)=\int d^3y\left[\{F(x),\phi^{t}(y)\}dt+\{F(x),\phi_{a}(y)\}d\bar{\psi}_{a}(y)+\{F(x),\bar{\phi_{a}}(y)\}d\psi_{a}(y)\right]
+\label{diferencial1}
+\end{equation}
+Definiendo $A\equiv\{F(x),\phi_{a}(y)\}$ y $B\equiv d\bar{\psi}_{a}(y)$, donde la paridad de $A$ es $n_{A}=n_{F}+n_{\phi_{a}}$ y la paridad de $B$ es $n_{B}=n_{\psi_{a}}$. Ahora usando la siguiente propiedad de variables Grass\-mannia\-nas:
+\begin{equation}
+ AB=(-1)^{n_{A}n_{B}}BA
+\label{propiedadgrassman}
+\end{equation}
+El segundo término de la expresión anterior se puede reescribir así:
+\begin{equation}
+ \{F(x),\phi_{a}(y)\}d\bar{\psi}_{a}(y)=(-1)^{(n_{F}+n_{\phi_{a}})n_{\psi_{a}}}d\bar{\psi}_{a}(y)\{F(x),\phi_{a}(y)\}
+\label{producto}
+\end{equation}
+El número de paridad de $\phi_{a}$ es $n_{\phi_{a}}=1$, y el de $\psi_{a}$ es $n_{\psi_{a}}=1$, además para este sistema en particular $F$ representa variables de paridad impar, por lo tanto $n_{F}=1$. Sustituyendo los anteriores valores de paridad en  \eqref{producto}, se determina que:
+\begin{equation}
+ \{F(x),\phi_{a}(y)\}d\bar{\psi}_{a}(y)=d\bar{\psi}_{a}(y)\{F(x),\phi_{a}(y)\}
+\end{equation}
+Con el resultado anterior el diferencial \eqref{diferencial1}, se escribe de la siguiente manera: 
+\begin{equation}
+ dF(x)=\int d^3y\left[\{F(x),\phi^{t}(y)\}dt+d\bar{\psi}_{a}(y)\{F(x),\phi_{a}(y)\}+\{F(x),\bar{\phi_{a}}(y)\}d\psi_{a}(y)\right]
+\label{diferencialc5}
+\end{equation}
+Ahora, se analizará las condiciones de integrabilidad del sistema de EDPHJ. La integrabilidad de $\phi_{a}$, implica que se deba cumplir:
+\begin{equation}
+ d\phi_{a}(x)=0
+\label{condicion11c5}
+\end{equation}
+Usando \eqref{diferencialc5}, la integrabilidad para $\phi_{a}$ se puede escribir de la siguiente manera:
+\begin{equation}
+ d\phi_{a}(x)=\int d^3y\left[\{\phi_{a}(x),\phi^{t}(y)\}dt+d\bar{\psi}_{b}(y)\{\phi_{a}(x)\;,\phi_{b}(y)\}+\{\phi_{a}(x),\bar{\phi_{b}}(y)\}d\psi_{b}(y)\right]
+\label{condicionphic5}
+\end{equation}
+Con el propósito de analizar la relación anterior se emplearan los siguientes paréntesis de Bose-Fermi obtenidos en el \pmb{apéndice C}:
+\begin{align}
+ \{\phi_{a}(x),\phi^{t}(y)\}&=\left[\frac{i}{2}\gamma_{ab}^{k}\psi_{b}(y)\partial_{k}^x+\frac{i}{2}\gamma_{ab}^{k}\partial_{k}^y\psi_{b}(y)-m\psi_{a}(y)\right]\delta^3(x-y)\\
+\{\phi_{a}(x),\bar{\phi}_{b}(y)\}&=-i\gamma_{ab}^{0}\delta^3(x-y)\\
+\{\phi_{a}(x),\phi_{b}(y)\}&=0
+\end{align}
+Sustituyendo los resultados anteriores en la integrabilidad de $\phi_{a}$, se determina que:
+\begin{align*}
+ d\phi_{a}(x)&=\int d^3y\left[\frac{i}{2}\gamma_{ab}^{k}\psi_{b}(y)\partial_{k}^x\delta^3(x-y)+\frac{i}{2}\gamma_{ab}^{k}\partial_{k}^y\psi_{b}(y)\delta^3(x-y)-m\psi_{a}(y)\delta^3(x-y)\right]dt\\
+&+\int d^3y\left(-i\gamma_{ab}^{0}\delta^3(x-y)\right)d\psi_{b}(y)\\
+&=\frac{i}{2}\gamma_{ab}^{k}\partial_{k}^x\int d^3y\psi_{b}(y)\delta^3(x-y)dt+\frac{i}{2}\gamma_{ab}^{k}\int d^3y\partial_{k}^y\psi_{b}(y)\delta^3(x-y)dt\\
+&-m\int d^3y\psi_{a}(y)\delta^3(x-y)dt-i\gamma_{ab}^{0}\int d^3y\delta^3(x-y)d\psi_{b}(y)\\
+&=\left[\frac{i}{2}\gamma_{ab}^{k}\partial_{k}^x\psi_{b}(x)+\frac{i}{2}\gamma_{ab}^{k}\partial_{k}^x\psi_{b}(x)-m\psi_{a}(x)\right]dt-i\gamma_{ab}^{0}d\psi_{b}(x)\\
+&=\left[i\gamma_{ab}^{k}\partial_{k}^x\psi_{b}(x)-m\psi_{a}(x)\right]dt-i\gamma_{ab}^{0}d\psi_{b}(x)=0
+\end{align*}
+Multiplicando la anterior expresión por $-i\gamma_{ca}^0$ , 
+\begin{align*}
+ \left[\gamma_{ca}^0\gamma_{ab}^{k}\partial_{k}^x\psi_{b}(x)+im\gamma_{ca}^0\psi_{a}(x)\right]dt-\underbrace{\gamma_{ca}^0\gamma_{ab}^{0}}_{\delta_{cb}}d\psi_{b}(x)&=0\\
+ \left[\gamma_{ca}^0\gamma_{ab}^{k}\partial_{k}^x\psi_{b}(x)+im\gamma_{ca}^0\psi_{a}(x)\right]dt&=d\psi_{c}(x)
+\end{align*}
+Finalmente se obtiene que:
+\begin{equation}
+d\psi_{a}(x)=\left[\gamma_{ab}^0\gamma_{bc}^{k}\partial_{k}^x\psi_{c}(x)+im\gamma_{ab}^0\psi_{b}(x)\right]dt
+\label{condicion1c5}
+\end{equation}
+De la misma manera, la integrabilidad de $\bar{\phi}_{a}$, exige que:
+\begin{equation}
+ d\bar{\phi}_{a}(x)=0
+\label{condicion2c5}
+\end{equation}
+Utilizando nuevamente \eqref{diferencialc5} la condición de integrabilidad \eqref{condicion2c5} se puede escribir de la siguiente manera:
+\begin{equation}
+ d\bar{\phi}_{a}(x)=\int d^3y\left[\{\bar{\phi}_{a}(x),\phi^{t}(y)\}dt+d\bar{\psi}_{b}(y)\{\bar{\phi}_{a}(x)\;,\phi_{b}(y)\}+\{\bar{\phi}_{a}(x),\bar{\phi_{b}}(y)\}d\psi_{b}(y)\right]
+\label{condicionphibarc5}
+\end{equation}
+Para analizar esta expresión se utilizara los siguientes paréntesis de Bose-Fermi calculados en el \pmb{Apéndice D}:
+\begin{align}
+ \{\bar{\phi}_{a}(x),\phi^{t}(y)\}&=\left[\frac{i}{2}\partial_{k}^y\bar{\psi_{c}}(y)\gamma_{ca}^{k}+\frac{i}{2}\bar{\psi_{c}}(y)\gamma_{ca}^{k}\partial_{k}^x+m\bar{\psi_{a}}(y)\right]\delta^3(x-y)\\
+\{\bar{\phi}_{a}(x),\phi_{b}(y)\}&=-i\gamma_{ba}^{0}\delta^3(x-y)\\
+\{\bar{\phi}_{a}(x),\bar{\phi}_{b}(y)\}&=0
+\end{align}
+Usando los resultados anteriores se determina que: 
+\begin{align*}
+ d\bar{\phi}_{a}(x)&=\int d^3y\left[\frac{i}{2}\partial_{k}^y\bar{\psi_{c}}(y)\gamma_{ca}^{k}\delta^3(x-y)+\frac{i}{2}\bar{\psi_{c}}(y)\gamma_{ca}^{k}\partial_{k}^x\delta^3(x-y)+m\bar{\psi_{a}}(y)\delta^3(x-y)\right]dt\\
+&+\int d^3yd\bar{\psi}_{b}(y)\left(-i\gamma_{ba}^{0}\delta^3(x-y)\right)\\
+&=\left[\frac{i}{2}\partial_{k}^x\bar{\psi_{c}}(x)\gamma_{ca}^{k}+\frac{i}{2}\partial_{k}^x\int d^3y\bar{\psi_{c}}(y)\gamma_{ca}^{k}\delta^3(x-y)+m\bar{\psi_{a}}(x)\right]dt-id\bar{\psi}_{b}(x)\gamma_{ba}^{0}\\
+&=\left[\frac{i}{2}\partial_{k}^x\bar{\psi_{c}}(x)\gamma_{ca}^{k}+\frac{i}{2}\partial_{k}^x\bar{\psi_{c}}(x)\gamma_{ca}^{k}+m\bar{\psi_{a}}(x)\right]dt-id\bar{\psi}_{b}(x)\gamma_{ba}^{0}\\
+&=\left[i\partial_{k}^x\bar{\psi}_{c}(x)\gamma_{ca}^{k}+m\bar{\psi}_{a}(x)\right]dt-id\bar{\psi}_{b}(x)\gamma_{ba}^{0}=0
+\end{align*}
+multiplicando por $-i\gamma_{ad}^0$
+\begin{align*}
+-i\left[i\partial_{k}^x\bar{\psi}_{c}(x)\gamma_{ca}^{k}\gamma_{ad}^0+m\bar{\psi}_{a}(x)\gamma_{ad}^0\right]dt-d\bar{\psi}_{b}(x)\underbrace{\gamma_{ba}^{0}\gamma_{ad}^0}_{\delta_{bd}}&=0\\
+\left[\partial_{k}^x\bar{\psi}_{c}(x)\gamma_{ca}^{k}\gamma_{ad}^0-im\bar{\psi}_{a}(x)\gamma_{ad}^0\right]dt&=d\bar{\psi}_{d}(x)
+\end{align*}
+\begin{equation}
+\therefore\;\;\;\;\;\;\;\;d\bar{\psi}_{a}(x)=\left[\partial_{k}^x\bar{\psi}_{c}(x)\gamma_{cb}^{k}\gamma_{ba}^0-im\bar{\psi}_{b}(x)\gamma_{ba}^0\right]dt
+\label{condicion22c5}
+ \end{equation}
+Las condiciones de integrabilidad \eqref{condicion11c5} y \eqref{condicion2c5} expresan relaciones entre los diferenciales de las variables independientes como lo muestran \eqref{condicion1c5} y \eqref{condicion22c5}, lo que indica que las EDPHJ no son linealmente independientes \cite{singular2c1}.\\[0.4cm] 
+Las relaciones \eqref{condicion1c5} y \eqref{condicion22c5} permiten escribir el diferencial \eqref{diferencialc5} de una variable dinámica $F(x)$ del sistema de la siguiente manera:
+\begin{align}
+\nonumber dF(x)&=\int d^3y\{F(x),\phi^{t}(y)\}dt+\int d^3y\left[\partial_{k}^y\bar{\psi}_{c}(y)\gamma_{cb}^{k}\gamma_{ba}^0-im\bar{\psi}_{b}(y)\gamma_{ba}^0\right]dt\{F(x),\phi_{a}(y)\}\\
+\nonumber&+\int d^3y\{F(x),\bar{\phi_{a}}(y)\}\left[\gamma_{ab}^0\gamma_{bc}^{k}\partial_{k}^y\psi_{c}(y)+im\gamma_{ab}^0\psi_{b}(y)\right]dt\\
+dF(x)&=\int d^3y[\{F(x),\phi^{t}(y)\}+\left(\partial_{k}^y\bar{\psi}_{c}(y)\gamma_{cb}^{k}\gamma_{ba}^0-im\bar{\psi}_{b}(y)\gamma_{ba}^0\right)\{F(x),\phi_{a}(y)\}\\
+\nonumber&+\{F(x),\bar{\phi_{a}}(y)\}\left(\gamma_{ab}^0\gamma_{bc}^{k}\partial_{k}^y\psi_{c}(y)+im\gamma_{ab}^0\psi_{b}(y)\right)]dt
+\end{align}
+\subsection{Paréntesis Generalizados}
+La expresión entre corchetes, define una forma particular de una estructura mas general conocida como los ``paréntesis Generalizados''(PG) \cite{involutivo}:
+\begin{eqnarray}
+\{F(x),\phi^{t}(y)\}^*\equiv&\{F(x),\phi^{t}(y)\}+\left(\partial_{k}^y\bar{\psi}_{c}(y)\gamma_{cb}^{k}\gamma_{ba}^0-im\bar{\psi}_{b}(y)\gamma_{ba}^0\right)\{F(x),\phi_{a}(y)\}\\
+\nonumber &+\{F(x),\bar{\phi_{a}}(y)\}\left(\gamma_{ab}^0\gamma_{bc}^{k}\partial_{k}^y\psi_{c}(y)+im\gamma_{ab}^0\psi_{b}(y)\right)
+\end{eqnarray}
+En términos de estos paréntesis generalizados la dinámica de una variable del espacio de fase $F$ se redefinirá así:
+\begin{equation}
+ dF(x)=\int d^3y\{F(x),\phi^{t}(y)\}^*dt
+\label{dinamicageneralizadac5}
+\end{equation}
+Los paréntesis generalizados entre dos variables dinámicas $F(x)$ y $G(y)$ se definen formalmente de la siguiente manera:
+\begin{equation}
+ \left\{F(x),G(y)\right\}^*=\left\{F(x),G(y)\right\}-\int \int d^3ud^3v\left\{F(x),\Sigma_{a}^{i}(u)\right\}\left(C_{ab}^{ij}(u,v)\right)^{-1}\{\Sigma_{b}^j(v),G(y)\}
+\label{pg}
+\end{equation}
+Donde $i,j=1,2$; además se ha definido: 
+$$\Sigma_{a}^{1}\equiv\phi_{a}=\pi_{a}+\frac{i}{2}\gamma_{ab}^{0}\psi_{b}=0$$ y $$\Sigma_{a}^{2}\equiv\bar{\phi}_{a}=\bar{\pi}_{a}+\frac{i}{2}\bar{\psi_{b}}\gamma_{ba}^{0}=0$$ $\left(C_{ab}^{ij}(u,v)\right)^{-1}$ es la inversa de la matriz $C_{ab}^{ij}(u,v)$ cuyos elementos son los paréntesis de Bose-Fermi entre las EDPHJ $\Sigma_{a}^i$ y $\Sigma_{b}^j$. 
+\begin{align}
+C_{ab}^{ij}(u,v) =
+\left( \begin{array}{cc}
+ \{\phi_{a}(u),\phi_{b}(v)\} & \{\phi_{a}(u),\bar\phi_{b}(v)\}  \\ 
+\{\bar\phi_{a}(u),\phi_{b}(v)\} & \{\bar\phi_{a}(u),\bar\phi_{b}(v)\} 
+\end{array} \right) 
+\end{align}
+Con ayuda de los resultados del \pmb{apéndice C y D}:
+\begin{align}
+ \{\phi_{a}(x),\bar{\phi}_{b}(y)\}&=-i\gamma_{ab}^{0}\delta^3(x-y)\\
+\{\phi_{a}(x),\phi_{b}(y)\}&=0\\
+\{\bar{\phi}_{a}(x),\phi_{b}(y)\}&=-i\gamma_{ba}^{0}\delta^3(x-y)\\
+\{\bar{\phi}_{a}(x),\bar{\phi}_{b}(y)\}&=0
+\end{align}
+la matriz $C_{ab}^{ij}(u,v)$ tiene la siguiente forma:
+\begin{align}
+C_{ab}^{ij}(u,v) =
+-i\left( \begin{array}{cc}
+ 0 & \gamma_{ab}^0  \\ 
+\gamma_{ba}^0& 0 
+\end{array} \right)\delta^3(u-v) 
+\end{align}
+y su inversa es \cite{sundermeyerc3}:  
+\begin{align}
+\left(C_{ab}^{ij}(u,v)\right)^{-1} =
+i\left( \begin{array}{cc}
+ 0 & \gamma_{ba}^0  \\ 
+\gamma_{ab}^0& 0 
+\end{array} \right)\delta^3(u-v) 
+\end{align}
+Con esta representación de la matriz inversa el paréntesis generalizado \eqref{pg} entre dos va\-ria\-bles dinámicas $F(x)$ y $G(y)$, esta determinado por la siguiente expresión:  
+\begin{eqnarray}
+  \left\{F(x),G(y)\right\}^*&=\left\{F(x),G(y)\right\}-i\gamma_{ba}^0\int d^3v\left\{F(x),\phi_{a}(v)\right\}\left\{\bar\phi_{b}(v),G(y)\right\}\\
+\nonumber &-i\gamma_{ab}^0\int d^3v\left\{F(x),\bar\phi_{a}(v)\right\}\left\{\phi_{b}(v),G(y)\right\}
+\end{eqnarray}
+Utilizando la propiedad \eqref{propiedadgrassman}, se puede escribir el segundo término de la expresión anterior así:
+\begin{equation}
+ \left\{F(x),\phi_{a}(v)\right\}\left\{\bar\phi_{b}(v),G(y)\right\}=(-1)^{(n_{F}+n_{\phi_{a}})(n_{\bar\phi_{b}}+n_{G})}\left\{\bar\phi_{b}(v),G(y)\right\}\left\{F(x),\phi_{a}(v)\right\}
+\label{producto2}
+\end{equation}
+Recordando que se tiene los siguientes números de paridad $n_{\phi_{a}}=1$, $n_{\bar\phi_{b}}=1$, también para este problema en particular la paridad de $F$ es $n_{F}=1$;  con estos números de paridad el producto \eqref{producto2}, da:
+\begin{align*}
+ \left\{F(x),\phi_{a}(v)\right\}\left\{\bar\phi_{b}(v),G(y)\right\}=(-1)^{(0)(1+n_{G})}\left\{\bar\phi_{b}(v),G(y)\right\}\left\{F(x),\phi_{a}(v)\right\}
+\end{align*}
+Por lo tanto se determina que:
+\begin{equation}
+ \left\{F(x),\phi_{a}(v)\right\}\left\{\bar\phi_{b}(v),G(y)\right\}=\left\{\bar\phi_{b}(v),G(y)\right\}\left\{F(x),\phi_{a}(v)\right\}
+\label{producto22}
+\end{equation}
+Entonces el PG (5.91) se puede reescribir de la siguiente manera:
+\begin{eqnarray}
+  \left\{F(x),G(y)\right\}^*&=\left\{F(x),G(y)\right\}-i\gamma_{ba}^0\int d^3v\left\{\bar\phi_{b}(v),G(y)\right\}\left\{F(x),\phi_{a}(v)\right\}\\
+\nonumber &-i\gamma_{ab}^0\int d^3v\left\{F(x),\bar\phi_{a}(v)\right\}\left\{\phi_{b}(v),G(y)\right\}
+\end{eqnarray}
+Si se considera $G(y)\equiv\phi^t(y)$ en (5.91) y se usa los siguientes resultados del \pmb{apéndice A y B}:
+\begin{eqnarray}
+\{\phi_{a}(x),\phi^{t}(y)\}=\left[\frac{i}{2}\gamma_{ab}^{k}\psi_{b}(y)\partial_{k}^x+\frac{i}{2}\gamma_{ab}^{k}\partial_{k}^y\psi_{b}(y)-m\psi_{a}(y)\right]\delta^3(x-y)\\
+\{\bar{\phi}_{a}(x),\phi^{t}(y)\}=\left[\frac{i}{2}\partial_{k}^y\bar{\psi_{c}}(y)\gamma_{ca}^{k}+\frac{i}{2}\bar{\psi_{c}}(y)\gamma_{ca}^{k}\partial_{k}^x+m\bar{\psi_{a}}(y)\right]\delta^3(x-y)
+\end{eqnarray}
+se deduce que:
+{\fontsize{11}{1}\selectfont{
+\begin{eqnarray}
+\{F(x),\phi^{t}(y)\}^*&=\{F(x),\phi^{t}(y)\}+\left(\partial_{k}^y\bar{\psi}_{c}(y)\gamma_{cb}^{k}\gamma_{ba}^0-im\bar{\psi}_{b}(y)\gamma_{ba}^0\right)\{F(x),\phi_{a}(y)\}\\
+\nonumber &+\{F(x),\bar{\phi_{a}}(y)\}\left(\gamma_{ab}^0\gamma_{bc}^{k}\partial_{k}^y\psi_{c}(y)+im\gamma_{ab}^0\psi_{b}(y)\right)
+\end{eqnarray}}}Resultado que concuerda correctamente con la relación (5.81). En un principio se asumio que los campos $(\psi_{a},\bar\psi_{a},\pi_{a},\bar\pi_{a})$ eran independientes, pero debido a la presencia de las relaciones \eqref{vinculoprimario1c5} y \eqref{vinculoprimario2c5} y del hecho de haber considerado a $(\psi,\bar\psi)$ como los parámetros independientes asociados a las EDPHJ; se definira a a los campos $(\pi,\bar\pi)$ como los grados de libertad de la teoría.\\[0.3cm]
+ De la definición de los PG, se procedera a deducir estas cantidades entre los campos independientes del problema, para ello se inicia calculando el PG de $\pi_{a}(x)$ con cualquier variable dinámica $G(y)$, el cual esta dado por:
+\begin{eqnarray}
+  \left\{\pi_{a}(x),G(y)\right\}^*&=\left\{\pi_{a}(x),G(y)\right\}-i\gamma_{cb}^0\int d^3v\left\{\bar\phi_{c}(v),G(y)\right\}\left\{\pi_{a}(x),\phi_{b}(v)\right\}\\
+\nonumber &-i\gamma_{bc}^0\int d^3v\left\{\pi_{a}(x),\bar\phi_{b}(v)\right\}\left\{\phi_{c}(v),G(y)\right\}
+\end{eqnarray}
+Calculando por separado los paréntesis de Bose-Fermi:
+\begin{equation}
+ \left\{\pi_{a}(x),\phi_{a}(v)\right\}=0
+\label{bf1}
+\end{equation}
+\begin{align*}
+\left\{\pi_{a}(x),\bar\phi_{b}(v)\right\}&=\{\pi_{a}(x),\bar{\pi}_{b}+\frac{i}{2}\bar{\psi_{c}}\gamma_{cb}^{0}\}=\frac{i}{2}\{\pi_{a}(x), \bar{\psi_{c}}\}\gamma_{cb}^{0}\\
+&=\frac{i}{2}\left(-\delta_{ac}\delta^3(x-v)\right)\gamma_{cb}^{0}
+\end{align*}
+\begin{equation}
+\left\{\pi_{a}(x),\bar\phi_{b}(v)\right\}=-\frac{i}{2}\gamma_{ab}^{0}\delta^3(x-v)
+\label{bf2}
+\end{equation}
+y utilizando estos resultados, el paréntesis generalizado (5.98) se reescribe así:
+\begin{align}
+  \nonumber \left\{\pi_{a}(x),G(y)\right\}^*&=\left\{\pi_{a}(x),G(y)\right\}-i\gamma_{bc}^0\int d^3v\left(-\frac{i}{2}\gamma_{ab}^{0}\delta^3(x-v)\right)\left\{\phi_{b}(v),G(y)\right\}\\
+\nonumber &=\left\{\pi_{a}(x),G(y)\right\}-\frac{1}{2}\left\{\phi_{a}(x),G(y)\right\}\\
+&=\frac{1}{2}\{\pi_{a}(x)-\frac{i}{2}\gamma_{ac}^0\psi_{c}(x),G(y)\}
+\end{align}
+Ahora se consideraran situaciones particulares para $G(y)$: si $G(y)=\pi_{b}(y)$, se obtiene que:
+\begin{equation}
+ \left\{\pi_{a}(x),\pi_{b}(y)\right\}^*=0
+\end{equation}
+Para $G(y)=\bar\pi_{b}(y)$, se determina lo siguiente:
+\begin{align}
+\nonumber \left\{\pi_{a}(x),\bar\pi_{b}(y)\right\}^*&=-\frac{i}{4}\gamma_{ac}^0\{\psi_{c}(x),\bar\pi_{b}(y)\}=\frac{i}{4}\gamma_{ac}^0\delta_{cb}\delta^3(x-y) \;\;\Longrightarrow\\
+ \left\{\pi_{a}(x),\bar\pi_{b}(y)\right\}^*&=\frac{i}{4}\gamma_{ab}^0\delta^3(x-y)
+\end{align}
+Ahora, se analizara el caso en el que $F(x)=\bar\pi_{a}(x)$ en (5.91):
+\begin{eqnarray}
+  \left\{\bar\pi_{a}(x),G(y)\right\}^*&=\left\{\bar\pi_{a}(x),G(y)\right\}-i\gamma_{bc}^0\int d^3v\left\{\bar\phi_{b}(v),G(y)\right\}\left\{\bar\pi_{a}(x),\phi_{c}(v)\right\}\\
+\nonumber &-i\gamma_{cb}^0\int d^3v\left\{\bar\pi_{a}(x),\bar\phi_{c}(v)\right\}\left\{\phi_{b}(v),G(y)\right\}
+\end{eqnarray}
+Si se usa los siguientes paréntesis de Bose-Fermi:
+\begin{equation}
+ \{\bar\pi_{a}(x),\bar\phi_{c}(v)\}=0
+\end{equation}
+Junto con:
+\begin{align}
+\nonumber \{\bar\pi_{a}(x),\phi_{c}(v)\}&=\{\bar\pi_{a}(x),\pi_{c}(v)+\frac{i}{2}\gamma_{cd}^0\psi_{d}(v)\}=\frac{i}{2}\gamma_{cd}^0\{\bar\pi_{a}(x),\psi_{d}(v)\}\\
+&=-\frac{i}{2}\gamma_{ca}^0\delta^3(x-v)
+\end{align}
+en el paréntesis generalizado (5.104), finalmente se obtiene:
+\begin{align}
+  \left\{\bar\pi_{a}(x),G(y)\right\}^*&=\frac{1}{2}\{\bar\pi_{a}(x)-\frac{i}{2}\bar\psi_{c}(x)\gamma_{ca}^0,G(y)\}
+\end{align}
+Para el caso particular en el que $G(y)=\bar\pi_{b}(y)$, se concluye:
+  \begin{align}
+  \left\{\bar\pi_{a}(x),\bar\pi_{b}(y)\right\}^*=0
+\end{align}
+Se procedera a mostrar una propiedad fundamental de los PG, para esto se calculará lo si\-guien\-te:
+\begin{align}
+ \{F(x),\phi_{c}(y)\}^*&=\left\{F(x),\phi_{c}(y)\right\}-i\gamma_{ba}^0\int d^3v\left\{F(x),\phi_{a}(v)\right\}\left\{\bar\phi_{b}(v),\phi_{c}(y)\right\}\\
+\nonumber &-i\gamma_{ab}^0\int d^3v\left\{F(x),\bar\phi_{a}(v)\right\}\left\{\phi_{b}(v),\phi_{c}(y)\right\}
+\end{align}
+Usando los resultados del \pmb{apéndice C y D}:
+\begin{align*}
+\{\phi_{b}(v),\phi_{c}(y)\}&=0\\
+\{\bar{\phi}_{b}(v),\phi_{c}(y)\}&=-i\gamma_{cb}^{0}\delta^3(v-y)
+\end{align*}
+en el paréntesis generalizado (5.109), se puede determinar lo siguiente:
+\begin{align}
+ \{F(x),\phi_{c}(y)\}^*&=\left\{F(x),\phi_{c}(y)\right\}-i\gamma_{ba}^0\left(-i\gamma_{cb}^{0}\right)\int d^3v\left\{F(x),\phi_{a}(v)\right\}\delta^3(v-y)\\
+\nonumber&=\left\{F(x),\phi_{c}(y)\right\}-\gamma_{cb}^{0}\gamma_{ba}^0\int d^3v\left\{F(x),\phi_{a}(v)\right\}\delta^3(v-y)\\
+\nonumber&=\left\{F(x),\phi_{c}(y)\right\}-\delta_{ca}\left\{F(x),\phi_{a}(y)\right\}\\
+ \{F(x),\phi_{c}(y)\}^*&=0
+\end{align}
+De igual manera se puede calcular:
+\begin{align}
+ \{F(x),\bar\phi_{c}(y)\}^*&=\left\{F(x),\bar\phi_{c}(y)\right\}-i\gamma_{ba}^0\int d^3v\left\{F(x),\phi_{a}(v)\right\}\left\{\bar\phi_{b}(v),\bar\phi_{c}(y)\right\}\\
+\nonumber &-i\gamma_{ab}^0\int d^3v\left\{F(x),\bar\phi_{a}(v)\right\}\left\{\phi_{b}(v),\bar\phi_{c}(y)\right\}
+\end{align}
+Utilizando los siguientes resultados del \pmb{apéndice C y D}:
+\begin{align*}
+\{\phi_{b}(v),\bar{\phi}_{c}(y)\}&=-i\gamma_{bc}^{0}\delta^3(v-y)\\
+\{\bar{\phi}_{b}(x),\bar{\phi}_{c}(v)\}&=0 
+\end{align*}
+en el PG (5.112), se muestra que:
+\begin{align}
+\nonumber \{F(x),\bar\phi_{c}(y)\}^*&=\left\{F(x),\bar\phi_{c}(y)\right\}-i\gamma_{ab}^0\left(-i\gamma_{bc}^{0}\right)\int d^3v\left\{F(x),\bar\phi_{a}(v)\right\}\delta^3(v-y)\\
+\nonumber&=\left\{F(x),\bar\phi_{c}(y)\right\}-\delta_{ac}\left\{F(x),\bar\phi_{a}(v)\right\}\\
+\{F(x),\bar\phi_{c}(y)\}^*&=0
+\end{align}
+Los resultados (5.111) y (5.113) muestran que el PG de cualquier variable dinámica $F(x)$ con las EDPHJ \eqref{vinculoprimario1c5} y \eqref{vinculoprimario2c5} son nulos.
+\subsection{Ecuaciones Características}
+Se debe verificar con el diferencial \eqref{dinamicageneralizadac5}, si las condiciones de integrabilidad se cumplen. La integrabilidad de $\phi_{a}(x)$, exige que:
+\begin{equation}
+d\phi_{a}(x)=\int d^3y\{\phi_{a}(x),\phi^{t}(y)\}^*dt=0
+\end{equation}
+Utilizando el siguiente resultado del \pmb{Apéndice E}:
+\begin{align}
+  \{\phi_{a}(x),\phi^{t}(y)\}^*=\frac{i}{2}\gamma_{ab}^{k}\psi_{b}(y)\partial_{k}^x\delta^3(x-y)-\frac{i}{2}\gamma_{ab}^{k}\partial_{k}^y\psi_{b}(y)\delta^3(x-y)
+\end{align}
+Se determina que:
+\begin{align*}
+ d\phi_{a}(x)&=\int d^3y\left[\frac{i}{2}\gamma_{ab}^{k}\psi_{b}(y)\partial_{k}^x\delta^3(x-y)-\frac{i}{2}\gamma_{ab}^{k}\partial_{k}^y\psi_{b}(y)\delta^3(x-y)\right]dt\\
+&=\left[\frac{i}{2}\gamma_{ab}^{k}\partial_{k}^x\psi_{b}(x)-\frac{i}{2}\gamma_{ab}^{k}\partial_{k}^x\psi_{b}(x)\right]dt=0
+\end{align*}
+\begin{equation}
+ d\phi_{a}(x)=0
+\label{involucion1c5}
+\end{equation}
+De manera similar, la integrabilidad para $\bar{\phi}_{a}(x)$, implica que se cumpla:
+\begin{equation}
+d\bar{\phi}_{a}(x)=\int d^3y\{\bar{\phi}_{a}(x),\phi^{t}(y)\}^*dt=0
+\end{equation}
+Usando el resultado del \pmb{Apéndice E}:
+\begin{align}
+ \{\bar{\phi}_{a}(x),\phi^{t}(y)\}^*=-\frac{i}{2}\partial_{k}^y\bar{\psi_{c}}(y)\gamma_{ca}^{k}\delta^3(x-y)+\frac{i}{2}\bar{\psi_{c}}(y)\gamma_{ca}^{k}\partial_{k}^x\delta^3(x-y)
+\end{align}
+En la integrabilidad de $\bar\phi$, se obtiene que:
+\begin{align*}
+ d\bar{\phi}_{a}(x)&=\int d^3y\left[-\frac{i}{2}\partial_{k}^y\bar{\psi_{c}}(y)\gamma_{ca}^{k}\delta^3(x-y)+\frac{i}{2}\bar{\psi}_{c}(y)\gamma_{ca}^{k}\partial_{k}^x\delta^3(x-y)\right]dt\\
+&=\left[-\frac{i}{2}\partial_{k}^x\bar{\psi_{c}}(x)\gamma_{ca}^{k}+\frac{i}{2}\partial_{k}^x\bar{\psi}_{c}(x)\gamma_{ca}^{k}\right]dt=0
+\end{align*}
+\begin{equation}
+ d\bar{\phi}_{a}(x)=0
+\label{involucion2c5}
+\end{equation}
+Los resultados \eqref{involucion1c5} y \eqref{involucion2c5} establecen que las EDPHJ estan involución con los paréntesis Generalizados y por lo tanto las respectivas ecuaciones características son integrables.\\[0.3cm]
+Se procede a calcular las ecuaciones características asociadas al conjunto de EDPHJ que co\-rres\-pon\-den a las ecuaciones de movimiento para las variables $(\pi_{a}, \bar\pi_{a})$, de \eqref{dinamicageneralizadac5} se determina lo siguiente:
+\begin{equation}
+  d\pi_{a}(x)=\int d^3y\{\pi_{a}(x),\phi^{t}(y)\}^*dt
+\label{movimientopi}
+\end{equation}
+\begin{equation}
+d\bar{\pi}_{a}(x)=\int d^3y\{\bar{\pi}_{a}(x),\phi^{t}(y)\}^*dt
+\label{movimientopibar}
+\end{equation}
+Para calcular las ecuaciones de movimiento para estos campos se emplearán los siguientes resultados del \pmb{Apéndice E}:
+\begin{align}
+  \{\pi_{a}(x),\phi^{t}(y)\}^*&=\frac{i}{2}\gamma_{ab}^{k}\partial_{k}^x\psi_{b}(y)\delta^3(x-y)-\frac{1}{2}m\psi_{a}(y)\delta^3(x-y)\\
+ \{\bar{\pi}_{a}(x),\phi^{t}(y)\}^*&=\frac{i}{2}\partial_{k}^x\bar{\psi_{c}}(y)\gamma_{ca}^{k}\delta^3(x-y)+\frac{1}{2}m\bar{\psi}_{a}(y)\delta^3(x-y)
+\end{align}
+Usando (5.122) en \eqref{movimientopi} se determina lo siguiente:
+\begin{align*}
+ d\pi_{a}(x)&=\int d^3y\left[\frac{i}{2}\gamma_{ab}^{k}\partial_{k}^x\psi_{b}(y)\delta^3(x-y)-\frac{1}{2}m\psi_{a}(y)\delta^3(x-y)\right]dt\\
+&=\left(\frac{i}{2}\gamma_{ab}^{k}\partial_{k}^x\psi_{b}(x)-\frac{1}{2}m\psi_{a}(x)\right)dt\\
+\partial_{0}\pi_{a}(x)&=\frac{i}{2}\gamma_{ab}^{k}\partial_{k}^x\psi_{b}(x)-\frac{1}{2}m\psi_{a}(x)
+\end{align*}
+Recordando que $\pi_{a}=-\frac{i}{2}\gamma_{ab}^0\psi_{b}$
+\begin{align*}
+-\frac{i}{2}\gamma_{ab}^0\partial_{0}\psi_{b}&= \frac{i}{2}\gamma_{ab}^{k}\partial_{k}\psi_{b}-\frac{1}{2}m\psi_{a}\\
+0&=i\gamma_{ab}^0\partial_{0}\psi_{b}+i\gamma_{ab}^k\partial_{k}\psi_{b}-m\psi_{a}\\
+0&=i\left(\gamma_{ab}^0\partial_{0}+\gamma_{ab}^k\partial_{k}\right)\psi_{b}-m\delta_{ab}\psi_{b}\\
+0&=\left(i\gamma_{ab}^{\mu}\partial_{\mu}-m\delta_{ab}\right)\psi_{b}
+\end{align*}
+\begin{equation}
+\therefore  \;\;\;\;\;\; \left[\left(i\gamma^{\mu}\partial_{\mu}-m\right)\psi\right]_{a}=0
+\label{hj1}
+\end{equation}
+De la misma manera la evolución del campo $\bar{\pi}(x)$ utilizando el resultado (5.123) es:
+\begin{align*}
+d\bar{\pi}_{a}(x)&=\int d^3y\left(\frac{i}{2}\partial_{k}^x\bar{\psi_{c}}(y)\gamma_{ca}^{k}\delta^3(x-y)+\frac{1}{2}m\bar{\psi}_{a}(y)\delta^3(x-y)\right)dt\\
+&=\left(\frac{i}{2}\partial_{k}^x\bar{\psi_{c}}(x)\gamma_{ca}^{k}+\frac{1}{2}m\bar{\psi}_{a}(x)\right)dt\\ 
+\partial_{0}\bar{\pi}_{a}(x)&=\frac{i}{2}\partial_{k}^x\bar{\psi_{c}}(x)\gamma_{ca}^{k}+\frac{1}{2}m\bar{\psi}_{a}(x)
+\end{align*}
+Recordando el resultado:
+$$\bar{\pi}_{a}(x)=-\frac{i}{2}\bar{\psi_{b}}(x)\gamma_{ba}^{0}$$
+\begin{align*}
+ \partial_{0}\left(-\frac{i}{2}\bar{\psi_{b}}(x)\gamma_{ba}^{0}\right)-\frac{i}{2}\partial_{k}^x\bar{\psi_{c}}(x)\gamma_{ca}^{k}-\frac{1}{2}m\bar{\psi}_{a}(x)=&0\\
+i\partial_{0}\bar{\psi_{b}}\gamma_{ba}^{0}+i\partial_{k}\bar{\psi_{b}}\gamma_{ba}^{k}+m\bar{\psi}_{a}=&0\\
+i\bar{\psi_{b}}\left(\gamma_{ba}^{0}\overleftarrow{\partial}_{0}+\gamma_{ba}^{k}\overleftarrow{\partial}_{k}\right)+m\bar{\psi}_{b}\delta_{ba}=&0\\
+i\bar{\psi_{b}}\gamma_{ba}^{\mu}\overleftarrow{\partial}_{\mu}+m\bar{\psi}_{b}\delta_{ba}=&0\\
+\bar{\psi_{b}}\left(i\gamma_{ba}^{\mu}\overleftarrow{\partial}_{\mu}+m\delta_{ba}\right)=&0
+\end{align*}
+\begin{equation}
+ \therefore \;\;\;\;\;\; \left[\bar{\psi}\left(i\gamma^{\mu}\overleftarrow{\partial}_{\mu}+m\right)\right]_{a}=0
+\label{hj2}
+\end{equation}
+Las ecuaciones de campo \eqref{hj1} y \eqref{hj2} se conocen como las ecuaciones de Dirac. La primera ecuación describe el movimiento de una partícula fermionica libre de spin $\frac{1}{2}$ y la segunda describe el movimiento de la correspondiente antipartícula.
+

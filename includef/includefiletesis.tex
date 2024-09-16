@@ -1,0 +1,350 @@
+%--------------------------------------------------------------------------
+% ARCHIVO .TEX DE DISEÑO
+% PAQUETES Y ESTILO DEL LIBRO 
+%--------------------------------------------------------------------------
+% Paquetes 
+\usepackage[latin1]{inputenc}   
+%\usepackage{titlesec, blindtext, color}                   % Entrada de acentos
+\usepackage[T1]{fontenc}
+\usepackage[autostyle, spanish = mexican]{csquotes}% manejo de comillas: " "
+\MakeOuterQuote{"}
+\usepackage{pslatex}                              % Fuentes finas postscript
+%\usepackage[sc]{mathpazo}                         % Fuentes mathpazo
+\usepackage{helvet}
+\linespread{1.05}                                  % Fuente Palatino necesita espaciado
+\usepackage[full]{textcomp}                        % Caracteres especiales como ' (recto)
+\usepackage{xcolor}                                % Color: X11names (en el documentclass)
+% COLORES personales---------------------------------------------------
+    \definecolor{colortitulo}{RGB}{11,17,79} % 
+    \definecolor{colordominante}{RGB}{11,17,79}
+    \definecolor{colordominanteF}{RGB}{219,68,14}
+    \definecolor{colordominanteD}{RGB}{137,46,55}
+    \definecolor{mostaza}{RGB}{231,196,25}
+    \definecolor{amarilloM}{RGB}{248,199,90}
+    \definecolor{amarilloD}{cmyk}{0,0,0.2,0}
+    \definecolor{azulF}{rgb}{.0,.0,.3}
+    \definecolor{grisD}{rgb}{.3,.3,.3}
+    \definecolor{grisF}{rgb}{.6,.6,.6}
+    \definecolor{grisamarillo}{RGB}{248,248,245} 
+    \definecolor{miverde}{RGB}{44,162,67}
+    \definecolor{verdep}{RGB}{166,206,58}
+    \definecolor{verdencabezado}{RGB}{166,206,58}
+    \definecolor{verdeF}{RGB}{5,92,8}
+    \colorlet{mygray}{black!20}
+    \newcommand{\verde}{\color{miverde}}
+    \definecolor{gris}{gray}{0.4}
+    \definecolor{azulado}{rgb}{0.2,0.5,0.7}
+% Fin COLORES personales-------------------------------------------------
+%\usepackage{psboxit}
+\usepackage{pstricks}
+\usepackage{xparse}
+\usepackage{tcolorbox} 
+\tcbuselibrary{skins,breakable}                    % Librerías tcolorbox
+\usepackage{tikz,tkz-tab}% Cajas de Teoremas, ejemplos, etc.
+\usetikzlibrary{positioning,shadows,backgrounds,calc}%
+\usepackage{tikzpagenodes}
+\usepackage{xargs}                                 % Comandos con opciones
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\usepackage{multicol}
+% %\usepackage{epstopdf}% Conversión - Miktes 2.9 o inferior, TexLive 2009. o inferior
+\usepackage[small,bf]{caption}
+%\usepackage[breaklinks,colorlinks=true, pdfstartview=FitV, linkcolor=black, citecolor=black, urlcolor=black]{hyperref}
+\usepackage{amsmath,amssymb,amsfonts,latexsym,cancel,stmaryrd}%
+\usepackage[ruled,,vlined,lined,linesnumbered,algochapter]{algorithm2e}
+%--------------------------------------------------------------------------------
+% Entornos  
+%--------------------------------------------------------------------------------
+%  Cajas con el paquete  tcbcolor 
+%  CONTADORES: wejemplo, wdefinicion, wlema, wteorema, wcorolario, wproposicion,wejercicio
+
+\newcounter{tcbca}[chapter]
+\renewcommand{\thetcbca}{\thechapter.\arabic{tcbca}}
+
+\newcounter{tcbejem}[chapter]
+\renewcommand{\thetcbejem}{\thechapter.\arabic{tcbejem}}
+
+\newcounter{tcble}[chapter]
+\renewcommand{\thetcble}{\thechapter.\arabic{tcble}}
+
+\newcounter{tcbteo}[chapter]
+\renewcommand{\thetcbteo}{\thechapter.\arabic{tcbteo}}
+
+\newcounter{tcbdefi}[chapter]
+\renewcommand{\thetcbdefi}{\thechapter.\arabic{tcbdefi}}
+
+\newcounter{tcbcoro}[chapter]
+\renewcommand{\thetcbcoro}{\thechapter.\arabic{tcbcoro}}
+
+\newcounter{tcbpropo}[chapter]
+\renewcommand{\thetcbpropo}{\thechapter.\arabic{tcbpropo}}
+
+\newcounter{tcbvoca}[chapter]
+\renewcommand{\thetcbvoca}{\thechapter.\arabic{tcbvoca}}
+
+\newcounter{tcbejer}[chapter]
+\renewcommand{\thetcbejer}{\thechapter.\arabic{tcbejer}}
+
+% Propiedades de nodo---------------------------------------------------------------
+\tikzset{
+    wnodeEjemplo/.style={%
+         rectangle, minimum width=4cm,
+         text=gray!10!black, 
+         top color=colorejemplo!20!white, bottom color=colorejemplo,
+         inner sep=1mm,anchor=west,font=\normalsize},
+    wnodeTeorema/.style={%
+         rectangle, minimum width=4cm, 
+         top color=colorteorema!50!white, bottom color=colorteorema,
+         text=black!80!white,
+         inner sep=1mm,anchor=west,font=\normalsize},     
+     wnodeDefinicion/.style={%
+         rectangle, minimum width=4cm, %minimum height=0.3cm,
+         text=black,
+         top color=colordefinicion!20!white, bottom color=colordefinicion,
+         inner sep=1mm,anchor=west,font=\normalsize
+         }, 
+     wnodeCaja/.style={%
+         rectangle, minimum width=4cm, 
+         top color=colorcaja, bottom color=colorcaja,
+         inner sep=1mm,anchor=west,font=\normalsize
+         }          
+}
+%CAJA simple---------------------------------------------------------------------
+\newtcolorbox{wwbox}[1][]{%
+arc=0mm,breakable,
+enhanced,colback=amarilloD,
+boxrule=0pt,
+top=0cm, %Separación vertical - inicia texto
+bottom=0cm,
+left=0cm,
+right=0cm,
+enlarge top by= 0.5ex,
+enlarge bottom by=2ex,
+%enlarge top by=0cm,
+%enlarge top at break by=0mm,pad at break=1mm,
+fontupper=\normalsize,
+%step and label={tcbca}{#3},
+%Borde
+overlay unbroken={\draw[color=amarilloD,line width=0.5pt] (frame.north west)
+  --([xshift=0pt]frame.north east)
+  --([xshift=0pt]frame.south east)
+  --([xshift=0pt]frame.south west)--(frame.north west);
+        },
+%Borde
+overlay first={\draw[color=amarilloD,line width=0.5pt] (frame.north west)
+  --([xshift=0pt]frame.north east)
+  --([xshift=0pt]frame.south east)
+  --([xshift=0pt]frame.south west)--(frame.north west);
+        },
+%Borde cambio de página
+overlay last={\draw[color=amarilloD,line width=0.5pt] (frame.north west)
+  --([xshift=0pt]frame.north east)
+  --([xshift=0pt]frame.south east)
+  --([xshift=0pt]frame.south west)--(frame.north west);}
+#1}
+
+ \newenvironment{scaja}[1][]{\bigskip\begin{wwbox}%
+ #1}{\end{wwbox}}	
+% Fin CAJA simple	
+% Fin CAJA simple
+
+
+
+%CAJA simple---------------------------------------------------------------------
+\newtcolorbox{wwwbox}[1][]{%
+arc=0mm,breakable,
+enhanced,colback=amarilloD,
+boxrule=0pt,
+top=-2ex, %Separación vertical - inicia texto
+bottom=0cm,
+left=0cm,
+right=0cm,
+enlarge top by= 0.5ex,
+enlarge bottom by=2ex,
+%enlarge top by=0cm,
+%enlarge top at break by=0mm,pad at break=1mm,
+fontupper=\normalsize,
+%step and label={tcbca}{#3},
+%Borde
+overlay unbroken={\draw[color=amarilloD,line width=0.5pt] (frame.north west)
+  --([xshift=0pt]frame.north east)
+  --([xshift=0pt]frame.south east)
+  --([xshift=0pt]frame.south west)--(frame.north west);
+        },
+%Borde
+overlay first={\draw[color=amarilloD,line width=0.5pt] (frame.north west)
+  --([xshift=0pt]frame.north east)
+  --([xshift=0pt]frame.south east)
+  --([xshift=0pt]frame.south west)--(frame.north west);
+        },
+%Borde cambio de página
+overlay last={\draw[color=amarilloD,line width=0.5pt] (frame.north west)
+  --([xshift=0pt]frame.north east)
+  --([xshift=0pt]frame.south east)
+  --([xshift=0pt]frame.south west)--(frame.north west);}
+#1}
+ \newenvironment{scajafig}[1][]{\bigskip\begin{wwwbox}%
+ #1}{\end{wwwbox}}	
+% Fin CAJA simple	
+% Fin CAJA simple
+
+%%otra caja simple
+\newtcolorbox{wwwwbox}[1][]{%
+arc=0mm,breakable,
+enhanced,colback=amarilloD,
+boxrule=0pt,
+top=-0.4cm, %Separación vertical - inicia texto
+bottom=0cm,
+left=0cm,
+right=0cm,
+enlarge top by=-0.3cm,
+enlarge bottom by=-0.1cm,
+%enlarge top at break by=0mm,pad at break=1mm,
+%fontupper=\normalsize,
+%step and label={tcbca}{#3},
+%Borde
+overlay unbroken={\draw[color=amarilloD,line width=0.5pt] (frame.north west)
+  --([xshift=0pt]frame.north east)
+  --([xshift=0pt]frame.south east)
+  --([xshift=0pt]frame.south west)--(frame.north west);
+        },
+%Borde
+overlay first={\draw[color=amarilloD,line width=0.5pt] (frame.north west)
+  --([xshift=0pt]frame.north east)
+  --([xshift=0pt]frame.south east)
+  --([xshift=0pt]frame.south west)--(frame.north west);
+        },
+%Borde cambio de página
+overlay last={\draw[color=amarilloD,line width=0.5pt] (frame.north west)
+  --([xshift=0pt]frame.north east)
+  --([xshift=0pt]frame.south east)
+  --([xshift=0pt]frame.south west)--(frame.north west);}
+#1}
+
+ \newenvironment{nuevacaja}[1][]{\bigskip\begin{wwwwbox}%
+ #1}{\end{wwwwbox}}	
+% Fin CAJA simple	
+% Fin CAJA simple
+
+%%otra caja simple wwwww
+\newtcolorbox{wwwwwbox}[1][]{%
+arc=0mm,breakable,
+enhanced,colback=amarilloD,
+boxrule=0pt,
+top=0cm, %Separación vertical - inicia texto
+bottom=0cm,
+left=0cm,
+right=0cm,
+enlarge top by=-4.8ex,
+enlarge bottom by=2ex,
+%enlarge top at break by=0mm,pad at break=1mm,
+%fontupper=\normalsize,
+%step and label={tcbca}{#3},
+%Borde
+overlay unbroken={\draw[color=amarilloD,line width=0.5pt] (frame.north west)
+  --([xshift=0pt]frame.north east)
+  --([xshift=0pt]frame.south east)
+  --([xshift=0pt]frame.south west)--(frame.north west);
+        },
+%Borde
+overlay first={\draw[color=amarilloD,line width=0.5pt] (frame.north west)
+  --([xshift=0pt]frame.north east)
+  --([xshift=0pt]frame.south east)
+  --([xshift=0pt]frame.south west)--(frame.north west);
+        },
+%Borde cambio de página
+overlay last={\draw[color=amarilloD,line width=0.5pt] (frame.north west)
+  --([xshift=0pt]frame.north east)
+  --([xshift=0pt]frame.south east)
+  --([xshift=0pt]frame.south west)--(frame.north west);}
+#1}
+
+ \newenvironment{nuevacajaw}[1][]{\bigskip\begin{wwwwwbox}%
+ #1}{\end{wwwwwbox}}	
+% Fin CAJA simple	
+% Fin CAJA simple
+
+%CAJA simple---------------------------------------------------------------------
+\newtcolorbox{mibox}[1][]{%
+arc=0mm,breakable,
+enhanced,colback=white,
+boxrule=0pt,
+top=-1ex, %Separación vertical - inicia texto
+bottom=0.5ex,
+left=0cm,
+right=0cm,
+enlarge top by= 0ex,
+enlarge bottom by=1ex,
+%enlarge top by=0cm,
+%enlarge top at break by=0mm,pad at break=1mm,
+fontupper=\normalsize,
+%step and label={tcbca}{#3},
+%Borde
+overlay unbroken={\draw[color=white,line width=0.5pt] (frame.north west)
+  --([xshift=0pt]frame.north east)
+  --([xshift=0pt]frame.south east)
+  --([xshift=0pt]frame.south west)--(frame.north west);
+        },
+%Borde
+overlay first={\draw[color=white,line width=0.5pt] (frame.north west)
+  --([xshift=0pt]frame.north east)
+  --([xshift=0pt]frame.south east)
+  --([xshift=0pt]frame.south west)--(frame.north west);
+        },
+%Borde cambio de página
+overlay last={\draw[color=white,line width=0.5pt] (frame.north west)
+  --([xshift=0pt]frame.north east)
+  --([xshift=0pt]frame.south east)
+  --([xshift=0pt]frame.south west)--(frame.north west);}
+#1}
+
+ \newenvironment{miscaja}[1][]{\bigskip\begin{mibox}%
+ #1}{\end{mibox}}	
+% Fin CAJA simple	
+% Fin CAJA simple
+
+
+
+
+\newtcolorbox{miboxx}[1][]{%
+arc=0mm,breakable,
+enhanced,colback=amarilloD,
+boxrule=0pt,
+top=-0.5ex, %Separación vertical - inicia texto
+bottom=1ex,
+left=0cm,
+right=0cm,
+enlarge top by= -1ex,
+enlarge bottom by=1ex,
+%enlarge top by=0cm,
+%enlarge top at break by=0mm,pad at break=1mm,
+fontupper=\normalsize,
+%step and label={tcbca}{#3},
+%Borde
+overlay unbroken={\draw[color=amarilloD,line width=0.5pt] (frame.north west)
+  --([xshift=0pt]frame.north east)
+  --([xshift=0pt]frame.south east)
+  --([xshift=0pt]frame.south west)--(frame.north west);
+        },
+%Borde
+overlay first={\draw[color=amarilloD,line width=0.5pt] (frame.north west)
+  --([xshift=0pt]frame.north east)
+  --([xshift=0pt]frame.south east)
+  --([xshift=0pt]frame.south west)--(frame.north west);
+        },
+%Borde cambio de página
+overlay last={\draw[color=white,line width=0.5pt] (frame.north west)
+  --([xshift=0pt]frame.north east)
+  --([xshift=0pt]frame.south east)
+  --([xshift=0pt]frame.south west)--(frame.north west);}
+#1}
+
+ \newenvironment{miscajax}[1][]{\bigskip\begin{miboxx}%
+ #1}{\end{miboxx}}	
+
+
+
+
+
+
+
+

@@ -1,0 +1,585 @@
+\fancyhead[LE]{{\footnotesize\sffamily\bfseries\sffamily \thepage}
+\scriptsize \sffamily{\hspace{0.08cm} APÉNDICES }}
+
+\fancyhead[RO]{
+{\footnotesize \sffamily Cálculos y programación c++}\hspace{0.3cm}
+{\footnotesize\sffamily\bfseries\thepage}}
+
+\renewcommand{\sectionmark}[1]{\markright{\sffamily{\thesection\ \ #1}}}
+
+\chapter*{AP\'ENDICES}
+\addcontentsline{toc}{chapter}{\hspace{0cm} \sffamily\bfseries\sffamily{\hspace{0.33cm} Apéndices}}
+\section*{\textbf{Ap\'endice A. Mínimos cuadrados}}
+\addcontentsline{toc}{section}{\hspace{0.7cm} \sffamily\bfseries\sffamily{Mínimos cuadrados}}
+El método para el ajuste de datos utilizado es el de mínimos cuadrados, consiste en encontrar los parámetros que están asociados a una curva que mejor ajusta los datos experimentales. En principio, lo que se hace es minimizar la función\cite{guialab}:
+\begin{equation}
+\chi^2\equiv\sum_{i=1}^n\left[\frac{y_i-f(x_i;a_j)}{\delta_i} \right]^2,
+\end{equation}
+donde $n$ es el n\'umero de puntos $x_i$, en el cual se mide la variable $y_i$ con errores $\delta_i$ $(i=1,2,...,n)$,  $f(x_i;a_j)$ ($j=1,2,...,m$) es la función teórica que ajusta los datos experimentales y $a_j$ es el n\'umero de par\'ametros ($m$) para el cual el modelo brinda una mejor descripción a las muestras de datos, además debe cumplirse que $n>m$. Para encontrar los $a_j$ resolvemos el sistema de ecuaciones:
+\begin{equation}
+\frac{\partial\chi}{\partial a_{j}}=0,\ \ \ \textup{con $j=1,2,...,m$}
+\end{equation} 
+Por lo general,  para poder minimizar $\chi^2$ es necesario hacerlo mediante métodos numéricos, esto puede facilitarse por medio de programas implementados en un ordenador. Para este propósito hacemos uso del software ROOT.\\
+
+Para una mejor comprensión del método de mínimos cuadrados tomemos el caso particular para el cual la función teórica es una linea recta, es decir, un polinomio de primer orden. Para este caso $y=f(x;a,b)=ax+b$. Los parámetros $a$ y $b$ se conocen como pendiente e intercepto respectivamente, $\chi^2$ para este caso es:
+\begin{equation}
+\chi^2=\sum_{i=1}^n\left[\frac{y_i-b-ax_i}{\delta_i}\right]^2
+\end{equation}
+Derivando parcialmente respecto de los parámetros $a$ y $b$ obtenemos 
+\begin{align}\label{minimoscuadrados}
+\nonumber\frac{\partial\chi^2}{\partial a}&=-2\sum_{i=1}^n\left[\frac{y_i-b-ax_i}{\delta_i}\right]^2x_i=0\\
+\frac{\partial\chi^2}{\partial b}&=-2\sum_{i=1}^n\left[\frac{y_i-b-ax_i}{\delta_i}\right]^2=0
+\end{align}
+De le ecuación  \ref{minimoscuadrados} obtenemos:
+\begin{align}\label{sistemamini}
+\nonumber bS+aS_x-S_y=0,\\
+bS_x+aS_{xx}-S_{xy}=0
+\end{align}
+donde
+\begin{equation}
+S=\sum_{i=1}^n\frac{1}{\sigma_{i}^2},\ \ \ S_x=\sum_{i=1}^n\frac{x_i}{\sigma_i^2},\ \ \ S_y=\sum_{i=1}^n\frac{y_i}{\sigma_i^2}, \ \ \ S_{xx}=\sum_{i=1}^n\frac{x_i^2}{\sigma_i^2},\ \ \ S_{xy}=\sum_{i=1}^n\frac{x_iy_i}{\sigma_i^2}
+\end{equation}
+Resolviendo el sistema de ecuaciones (\ref{sistemamini}) obtenemos para $a$ y $b$ lo siguiente:\begin{equation}
+a=\frac{S_{xx}S_y-S_{x}S_{xy}}{\delta},\ \ \ b=\frac{SS_{xy}-S_{x}S_{y}}{\delta}
+\end{equation}
+con $\Delta=SS_{xx}-S_{x}^2$. Las expresiones para el error estadístico son:
+\begin{equation}
+(\Delta b)^2=\frac{S_{xx}}{\Delta}  \ \ \ y \ \ \ (\Delta a)^2=\frac{S}{\Delta} 
+\end{equation}
+ \subsection*{Calidad del ajuste}
+ para tener un  ajuste aceptable debemos verificar que (observación $\nu=$ndf=n-m):\\
+ 
+ $$0\textup{.}5\leqslant\frac{\chi^2}{\nu}\leqslant2\textup{.}5$$
+Donde $\nu$ es el numero de grados de libertad.
+\subsection*{Reglas para redondeo de números}
+\begin{itemize}
+\item Si la primera de las cifras que se descartan es inferior a 5, las cifras que se conservan se dejan inalteradas: 25.74...$\approx$25.7
+\item Si la primera de las cifras que se descartan es mayor  a 5, entonces la ultima cifra que se conserva se aumenta en 1:   25.56...$\approx$25.6 
+\item Si la primera de las cifras que se descartan es exactamente 5, incrementa en 1 la ultima cifra que se conserva solamente si esta es impar: 28.45...$\approx$28.4, 28.35...$\approx$28.4  
+\end{itemize}
+\section*{\textbf{Apéndice B. Reducción de un parámetro por medio del teorema óptico}}
+\addcontentsline{toc}{section}{\hspace{0.7cm} \sffamily\bfseries\sffamily{Reducción de un parámetro por medio del teorema óptico}}
+Las amplitudes de dispersión (\ref{eq1}, \ref{eq2}, \ref{eq3}) en la región frontal para el cual $t=0$ son:
+\begin{align}
+F_{1}(s,0)&=\frac{ip\sigma_{tot}}{4\pi}\left[B_{13}+B_{14}+B_{23}+B_{24}\right]\\
+F_{2}(s,0)&=\frac{ip\sigma^2_{tot}}{16\pi^2}\left[\frac{B_{13}B_{24}}{\xi_{13}+\xi_{24}+\lambda+\eta}+\frac{B_{13}B_{24}}{\xi_{14}+\xi_{23}+\lambda+\eta}\right]\\
+F_{3}(s,0)&=\frac{ip\sigma^2_{tot}}{32\pi^2}\left[\frac{B_{13}B_{14}}{\xi_{13}+\xi_{14}+\eta}+\frac{B_{23}B_{24}}{\xi_{24}+\xi_{23}+\eta}+\frac{B_{13}B_{23}}{\xi_{13}+\xi_{23}+\lambda}+\frac{B_{14}B_{24}}{\xi_{14}+\xi_{24}+\lambda}\right]
+\end{align}
+haciendo uso de la relación $B_{23}=B_{14}=\sqrt{B_{13}B_{24}}$ obtenemos:
+ \begin{align}
+F_{1}(s,0)&=\frac{ip\sigma_{tot}}{4\pi}\left[B_{13}+2\sqrt{B_{13}B_{24}}+B_{24}\right]\\
+F_{2}(s,0)&=\frac{ip\sigma^2_{tot}}{4\pi}\left[b_1 B_{13}B_{24}+B_{13}B_{24}b_2\right]\\
+F_{3}(s,0)&=\frac{ip\sigma^2_{tot}}{4\pi}\left[b_3B_{13}\sqrt{B_{13}B_{24}}+b_{4}B_{24}\sqrt{B_{13}B_{24}}+b_{5}B_{13}\sqrt{B_{13}B_{24}}+b_6B_{24}\sqrt{B_{13}B_{24}}\right]
+\end{align}
+Donde \begin{align}
+\nonumber b_{1}&=\frac{1}{4\pi}\textup{Re}\left[ \frac{1}{\xi_{13}+\xi_{24}+\lambda+\eta}\right]\\
+\nonumber b_{2}&=\frac{1}{4\pi}\textup{Re}\left[\frac{1}{\xi_{14}+\xi_{23}+\lambda+\eta}\right]\\
+\nonumber b_{3}&=\frac{1}{4\pi}\textup{Re}\left[\frac{1}{\xi_{13}+\xi_{14}+\eta}\right]\\
+\nonumber b_{4}&=\frac{1}{4\pi}\textup{Re}\left[\frac{1}{\xi_{24}+\xi_{23}+\eta}\right]\\
+\nonumber b_{5}&=\frac{1}{4\pi}\textup{Re}\left[\frac{1}{\xi_{13}+\xi_{23}+\lambda}\right]\\
+b_{6}&=\frac{1}{4\pi}\textup{Re}\left[\frac{1}{\xi_{14}+\xi_{24}+\lambda}\right]
+\end{align}
+Del teorema óptico:
+\begin{align}
+\sigma_{tot}=\frac{4\pi}{p}\textup{Im}[F_1(s,0)-F_2(s,0)-F_3(s,0)]
+\end{align}
+obtenemos:
+\begin{align}
+\nonumber 1=B_{13}+2\sqrt{B_{13}B_{24}}+[1-\sigma_{tot} B_{13}(b_1+b_2)]B_{24}-\\
+\sigma_{tot}B_{13}\sqrt{B_{13}B_{24}}(b_3+b_5)
+-\sigma_{tot}\sqrt{B_{13}B^3_{24}}(b_6+b_{4})
+\end{align}
+Factorizando y organizando términos obtenemos
+\begin{align}
+[\sigma_{tot}B_{13}(b_3+b_5)-2]\sqrt{B_{13}B_{24}}+[\sigma_{tot}B_{13}(b_1+b_2)-1]B_{24}+(1-B_{13})=0
+\end{align}
+Haciendo las siguientes definiciones:
+\begin{align}
+a_0&=1-B_{13}\\
+a_1&=[\sigma_{tot}B_{13}(b_3+b_5)-2]\sqrt{B_{13}}\\
+a_{2}&=[\sigma_{tot}B_{13}(b_1+b_2)-1]\\
+a_{3}&=[\sigma_{tot}(b_6+b_4)]\sqrt{B_{13}}
+\end{align}se tiene:
+\begin{equation}
+a_3\left(\sqrt{B_{24}}\right)^3+a_2\left(\sqrt{B_{24}}\right)^2+a_{1}\left(\sqrt{B_{24}}\right)+a_0=0
+\end{equation}
+Esta es una ecuación de tercer orden respecto de $\sqrt{B_{24}}$. Para resolver esta ecuación se implemento un código c++ el cual se muestra a continuación. De este modo, $B_{24}$ queda expresado en términos del coeficiente de pendiente nuclear $B_{13}$. 
+\section*{\textbf{Apéndice C. Identidad Mandelstam}}
+\addcontentsline{toc}{section}{\hspace{0.7cm} \sffamily\bfseries\sffamily{Identidad Mandelstam}} 
+En el caso para el cual $\hslash=c=1$, el cuadrado del cuadrimomento de una partícula es el cuadrado de su masa, esto es: $p_{i}^2=m_i$, además (Note que: $p_1=p_{iA}$, $p_2=p_{iB}$, $p_3=p_{fA}$, $p_4=p_{fB}$):  
+\begin{align}\label{ecuacion2_13}
+s &\equiv (p_{1}+p_{2})^2=p_{1}^2+p_{2}^2+2p_{1}\cdot p_{2}\\
+t &\equiv (p_{1}-p_{3})^2=p_{1}^2+p_{3}^2-2p_{1}\cdot p_{3}\\
+u &\equiv (p_{1}-p_{4})^2=p_{1}^2+p_{4}^2-2p_{1}\cdot p_{4}
+\end{align}
+y la expresión para la conservación de la energía y del momento es: $p_1+p_2=p_3+p_4$ \'o $p_1+p_2-p_3-p_4=0$\\
+
+Sumando las tres variables Mandelstam $(s, t, u)$ se tiene que:
+\begin{equation}
+s+t+u=m_1^2 + m_2^2 + m_3^2 + m_4^2 + \underbrace{2 p_1^2 + 2p_1 \cdot p_2 - 2p_1 \cdot p_3 - 2p_1 \cdot p_4}_{=2p_1\cdot(p_1 + p_2 - p_3 - p_4)=0} 
+\end{equation}
+en consecuencia
+\begin{equation}
+s+t+u=m_1^2 + m_2^2 + m_3^2 + m_4^2 =\sum_{i=1}^{4}m_{i}^2
+\end{equation}
+\section*{\textbf{Apéndice D. Solución a la ecuación de tercer grado}}
+\addcontentsline{toc}{section}{\hspace{0.7cm} \sffamily\bfseries\sffamily{Solución a la ecuación de tercer grado}} 
+\begin{lstlisting}[style=C]
+Double_t myFunc(Double_t [], Double_t []);
+Double_t AmplitudNuclear(Double_t [],Double_t []);
+
+void ValoresRaices(Double_t a,Double_t b ,Double_t c,Bool_t complex){
+  TComplex i=TComplex::I();
+  if(complex==kTRUE){
+    Double_t  x1=a;
+    TComplex  x2=b-i*c;
+    TComplex  x3=b+i*c;
+    
+    std::cout <<"x1= "<<x1<<"\n";
+    std::cout <<"x2= "<<x2<<"\n";
+    std::cout <<"x3= "<<x3<<"\n";
+  }
+  if(complex==kFALSE) {
+    Double_t  x1=a;
+    Double_t  x2=b;
+    Double_t  x3=c;
+    
+    std::cout <<"x1= "<<x1<<"\n";
+    std::cout <<"x2= "<<x2<<"\n";
+    std::cout <<"x3= "<<x3<<"\n";
+    
+  }
+  
+}
+
+Double_t* RootsCubic(Double_t a0,Double_t a1,Double_t a2,Double_t a3){
+  const Double_t coef[]={a0,a1,a2,a3};
+  Double_t  a=0;
+  Double_t  b=0;
+  Double_t  c=0;
+  Bool_t complex = kFALSE;
+  Double_t r,s,t,p,q,d,ps3,ps33,qs2,u,v,tmp,lnu,lnv,su,sv,y1,y2,y3;
+  if (coef[3] == 0) {std::cout << "coef[3]=0" << "\n";}//return complex;
+  r    = coef[2]/coef[3];
+  s    = coef[1]/coef[3];
+  t    = coef[0]/coef[3];
+  p    = s - (r*r)/3;
+  ps3  = p/3;
+  q    = (2*r*r*r)/27.0 - (r*s)/3 + t;
+  qs2  = q/2;
+  ps33 = ps3*ps3*ps3;
+  d    = ps33 + qs2*qs2;
+  if (d>=0) {
+    complex = kTRUE;
+    d   = TMath::Sqrt(d);
+    u   = -qs2 + d;
+    v   = -qs2 - d;
+    tmp = 1./3.;
+    lnu = TMath::Log(TMath::Abs(u));
+    lnv = TMath::Log(TMath::Abs(v));
+    su  = TMath::Sign(1.,u);
+    sv  = TMath::Sign(1.,v);
+    u   = su*TMath::Exp(tmp*lnu);
+    v   = sv*TMath::Exp(tmp*lnv);
+    y1  = u + v;
+    y2  = -y1/2;
+    y3  = ((u-v)*TMath::Sqrt(3.))/2;
+    tmp = r/3;
+    a   = y1 - tmp;
+    b   = y2 - tmp;
+    c   = y3;
+  } else {
+    Double_t phi,cphi,phis3,c1,c2,c3,pis3;
+    ps3   = -ps3;
+    ps33  = -ps33;
+    cphi  = -qs2/TMath::Sqrt(ps33);
+    phi   = TMath::ACos(cphi);
+    phis3 = phi/3;
+    pis3  = TMath::Pi()/3;
+    c1    = TMath::Cos(phis3);
+    c2    = TMath::Cos(pis3 + phis3);
+    c3    = TMath::Cos(pis3 - phis3);
+    tmp   = TMath::Sqrt(ps3);
+    y1    = 2*tmp*c1;
+    y2    = -2*tmp*c2;
+    y3    = -2*tmp*c3;
+    tmp = r/3;
+    a   = y1 - tmp;
+    b   = y2 - tmp;
+    c   = y3 - tmp;
+  }
+  Double_t *m=new Double_t[3]; 
+  m[0]=a;
+  m[1]=b;
+  m[2]=c;
+  //ValoresRaices(a,b,c,complex);
+  return m;
+}
+  \end{lstlisting}
+\section*{Apéndice F. Estructura de c\'odigo c++ para los ajustes}
+\addcontentsline{toc}{section}{\hspace{0.7cm} \sffamily\bfseries\sffamily{Estructura de c\'odigo c++ para los ajustes}}
+Con el siguiente código se pueden reproducir todas las gráficas que se han presentado en este trabajo, desde 4.62 GeV hasta 7 Tev. Todos y cada uno de estos códigos se entregaran en una carpeta adicional al documento. 
+\begin{lstlisting}[style=C]
+void ajustedata(){
+  Int_t contador=0, npoints=0;
+  Float_t tt[500]={0};
+  Float_t dsdt[500]={0};
+  Float_t edsdt[500]={0};
+  Float_t error_e[500]={0};
+  Double_t data1=0,data2=0,data3=0,data4=0, data5=0, data6=0;
+  string name1;//[20];
+  string collision_pp="pp_ds/dt";
+  string collision_ppbar="pbarp_ds/dt";
+  ifstream data;
+  data.open("data_dsdt.dat",ios::in);
+  //data.open("data1960.dat",ios::in);
+  if(!data){
+    cerr <<"no data file found "<<endl;
+  }
+  else
+    {
+      while(!data.eof() && contador <13861){
+	data>>data1;
+	data>>data2;
+	data>>data3;
+	data>>data4;
+	data>>data5;
+	data>>data6;
+	data>>name1;
+	//###Proton-proton####
+	//if(data1 > 6900 && data1 < 7100 /*&& data6 < data3*/&& collision_pp == name1&& data2 >0.005 && data2 <3){
+	//if(data1 > 23.4 && data1 < 23.51/*&& data3 > 1E-5 && data3<10*/ && collision_pp == name1  && data2 >0.005 && data2 <6 ){
+	if(data1 > 19.3 && data1 <19.5 && data3 > 1E-5 && data3<10 && collision_pp == name1  && data2 >0.005 && data2 <6 ){
+	//if(data1 > 30.65 && data1 <31 /*&& data3 > 1E-5 && data3<10 */&& collision_pp == name1  && data2 >0.007 && data2 <6 ){
+	//if(data1 > 44.6 && data1 <44.7 /*&& data3 > 1E-5 && data3<10 */&& collision_pp == name1  && data2 >0.007 && data2 <6 ){
+	//if(data1 > 52.8 && data1 <53.1 /*&& data3 > 1E-5 && data3<10 */&& collision_pp == name1  && data2 >0.005 && data2 <6 ){
+	//if(data1 > 62.4 && data1 <62.6 && data3 > 2E-8 /*&& data3<10*/ && collision_pp == name1  && data2 >0.005 && data2 <6 ){
+	//if(data1 > 4.6 && data1 < 4.63 /*&& data6 < data3*/&& collision_pp == name1&& data2 >0.005 && data2 < 6){
+	//if(data1 > 9.7 && data1 < 9.8 /*&& data6 < data3*/&& collision_pp == name1&& data2 >0.005 && data2 < 6){
+	//if(data1 > 13.7 && data1 < 13.8 /*&& data6 < data3*/&& collision_pp == name1&& data2 >0.005 && data2 < 6){
+	  
+	//####Proton-antiproton####
+	//if(data1 > 19.3 && data1 <19.5 /*&& data3 > 1E-5 && data3<10*/ && collision_ppbar == name1 && data2 >0.005 && data2 < 6 ){
+	//if(data1 > 52.89 && data1 < 53.1 /*&& data3 > 1E-5 && data3<10*/ && collision_ppbar == name1 && data2 >0.005 && data2 < 8 ){
+	//if(data1 > 545 && data1 < 547 /*&& data3 > 1E-5 && data3<10*/ && collision_ppbar == name1  && data2 >0.005 && data2 <6 ){
+	//if(data1 > 629 && data1 <631 /*&& data3 > 1E-5 && data3<10*/ && collision_ppbar == name1  && data2 >0.005 && data2 <3 ){
+	//if(data1 >1799 && data1 <1961 /*&& data3 > 1E-5 && data3<10*/ && collision_ppbar == name1  && data2 >0.005 && data2 < 5 ){  
+	//if(data1 > 1958 && data1 < 1961 /*&& data3 > 1E-5 && data3<10*/ && collision_ppbar == name1  && data2 >0.005 && data2 <5 ){
+	  tt[npoints] = data2;
+	  dsdt[npoints] = data3;
+	  edsdt[npoints] = data6;
+	  npoints++;
+	  //std::cout <<data2<< "\t\t"<<data3<< "\n";
+	}//fin if 
+	contador++;
+      }//fin while
+      
+    }//fin else
+  
+  //gStyle->SetOptFit();
+  TCanvas *micanvas = new TCanvas("canvas","migrafico",300,500,490,470);
+  micanvas->Divide(2,1);
+  micanvas->cd(); 
+ 
+  TGraphErrors *gre3=new TGraphErrors(npoints,tt,dsdt,error_e,edsdt);
+  gre3->SetMarkerStyle(21);
+  gre3->SetMarkerColor(1);
+  gre3->SetMarkerSize(1);
+  gre3->SetLineColorAlpha(1,1);
+  gPad->SetLogy();
+  gre3->GetYaxis()->SetTitle("d#sigma/dt (mb/GeV^{2})");
+  gre3->GetXaxis()->SetTitle("momento trasferido, |t| (GeV^{2})");
+  gre3->GetYaxis()->SetTitleOffset(1.2);
+  gre3->GetYaxis()->SetTitleSize(0.038);
+  gre3->GetXaxis()->SetTitleSize(0.038);
+  gre3->SetTitle("d#sigma/dt elastica pp#rightarrow pp a #sqrt{s}=19.4 GeV vs. |t|");
+  gre3->Draw("AP");
+  gre3->GetXaxis()->SetLimits(-0.05,4);
+  gre3->SetMinimum(1E-7);
+  gre3->SetMaximum(4E+1);
+  //gPad->SetGrid();
+  gPad->Update(); 
+  Double_t (*f)(Double_t*,Double_t*);
+  f=myFunc;
+  TF1 *f3 = new TF1("funajuste",f,0,7,4);
+  gPad->SetLogy();
+  f3->SetLineWidth(3);
+  f3->SetLineColor(2);
+  f3->SetParNames("r_{proton}","#alpha_{p}","B_{13}");
+  //f3->SetParameters(8.3,6,0.04,1.5);
+  f3->SetParameters(6,1.5,0.024,1,0.16);
+  //f3->FixParameter(3,3);
+
+  //f3->SetParameters(6.5,1.4,0.024,5);
+  //f3->SetParameters(7,1.2,0.03,5);
+  //f3->Draw("same");
+  gre3->Fit(f3);
+ 
+  /* 
+  TF1 *f3 = new TF1("funajuste",AmplitudNuclear,0.005,0.1,2);
+  gPad->SetLogy();
+  f3->SetLineWidth(3);
+  f3->SetLineColor(2);
+  f3->SetParameters(0.15,20);
+  //f3->Draw("same");
+  gre3->Fit(f3);
+  
+  */
+    
+  
+  TLegend *legend=new TLegend(0.5,0.45,0.88,1);
+  legend->SetTextFont(50);
+  legend->SetTextSize(0.03);
+  legend->AddEntry(gre3,"Datos TOTEM ","lep");
+  legend->SetFillColor(19);
+  legend->SetBorderSize(4);
+  legend->AddEntry(f3,"Modelo-qQ 4 parametros","l");
+  legend->Draw();
+  
+  /*
+  TLatex latex;
+  latex.SetTextSize(0.055);
+  latex.SetTextAlign(13);  //align at top
+  latex.DrawLatex(850,1.2,"#beta#gamma");
+  latex.DrawLatex(500,2.5,"-#frac{dE}{dx} = f(#beta#gamma)");
+  */
+}
+
+Double_t myFunc(Double_t x[],  Double_t p[])
+{
+  Double_t h=6.58211899E-16;
+  Double_t hc2=0.389379338;//Gev^2*mbarn
+  Double_t hc=TMath::Sqrt(hc2);
+  Double_t t = x[0];
+  const Double_t mP =0.938109927; //mP masa del protón en Gev
+  const Double_t Pi = TMath::Pi();
+  Double_t pk=1;
+  const Double_t singmatotal =38.94; //sigma total Gev
+  Double_t S =TMath::Power(19.4,2); //en Gev
+  Double_t alfaslope = 0.2316-0.1039*log(log(log(sqrt(S))));//0.15;//constante alfaslope Gev
+  const Double_t So=1/alfaslope;//valor constante So
+  TComplex I=TComplex::I();
+  TComplex F13=0,F14=0,F23=0,F24=0,F13_24=0,F14_23=0,F13_14=0,F23_24=0,F13_23=0,F14_24=0,F1=0,F2=0,F3=0;
+  Double_t beta=2./3.,alfa=1./3.,gamma=1./3.,delta=2./3.;
+  Double_t   B14= 0, B23 = 0, B24 = 0;
+  Double_t r1=0, r2=0, r3=0, r4=0;
+  //definicion de parametros, radio nucleon, alfa_p y B13
+  Double_t rP =p[0];//rP es el radio del protón
+  Double_t alfa_p=p[1];//parametro pomeron
+  Double_t B13 =p[2];
+  //if (B13>0&&B13<1){
+  //std::cout <<t<<"  "<< rP<<" "<<alfa_p<<" "<<B13 << "\n";
+  //definicion de varialbes
+  r1 = 0.173*rP;
+  r2 = 0.316*rP;
+  r3 = 0.173*rP;
+  r4 = 0.316*rP;
+  
+  Double_t lamda = pow(rP,2)/4;
+  Double_t eta=pow(rP,2)/4;
+  Double_t A13=0,A14=0,A23=0,A24=0;
+  TComplex E13=0,E14=0,E23=0,E24=0;
+  Double_t pImgE = -(alfaslope)*(alfa_p)*(Pi/2);//pImgA parte imaginaria de Ajk
+   
+  A13 = ((pow(r1,2)+pow(r3,2))/16)+alfaslope*TMath::Log((S)/So);
+  A14 = ((pow(r1,2)+pow(r4,2))/16)+alfaslope*TMath::Log((S)/So);
+  A23 = ((pow(r2,2)+pow(r3,2))/16)+alfaslope*TMath::Log((S)/So);
+  A24 = ((pow(r2,2)+pow(r4,2))/16)+alfaslope*TMath::Log((S)/So);
+
+  E13= A13+ I*pImgE ;
+  E14= A14+ I*pImgE ;
+  E23= A23+ I*pImgE ;
+  E24= A24+ I*pImgE ;
+  // std::cout << E13 << "\n";
+  //se expresa el parametor B24 en terminos de B13 
+  //_______________________________________
+  Double_t a=0,b=0,c=0,d=0,realb1=0,realb2=0,realb3=0,realb4=0,realb5=0,realb6=0;
+  TComplex varb1=0,varb2=0,varb3=0, varb4=0, varb5=0, varb6=0;
+  
+  varb1=(pk/(4*Pi*hc2*hc))*operator/(1,(E14+E23+eta+lamda));
+  varb2=(pk/(4*Pi*hc2*hc))*operator/(1,(E13+E24+eta+lamda));
+  varb3=(pk/(8*Pi*hc2*hc))*operator/(1,(E13+E14+eta));
+  varb4=(pk/(8*Pi*hc2*hc))*operator/(1,(E23+E24+eta));
+  varb5=(pk/(8*Pi*hc2*hc))*operator/(1,(E13+E23+lamda));
+  varb6=(pk/(8*Pi*hc2*hc))*operator/(1,(E14+E24+lamda));
+  //parte real de de los varb_i
+  realb1=varb1.TComplex::Re();
+  realb2=varb2.TComplex::Re();
+  realb3=varb3.TComplex::Re();
+  realb4=varb4.TComplex::Re();
+  realb5=varb5.TComplex::Re();
+  realb6=varb6.TComplex::Re();
+  //definicion de los coeficiente del polinomio
+
+  d =(1-B13*pk); c =hc*(singmatotal*B13*(realb3 + realb5) - 2*pk/hc)*TMath::Sqrt(B13); 
+  b = hc*(singmatotal*B13*(realb1 + realb2) - pk/hc); a =hc*singmatotal*(realb6 + realb4)*TMath::Sqrt(B13);
+  
+  //___________________________________
+  //RootsCubic1(d,c,b,a);
+  Double_t *mp=0;
+  mp=RootsCubic(d,c,b,a);
+  B24=pow(mp[1],2);
+  B14=TMath::Sqrt(B13*B24);
+  B23=B14;
+  //cout<<B24;
+  //std::cout <<t<<"\t"<< B13*B24<<"\t"<<p[3]<<"\t"<<B14<<B23  << "\n";
+  //___________________________________
+  
+  //B24 en terminos de x_i
+  /*TComplex exp14=B14*TComplex::Exp(-t*( pow(beta,2)*lamda + pow(delta,2)*eta + E13));
+  TComplex exp24=B24*TComplex::Exp(-t*( pow(beta,2)*lamda + pow(gamma,2)*eta + E14));
+
+  TComplex GF1  = exp14 + exp24;
+
+  GF1 *=  0.25*singmatotal*I/(Pi*hc);
+
+
+  TComplex z1424  = -(E24 + alfa*lamda)*(E24 + alfa*lamda);
+            z1424 /= E14 + E24 + lamda;
+            z1424 += E24 + alfa*alfa*lamda + gamma*gamma*eta;
+ 
+  TComplex exp1424  = TComplex::Exp(-z1424*t);
+            exp1424 /= E14 + E24 + lamda;
+
+  TComplex GF3  = B14*B13*exp1424;
+
+  GF3 *=  0.25/(Pi*hc)*I;
+  GF3 *= singmatotal*singmatotal/(8.*Pi*hc2);
+
+  TComplex GF13  =GF1 - GF3;
+  */
+  
+  F13=B13*TComplex::Exp(-t*( pow(beta,2)*lamda + pow(delta,2)*eta + E13));
+  F14=B14*TComplex::Exp(-t*( pow(beta,2)*lamda + pow(gamma,2)*eta + E14));
+  F23=B23*TComplex::Exp(-t*( pow(alfa,2)*lamda + pow(delta,2)*eta + E23));
+  F24=B24*TComplex::Exp(-t*( pow(alfa,2)*lamda + pow(gamma,2)*eta + E24));
+  
+  F13_24=((B13*B24)/(lamda + eta+ E13+E24))*
+    TComplex::Exp(-t*((pow(alfa,2)*lamda+pow(gamma,2)*eta+E24)-
+		      ((alfa*lamda + gamma*eta+E24)*(alfa*lamda+gamma*eta+E24)/(lamda+eta+E13+E24))));
+  
+  F14_23=((B14*B23)/(lamda + eta + E14 + E23))*
+    TComplex::Exp(-t*(( pow(alfa,2)*lamda+pow(delta,2)*eta+E23)-
+		      ((alfa*lamda + delta*eta+E23)*(alfa*lamda+delta*eta+E23)/(lamda+eta+E14+E23))));
+  					    
+  F13_14=((B13*B14)/(eta + E13+E14))*
+    TComplex::Exp(-t*(( pow(beta,2)*lamda+pow(gamma,2)*eta+E14)-((gamma*eta+E14)*(gamma*eta+E14)/(eta+E13+E14))));
+  
+  F23_24=((B23*B24)/(eta+ E23+E24))*
+    TComplex::Exp(-t*(( pow(alfa,2)*lamda+pow(gamma,2)*eta+E24)-((gamma*eta+E24)*(gamma*eta+E24)/(eta+E23+E24))));
+  
+  F13_23=((B13*B23)/(lamda+ E13+E23))*
+    TComplex::Exp(-t*(( pow(alfa,2)*lamda+pow(delta,2)*eta+E23)-((alfa*lamda+E23)*(alfa*lamda+E23)/(lamda+E13+E23))));
+  
+  F14_24=((B14*B24)/(lamda+E14+E24))*
+    TComplex::Exp(-t*(( pow(alfa,2)*lamda+pow(beta,2)*eta+E24)-((alfa*lamda+E24)*(alfa*lamda+E24)/(lamda+E14+E24))));     
+  //funciones F1, F2, F3.
+  F1=I*(singmatotal/(4*Pi*hc))*(F13+F14+F23+F24);
+  F2=I*(pow(singmatotal,2)/(16*pow(Pi,2)*hc2*hc))*(F13_24+F14_23);
+  F3=I*(pow(singmatotal,2)/(32*pow(Pi,2)*hc2*hc))*(F13_14+F23_24+F13_23+F14_24);
+  //constantes
+  // std::cout <<( pow(alfa,2)*lamda+pow(beta,2)*eta+E24)-((alfa*lamda+E24)*(alfa*lamda+E24)/(lamda+E14+E24))  << "\n";
+  Double_t  rho=0.145;
+  Double_t alfaestfina=7.297352568E-3;
+  Double_t B=19.89;
+  Double_t Gt=pow(1+TMath::Abs(t)/0.71,-2);
+  //constantes
+  Double_t dsigmadt=0;TComplex F=0;
+  TComplex fconj=0,FG=0,dnucledt=0,dinterdt=0,fn=0;
+  
+  F = (F1-F2-F3)*pk;
+  Double_t realFG=F.TComplex::Re();
+  Double_t imagFG=F.TComplex::Im();
+  //std::cout <<pk*B14*B14<<"\t"<<B14*B14<<"\t"<<F2<<"\t"<<F3<<"\t"<<F << "\n";
+  dsigmadt=Pi*(realFG*realFG+imagFG*imagFG);
+  delete mp;
+  cout << dsigmadt <<"\t\t"<< t<<"\n";
+   return dsigmadt;
+  
+}
+
+Double_t AmplitudNuclear(Double_t x[],Double_t p[]){
+  Double_t hc2=0.389379338;
+  Double_t hc=TMath::Sqrt(hc2);
+  
+  Double_t t = x[0];
+  const Double_t Pi = TMath::Pi();
+  const Double_t singmatotal =39.18;  //sigma total Gev
+  TComplex I=TComplex::I();
+    
+  Double_t alfaestfina=0;
+  Double_t Gt=0,rho=0,B=0;
+  Double_t dcoulombdt=0;
+
+  //constantes
+  alfaestfina=7.297352568E-3;
+  rho=p[0];
+  B=p[1];
+  //factor de forma
+  Gt=pow(1+TMath::Abs(t)/0.71,-2);
+
+  Double_t dsigmadt=0,phidet=0,F=0;
+  TComplex fconj=0,FG=0,dnucledt=0,dinterdt=0,fn=0;
+   
+  //definicion del angulo fi
+  phidet=TMath::Log(0.08/TMath::Abs(t))-0.577;
+    
+  //amplitud nuclear
+  fn=singmatotal*(rho+I)*TMath::Exp(-B*TMath::Abs(t)/2)/(4*Pi*hc);
+ 
+  //amplitud de Grichine
+  TComplex fncojudado=TComplex::Conjugate(fn);
+  Double_t dsimafndt=Pi*(fncojudado*fn);
+
+  return dsimafndt;
+}
+  \end{lstlisting}
+  \section*{Apéndice G. Codigo c++ radio del protón en función de la energía}
+  \addcontentsline{toc}{section}{\hspace{0.7cm} \sffamily\bfseries\sffamily{Codigo c++ radio del protón en función de la energía}}
+  \begin{lstlisting}[style=C]
+  double funajuste(double* x,double* p){
+ double S=x[0];
+ double R=p[0]+p[1]*TMath::Log(S);
+  return R;
+}
+
+
+void fitparameters()
+{
+  TCanvas *micanvas = new TCanvas("canvas","migrafico",300,500,490,470);
+  TGraphErrors *gre3 = new TGraphErrors("grafradioproton.dat");
+  
+   gre3->GetYaxis()->SetTitle("r_{p} en GeV^{-1}");
+   gre3->GetXaxis()->SetTitle("#sqrt{s/s_{0}}");
+   gre3->GetYaxis()->SetTitleOffset(1);
+   gre3->GetYaxis()->SetTitleSize(0.038);
+   gre3->GetXaxis()->SetTitleSize(0.038);
+   gre3->SetTitle(" Radio del proton (r_{p}) vs #sqrt{s/s_{0}}");
+   gre3->Draw("AP");
+   gre3->GetXaxis()->SetLimits(0,7050);
+   //gre3->SetMinimum(1E-0);
+   //gre3->SetMaximum(6.2);
+   gre3->SetMarkerStyle(21);
+   gre3->SetMarkerColor(4);
+   gre3->SetMarkerSize(1);
+   gPad->SetLogx();
+   //gre3->GetXaxis()->SetLimits(0,1);
+   gre3->SetLineColorAlpha(4,1);
+   gre3->Draw("AP");
+   TF1 *f3 = new TF1("funajuste",funajuste,30,50,2);
+   f3->SetLineWidth(3);
+   f3->SetLineColor(2);
+   f3->SetParameters(0.03,3);
+   //f3->FixParameter(0,48);
+   gre3->Fit(f3);
+   TLegend *legend=new TLegend(0.5,0.45,0.88,1);
+     legend->SetTextFont(40);
+     legend->SetTextSize(0.03);
+     legend->AddEntry(gre3,"Datos en acuerdo al modelo qQ, 4 parametros","lep");
+     legend->SetFillColor(19);
+     legend->SetBorderSize(4);
+     legend->AddEntry(f3,"Modelo de ajuste, 1er polinomio","l");
+     legend->Draw();
+
+} 
+   \end{lstlisting}

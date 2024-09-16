@@ -1,0 +1,781 @@
+
+
+\chapter{Leyes de conservación en teoría clásica de campos}
+Noether en el año de 1918 en su artículo  \textit{``Invariante variationsprobleme''} formaliza las leyes de conservación. Noether al imponer la condición que la acción debe ser invariante por \mbox{transformaciones} de coordenadas y campos, obtiene una relación entre las simetrías en las leyes de la física y las cantidades conservadas \cite{ noether, greiner, emmy}. El teorema de Noether que en este capitulo se desarrollara para sistemas físicos descritos por Lagrangianos de orden $m$ en las derivadas \cite{general}, tiene dos partes:
+\\
+
+El primer teorema de Noether establece que la invariancia del Lagrangiano ante un grupo de simetría finito o global, implica la existencia de cantidades \mbox{conservadas}, de esta manera como consecuencia del grupo de simetría global de Poincaré, se obtiene expresiones para la energía, el momentum lineal, el momentum \mbox{angular} y el spin, demostrando que estas cantidades son \mbox{conservadas \cite{ noether, greiner, emmy}}. Del cálculo de la energía se deduce una expresión \mbox{generalizada} para el Hamiltoniano canónico y los momentos canónicos asociados a cada uno de los campos linealmente \mbox{independientes}, lo que permite desarrollar una versión canónica de este tipo de \mbox{teorías \cite{general}.}
+\\
+
+El segundo teorema de Noether, establece que la invariancia del Lagrangiano ante un grupo de simetría infinito, es decir simetrías de gauge locales, implica: la existencia de cantidades conservadas, el cumplimiento de las identidades de Bianchi, y un Lagrangiano singular, \mbox{resultado} en sistemas dinámicos con vínculos \cite{noether,emmy,local}. Dirac estableció el método para el estudio canónico de estos sistemas, método que es fundamental en la cuantización de este tipo de \mbox{teorías \cite{dirac, canoalor}.}
+\section{Teorema de Noether}
+Las leyes de conservación en física, son cantidades que permanecen constantes en el tiempo independiente de la evolución dinámica de un sistema físico y son \mbox{consecuencia} de simetrías en la leyes de la física, es decir de la invariancia del \mbox{Lagrangiano} ante transformaciones de coordenadas y campos pertenecientes a un determinado grupo de simetría \cite{ noether, greiner, emmy}.
+\\
+
+Consideremos un sistema físico descrito por campos al cual se le asocia una densidad Lagrangiana de orden dos en las derivadas:
+\begin{equation}
+\mathscr{L}=\mathscr{L}[\psi_a(x),\partial_\mu\psi_a(x),\partial_\mu\partial_\nu\psi_a(x),x] 
+\end{equation}
+a partir del Lagrangiano se construye la funcional de acción:
+\begin{equation}
+A[\psi_a(x)]=\int\limits_{\sigma}d^4 x \mathscr{L}
+\label{accod}
+\end{equation}
+Las leyes de conservación son consecuencia de la invariancia de la acción ante las siguientes transformaciones continuas de coordenadas y campos:
+\begin{equation}
+x^{'}=x^{'}(x) \ \ \ \ \ \ \ \ \ \psi_a^{'}(x^{'})=\psi_a^{'}[\psi_a(x)]
+\end{equation}
+las cuales pueden ser construidas a partir de transformaciones infinitesimales \cite{general, greiner}:
+\begin{equation}
+x^{'\mu}=x^{\mu}+\delta x^{\mu} \ \ \ \ \ \ \psi_a^{'}(x^{'})=\psi_a(x)+\delta\psi_a(x)
+\label{traninfi}
+\end{equation}
+La variación local $\delta\psi_a(x)$, es consecuencia de la transformación de coordenadas y campos: 
+\begin{equation}
+\delta\psi_a(x)=\psi_a^{'}(x^{'})-\psi_a(x)=\psi_a^{'}(x+\delta x)-\psi_a(x)
+\label{locglo}
+\end{equation}
+$$\approx\psi_a^{'}(x)+ \delta x^{\mu}\partial_\mu\psi_a(x)-\psi_a(x)=\overset{\_}{\delta}\psi_a(x)+\delta x^{\mu}\partial_\mu\psi_a(x)$$
+en donde se hizo un expansión en series de Taylor para $\psi_a^{'}(x+\delta x)$ considerando términos de primer orden y se introdujo el concepto de variación global $\overset{\_}{\delta}\psi_a(x)$, que representa cambios solo en la forma de los campos, sin tener cambios en el punto $x$ del espacio-tiempo \cite{noether,general,greiner}:
+\begin{equation}
+\overset{\_}{\delta}\psi_a(x)=\psi_a^{'}(x)-\psi_a(x)
+\label{globalvari}
+\end{equation}
+Debido a la definición \eqref{globalvari}, es posible mostrar que la variación global conmuta con las derivadas \cite{noether, greiner}:
+\begin{equation}
+\partial_{\mu}[\overset{\_}{\delta}\psi_a(x)]=\partial_{\mu}[\psi_a^{'}(x)-\psi_a(x)]=\partial_{\mu}[\psi_a^{'}(x)]-\partial_{\mu}[\psi_a(x)]=\overset{\_}{\delta}[\partial_{\mu}\psi_a(x)] 
+\label{conglo}
+\end{equation}
+por el contrario la variación local no presenta esta característica, (ver \mbox{Apéndice C) \cite{noether,greiner}:}
+\begin{equation}
+\partial_{\mu}[\delta\psi_a(x)]\approx\delta[\partial_{\mu}\psi_a(x)]+[\partial_{\mu} \delta x^{\alpha}][\partial_{\alpha}\psi_a(x)]
+\end{equation}
+Como consecuencia de las transformaciones infinitesimales de coordenadas y campos dada por \eqref{traninfi}, la variación de la densidad Lagrangiana se expresa como:
+\begin{equation}
+\mathscr{L}^{'}=\mathscr{L}+\delta\mathscr{L}
+\label{varlangr}
+\end{equation}
+donde:
+\begin{equation}
+\mathscr{L}^{'}=\mathscr{L}^{'}[\psi_a^{'}(x^{'}),\partial_{\mu}^{'}\psi_a^{'}(x^{'}),\partial_{\mu}^{'}\partial_{\nu}^{'}\psi_a^{'}(x^{'}),x^{'}] 
+\end{equation}
+Al exigir que la acción sea invariante por transformaciones infinitesimales de coordenadas y campos \eqref{traninfi}, se debe cumplir: \cite{general,noether,greiner}:
+\begin{equation}
+\delta A[\psi_a (x)]=A^{'}[\psi_a^{'}(x^{'})]-A[\psi_a(x)]=\int\limits_{\sigma^{'}}dx^{'4}\mathscr{L}^{'}-\int\limits_{\sigma}dx^4\mathscr{L}=0 
+\label{acno} 
+\end{equation}
+donde $\sigma^{'}$ denota el volumen expresado en términos de las coordenadas $x^{'}$.
+\\
+  
+La relación entre el elemento de volumen $dx^{4}$ y el volumen $dx^{'4}$ en las nuevas coordenadas, se determina a partir del Jacobiano de \mbox{transformación \cite{general, noether, greiner}}: 
+\begin{equation}
+dx^{'4}=\left|\frac{\partial x^{'\mu}}{\partial x^{\alpha}}\right|dx^{4}=\left|\frac{\partial }{\partial x^{\alpha}}(x^{\mu}+\delta x^{\mu})\right|dx^{4}=\left|\delta_{\ \alpha}^\mu+\partial_\alpha(\delta x^{\mu})\right|dx^{4} 
+\end{equation}
+teniendo en cuenta que las transformaciones de coordenadas son infinitesimales, se debe considerar términos de primer orden en el Jacobiano:
+\begin{equation}
+\left|\frac{\partial x^{'\mu}}{\partial x^{\alpha}}\right|=\left|\begin{matrix}
+1+\partial_0 \delta x^{0} & \partial_1 \delta x^{0} & \partial_2 \delta x^{0} & \partial_3 \delta x^{0}\\
+\\ \partial_0 \delta x^{1} & 1+\partial_1 \delta x^{1} & \partial_2 \delta x^{1} & \partial_3 \delta x^{1}\\
+\\ \partial_0 \delta x^{2} & \partial_1 \delta x^{2} & 1+\partial_2 \delta x^{2} & \partial_3\delta x^{2}\\
+\\ \partial_0 \delta x^{3} & \partial_1\delta x^{3} & \partial_2 \delta x^{3} & 1+\partial_3\delta x^{3}\\
+\end{matrix}\right|\approx1+\partial_{\mu} \delta x^\mu  
+\end{equation}
+de esta manera, la relación entre los elementos de volumen $dx^{4}$ y $dx^{'4}$ es:
+\begin{equation} 
+dx^{'4}=(1+\partial_{\mu}\delta x^\mu)dx^{4} 
+\label{jaco}
+\end{equation}
+Sustituyendo las relaciones \eqref{jaco} y \eqref{varlangr} en la \mbox{expresión \eqref{acno}} y considerando, nuevamente términos de primer orden, se obtiene: 
+\begin{equation}
+\delta A[\psi_a (x)]=\int\limits_{\sigma}dx^{4}(1+\partial_{\mu}\delta x^\mu)\left(\mathscr{L}+\delta \mathscr{L} \right)-\int\limits_{\sigma}dx^4\mathscr{L}=0 
+\label{lolanglo}           
+\end{equation}
+$$
+\approx\int\limits_{\sigma}dx^{4}[\delta\mathscr{L}+\mathscr{L}(\partial_{\mu}\delta x^\mu)]=0     
+$$
+expresando la variación local del Lagrangiano $\delta \mathscr{L}$, en términos de la variación global del mismo, $\overset{\_}{\delta}\mathscr{L}$, ecuación \eqref{locglo}:
+\begin{equation}
+\delta \mathscr{L}=\overset{\_}{\delta}\mathscr{L}+\delta x^{\mu}\partial_\mu\mathscr{L}
+\end{equation}
+la relación \eqref{lolanglo} puede ser escrita en la forma:
+\begin{equation}
+\delta A[\psi_a (x)]=\int\limits_{\sigma}dx^{4}[\overset{\_}{\delta}\mathscr{L}+\partial_{\mu}(\delta x^{\mu}\mathscr{L})]=0         
+\label{actra}
+\end{equation}
+Se puede expresar la variación global del Lagrangiano en términos de las variaciones globales del campo y de sus derivadas de la siguiente manera: 
+\begin{equation}
+\overset{\_}{\delta}\mathscr{L}=\frac{\partial\mathscr{L} }{\partial \psi_a}\overset{\_}{\delta}\psi_a +\frac{\partial\mathscr{L} }{\partial(\partial_{\mu} \psi_a)}\overset{\_}{\delta}(\partial_{\mu} \psi_a)+\frac{\partial\mathscr{L} }{\partial(\partial_{\mu}\partial_{\nu} \psi_a)}\overset{\_}{\delta}(\partial_{\mu}\partial_{\nu} \psi_a)
+\label{varlaglo} 
+\end{equation}
+teniendo en cuenta \eqref{conglo} y del hecho que $\partial_{\mu}\partial_{\nu} \overset{\_}{\delta}\psi_a=\partial_{\mu}\partial_{\nu}[\psi_a^{'}(x)-\psi_a(x)]=\overset{\_}{\delta}(\partial_{\mu}\partial_{\nu} \psi_a)$, la anterior ecuación se expresa en la forma: 
+\begin{equation}
+\overset{\_}{\delta}\mathscr{L}=\frac{\partial\mathscr{L} }{\partial \psi_a}\overset{\_}{\delta}\psi_a +\frac{\partial\mathscr{L} }{\partial(\partial_{\mu} \psi_a)}\partial_{\mu}(\overset{\_}{\delta} \psi_a)+\frac{\partial\mathscr{L} }{\partial(\partial_{\mu}\partial_{\nu} \psi_a)}\partial_{\mu}\partial_{\nu}(\overset{\_}{\delta} \psi_a)  
+\label{varlas}
+\end{equation}
+Utilizando las siguientes relaciones:
+\begin{equation}
+\frac{\partial\mathscr{L} }{\partial(\partial_{\mu} \psi_a)}\partial_{\mu}(\overset{\_}{\delta} \psi_a)=\partial_{\mu}\left(\frac{\partial\mathscr{L} }{\partial(\partial_{\mu} \psi_a)}\overset{\_}{\delta} \psi_a\right)-\partial_{\mu}\left(\frac{\partial\mathscr{L} }{\partial(\partial_{\mu} \psi_a)}\right)\overset{\_}{\delta} \psi_a 
+\end{equation}
+$$
+\frac{\partial\mathscr{L} }{\partial(\partial_{\mu}\partial_{\nu} \psi_a)}\partial_{\mu}\partial_{\nu}(\overset{\_}{\delta} \psi_a)=\partial_{\mu}\left(\frac{\partial\mathscr{L} }{\partial(\partial_{\mu}\partial_{\nu} \psi_a)}\partial_{\nu}\overset{\_}{\delta} \psi_a\right)-\partial_{\nu}\left[\partial_{\mu}\left(\frac{\partial\mathscr{L} }{\partial(\partial_{\mu}\partial_{\nu} \psi_a)}\right)\overset{\_}{\delta} \psi_a\right] 
+$$
+$$+\partial_{\nu}\partial_{\mu}\left(\frac{\partial\mathscr{L} }{\partial(\partial_{\mu}\partial_{\nu} \psi_a)}\right)\overset{\_}{\delta}\psi_a$$
+la expresión \eqref{varlas}, se reescribe en la forma:
+\begin{equation}
+\overset{\_}{\delta}\mathscr{L}=\frac{\partial\mathscr{L} }{\partial \psi_a}\overset{\_}{\delta}\psi_a+\partial_{\mu}\left(\frac{\partial\mathscr{L} }{\partial(\partial_{\mu} \psi_a)}\overset{\_}{\delta} \psi_a\right)-\partial_{\mu}\left(\frac{\partial\mathscr{L} }{\partial(\partial_{\mu} \psi_a)}\right)\overset{\_}{\delta} \psi_a
+\label{varlola}
+\end{equation}
+$$+\partial_{\mu}\left(\frac{\partial\mathscr{L} }{\partial(\partial_{\mu}\partial_{\nu} \psi_a)}\partial_{\nu}\overset{\_}{\delta} \psi_a\right)-\partial_{\nu}\left[\partial_{\mu}\left(\frac{\partial\mathscr{L} }{\partial(\partial_{\mu}\partial_{\nu} \psi_a)}\right)\overset{\_}{\delta} \psi_a\right]+\partial_{\nu}\partial_{\mu}\left(\frac{\partial\mathscr{L} }{\partial(\partial_{\mu}\partial_{\nu} \psi_a)}\right)\overset{\_}{\delta}\psi_a $$
+Al sustituir \eqref{varlola} en \eqref{actra}, la invariancia de la acción ante transformaciones de coordenadas y campos implica:
+\begin{equation}
+\delta A[\psi_a (x)]=\int\limits_{\sigma}dx^{4}\left[\frac{\partial\mathscr{L} }{\partial \psi_a}-\partial_{\mu}\left(\frac{\partial\mathscr{L} }{\partial(\partial_{\mu} \psi_a)}\right)+\partial_{\mu}\partial_{\nu}\left(\frac{\partial\mathscr{L} }{\partial(\partial_{\mu}\partial_{\nu} \psi_a)}\right)\right]\overset{\_}{\delta}\psi_a
+\label{canoe}
+\end{equation}  
+$$+\int\limits_{\sigma}dx^{4}\partial_{\mu}\left\{\left[\frac{\partial \mathscr{L} }{\partial(\partial_{\mu} \psi_a)}-\partial_{\nu}\left(\frac{\partial\mathscr{L} }{\partial(\partial_{\nu}\partial_{\mu} \psi_a)}  \right) \right]\overset{\_}{\delta}\psi_a\ +\ \frac{\partial\mathscr{L} }{\partial(\partial_{\mu}\partial_{\nu} \psi_a)}\partial_{\nu}\overset{\_}{\delta} \psi_a+\mathscr{L}\delta x^\mu \right\}=0$$
+Denotando las ecuaciones de Euler-Lagrange para Lagrangianos de segundo orden de la siguiente manera:
+\begin{equation}
+L^a=\frac{\partial\mathscr{L} }{\partial \psi_a}-\partial_{\mu}\left(\frac{\partial\mathscr{L} }{\partial(\partial_{\mu} \psi_a)}\right)+\partial_{\mu}\partial_{\nu}\left(\frac{\partial\mathscr{L} }{\partial(\partial_{\mu}\partial_{\nu} \psi_a)}\right)=0
+\label{la}
+\end{equation}
+y definiendo la corriente de Noether, de la forma:
+\begin{equation}
+J^\mu=\left[\frac{\partial \mathscr{L} }{\partial(\partial_{\mu} \psi_a)}-\partial_{\nu}\left(\frac{\partial\mathscr{L} }{\partial(\partial_{\nu}\partial_{\mu} \psi_a)}  \right) \right]\overset{\_}{\delta}\psi_a\ +\ \frac{\partial\mathscr{L} }{\partial(\partial_{\mu}\partial_{\nu} \psi_a)}\partial_{\nu}\overset{\_}{\delta} \psi_a\ \ + \ \mathscr{L}\delta x^\mu
+\label{corr}
+\end{equation}
+la ecuación \eqref{canoe} se escribe como:
+\begin{equation}
+\delta A[\psi_a (x)]=\int\limits_{\sigma}dx^{4}\left(L^a\overset{\_}{\delta}\psi_a+\partial_\mu J^\mu \right)=0 
+\label{voar}
+\end{equation}
+Teniendo en cuenta que el volumen en el espacio-tiempo $\sigma$ es arbitrario y que la identidad \eqref{voar} se debe garantizar independientemente de $\sigma$, la condición de invariancia de la acción ante transformaciones infinitesimales de coordenadas y campos implica \cite{noether,general,greiner}:
+\begin{equation}
+L^a\overset{\_}{\delta}\psi_a+\partial_\mu J^\mu=0 
+\label{noeemy}
+\end{equation}
+la expresión \eqref{noeemy}, es conocido como el teorema de Noether. 
+\section{Primer teorema de Noether}
+Si las transformaciones en coordenadas y campos: $\delta x^{\mu}$, $\delta\psi_a$; están caracterizadas por un \mbox{conjunto} infinitesimal de $r$ parámetros constantes e independientes del espacio-tiempo $\in^\beta $, con \mbox{$\beta=1,2,..r$}; las transformaciones pertenecen a un grupo de simetría finito \cite{ noether, greiner, emmy}: 
+\begin{equation}
+\delta x^{\mu}=x^{'\mu}-x^{\mu}=\in^\beta X_{\ \beta}^\mu(x)
+\label{glocon}
+\end{equation}
+$$\delta\psi_a(x)=\psi_a^{'}(x^{'})-\psi_a(x)=\in^\beta \Phi_{\beta a}(x)$$
+donde $X_{\ \beta}^\mu(x)$ y $\Phi_{\beta a(x)}$ son los generadores del grupo de simetría. Los generadores pertenecen a un mínimo subgrupo del grupo de transformaciones, de manera que todo elemento del grupo de simetría puede ser expresado en términos de los generadores del grupo.
+\\
+
+Si se considera invariancia de la acción ante un grupo de simetría finito, junto a la condición que el sistema físico descrito por campos $\psi_a(x)$ satisface las ecuaciones de \mbox{Euler-Lagrange,} es decir \mbox{$L^a=0$}, el primer teorema de Noether establece la siguiente ecuación de continuidad \cite{noether,general,greiner}:
+\begin{equation}
+\partial_\mu J^\mu=0 
+\label{nocopr}
+\end{equation}
+donde $J^\mu$, se define como la corriente de Noether, que expresada en función de variaciones locales se escribe como: 
+\begin{equation}
+J^\mu=\left[\frac{\partial \mathscr{L} }{\partial(\partial_{\mu} \psi_a)}-\partial_{\nu}\left(\frac{\partial\mathscr{L} }{\partial(\partial_{\nu}\partial_{\mu} \psi_a)}  \right) \right]\delta\psi_a\ +\ \frac{\partial\mathscr{L} }{\partial(\partial_{\mu}\partial_{\nu} \psi_a)}\delta\partial_\nu\psi_a
+\label{corrino}
+\end{equation}
+$$ -\delta x^\alpha\left\{\ \ \ \left[\frac{\partial \mathscr{L} }{\partial(\partial_{\mu} \psi_a)}-\partial_{\nu}\left(\frac{\partial\mathscr{L} }{\partial(\partial_{\nu}\partial_{\mu} \psi_a)}  \right) \right]\partial_\alpha\psi_a +\ \frac{\partial\mathscr{L} }{\partial(\partial_{\mu}\partial_{\nu} \psi_a)}\partial_\alpha\partial_\nu\psi_a-\delta^\mu_{\ \alpha}\mathscr{L}   \right\}$$
+Considerando un grupo de simetría finito \eqref{glocon} y el hecho que los parámetros $\in^\beta$ son \mbox{constantes}, la ecuación de continuidad \eqref{nocopr} es reescrita de la forma:
+\begin{equation}
+\in^\beta\partial_\mu J^\mu_{\ \beta}=\partial_\mu J^\mu_{\ \beta}=0 
+\label{congene}
+\end{equation}
+donde $J^\mu_{\ \beta}$, es la corriente de Noether expresada en función de los generadores del grupo de simetría finito:
+\begin{equation}
+J^\mu_{\ \beta}=\left[\frac{\partial \mathscr{L} }{\partial(\partial_{\mu} \psi_a)}-\partial_{\nu}\left(\frac{\partial\mathscr{L} }{\partial(\partial_{\nu}\partial_{\mu} \psi_a)}  \right) \right]\Phi_{\beta a}(x)+\frac{\partial\mathscr{L} }{\partial(\partial_{\mu}\partial_{\nu} \psi_a)}\partial_\nu\Phi_{\beta a}(x)
+\label{corrinoss}
+\end{equation}
+$$ -X_{\ \beta}^\alpha(x)\left\{\ \ \ \left[\frac{\partial \mathscr{L} }{\partial(\partial_{\mu} \psi_a)}-\partial_{\nu}\left(\frac{\partial\mathscr{L} }{\partial(\partial_{\nu}\partial_{\mu} \psi_a)}  \right) \right]\partial_\alpha\psi_a +\ \frac{\partial\mathscr{L} }{\partial(\partial_{\mu}\partial_{\nu} \psi_a)}\partial_\alpha\partial_\nu\psi_a-\delta^\mu_{\ \alpha}\mathscr{L}   \right\}$$
+\\
+
+Integrando en el espacio la ecuación de continuidad \eqref{congene}:
+\begin{equation}
+\int\limits_{\Omega}dx^{3}\partial_\mu J^\mu_{\ \beta}=\int\limits_{\Omega}dx^{3}(\partial_0 J^0_{\ \beta}+\partial_k J^k_{\ \beta})=0 
+\label{gauus}
+\end{equation}
+Al utilizar el teorema de Gauus, el término:
+\begin{equation}
+\int\limits_{\Omega}dx^{3}(\partial_k J^k_{\ \beta})=\oint\limits_{s}d_{s_k}J^k_{\ \beta}
+\end{equation}
+siendo $s$ la superficie cerrada que es contorno del volumen $\Omega$. El volumen de integración $\Omega$ es arbitrario, y lo podemos escoger tan grande como se deseé, al considerar campos \mbox{completamente} asintóticos, es decir:
+\begin{equation}
+\left.\begin{array}{lcl}
+\psi_a(\textbf{x},t)\rightarrow0 \\
+\partial_k \psi_a(\textbf{x},t)\rightarrow0 \\
+\end{array}
+\right\} \mbox{cuando}\ |\textbf{x}|\rightarrow\infty
+\label{asindos}
+\end{equation}
+se obtiene, que cuando $|\textbf{x}|\rightarrow\infty$:
+\begin{equation}
+\int\limits_{\Omega}dx^{3}(\partial_k J^k_{\ \beta})=\oint\limits_{s}d_{s_k}J^k_{\ \beta}\rightarrow0  
+\end{equation}
+Por lo tanto, \eqref{gauus} se expresa como:
+\begin{equation}
+\int\limits_{\Omega}dx^{3}\partial_0 J^0_{\ \beta}=\frac{d}{dt}\int\limits_{\Omega}dx^{3}J^0_{\ \beta}=\frac{d}{dt}Q_{\beta}= 0 
+\end{equation}
+la cantidad:
+\begin{equation}
+Q_{\beta}=\int\limits_{\Omega}dx^{3}J^0_{\ \beta}=\mbox{constante} \ \ \ \ \beta=1,2,..,r
+\label{carnoem}
+\end{equation}
+se denomina carga de Noether.
+\\
+
+La ecuación de continuidad establece la existencia de $r$ cantidades conservadas $Q_{\beta}$ asociadas al sistema físico, y son consecuencia de la invariancia de la acción ante transformaciones de coordenadas y campos \eqref{traninfi}. 
+\\
+
+Así, el primer teorema de Noether establece que si el Lagrangiano es invariante ante una transformación infinitesimal, generada por un grupo finito que depende \mbox{de $r$} parámetros \mbox{constantes}, existen $r$ cantidades independientes asociadas al sistema físico descrito por los campos $\psi_a(x)$ que se conservan \cite{ noether,general, greiner, emmy}. 
+\\
+
+La corriente $J^\mu_{\ \beta}$ puede ser generalizada para Lagrangianos de orden m en las derivadas en la forma \cite{general}:
+{\small\begin{equation}
+J^\mu_{\ \beta}=\sum\limits_{i=o}^{m-1}\ \sum\limits_{j=o}^{m-(i+1)}(-1)^j\prod\limits_{k=o}^{j}\partial_{\mu_k}\left(\frac{\partial\mathscr{L}}{\partial\left(\partial_\mu\prod\limits_{k=o}^{j}\partial_{\mu_k}\prod\limits_{l=o}^{i}\partial_{\nu_l}\psi_a\right)}\right)\prod\limits_{l=o}^{i}\partial_{\nu_l}\Phi_{\beta a}(x)
+\end{equation}
+$$-\left\{ \sum\limits_{i=o}^{m-1}\ \sum\limits_{j=o}^{m-(i+1)}(-1)^j\prod\limits_{k=o}^{j}\partial_{\mu_k}\left(\frac{\partial\mathscr{L}}{\partial\left(\partial_\mu\prod\limits_{k=o}^{j}\partial_{\mu_k}\prod\limits_{l=o}^{i}\partial_{\nu_l}\psi_a\right)}\right)\partial_\alpha\prod\limits_{l=o}^{i}\partial_{\nu_l}\psi_a\ -\ \mathscr{L}\delta_{\ \alpha}^\mu \right\}X_{\ \beta}^\alpha(x)$$}
+\section{Translación espacio-temporal}
+La homogeneidad en el espacio de Minkowski es la invariancia del Lagrangiano ante translaciones en el espacio-tiempo, como consecuencia, la carga asociada al sistema físico es el cuadri-momentum \cite{ noether, greiner}.
+\\
+
+Las translaciones en las coordenadas del \mbox{espacio-tiempo} son representadas en la forma: 
+\begin{equation}
+x^{'\mu}=x^{\mu}+\in^{\mu}
+\label{trans}
+\end{equation}
+donde $\in^{\mu}$ es un cuadrivector infinitesimal constante, de manera que son \mbox{cuatro} el número de parámetros que caracterizan la transformación y de \mbox{acuerdo} al primer \mbox{teorema} de Noether existen cuatro cargas asociadas al \mbox{campo} que se conservan. Como los campos son \mbox{invariantes} ante translaciones en el \mbox{espacio-tiempo \mbox{$\psi{_a}^{'}(x^{'})=\psi_a(x)$,}} las variaciones en coordenadas y campos \mbox{correspondientes} a la simetría de \mbox{homogeneidad} en el espacio de Minkowski, \mbox{son \cite{ noether, greiner}:}  
+\begin{equation}
+\delta x^{\mu}=x^{'\mu}-x^{\mu}=\in^{\mu}=\in^{\beta}\delta_{\ \beta}^\mu\ \ \ \ \ \ \ \ \ \delta\psi_a(x)=0 
+\label{vartrans}
+\end{equation}
+de esta forma los generadores del grupo de simetría de homogeneidad en el \mbox{espacio-tiempo}, corresponden a \cite{general}:
+\begin{equation}
+X_{\ \beta}^\mu(x)=\delta_{\ \beta}^\mu \ \ \ \ \ \ \ \ \ \Phi_{\beta a(x)}=0
+\end{equation}
+como $\delta_{\ \beta}^\mu$ es un tensor constante, la ecuación de continuidad \eqref{congene} asociada a la simetría de homogeneidad del espacio de Minkowski es escrita de la siguiente manera:
+\begin{equation}
+\in^{\beta}\delta_{\ \beta}^\alpha\partial_\mu\theta^{\mu}_{\ \alpha}=\partial_\mu\theta^{\mu}_{\ \alpha}=0 
+\end{equation}
+donde $\theta^{\mu}_{\ \alpha}$ es la corriente de Noether asociada al campo, la cual se denomina tensor momentum-energía y se define como:
+\begin{equation}
+\theta^{\mu}_{\ \alpha}= \ \ \left[\frac{\partial \mathscr{L} }{\partial(\partial_{\mu} \psi_a)}-\partial_{\nu}\left(\frac{\partial\mathscr{L} }{\partial(\partial_{\nu}\partial_{\mu} \psi_a)}  \right) \right]\partial_\alpha\psi_a +\ \frac{\partial\mathscr{L} }{\partial(\partial_{\mu}\partial_{\nu} \psi_a)}\partial_\alpha\partial_\nu\psi_a-\delta^\mu_{\ \alpha}\mathscr{L}
+\label{temoend}
+\end{equation}
+La generalización para el tensor momentum-energía para Lagrangianos de orden $m$ en las derivadas es \cite{general}:
+{\small
+\begin{equation}
+\theta^{\mu}_{\ \alpha}= \sum\limits_{i=o}^{m-1}\ \sum\limits_{j=o}^{m-(i+1)}(-1)^j\prod\limits_{k=o}^{j}\partial_{\mu_k}\left(\frac{\partial\mathscr{L}}{\partial\left(\partial_\mu\prod\limits_{k=o}^{j}\partial_{\mu_k}\prod\limits_{l=o}^{i}\partial_{\nu_l}\psi_a\right)}\right)\partial_\alpha\prod\limits_{l=o}^{i}\partial_{\nu_l}\psi_a\ -\ \mathscr{L}\delta_{\ \alpha}^\mu
+\end{equation}}\\
+De acuerdo al primer teorema de Noether, la carga del campo como consecuencia de la homogeneidad del espacio-tiempo, que resulta al reemplazar $\mu=0$ en la \mbox{ecuación \eqref{temoend}} y sustituir en la \mbox{relación \eqref{carnoem},} es de la \mbox{forma \cite{ noether, greiner}:}
+\begin{equation}
+P_{\alpha}=\int\limits_{\Omega}dx^{3}\theta^{0}_{\ \alpha} \ \ \ \ \ \ \alpha=0,1,2,3
+\label{cuadri}
+\end{equation}
+El cuadrivector \mbox{$P_{\alpha}=(E,-\textbf{P})$}; se define como el cuadri-momentum asociado al campo, este tiene la siguiente interpretación: \mbox{$P_{0}=E$} es la energía del campo \mbox{y $P_{j}=\textbf{P}$} con \mbox{$j=1,2,3;$} es su momentum lineal \cite{ noether, greiner, emmy}.
+\\
+
+Para un sistema físico conservativo, la energía es equivalente al Hamiltoniano canónico, \mbox{$E=H_c=\int\limits_{\Omega}dx^{3}\theta^{0}_{\ 0}$}, este tiene la siguiente estructura, (ver Apéndice D): 
+{\small\begin{equation}
+H_c=\int\limits_{\Omega}dx^{3}\ \left(\\\ \left[\frac{\partial \mathscr{L} }{\partial\dot \psi_a}-\partial_{0}\left(\frac{\partial\mathscr{L} }{\partial\ddot \psi_a}  \right)-2\partial_{k}\left(\frac{\partial\mathscr{L} }{\partial(\partial_{k}\dot \psi_a)}  \right) \right] \dot\psi_a +\ \frac{\partial\mathscr{L} }{\partial\ddot \psi_a}\ \ddot\psi_a\ -\mathscr{L}\right) 
+\end{equation}}\\
+El Hamiltoniano canónico permite describir la dinámica del sistema físico en el espacio de fase $(\psi_a,\dot\psi_a,\pi^{a}_{\psi},\pi^{a}_{\dot\psi})$; donde $\pi^{a}_{\psi}$ y $\pi^{a}_{\dot\psi}$ son definidos como los momentos canónicos conjugados asociados a las variables $\psi_a$ y $\dot\psi_a$ respectivamente, $\dot\psi_a$ es considerada como una variable canónica independiente. Los momentos   
+$\pi^{a}_{\psi}$ y $\pi^{a}_{\dot\psi}$ son definidos por:
+\begin{equation}
+\pi^{a}_{\psi}=\frac{\partial \mathscr{L} }{\partial\dot \psi_a}-\partial_{0}\left(\frac{\partial\mathscr{L} }{\partial\ddot \psi_a}  \right)-2\partial_{k}\left(\frac{\partial\mathscr{L} }{\partial(\partial_{k}\dot \psi_a)}\right)\ \ \ \ \ \ \ \ \ \ \ \pi^{a}_{\dot\psi}=\frac{\partial \mathscr{L} }{\partial\ddot \psi_a} 
+\label{mome}
+\end{equation}
+En función de los momentos canónicos, el Hamiltoniano es \cite{general,podolsky}:
+\begin{equation}
+H_c=\int\limits_{\Omega}dx^{3}\left(\pi^{a}_{\psi}\dot\psi_a\ +\pi^{a}_{\dot\psi} \ddot\psi_a-\mathscr{L}\right)=\int\limits_{\Omega}dx^{3}\mathscr{H} 
+\end{equation}
+donde $\mathscr{H}=\pi^{a}_{\psi}\dot\psi_a\ +\pi^{a}_{\dot\psi} \ddot\psi_a-\mathscr{L}$, es la densidad Hamiltoniana canónica.
+\\
+
+El momentum lineal asociado al sistema físico representado por campos es $P_{j}={\bf P}$ y se define como \cite{ noether, greiner,podolsky}, (ver Apéndice E):
+\begin{equation}
+P_{j}=\mathbf{P}=\int\limits_{\Omega}dx^{3}\theta^{0}_{\ j}=\int\limits_{\Omega}dx^{3}\left( \ \pi^{a}_{\psi}\partial_j\psi_a +\ \pi^{a}_{\dot\psi}\partial_j\dot\psi_a\ \\ \right) 
+\end{equation}
+En general para Lagrangianos de orden $m$ en las derivadas, el momento canónico asociado al campo $\psi_{a_{(l-1)}}$ es $\pi^{a}_{\psi_{(l-1)}}$ y tiene la forma \cite{general}:  
+\begin{equation}
+\pi^{a}_{\psi_{(l-1)}}=\sum\limits_{i=o}^{m-l}(-1)^i\prod\limits_{k=o}^{i}\left(\frac{d}{dt}\right)^k\left[\frac{\partial\mathscr{L}}{\partial\left(\prod\limits_{k=o}^{i}\left(\frac{d}{dt}\right)^k\psi_{a_l}\right)}\right]
+\label{moca}
+\end{equation}
+$$+\sum\limits_{j=l+1}^{m}\sum\limits_{i=l+1}^{j}(-1)^{i+l+1}C_{i,j}\prod\limits_{k=o}^{i-l-1}\left(\frac{d}{dt}\right)^k\  \prod\limits_{n=o}^{j-i+1}\partial_{x_n}\left[\frac{\partial\mathscr{L}}{\partial\left(\prod\limits_{k=o}^{i-l-1}\left(\frac{d}{dt}\right)^k\ \prod\limits_{n=o}^{j-i+1}\partial_{x_n}{\psi}_{a_l}\right)}\right]$$
+donde: 
+\begin{equation}
+\psi_{a_l}=\frac{d^l}{dt^l}\psi_a \ \ \ \ l=1,2,...,m \ \ \ \ \ \psi_{a_0}=\psi_a \ \ \ \ \ a=1,2,..,N 
+\label{cavar}
+\end{equation}
+Los coeficientes $C_{i,j}$ en la expresión \eqref{moca} se obtiene de la siguiente figura:
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.70]{Imagenes/tablaco.jpg}
+\caption{\textit{Figura para obtener los coeficientes $C_{i,j}$; las $i's$ corren en forma diagonal y las $j's$ en forma vertical. Por ejemplo el coeficiente $C_{3,4}=6.$}}
+\label{moca}
+ \end{figure}
+De esta manera el Hamiltoniano canónico y el momentum lineal para sistemas físicos des\-critos por campos con Lagrangianos de orden $m$ en las derivadas, son definidos de la \mbox{siguiente} manera \cite{general, podolsky}:
+\begin{equation}
+H_c=\int\limits_{\Omega}dx^{3} \left(\ \pi^{a}_{\psi}  \dot\psi_a\ +\pi^{a}_{\dot\psi}  \ddot\psi_a+.....+\pi^{a}_{\psi_{(m-1)}}\psi_{a_m}-\mathscr{L}\ \right)=\int\limits_{\Omega}dx^{3}\mathscr{H} 
+\label{hamil}
+\end{equation}
+\begin{equation}
+P_{j}=\int\limits_{\Omega}dx^{3}\left( \ \pi^{a}_{\psi}\partial_j\psi_a +\ \pi^{a}_{\dot\psi}\partial_j\dot\psi_a+.....+\pi^{a}_{\psi_{(m-1)}}\partial_j\psi_{a_{(m-1)}}\ \\ \right) 
+\label{momenli}
+\end{equation}
+\section{Rotación espacio-temporal}
+Las coordenadas de un mismo evento medidas en diferentes sistemas de referencia inerciales se relacionan por medio de las transformaciones de Lorentz, las cuales son interpretadas como una rotación continua en el espacio-tiempo y son escritas matricialmente en la forma \cite{noether,rela}:
+\begin{equation}
+x^{'\mu}=a_{\ \nu}^{\mu}x^{\nu}
+\label{lore}
+\end{equation}
+Las transformaciones de Lorentz son construidas a partir de rotaciones \mbox{infinitesimales} en el espacio de Minkowski \cite{noether, greiner}:
+\begin{equation}
+x^{'\mu}=x^{\mu}+\delta W^{\mu \nu}x_\nu
+\end{equation}
+donde $\delta W^{\mu \nu}=-\delta W^{\nu\mu} $, es un tensor infinitesimal constante que tiene la propiedad de ser antisimétrico \mbox{con} el fin de garantizar la invariancia de la distancia \mbox{infinitesimal} entre eventos: \mbox{$ds^2=\eta_{\mu \nu}dx^\mu dx^\nu=\eta_{\mu \nu}dx^{\mu'} dx^{\nu'}$} \cite{rela,greiner}.
+\\
+
+Como consecuencia de la transformaciones infinitesimales de Lorentz, los campos se comportan en la \mbox{forma \cite{noether,greiner}:}
+\begin{equation}
+\psi_{a}^{'}(x^{'})=\psi_{a}(x)+\frac{1}{2}\delta W^{\mu \nu}(I_{\mu \nu})_{ab}\psi_{b}(x)
+\end{equation}
+$I_{\mu \nu}$ son conocidos como generadores infinitesimales de las transformaciones de Lorentz y poseen la propiedad de antisimétria:
+\begin{equation}
+I_{\mu \nu}=-I_{\nu\mu} 
+\label{gene}
+\end{equation}
+la representación matricial de los generadores $(I_{\mu \nu})_{ab}$, depende del tipo de \mbox{campo} estudiado (campo escalar, campo vectorial, campo de Dirac, etc) y \mbox{como} \mbox{consecuencia} de \eqref{gene} existen seis generadores independientes: tres \mbox{correspondientes} a rotaciones espaciales $(I_{21}, I_{31}, I_{32})$ y tres asociados a rotaciones en el \mbox{espacio-tiempo} $(I_{10}, I_{20}, I_{30})$. Los generadores  $I_{\mu \nu}$ satisfacen las siguientes relaciones de conmutación \cite{greiner}:
+\begin{equation}
+\left[\ I_{\alpha\beta}\ ,\ I_{\gamma\delta}\ \right]\ =\ -\eta_{\alpha\gamma}I_{\beta\delta}+\eta_{\alpha\delta}I_{\beta\gamma}+\eta_{\beta\gamma}I_{\alpha\delta}-\eta_{\beta\delta}I_{\alpha\gamma} 
+\end{equation}
+La isotropía en el espacio de Minkowski es la invariancia del Lagrangiano ante una rotación infinitesimal de Lorentz, como consecuencia, las variaciones en coordenadas y campos co\-rrespondientes a la simetría de isotropía del espacio-tiempo son \cite{greiner}:
+\begin{equation}
+\delta x^\mu=x^{'\mu}-x^{\mu}=\delta W^{\mu \nu}x_\nu 
+\label{rotvar}
+\end{equation}
+$$\delta \psi_a(x)=\psi_{a}^{'}(x^{'})-\psi_{a}(x)=\frac{1}{2}\delta W^{\mu \nu}(I_{\mu \nu})_{ab}\psi_{b}(x)$$
+las trasformaciones \eqref{rotvar}, están caracterizadas por seis generadores independientes y de acuerdo al primer teorema de Noether existen seis cargas asociadas al sistema físico que se conservan \cite{greiner}.  
+\\
+
+Los generadores del grupo de simetría de isotropía en el espacio-tiempo tienen la forma:
+\begin{equation}
+X_{\ \beta}^\mu(x)=x_\beta \ \ \ \ \ \ \ \ \ \Phi_{\beta a(x)}=\frac{1}{2}(I_{\mu \beta})_{ab}\psi_{b}(x)
+\end{equation}
+como consecuencia, la ecuación de continuidad \eqref{congene} asociada a la isotropía del espacio de Minkowski, teniendo en cuenta la definición de tensor \mbox{momentum-energía \eqref{temoend},} es:
+\begin{equation}
+\frac{1}{2}\delta W^{\alpha\beta}\partial^\mu\left( \left[\frac{\partial \mathscr{L} }{\partial(\partial^{\mu} \psi_a)}-\partial_{\nu}\left(\frac{\partial\mathscr{L} }{\partial(\partial_{\nu}\partial^{\mu} \psi_a)}  \right) \right](I_{\alpha\beta})_{ab}\psi_{b}\right. 
+\label{conrot}
+\end{equation}
+$$\left.+  \frac{\partial\mathscr{L} }{\partial(\partial^{\mu}\partial_{\nu} \psi_a)}(I_{\alpha\beta})_{ab}\partial_\nu\psi_{b}-2x_\beta\theta_{\mu \alpha}\right)=0$$
+al simetrizar el producto:
+\begin{equation}
+\delta W^{\alpha\beta}\theta_{\mu\alpha}x_\beta=\delta W^{\alpha\beta}\left[\ \frac{1}{2}\left(\ \theta_{\mu\alpha}x_\beta +\theta_{\mu\beta}x_\alpha  \right)+\frac{1}{2}\left(\ \theta_{\mu\alpha}x_\beta -\theta_{\mu\beta}x_\alpha  \right) \right]=
+\end{equation}
+$$=\frac{1}{2}\delta W^{\alpha\beta}\left(\ \theta_{\mu\alpha}x_\beta -\theta_{\mu\beta}x_\alpha  \right) $$
+y dado que $\delta W^{\alpha\beta}$ es un tensor constante, se obtiene que la ecuación de \mbox{continuidad \eqref{conrot}}, se escribe de la forma:
+\begin{equation}
+\partial_\mu\left( \left[\frac{\partial \mathscr{L} }{\partial(\partial_{\mu} \psi_a)}-\partial_{\nu}\left(\frac{\partial\mathscr{L} }{\partial(\partial_{\nu}\partial_{\mu} \psi_a)}  \right) \right](I_{\alpha\beta})_{ab}\psi_{b}\right.
+\end{equation}
+$$\left.+\ \frac{\partial\mathscr{L} }{\partial(\partial_{\mu}\partial_{\nu} \psi_a)}(I_{\alpha\beta})_{ab}\partial_\nu\psi_{b}+\theta_{\ \beta}^\mu x_\alpha-\theta_{\ \alpha}^\mu x_\beta  \right)=0  $$
+La corriente de Noether, asociada a la simetría de isotropía del espacio-tiempo, es un \mbox{tensor} de tercer orden conocido como densidad tensorial de momentum angular-spin, este es definido de la forma:
+\begin{equation}
+\mathscr{M}_{\ \alpha\beta}^\mu=\left[\frac{\partial \mathscr{L} }{\partial(\partial_{\mu} \psi_a)}-\partial_{\nu}\left(\frac{\partial\mathscr{L} }{\partial(\partial_{\nu}\partial_{\mu} \psi_a)}  \right) \right](I_{\alpha\beta})_{ab}\psi_{b}\ 
+\label{temoande} 
+\end{equation}
+$$+\ \frac{\partial\mathscr{L} }{\partial(\partial_{\mu}\partial_{\nu} \psi_a)}(I_{\alpha\beta})_{ab}\partial_\nu\psi_{b}+\theta_{\ \beta}^\mu x_\alpha-\theta_{\ \alpha}^\mu x_\beta $$
+y satisface la ecuación de continuidad:
+\begin{equation}
+\partial_\mu \mathscr{M}^{\mu}_{\ \alpha\beta}=0
+\label{contenmo}
+\end{equation}
+La generalización de la densidad tensorial de momentum angular-spin para Lagrangianos de orden $m$ en las derivadas se expresa como \cite{general}:
+{\small
+\begin{equation}
+\mathscr{M}_{\ \alpha\beta}^\mu=\sum\limits_{i=o}^{m-1}\ \sum\limits_{j=o}^{m-(i+1)}(-1)^j\prod\limits_{k=o}^{j}\partial_{\mu_k}\left(\frac{\partial\mathscr{L}}{\partial\left(\partial_\mu\prod\limits_{k=o}^{j}\partial_{\mu_k}\prod\limits_{l=o}^{i}\partial_{\nu_l}\psi_a\right)}\right)(I_{\alpha\beta})_{ab}\prod\limits_{l=o}^{i}\partial_{\nu_l}\psi_b 
+\end{equation}}
+$$+\theta_{\ \beta}^\mu x_\alpha-\theta_{\ \alpha}^\mu x_\beta$$
+De acuerdo al primer teorema de Noether, la carga asociada al sistema físico como consecuencia de la isotropía del \mbox{espacio-tiempo,} corresponde a: 
+\begin{equation}
+M_{\alpha\beta}=\int\limits_{\Omega}dx^{3}\mathscr{M}_{\ \alpha\beta}^{0}\ \ \ \ \ \ \alpha,\beta=0,1,2,3 
+\end{equation}
+y se denomina tensor de momentum angular-spin, este tensor se lo reescribe de la siguiente forma, (ver Apéndice F) \cite{greiner}: 
+\begin{equation}
+M_{\alpha\beta}=L_{\alpha\beta}+S_{\alpha\beta} 
+\label{angular}
+\end{equation}
+donde:
+\begin{equation}
+L_{\alpha\beta}=\int\limits_{\Omega}dx^{3}[\ \pi^{a}_{\psi}(x_{\alpha}\partial_{\beta}\psi_a-x_{\beta}\partial_{\alpha}\psi_a)+\pi^{a}_{\dot\psi}(x_{\alpha}\partial_{\beta}\dot\psi_a-x_{\beta}\partial_{\alpha}\dot\psi_a)  \  ] 
+\label{orbitalm}
+\end{equation}
+\begin{equation}
+S_{\alpha\beta}=\int\limits_{\Omega}dx^{3}\left[\pi^{a}_{\psi}(I_{\alpha\beta})_{ab}\psi_{b}\ +\ \pi^{a}_{\dot\psi}(I_{\alpha\beta})_{ab}\dot\psi_b\right]
+\label{spin}  
+\end{equation}
+$L_{\alpha\beta}$ se denomina tensor de momentum angular y $S_{\alpha\beta}$ es el tensor de spin, la antisimétria del tensor momentum angular-spin $M_{\alpha\beta}=-M_{\beta\alpha}$, (ver Apéndice G), implica que existen seis cargas asociadas al sistema físico que se conservan: tres de momentum angular orbital $L_{ij}$, y tres de spin $S_{ij}$ \cite{greiner}.
+\\
+
+La generalización del tensor de spin y del tensor de momentum angular para Lagrangianos de orden $m$ en las derivadas es \cite{general,podolsky}:
+\begin{equation}
+S_{\alpha\beta}=\int\limits_{\Omega}dx^{3}\left[\ \pi^{a}_{\psi}(I_{\alpha\beta})_{ab}\psi_{b}+\pi^{a}_{\dot\psi}(I_{\alpha\beta})_{ab}\dot\psi_{b}+.......+\pi^{a}_{\psi_{(m-1)}}(I_{\alpha\beta})_{ab}\psi_{b_{(m-1)}}\ \right] 
+\end{equation}
+$$
+L_{\alpha\beta}=\int\limits_{\Omega}dx^{3}\left[\pi^{a}_{\psi}(x_{\alpha}\partial_{\beta}\psi_a-x_{\beta}\partial_{\alpha}\psi_a)+.....+\pi^{a}_{\psi_{(m-1)}}(x_{\alpha}\partial_{\beta}\psi_{a_{(m-1)}}-x_{\beta}\partial_{\alpha}\psi_{a_{(m-1)}})\right]
+$$
+\section{Simetría de Poincaré}
+La simetría de Poincaré es la invariancia del Lagrangiano ante una translación en el espacio-tiempo mas una transformación infinitesimal de \mbox{Lorentz \cite{greiner}}. Bajo el grupo de simetría de Poincaré, las transformaciones en coordenadas y campos son:
+\begin{equation}
+\delta x^{\mu}=\in^{\mu}+\delta W^{\mu \nu}x_\nu\ \ \ \ \ \delta\psi_{a}(x)=\frac{1}{2}\delta W^{\mu \nu}(I_{\mu \nu})_{ab}\psi_{b}(x)   
+\label{poi}
+\end{equation}
+donde $\in^{\mu}$ es un cuadrivector infinitesimal constante que representa la translación espacio-temporal y $\delta W^{\mu \nu}$ es un tensor infinitesimal constante que representa la rotación infinitesimal de Lorentz.   
+\\
+
+La invariancia del Lagrangiano ante el grupo de simetría de Poincaré, teniendo en cuenta la definición de tensor momentum-energía \eqref{temoend} y densidad tensorial de momentum angular-spin \eqref{temoande}, tiene como consecuencia el establecimiento de la siguiente ecuación de continuidad, (ver Apéndice H):
+\begin{equation}
+\partial_\mu J^{\mu}=0  
+\end{equation}
+con:
+\begin{equation}
+J^\mu=\ \frac{1}{2}\delta W^{\alpha\beta}\mathscr{M}_{\ \alpha\beta}^\mu\ -\ \in^{\alpha}\theta_{\ \alpha}^\mu 
+\end{equation}
+De esta manera la carga de Noether asociada al campo es \cite{greiner}:
+\begin{equation}
+Q=\frac{1}{2}\delta W^{\alpha\beta}M_{\alpha\beta}-\in^{\alpha}P_{\alpha}
+\end{equation}
+Por lo tanto la invariancia del Lagrangiano ante el grupo de simetría de Poincaré, establece la existencia de $10$ cantidades conservadas asociadas al campo: la energía, tres componentes de momentum lineal, tres componentes de momentum angular orbital, y tres componentes de spin \cite{greiner}. 
+\\
+
+La invariancia del Lagrangiano ante transformaciones infinitesimales de campos y coordenadas implica la existencia de cargas de Noether asociadas al campo, la carga de Noether se denomina generador de simetría e implica la existencia de un grupo de simetría en las las leyes de la física, de esta manera si $Q$ es la carga conservada, entonces la variación global de campos que deja invariante el Lagrangiano es calculada a partir de \cite{greiner}:
+\begin{equation}
+\overset{\_}{\delta}\psi_a(x)=\psi_a^{'}(x)-\psi_a(x)=\{ \psi_a(x),Q \} 
+\end{equation}
+donde los corchetes de Poisson entre dos variables dinámicas \mbox{$A(x)=A(\psi_a,\dot\psi_a,\pi^{a}_{\psi},\pi^{a}_{\dot\psi})$} y \mbox{$B(y)=B(\psi_a,\dot\psi_a,\pi^{a}_{\psi},\pi^{a}_{\dot\psi})$} definidas en el espacio de fase $(\psi_a,\dot\psi_a,\pi^{a}_{\psi},\pi^{a}_{\dot\psi})$, evaluados en tiempos iguales son definidos en la forma \cite{general, greiner}:
+\begin{equation}
+\{A(x),B(y)\}_{_{x_0=y_0}}=\int\limits_{\Omega}dz^3\left(\frac{\delta A(x)}{\delta\psi_a(z)}\frac{\delta B(y)}{\delta \pi^{a}_{\psi}(z) }-\frac{\delta A(x)}{\delta \pi^{a}_{\psi}(z) }\frac{\delta B(y)}{\delta\psi_a(z)}\right.
+\label{cor}
+\end{equation}
+$$\left.+\frac{\delta A(x)}{\delta \dot\psi_{a}(z)}\frac{\delta B(y)}{\delta \pi^{a}_{\dot\psi}(z)}-\frac{\delta A(x)}{\delta \pi^{a}_{\dot\psi}(z)}\frac{\delta B(y)}{\delta \dot\psi_{a}(z) }\right)$$
+De esta manera \mbox{$-\in^{\mu}P_{\mu}$} es el generador de simetría por translación en el \mbox{espacio-tiempo} y $\frac{1}{2}\delta W^{\alpha\beta}M_{\alpha\beta}$ es el generador de simetría por rotaciones \mbox{infinitesimales} de Lorentz. Los generadores de simetría $P_{\mu}$ y $M_{\alpha\beta}$ cumplen con la siguiente relaciones, conocidas como el álgebra de Poincaré \cite{greiner}:
+\begin{equation}
+\{P_\mu\ ,\ P_v\}=0  
+\end{equation}
+$$\{M_{\mu v} ,\ P_\lambda\}=\eta_{v\lambda}P_\mu-\eta_{\mu\lambda}P_v$$ 
+$$\{M_{\mu v} ,\ M_{\sigma\tau}\}=\eta_{v\sigma}M_{\mu \tau}+\eta_{\mu\tau}M_{v\sigma}-\eta_{v\tau}M_{\mu\sigma}-\eta_{\mu\sigma}M_{v \tau}$$
+\section{Ecuaciones de movimiento de Hamilton}
+La estructura Lagrangiana de una teoría clásica de campos, asocia a un sistema físico una densidad Lagrangiana la cual describe la dinámica de los campos en el espacio de con\-figuraciones, la evolución temporal del sistema físico esta \mbox{determinada} por las ecuaciones de movimiento de Euler-Lagrange, las cuales son deducidas a partir del principio de \mbox{Hamilton} de acción extremal, junto a las condiciones de frontera y campos asintóticos \cite{general, greiner,canoalor,tesis}. 
+\\
+
+En la versión Hamiltoniana o canónica de una teoría clásica de campos, la dinámica del \mbox{sistema} físico en el espacio de fase esta determinada por el \mbox{Hamiltoniano} canónico, el cual, para sistemas conservativos corresponde a la componente $P_0$ del cuadri-momentum del \mbox{campo} $P_\mu$. El \mbox{cuadri-momentum} es deducido a partir de la invariancia del Lagrangiano bajo una translación en el espacio-tiempo \cite{ noether, greiner, emmy}.
+\\
+
+La evolución temporal del sistema físico en el espacio de fase esta determinada por las \mbox{ecuaciones} de Hamilton, las cuales son deducidas a partir del principio de Hamilton modificado, mas las condiciones de frontera. La estructura Hamiltoniana es equivalente a la versión Lagrangiana y su importancia radica en la cuantización canónica de campos \cite{general,hamilton,canoalor,tesis}. 
+\\
+
+El espacio de fase que determina la evolución temporal de un sistema físico descrito por una densidad Lagrangiana de orden $m$ en las derivadas, esta determinado por los \mbox{campos} \mbox{linealmente} \ independientes \ $(\psi_a,\dot \psi_a,\ddot \psi_a,\dotso,\overset{_{m-1}}{\psi}_a)$\ \ y \ sus \ momentos \ canónicos \ asociados 
+\\$(\pi^{a}_{\psi},\pi^{a}_{\dot\psi},\pi^{a}_{\ddot\psi},\dotso,\pi^{a}_{\psi_{(m-1)}})$, que forman un conjunto de variables canónicas independientes, de manera que el espacio de fase de dimensión $2Nm$ que define la estructura Hamiltoniana es:
+\begin{equation}
+(\psi_a,\dot \psi_a,\ddot \psi_a,\dotso,\overset{_{m-1}}{\psi}_a,\pi^{a}_{\psi},\pi^{a}_{\dot\psi},\pi^{a}_{\ddot\psi},\dotso,\pi^{a}_{\psi_{(m-1)}})=(\psi_{a_{(l-1)}},\pi^{a}_{\psi_{(l-1)}})
+\label{fase} 
+\end{equation}
+donde: 
+\begin{equation}
+\psi_{a_l}=\frac{d^l}{dt^l}\psi_a \ \ \ \ l=1,2,...,m \ \ \ \ \ \psi_{a_0}=\psi_a \ \ \ \ \ a=1,2,..,N 
+\end{equation}
+Para determinar la evolución temporal de un sistema físico descrito por campos en el espacio de fase, consideremos una densidad Lagrangiana de orden dos en las derivadas:
+\begin{equation}
+\mathscr{L}[\psi_a(x),\partial_\mu\psi_a(x),\partial_\mu\partial_\nu\psi_a(x),x] 
+\end{equation} 
+De acuerdo al teorema de Noether, la carga conservada asociada al campo como \mbox{consecuencia} de la invariancia del Lagrangiano ante una translación en el \mbox{espacio-tiempo} es el cuadri-momentum $P_\mu$, la componente $P_0$ corresponde al Hamiltoniano canónico, y tiene la siguiente estructura \cite{general,greiner,hamilton}:
+{\small\begin{equation}
+H_c=\int\limits_{\Omega}dx^{3}\ \left(\\\ \left[\frac{\partial \mathscr{L} }{\partial\dot \psi_a}-\partial_{0}\left(\frac{\partial\mathscr{L} }{\partial\ddot \psi_a}  \right)-2\partial_{k}\left(\frac{\partial\mathscr{L} }{\partial(\partial_{k}\dot \psi_a)}  \right) \right] \dot\psi_a +\ \frac{\partial\mathscr{L} }{\partial\ddot \psi_a}\ \ddot\psi_a\ -\mathscr{L}\right) 
+\end{equation}}\\
+El Hamiltoniano canónico permite describir la dinámica del sistema físico en el espacio de fase $(\psi_a,\dot\psi_a,\pi^{a}_{\psi},\pi^{a}_{\dot\psi})$, donde $\pi^{a}_{\psi}$ y $\pi^{a}_{\dot\psi}$ son definidos como los momentos canónicos conjugados asociados a las variables $\psi_a$ y $\dot\psi_a$ respectivamente. Los momentos $\pi^{a}_{\psi}$ y $\pi^{a}_{\dot\psi}$ son definidos por:
+\begin{equation}
+\pi^{a}_{\psi}=\frac{\partial \mathscr{L} }{\partial\dot \psi_a}-\partial_{0}\left(\frac{\partial\mathscr{L} }{\partial\ddot \psi_a}  \right)-2\partial_{k}\left(\frac{\partial\mathscr{L} }{\partial(\partial_{k}\dot \psi_a)}\right)\ \ \ \ \ \ \ \ \ \ \ \pi^{a}_{\dot\psi}=\frac{\partial \mathscr{L} }{\partial\ddot \psi_a} 
+\end{equation}
+En función de los momentos canónicos, el Hamiltoniano es \cite{general,podolsky}:
+\begin{equation}
+H_c=\int\limits_{\Omega}dx^{3}\left(\pi^{a}_{\psi}\dot\psi_a\ +\pi^{a}_{\dot\psi} \ddot\psi_a-\mathscr{L}\right)=\int\limits_{\Omega}dx^{3}\mathscr{H} 
+\end{equation}
+donde $\mathscr{H}$ es la densidad Hamiltoniana canónica la cual esta definida en el espacio de fase:
+\begin{equation}
+\mathscr{H}(\psi_a,\dot\psi_a,\pi^{a}_{\psi},\pi^{a}_{\dot\psi})=\pi^{a}_{\psi} \ \dot\psi_a\ +\ \pi^{a}_{\dot\psi} \ \ddot\psi_a -\ \mathscr{L} 
+\label{hamillag}
+\end{equation}
+El Hamiltoniano canónico permite pasar del espacio de configuraciones al espacio de fase, es decir del formalismo Lagrangiano al Hamiltoniano \cite{general,hamilton,canoalor,tesis}. De esta manera utilizando la expresión \eqref{hamillag}, la densidad Lagrangiana toma la forma:
+\begin{equation}
+\mathscr{L}=\pi^{a}_{\psi} \ \dot\psi_a\ +\ \pi^{a}_{\dot\psi} \ \ddot\psi_a -\ \mathscr{H}(\psi_a,\dot\psi_a,\pi^{a}_{\psi},\pi^{a}_{\dot\psi})
+\label{laghal} 
+\end{equation}
+reemplazando la densidad Lagrangiana en la funcional de acción \eqref{acmos}, se obtiene:
+\begin{equation}
+A[\psi_a,\dot\psi_a,\pi^{a}_{\psi},\pi^{a}_{\dot\psi}]=\int\limits_{\sigma}dx^4\left[\ \ \pi^{a}_{\psi} \ \dot\psi_a\ +\ \pi^{a}_{\dot\psi} \ \ddot\psi_a -\ \mathscr{H}(\psi_a,\dot\psi_a,\pi^{a}_{\psi},\pi^{a}_{\dot\psi})\ \ \right] 
+\label{acmo}
+\end{equation}
+Para deducir las ecuaciones de movimiento en la estructura canónica se utiliza el principio de Hamilton modificado \cite{general,canoalor,tesis,hamilmodi}:
+\begin{center}
+\fbox{ \parbox{0.9\linewidth}{\textit{La trayectoria que sigue un sistema físico representado por campos, en el espacio de fase entre los tiempos $[t_1,t_2]$, es aquella que hace extremal la funcional de acción \eqref{acmo}.
+\begin{equation}
+\delta A[\psi_a,\dot\psi_a,\pi^{a}_{\psi},\pi^{a}_{\dot\psi}]=0 
+\label{hacam}
+\end{equation}
+}}}
+\end{center}
+la condición de acción extremal se debe cumplir bajo las condiciones de frontera:
+\begin{equation}
+\delta \psi_a(\textbf{x},t_1)=\delta \psi_a(\textbf{x},t_2)=0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \delta \dot \psi_a(\textbf{x},t_1)=\delta\dot  \psi_a(\textbf{x},t_2)=0 
+\label{fronterascamddd}
+\end{equation}
+La acción es funcional de los campos linealmente independientes $(\psi_a,\dot\psi_a,\pi^{a}_{\psi},\pi^{a}_{\dot\psi})$; de manera que
+al realizar la variación de la acción se debe realizar variaciones independientes de $\delta\psi_a$, $\delta\dot\psi_a$, $\delta\pi^{a}_{\psi}$ y $\delta\pi^{a}_{\dot\psi}$; de esta manera:
+\begin{equation}
+\delta A=\int\limits_{\sigma}dx^4\left[\delta\pi^{a}_{\psi}\dot\psi_a+\pi^{a}_{\psi}\delta\dot\psi_a+\delta\pi^{a}_{\dot\psi}\ddot\psi_a+\pi^{a}_{\dot\psi}\delta\ddot\psi_a \right.
+\end{equation}
+$$\left.-\frac{\partial \mathscr{H}}{\partial\psi_a}\delta\psi_a-\frac{\partial \mathscr{H}}{\partial\dot\psi_a}\delta\dot\psi_a-\frac{\partial \mathscr{H}}{\partial\pi^{a}_{\psi}}\delta\pi^{a}_{\psi}-\frac{\partial \mathscr{H}}{\partial\pi^{a}_{\dot\psi}}\delta\pi^{a}_{\dot\psi}\right]$$
+utilizando las siguientes expresiones:
+\begin{equation}
+\pi^{a}_{\psi}\delta\dot\psi_a=\frac{d}{dt}(\delta\psi_a\pi^{a}_{\psi})-\delta\psi_a\dot\pi^{a}_{\psi}\ \ \ \ \ \  \ \pi^{a}_{\dot\psi}\delta\ddot\psi_a=\frac{d}{dt}(\delta\dot\psi_a\pi^{a}_{\dot\psi})-\delta\dot\psi_a\dot\pi^{a}_{\dot\psi} 
+\end{equation}
+se obtiene:
+\begin{equation}
+\delta A=\int\limits_{\sigma}dx^4\left[\delta\pi^{a}_{\psi}\left(\dot\psi_a-\frac{\partial \mathscr{H}}{\partial\pi^{a}_{\psi}}\right)+\delta\pi^{a}_{\dot\psi}\left(\ddot\psi_a-\frac{\partial \mathscr{H}}{\partial\pi^{a}_{\dot\psi}}\right)-\delta\psi_a\left(\dot\pi^{a}_{\psi}+\frac{\partial \mathscr{H}}{\partial\psi_a}\right)\right.
+\end{equation}
+$$-\delta\dot\psi_a\left(\dot\pi^{a}_{\dot\psi}+\frac{\partial \mathscr{H}}{\partial\dot\psi_a}\right)+\left.\frac{d}{dt}(\delta\psi_a\pi^{a}_{\psi})+\frac{d}{dt}(\delta\dot\psi_a\pi^{a}_{\dot\psi})\right] $$
+los siguientes términos son nulos:
+\begin{equation}
+\int\limits_{\sigma}dx^4\frac{d}{dt}(\delta\psi_a\pi^{a}_{\psi})=\int\limits_{\Omega}dx^3\int\limits_{t_1}^{t_2}dt\ \frac{d}{dt}(\delta\psi_a\pi^{a}_{\psi})=\int\limits_{\Omega}dx^3(\delta\psi_a\pi^{a}_{\psi})\ |_{t_1}^{t_2}=0
+\end{equation}
+$$\int\limits_{\sigma}dx^4\frac{d}{dt}(\delta\dot\psi_a\pi^{a}_{\dot\psi})=\int\limits_{\Omega}dx^3\int\limits_{t_1}^{t_2}dt\ \frac{d}{dt}(\delta\dot\psi_a\pi^{a}_{\dot\psi})=\int\limits_{\Omega}dx^3(\delta\dot\psi_a\pi^{a}_{\dot\psi})\ |_{t_1}^{t_2}=0$$ 
+como consecuencia de las condiciones de frontera \eqref{fronterascamddd}, de esta manera la variación de la acción es:
+\begin{equation}
+\delta A=\int\limits_{\sigma}dx^4\left[\ \ \delta\pi^{a}_{\psi}\left(\dot\psi_a-\frac{\partial \mathscr{H}}{\partial\pi^{a}_{\psi}}\right)+\delta\pi^{a}_{\dot\psi}\left(\ddot\psi_a-\frac{\partial \mathscr{H}}{\partial\pi^{a}_{\dot\psi}}\right)\right. 
+\end{equation}
+$$\left.-\delta\psi_a\left(\dot\pi^{a}_{\psi}+\frac{\partial \mathscr{H}}{\partial\psi_a}\right)-\delta\dot\psi_a\left(\dot\pi^{a}_{\dot\psi}+\frac{\partial \mathscr{H}}{\partial\dot\psi_a}\right)\ \ \right]=0$$
+Considerando variaciones independientes en los campos $\delta\psi_a$, $\delta\dot\psi_a$, $\delta\pi^{a}_{\psi}$, $\delta\pi^{a}_{\dot\psi}$; se deduce las ecuaciones de movimiento de Hamilton para sistemas físicos representado por campos con Lagrangianos de orden dos en las derivadas \cite{general,canoalor,tesis}:
+\begin{equation}
+\dot\psi_a-\frac{\partial \mathscr{H}}{\partial\pi^{a}_{\psi}}=0\ \ \ \ \ \ \ \ \ \ \ \ \ \dot\psi_a=\frac{\partial \mathscr{H}}{\partial\pi^{a}_{\psi}} 
+\end{equation}
+$$\ddot\psi_a-\frac{\partial \mathscr{H}}{\partial\pi^{a}_{\dot\psi}}=0\ \ \ \ \ \ \ \  \ \ \ddot\psi_a=\frac{\partial \mathscr{H}}{\partial\pi^{a}_{\dot\psi}}$$ 
+$$\dot\pi^{a}_{\psi}+\frac{\partial \mathscr{H}}{\partial\psi_a}=0\ \ \ \ \ \ \ \ \ \ \ \dot\pi^{a}_{\psi}=-\frac{\partial \mathscr{H}}{\partial\psi_a}$$
+$$\dot\pi^{a}_{\dot\psi}+\frac{\partial \mathscr{H}}{\partial\dot\psi_a}=0\ \ \ \ \ \ \ \ \ \ \ \dot\pi^{a}_{\dot\psi}=-\frac{\partial \mathscr{H}}{\partial\dot\psi_a}$$   
+Considerando la siguiente propiedad de derivada funcional \cite{greiner}:
+\begin{equation}
+\frac{\delta}{\delta \psi(y)}\int\limits dx F[\psi(x)]=\frac{\partial F[\psi(y)]}{\partial  \psi(y)} 
+\end{equation}
+las ecuaciones de Hamilton toman la forma \cite{general,canoalor,tesis}:
+\begin{equation}
+\dot\psi_a=\frac{\delta H_c}{\delta \pi^{a}_{\psi}}=\frac{\partial \mathscr{H}}{\partial\pi^{a}_{\psi}}
+\label{haecu} 
+\end{equation}
+$$\ddot\psi_a=\frac{\delta H_c}{\delta \pi^{a}_{\dot\psi}}=\frac{\partial \mathscr{H}}{\partial\pi^{a}_{\dot\psi}}$$ 
+$$\dot\pi^{a}_{\psi}=-\frac{\delta H_c}{\delta \psi_a}=-\frac{\partial \mathscr{H}}{\partial\psi_a}$$
+$$\dot\pi^{a}_{\dot\psi}=-\frac{\delta H_c}{\delta\dot\psi_a}=-\frac{\partial \mathscr{H}}{\partial\dot\psi_a}$$  
+Un elemento importante que se debe definir en el espacio de fase son los paréntesis de Poisson, los cuales son definidos para dos variables \mbox{dinámicas \mbox{$A(x)=A(\psi_a,\dot\psi_a,\pi^{a}_{\psi},\pi^{a}_{\dot\psi})$}} y \mbox{$B(y)=B(\psi_a,\dot\psi_a,\pi^{a}_{\psi},\pi^{a}_{\dot\psi})$}, de la siguiente \mbox{manera} \cite{general,canoalor,tesis}:
+\begin{equation}
+\{A(x),B(y)\}_{x_0=y_0}=\int\limits_{\Omega}dz^3\left(\ \frac{\delta A(x)}{\delta\psi_b(z)}\frac{\delta B(y)}{\delta \pi^{b}_{\psi}(z) }-\frac{\delta A(x)}{\delta \pi^{b}_{\psi}(z) }\frac{\delta B(y)}{\delta\psi_b(z)}\right. 
+\label{parepo}
+\end{equation}
+$$\left.+\frac{\delta A(x)}{\delta \dot\psi_{b}(z)}\frac{\delta B(y)}{\delta \pi^{b}_{\dot\psi}(z) }-\frac{\delta A(x)}{\delta \pi^{b}_{\dot\psi}(z) }\frac{\delta B(y)}{\delta \dot\psi_{b}(z) }\ \right)$$
+estas cantidades son calculadas a tiempos iguales \mbox{$x_0=y_0$}, y cumplen con las siguientes propiedades:
+\begin{equation}
+\mbox{antisimetría:} \ \ \ \  \ \ \  \ \ \ \ \  \ \ \ \ \ \ \ \  \ \ \ \ \  \ \ \ \{A,B\}=-\{B,A\}  
+\end{equation}
+\begin{equation}
+\mbox{producto:}\  \ \ \ \ \ \ \ \ \ \  \ \ \ \{AB,C\}=A\{B,C\}+\{A,C\}B 
+\end{equation}
+\begin{equation}
+\mbox{linealidad:}\ \ \ \ \{c_1A+c_2B,C\}=c_1\{A,C\}+c_2\{B,C\} 
+\end{equation}
+Ahora, si se calcula la evolución temporal de $A(x)$, se obtiene que \cite{general,canoalor,tesis}:
+{\small
+\begin{equation}
+\dot A(x)=\int\limits_{\Omega}dz^3\left(\ \frac{\delta A(x)}{\delta\psi_b(z)}\dot\psi_b(z)+\frac{\delta A(x)}{\delta \dot\psi_{b}(z)}\ddot\psi_b(z)+\frac{\delta A(x)}{\delta \pi^{b}_{\psi}(z) }\dot\pi^{b}_{\psi}(z)+\frac{\delta A(x)}{\delta \pi^{b}_{\dot\psi}(z) }\dot\pi^{b}_{\dot\psi}(z)\ \right) 
+\label{evo}
+\end{equation}}\\
+teniendo en cuanta las ecuaciones de movimiento de Hamilton \eqref{haecu}, se \mbox{reescribe \eqref{evo}} como:
+\begin{equation}
+\dot A(x)=\int\limits_{\Omega}dz^3\left(\ \frac{\delta A(x)}{\delta\psi_b(z)}\frac{\delta H_c}{\delta \pi^{b}_{\psi}(z)}-\frac{\delta A(x)}{\delta \pi^{b}_{\psi}(z) }\frac{\delta H_c}{\delta \psi_b(z)}\right. 
+\end{equation}
+$$\left.+\frac{\delta A(x)}{\delta \dot\psi_{b}(z)}\frac{\delta H_c}{\delta \pi^{b}_{\dot\psi}(z)}-\frac{\delta A(x)}{\delta \pi^{b}_{\dot\psi}(z) }\frac{\delta H_c}{\delta\dot\psi_b(z)}\ \right)$$
+de esta manera se puede expresar la evolución temporal de cualquier variable dinámica $A(x)$ definida en el espacio de fase, en términos de los paréntesis de \mbox{Poisson \eqref{parepo} \cite{general,canoalor,tesis,hamilmodi}:}
+\begin{equation}
+\dot A(x)=\{A(x),H_c\}
+\label{pohal}
+\end{equation}
+Las ecuaciones de movimiento de Hamilton para sistemas físicos descritos por Lagrangianos de  orden dos en las derivadas, teniendo en cuenta \eqref{pohal}, son \cite{general,canoalor,tesis}:
+\begin{equation}
+\dot\psi_a(x)=\{\psi_a(x),H_c\}\ \ \ \ \ \ \ \ \ddot\psi_a(x)=\{\dot\psi_a(x),H_c\}
+\end{equation}
+$$\dot\pi^{a}_{\psi}(x)=\{\pi^{a}_{\psi}(x),H_c\}\ \ \ \ \ \ \ \dot\pi^{a}_{\dot\psi}(x)=\{\pi^{a}_{\dot\psi}(x),H_c\}$$
+es posible mostrar que los paréntesis de Poisson fundamentales no nulos entre los campos $(\psi_a,\dot\psi_a,\pi^{a}_{\psi},\pi^{a}_{\dot\psi})$, se expresan como, (ver Apéndice I) \cite{general,hamilton,canoalor,tesis}:
+\begin{equation}
+\{\psi_a(x),\pi^{b}_{\psi}(y)\}=\delta_{a}^{b}\delta^3(\textbf{x}-\textbf{y})\ \ \ \ \ \ \ \ \ \ \ \{\dot\psi_a(x),\pi^{b}_{\dot\psi}(y)\}=\delta_{a}^{b}\delta^3(\textbf{x}-\textbf{y})       
+\end{equation}
+La generalización de la estructura Hamiltoniana para Lagrangianos de orden $m$ en las derivadas se obtiene en base a la definición del Hamiltoniano \mbox{canónico \eqref{hamil} \cite{general,canoalor,tesis}:}
+\begin{equation}
+H_c=\int\limits_{\Omega}dx^{3}\ \left(\ \pi^{a}_{\psi} \ \dot\psi_a\ +\pi^{a}_{\dot\psi} \ \ddot\psi_a+.....+\pi^{a}_{\psi_{(m-1)}}\psi_{a_m}\ -\ \mathscr{L}\ \right)=\int\limits_{\Omega}dx^{3}\ \mathscr{H}  
+\end{equation}
+junto a la definición de paréntesis de Poisson generalizados evaluados en tiempos iguales \mbox{entre} dos variables dinámicas $A(x)$ y \mbox{$B(y)$} definidas en el espacio de fase $(\psi_{a_{(l-1)}},\pi^{a}_{\psi_{(l-1)}})$ \cite{general,canoalor,tesis}:
+{\small
+\begin{equation}
+\{A(x),B(y)\}_{x_0=y_0}=\int\limits_{\Omega}dz^3\sum\limits_{l=1}^{m}\left(\ \frac{\delta A(x)}{\delta\psi_{b_{(l-1)}}(z)}\frac{\delta B(y)}{\delta \pi^{b}_{\psi_{(l-1)}}(z) }-\frac{\delta A(x)}{\delta \pi^{b}_{\psi_{(l-1)}}(z)}\frac{\delta B(y)}{\delta\psi_{b_{(l-1)}}(z)}\right)
+\label{genepare} 
+\end{equation}}\\
+La evolución temporal de cualquier variable dinámica $A(x)$ definida en el espacio de fase, es:
+\begin{equation}
+\dot A(x)=\{A(x),H_c\} 
+\end{equation}
+y las ecuaciones de movimiento de Hamilton para sistemas físicos representados por campos con Lagrangianos de  orden $m$ en las derivadas, son \cite{general,canoalor,tesis}:
+\begin{equation}
+\dot\psi_{a_{(l-1)}}(x)=\{\psi_{a_{(l-1)}}(x),H_c\}=\frac{\delta H_c}{\delta\pi^{a}_{\psi_{(l-1)}}} =\frac{\partial \mathscr{H}}{\partial\pi^{a}_{\psi_{(l-1)}}}
+\label{ehaalor}
+\end{equation}
+$$\ \dot\pi^{a}_{\psi_{(l-1)}}(x)=\{\pi^{a}_{\psi_{(l-1)}}(x),H_c\}=-\frac{\delta H_c}{\delta \psi_{a_{(l-1)}}}=-\frac{\partial \mathscr{H}}{\partial \psi_{a_{(l-1)}}}$$
+se determina que los paréntesis de Poisson fundamentales no nulos entre los campos $\psi_{a_{(l-1)}}$ y $\pi^{a}_{\psi_{(l-1)}}$, tienen la forma, (ver Apéndice I) \cite{general,canoalor,tesis}:
+\begin{equation}
+\{\psi_{a_{(l-1)}}(x),\pi^{b}_{\psi_{(l-1)}}(y)\}=\delta_{a}^{b}\delta^3(\textbf{x}-\textbf{y}) 
+\end{equation}
+Las ecuaciones de movimiento de Hamilton \eqref{ehaalor} constituyen un conjunto de $2Nm$ ecuaciones diferenciales de primer orden en las derivadas temporales para los campos \mbox{linealmente} independientes $(\psi_{a_{(l-1)}},\pi^{a}_{\psi_{(l-1)}})$; para determinar una solución única se requieren $2Nm$ condiciones iniciales.
+\section{Segundo teorema de Noether}
+El teorema de Nother es consecuencia de la invariancia de la acción ante el grupo de simetría de transformaciones infinitesimales en coordenadas y campos \cite{noether,greiner,local}:
+\begin{equation}
+L^a\overset{\_}{\delta}\psi_a+\partial_\mu J^\mu=0  
+\label{ten}
+\end{equation}
+Si se considera un grupo de simetría finito que depende de $r$ \mbox{parámetros }\mbox{constantes \eqref{glocon}}, el primer teorema de Noether establece la ecuación de continuidad \eqref{congene}, como consecuencia de la ecuación de continuidad y de la condición de campos asintóticos, existen $r$ cargas \mbox{independientes} asociadas al campo que son conservadas \eqref{carnoem} \cite{noether,greiner}. 
+\\
+
+El segundo teorema de Noether, establece que la invariancia del Lagrangiano ante un grupo de simetría infinito, es decir simetrías de gauge locales, implica: la existencia de cantidades conservadas, el cumplimiento de las identidades de Bianchi, y un Lagrangiano singular, resultado en sistemas dinámicos con \mbox{vínculos \cite{noether,vinculos, emmy, local}.} Dirac estableció el método para el estudio canónico de estos sistemas, método que es fundamental en la cuantización de este tipo de \mbox{teorías \cite{dirac, canoalor}.}
+\\
+
+Un grupo de simetría infinito o simetrías gauge locales, depende \mbox{de $r$} \mbox{parámetros} definidos en el espacio-tiempo, de esta manera, el grupo de \mbox{transformaciones} infinitesimales en coordenadas y campos conocido, como \mbox{transformaciones} gauge locales, que dejan invariante la acción, es definido por \cite{vinculos}:
+\begin{equation}
+\delta x^{\mu}=x^{'\mu}-x^{\mu}=\in^\beta(x) X_{\ \beta}^\mu(x)
+\label{galoca}
+\end{equation}
+$$\delta\psi_a(x)=\psi_a^{'}(x^{'})-\psi_a(x)=\in^\beta(x)\Phi_{\beta a}(\psi,x)+\in^{\beta,\mu}(x)\varphi_{\mu\beta a}(\psi,x)$$
+donde \mbox{$\in^\beta(x)$} con $\beta=1,2,...,r$; es un parámetro definido en el espacio-tiempo. Como la estructura del espacio-tiempo es continua a cada evento $x$ en el espacio de Minkowski le corresponde un valor de $\in^\beta(x)$, lo que le da el carácter de infinito al grupo de simetría. Además $\in^{\beta,\mu}(x)\equiv\partial^\mu\in^{\beta}(x)$ y $X_{\ \beta}^\mu(x), \Phi_{\beta a}(\psi,x), \varphi_{\mu\beta  a}(\psi,x)$; son los generadores del grupo de simetría infinito \cite{noether,vinculos,emmy,local}.    
+\\
+
+La variación global de campos, ecuación \eqref{locglo}, para el grupo de transformaciones gauge locales, se puede reescribir utilizando \eqref{galoca}, en la forma:
+\begin{equation}
+\overset{\_}{\delta}\psi_a(x)= \delta\psi_a(x)-\delta x^{\mu}\partial_\mu\psi_a(x)= \in^\beta(\Phi_{\beta a}-X_{\ \beta}^\mu\partial_\mu\psi_a)+\in^{\beta,\mu}\varphi_{\mu\beta a}
+\label{gloloca} 
+\end{equation}
+Integrando en el espacio el teorema de Noether \eqref{ten} y al sustituir \mbox{la expresión \eqref{gloloca}:}
+\begin{equation}
+\int\limits_{\Omega}dx^{3}(L^a\overset{\_}{\delta}\psi_a+\partial_\mu J^\mu)\label{noloc}=
+\end{equation}
+$$=\int\limits_{\Omega}dx^{3}\left\{ L^a\left[\in^\beta(\Phi_{\beta a}-X_{\ \beta}^\mu\partial_\mu\psi_a)+\in^{\beta,\mu}\varphi_{\mu\beta a}\right]+\partial_\mu J^\mu\right\}=
+$$
+$$
+=\int\limits_{\Omega}dx^{3}\in^\beta\left\{L^a(\Phi_{\beta a}-X_{\ \beta}^\mu\partial_\mu\psi_a)-\partial^\mu(L^a\varphi_{\mu\beta a})\right\}+\int\limits_{\Omega}dx^{3}\partial^\mu(L^a\in^{\beta}\varphi_{\mu\beta a}+J_\mu)=0 
+$$
+La corriente de Noether $J_\mu$, para Lagrangianos de segundo orden expresada en términos del grupo de transformaciones gauges locales, toma la forma, (ver \mbox{Apéndice J):} 
+\begin{equation}
+J_\mu=\ \in^\beta j_{\mu\beta}+\in^{\beta,\alpha}F_{\mu\alpha\beta}+\in^{\beta,\alpha\nu}G_{\mu\nu\alpha\beta}
+\label{conlocss}
+\end{equation}
+donde:
+\begin{equation}
+j^\mu_{\ \beta}=\left[\frac{\partial \mathscr{L} }{\partial(\partial_{\mu} \psi_a)}-\partial_{\nu}\left(\frac{\partial\mathscr{L} }{\partial(\partial_{\nu}\partial_{\mu} \psi_a)}  \right) \right](\Phi_{\beta a}-X_{\ \beta}^\alpha\partial_\alpha\psi_a)
+\end{equation}
+$$+\frac{\partial\mathscr{L} }{\partial(\partial_{\mu}\partial_{\nu} \psi_a)}\partial_{\nu}(\Phi_{\beta a}-X_{\ \beta}^\alpha\partial_\alpha\psi_a)+\mathscr{L}X_{\ \beta}^\mu$$
+\begin{equation}
+F^\mu_{\ \alpha\beta}=\left[\frac{\partial \mathscr{L} }{\partial(\partial_{\mu} \psi_a)}-\partial_{\nu}\left(\frac{\partial\mathscr{L} }{\partial(\partial_{\nu}\partial_{\mu} \psi_a)}  \right) \right]\varphi_{\alpha\beta a}+\frac{\partial\mathscr{L} }{\partial(\partial_{\mu}\partial_{\nu} \psi_a)}\partial_{\nu}\varphi_{\alpha\beta a}
+\end{equation}
+$$+\frac{\partial\mathscr{L} }{\partial(\partial_{\mu}\partial^{\alpha} \psi_a)}(\Phi_{\beta a}-X_{\ \beta}^\rho\partial_\rho\psi_a)$$
+\begin{equation}
+G^\mu_{\ \nu\alpha\beta}=\frac{\partial\mathscr{L} }{\partial(\partial_{\mu}\partial^{\nu} \psi_a)}\varphi_{\alpha\beta a}
+\end{equation}
+Al sustituir \eqref{conlocss}, en la expresión $\partial^\mu(L^a\in^{\beta}\varphi_{\mu\beta a}+J_\mu)$, permite reescribir la \mbox{ecuación \eqref{noloc}} en la forma: 
+\begin{equation}
+\int\limits_{\Omega}dx^{3}(L^a\overset{\_}{\delta}\psi_a+\partial_\mu J^\mu)=
+\end{equation}
+$$=\int\limits_{\Omega}dx^{3}\in^\beta\left[L^a(\Phi_{\beta a}-X_{\ \beta}^\mu\partial_\mu\psi_a)-\partial^\mu(L^a\varphi_{\mu\beta a})+\partial^\mu(L^a\varphi_{\mu\beta a}+j_{\mu\beta})\right]$$
+$$+\int\limits_{\Omega}dx^{3}\in^{\beta,\mu}[L^a\varphi_{\mu\beta a}+j_{\mu\beta}+\partial^\alpha F_{\alpha\mu\beta}]$$
+$$+\int\limits_{\Omega}dx^{3}\in^{\beta,\alpha\mu}[F_{\mu\alpha\beta}+\partial^\nu G_{\nu\mu\alpha\beta}]$$
+$$+\int\limits_{\Omega}dx^{3}\in^{\beta,\alpha\nu\mu}G_{\mu\nu\alpha\beta}=0$$
+Utilizando el hecho que la función $\in^\beta$ y sus derivadas: $(\in^{\beta,\mu}$, $\in^{\beta,\alpha\mu}$, $\in^{\beta,\alpha\nu\mu})$; son linealmente independientes, permite garantizar que la anterior identidad se cumple si las siguientes relaciones son validas:   
+\begin{equation}
+L^a(\Phi_{\beta a}-X_{\ \beta}^\mu\partial_\mu\psi_a)-\partial^\mu(L^a\varphi_{\mu\beta a})+\partial^\mu(L^a\varphi_{\mu\beta a}+j_{\mu\beta})=0 
+\label{uno}
+\end{equation}
+\begin{equation}
+L^a\varphi_{\mu\beta a}+j_{\mu\beta}+\partial^\alpha F_{\alpha\mu\beta}=0 
+\label{dos}
+\end{equation}
+\begin{equation}
+F_{\mu\alpha\beta}+\partial^\nu G_{\nu\mu\alpha\beta}=0
+\label{tres}
+\end{equation}
+\begin{equation}
+G_{\mu\nu\alpha\beta}=0
+\label{cuatro}
+\end{equation}
+al sustituir la expresión \eqref{cuatro} en \eqref{tres}, se obtiene:
+\begin{equation}
+F_{\mu\alpha\beta}=0
+\end{equation}
+lo que implica: 
+\begin{equation}
+\partial^\mu(L^a\varphi_{\mu\beta a}+j_{\mu\beta})=0
+\end{equation}
+La invariancia de la acción ante transformaciones gauge locales, tiene como consecuencia que el tensor $\Theta_{\mu\beta}\equiv L^a\varphi_{\mu\beta a}+j_{\mu\beta}$, se conserva \cite{vinculos}:
+\begin{equation}
+\partial^\mu \Theta_{\mu\beta}=0
+\label{congaulo}
+\end{equation}
+además, se debe garantizar el cumplimiento de la identidades generalizadas de Bianchi \cite{vinculos}:
+\begin{equation}
+L^a(\Phi_{\beta a}-X_{\ \beta}^\mu\partial_\mu\psi_a-\partial^\mu\varphi_{\mu\beta a})-(\partial^\mu L^a)\varphi_{\mu\beta a}=0
+\label{ibianchi}
+\end{equation}
+de manera que las ecuaciones de movimiento de Euler-Lagrange no son \mbox{independientes} \cite{vinculos}.
+\\
+
+Las ecuaciones de movimiento de Euler-Lagrange, para Lagrangianos de segundo orden son:
+\begin{equation}
+L^a=\frac{\partial\mathscr{L} }{\partial \psi_a}-\partial_{\mu}\left(\frac{\partial\mathscr{L} }{\partial(\partial_{\mu} \psi_a)}\right)+\partial_{\mu}\partial_{\nu}\left(\frac{\partial\mathscr{L} }{\partial(\partial_{\mu}\partial_{\nu} \psi_a)}\right) 
+\end{equation}
+y pueden ser escritas en la forma (ver Apéndice K):
+\begin{equation}
+L^a=W^{\gamma\alpha\mu\nu ab}\partial_\mu\partial_\nu\partial_\gamma\partial_\alpha\psi_b+V^a(\psi_a,\partial_\mu\psi_a,\partial_\mu\partial_\nu\psi_a,\partial_\mu\partial_\nu\partial_\alpha\psi_a) 
+\label{expel}
+\end{equation}
+donde:
+\begin{equation}
+W^{\gamma\alpha\mu\nu ab}= \frac{\partial^2\mathscr{L} }{\partial( \partial_\gamma\partial_\alpha\psi_b)\partial(\partial_{\mu}\partial_{\nu} \psi_a)}
+\end{equation}
+Al sustituir \eqref{expel}, en las identidades de Bianchi \eqref{ibianchi}, se obtendrá que:
+\begin{equation}
+L^a(\Phi_{\beta a}-X_{\ \beta}^\mu\partial_\mu\psi_a-\partial^\mu\varphi_{\mu\beta a})-\varphi_{\theta\beta a}(\partial^\theta V^a)
+\label{biacin}
+\end{equation}
+$$-\varphi_{\theta\beta a}(\partial^\theta W^{\gamma\alpha\mu\nu ab})\partial_\mu\partial_\nu\partial_\gamma\partial_\alpha\psi_b-\varphi_{\theta\beta a}W^{\gamma\alpha\mu\nu ab}\partial^\theta\partial_\mu\partial_\nu\partial_\gamma\partial_\alpha\psi_b=0$$
+Para Lagrangianos de segundo orden en las derivadas, las ecuaciones de movimiento de \mbox{Euler-Lagrange} \eqref{expel}, es un conjunto de N ecuaciones diferenciales de orden 4 en las derivadas temporales, y son escritas de forma general, de la siguiente \mbox{manera \cite{podolsky}:} 
+\begin{equation}
+L^a=W^{ab}_0\ \ddddot\psi_b+H^a(\psi_a,\partial_\mu\psi_a,\partial_\mu\partial_\nu\psi_a,\partial_\mu\partial_\nu\partial_\alpha\psi_a) =0
+\end{equation}
+donde $W^{ab}_0$, es definida como la matriz Hessiana \cite{vinculos}:  
+\begin{equation}
+W^{ab}_0=\frac{\partial^2\mathscr{L} }{\partial\ddot\psi_b\partial\ddot \psi_a}
+\end{equation}
+Como consecuencia del hecho que las ecuaciones de movimiento de Euler-Lagrange son como máximo de cuarto orden en las derivadas temporales, el término que contiene cinco derivadas en las identidades de Bianchi \eqref{biacin}, se debe anular:
+\begin{equation}
+\varphi_{\theta\beta a}W^{\gamma\alpha\mu\nu ab}\partial^\theta\partial_\mu\partial_\nu\partial_\gamma\partial_\alpha\psi_b=0 
+\end{equation}
+los campos $\psi_b$ y sus derivadas $\partial^\theta\partial_\mu\partial_\nu\partial_\gamma\partial_\alpha\psi_b$, son linealmente independientes, así se debe garantizar:
+\begin{equation}
+\varphi_{\theta\beta a}W^{\gamma\alpha\mu\nu ab}=0 
+\label{tem}
+\end{equation}
+Al considerar índices temporales en \eqref{tem}, se obtiene la siguiente ecuación de autovalores \cite{vinculos}:
+\begin{equation}
+\varphi_{0\beta a}W^{ab}_0=a_\beta\varphi_{b}=0 \ \ \ \  \ \ \ \ \beta=1,2,..,r
+\label{auto}
+\end{equation}
+de manera que existen $N-r$ autovalores nulos $a_i=0$, con $i=1,2,..,N-r$; correspondientes a los autovectores $\varphi_{b}\neq0$. Cuando se diagonaliza la matriz Hessiana, los autovalores se ubican en la diagonal principal, lo que establece que el determinante de esta matriz es nulo $|W^{ab}_0| =0$, es decir el Lagrangiano es singular.
+\\
+
+Por lo tanto, la invariancia de la acción ante transformaciones gauges locales, implica: la conservación de $r$ cargas, el cumplimiento de las identidades de Bianchi, y un Lagrangiano singular, como consecuencia, el Lagrangiano describe un sistema dinámico con vínculos \cite{vinculos,local}. Ahora, que el \mbox{Lagrangiano} sea \mbox{singular} no implica que la acción sea invariante por \mbox{transformaciones} gauges \mbox{locales \cite{vinculos}.} 
+     

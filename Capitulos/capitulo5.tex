@@ -1,0 +1,627 @@
+\chapter{ANÁLISIS Y RESULTADOS}
+\lettrine[lines=3, loversize=-0.1, lraise=0.1]D\ espués de haber hablado en el cap\'itulo anterior del modelo fenomenológico en estudio, de sus variables y parámetros que lo componen, presentaremos finalmente los resultados obtenidos para $\frac{d\sigma_{el}}{dt}$. Inicialmente mostraremos los ajustes  con los parámetros  libres: radio del protón $r$, elasticidad del pomer\'on $\alpha_p$ y el coeficiente  $B_{13}$ que parametriza la sección eficaz $\sigma_{13}$. Mostraremos gráficamente que la amplitud de dispersión $F(s,t)$ presentada por Grichine para la descripción de datos\footnote{Que  fueron obtenidos de la referencia \cite{martinov}, este art\'iculo facilita un link para su descarga.} de sección eficaz diferencial elástica en colisiones prot\'on(antiprot\'on)-prot\'on (p$(\bar{\textup{p}})$-p), describe correctamente los datos experimentales para ciertas energías de centro de masa (de 4.62 GeV a 13.76 GeV y, 7 TeV, para colisiones pp, y de 546 GeV a 1960 GeV para colisiones $\bar{\textup{p}}$p). Sin  embargo, el modelo $qQ$ con pomerón elástico no predice correctamente los datos para  energías intermedias (de 19.4 GeV a 62.5 GeV), veamos.
+\section{Procedimiento}
+Todos los fits realizados con el modelo para la descripción  a los datos de sección eficaz diferencial elástica $d\sigma_{el}/dt$ que se mostrar\'an un poco m\'as adelante en este cap\'itulo, fueron implementados en el software root. Toda la estructura de código desarrollada para este trabajo se encuentra debidamente organizada en el apéndice de este documento. Si est\'a interesado en saber m\'as sobre las clases utilizadas y sus métodos, puede hacer uso del manual \cite{manualroot} que ofrece de manera gratuita este paquete.\subsection*{Detalles a considerar}
+Antes de dar inicio a los fits debemos fijar algunas constantes importantes, estas son: $(\hslash c)^2=$0.389 GeV$^2$ mbarn, la masa del protón $m_p=$0.938 GeV \cite{ivan}, la sección eficaz  total $\sigma_{total}$ ya se encuentra medida  y  cambia considerablemente con la energ\'ia  ($\sqrt{s}$)\cite{seccioneficaztotal,amaldi}, los parámetros $r$, $\alpha_{p}$ y $B_{13}$ son inicializados de manera diferente para cada valor de $\sqrt{s}$ y $\sigma_{tot}$. Para tener una idea clara acerca de los valores de partida para $\alpha_{p}$ y $B_{13}$ se tuvo la colaboración de Vladimir Grichine. 
+\subsection*{El coeficiente B$_{24}$}
+Como se mencion\'o en el cap\'itulo \ref{cappomeronelastic}, el coeficiente $B_{24}$ puede expresarse en términos del parámetro $B_{13}$ mediante el teorema óptico (Apéndice B). La ecuación resultante es: 
+\begin{equation}\label{eqB13}
+a_3\left(\sqrt{B_{24}}\right)^3+a_2\left(\sqrt{B_{24}}\right)^2+a_1\left(\sqrt{B_{24}}\right)+a_0=0
+\end{equation}
+La ecuación (\ref{eqB13}) es de tercer grado respecto de $\sqrt{B_{24}}$, los coeficientes $a_0$, $a_1$,$a_2$ y $a_3$   dependen de los parámetros $B_{13}$ y $r$. Para  encontrar las soluciones a (\ref{eqB13}) es necesario implementar un programa que haga el trabajo (Apéndice C). En las soluciones encontramos tres raíces las cuales pueden ser reales o complejas. Para los ajustes necesariamente necesitamos valores para $B_{24}$ reales y que adem\'as $0\leq B_{24}\leq 1$ \cite{modeloqQ}.
+\section{Ajustes}
+Para los ajustes fue necesario implementar un programa que sea legible para el paquete root (ver Ap\'endice D y E). Este script contiene todas las ordenes para que root pueda construir la función chi-cuadrado (Apéndice A)  que ser\'a minimizada con ayuda  de algún paquete que realice esta tarea, y as\'i, encontrar los parámetros que muestren una curva que mejor describe los datos experimentales. Actualmente root  cuenta con varios minimizadores, a continuación mencionaremos sin entrar en detalle  algunos de estos minimizadores y sus algoritmos:
+\begin{itemize}
+\item {\bf Minuit}
+\begin{itemize}
+\item Migrad (uno por defecto)
+\item Simplex
+\item Minimize (es una combinación de Migrad y Simplex)
+\item MigradImproved
+\item Scan
+\item Seek
+\end{itemize}
+\item {\bf Minuit2}
+\begin{itemize}
+\item Migrad (defecto)
+\item Simplex
+\item Minimize
+\item Scan
+\item Fumili
+\end{itemize}
+\item {\bf Fumili} (No tiene un algoritmo específico)
+\item {\bf GSLMultiFit}
+\begin{itemize}
+\item BFGS2 (predeterminado)
+\item BFGS 
+\item ConjugateFR 
+\item ConjugatePR
+\item SteepestDescent
+\end{itemize}
+\end{itemize}
+Algunos de estos minimizadores (como Minuit, Minuit2, GSLMultiMin) cuentan con varios algoritmos para el desarrollo de cálculos que el usuario puede elegir, otros (como Fumili) simplemente tienen un solo algoritmo  \cite{manualroot}. Los ajustes que se mostrar\'an en esta sección se obtuvieron con ayuda de Minuit y su algoritmo por defecto Migrad. El algoritmo Migrad es en general el mejor minimizador para casi todas las funciones. Se trata de un método de métrica variable \cite{metricavariable}, un esquema de actualización de métricas estable y comprobaciones de la matriz Hessiana positiva definida \cite{minuit}.
+
+ \sp En el  programa que hemos implementado (ver Apéndice D) se ha escrito (en \texttt{c++}) la amplitud de dispersión $F(s,t)$ que se dio a conocer en el cap\'itulo precedente (Ecu.  (\ref{amplitudFcap4})) como una función que se ha llamado \texttt{myFunc}. En  nuestro proyecto, 
+ \texttt{myFunc} define  la clase \texttt{TF1}, para luego, 
+el método \texttt{Fit} definir la función \texttt{FCN}
+del paquete Minuit \cite{minuit}. El  paquete Minuit, actúa sobre la función multiparam\'entrica \texttt{FCN}, que para nuestro caso, es la función chi-cuadrado ($\chi^2$), definida por la siguiente expresión:
+\begin{equation}\label{chicuadrado}
+\chi^2\equiv\sum_{i=1}^n\left[\frac{(d\sigma/dt)_i-F(|t_i|;a_j)}{\delta_i} \right]^2,
+\end{equation} 
+donde $n$ es el n\'umero de puntos $|t_i|$ de cuadrimomento transferido , en el cual se mide la variable sección eficaz diferencial $(d\sigma/dt)_i$ con incertidumbres $\delta_i$ $(i=1,2,...,n)$,  $F(x_i;a_j)$ con ($j=1,2,3$) es la función teórica (Ecu.  (\ref{amplitudFcap4}))   que ajusta los datos experimentales y $a_j$ es el n\'umero de par\'ametros para el cual el modelo brinda una mejor descripción a las muestras de datos. La función \texttt{FCN} calcula el $\chi^2$ entre la función de ajuste del usuario (para nuestro caso Ecu.  (\ref{amplitudFcap4})) y los datos experimentales. Es la tarea de Minuit encontrar esos valores de los parámetros que dan el valor más bajo de $\chi^2$ \cite{manualroot}.\\
+
+Para cada uno de los ajustes obtuvimos una matriz Hessiana positiva definida, lo que asegura la convergencia de la función chi-cudrado. Desafortunadamente no todos los datos pueden ser descritos por el modelo propuesto. En colisiones protón-protón, los ajustes mostrados en las figuras 6.4 a 6.8 muestran una correcta descripción de los datos únicamente para un rango de $|t|<1$ GeV$^2$ aproximadamente y en un  rango de $|t|<$0.5 GeV$^2$ aproximadamente en la figura 6.9. Los fits de las figuras 2.1 a 2.3  y 2.10 muestran una correcta descripción a los datos experimentales. En colisiones antiprot\'on-prot\'on, se obtienen buenos resultados para los fits a energías entre 546 GeV a 1960 GeV (Fig. 2.13-2.16), los ajustes mostrados en las figuras 2.11 y 2.12 muestran una buena descripción únicamente para datos para el cual $|t|<1.5$ GeV$^2$ aproximadamente. El problema en los ajustes puede parecer consecuencia de una mala elección en los parámetros iniciales, pero este no es el caso. Para cada uno de los fits se hizo una minuciosa búsqueda a estos valores iniciales con el objetivo de encontrar la mejor curva que brinde una buena representación a las muestras experimentales. Se observ\'o que el modelo con tres parámetros empieza a  decaer rápidamente un poco antes de llegar al m\'inimo de difracción para las energías intermedias. M\'as adelante mostraremos que al introducir un nuevo parámetro al modelo se corrige este problema.\\
+        
+Finalmente mostraremos los ajustes realizados para colisiones pp$\rightarrow$pp y colisiones  $\bar{\textup{p}}$p$\rightarrow \bar{\textup{p}}$p
+\subsection*{Ajustes para colisiones $\textsc{pp}\rightarrow \textsc{pp}$ }\newpage
+\begin{figure}[H]
+%\centering
+\begin{tabular}{p{7.4cm}p{7.4cm}}
+\begin{minipage}[l]{7.4cm}
+\includegraphics[width=7.4cm]{Imagenes/figurastesis/graficas/graf4proton.pdf}
+\caption{Se muestra el ajuste a los datos de sección eficaz diferencial elástica en colisiones prot\'on-prot\'on a $\sqrt{s}=4\textup{.}62$ GeV. La curva es el modelo $qQ$ con pomer\'on elástico en todo el rango de $|t|$.}
+\label{figpp5_1}
+\end{minipage}
+&
+\begin{minipage}[r]{7.4cm}
+\includegraphics[width=7.4cm]{Imagenes/figurastesis/graficas/graf9proton.pdf}
+\caption{Se muestra el ajuste a los datos de sección eficaz diferencial elástica en colisiones prot\'on-prot\'on a $\sqrt{s}=9\textup{.}78$ GeV. La curva es el modelo $qQ$ con pomer\'on elástico en todo el rango de $|t|$.}
+\label{figpp5_2}
+\end{minipage}
+\end{tabular}
+\end{figure}
+%\newpage
+\begin{figure}[H]
+%\centering
+\begin{tabular}{p{7.4cm}p{7.4cm}}
+\begin{minipage}[l]{7.4cm}
+\includegraphics[width=7.4cm]{Imagenes/figurastesis/graficas/graf13proton.pdf}
+\caption{Se muestra el ajuste a los datos de sección eficaz diferencial elástica en colisiones prot\'on-prot\'on a $\sqrt{s}=13\textup{.}76$ GeV. La curva es el modelo $qQ$ con pomer\'on elástico en todo el rango de $|t|$.}
+\label{figpp5_3}
+\end{minipage}
+&
+\begin{minipage}[r]{7.4cm}
+\includegraphics[width=7.4cm]{Imagenes/figurastesis/graficas/graf19proton.pdf}
+\caption{Se muestra el ajuste a los datos de sección eficaz diferencial elástica en colisiones prot\'on-prot\'on a $\sqrt{s}=19\textup{.}4$ GeV. La curva es el modelo $qQ$ con pomer\'on elástico en todo el rango de $|t|$.}
+\label{figpp5_4}
+\end{minipage}
+\end{tabular}
+\end{figure}
+\newpage
+\begin{figure}[H]
+%\centering
+\begin{tabular}{p{7.4cm}p{7.4cm}}
+\begin{minipage}[l]{7.4cm}
+\includegraphics[width=7.4cm]{Imagenes/figurastesis/graficas/graf23proton.pdf}
+\caption{Se muestra el ajuste a los datos de sección eficaz diferencial elástica en colisiones prot\'on-prot\'on a $\sqrt{s}=23\textup{.}5$ GeV. La curva es el modelo $qQ$ con pomer\'on elástico en todo el rango de $|t|$.}
+\label{figpp5_5}
+\end{minipage}
+&
+\begin{minipage}[r]{7.4cm}
+\includegraphics[width=7.4cm]{Imagenes/figurastesis/graficas/graf30proton.pdf}
+\caption{Se muestra el ajuste a los datos de sección eficaz diferencial elástica en colisiones prot\'on-prot\'on a $\sqrt{s}=30\textup{.}7$ GeV. La curva es el modelo $qQ$ con pomer\'on elástico en todo el rango de $|t|$.}
+\label{figpp5_6}
+\end{minipage}
+\end{tabular}
+\end{figure}
+\begin{figure}[H]
+%\centering
+\begin{tabular}{p{7.4cm}p{7.4cm}}
+\begin{minipage}[l]{7.4cm}
+\includegraphics[width=7.4cm]{Imagenes/figurastesis/graficas/graf44proton.pdf}
+\caption{Se muestra el ajuste a los datos de sección eficaz diferencial elástica en colisiones prot\'on-prot\'on a $\sqrt{s}=44\textup{.}7$ GeV. La curva es el modelo $qQ$ con pomer\'on elástico en todo el rango de $|t|$.}
+\label{figpp5_7}
+\end{minipage}
+&
+\begin{minipage}[r]{7.4cm}
+\includegraphics[width=7.4cm]{Imagenes/figurastesis/graficas/graf53proton.pdf}
+\caption{Se muestra el ajuste a los datos de sección eficaz diferencial elástica en colisiones prot\'on-prot\'on a $\sqrt{s}=53$ GeV. La curva es el modelo $qQ$ con pomer\'on elástico en todo el rango de $|t|$.}
+\label{figpp5_8}
+\end{minipage}
+\end{tabular}
+\end{figure}
+\newpage
+\begin{figure}[H]
+%\centering
+\begin{tabular}{p{7.4cm}p{7.4cm}}
+\begin{minipage}[l]{7.4cm}
+\includegraphics[width=7.4cm]{Imagenes/figurastesis/graficas/graf62proton.pdf}
+\caption{Se muestra el ajuste a los datos de sección eficaz diferencial elástica en colisiones prot\'on-prot\'on a $\sqrt{s}=62\textup{.}5$ GeV. La curva es el modelo $qQ$ con pomer\'on elástico en todo el rango de $|t|$.}
+\label{figpp5_9}
+\end{minipage}
+&
+\begin{minipage}[r]{7.4cm}
+\includegraphics[width=7.4cm]{Imagenes/figurastesis/graficas/graf7000proton.pdf}
+\caption{Se muestra el ajuste a los datos de sección eficaz diferencial elástica en colisiones prot\'on-prot\'on a $\sqrt{s}=7000$ GeV. La curva es el modelo $qQ$ con pomer\'on elástico en todo el rango de $|t|$.}
+\label{figpp5_10}
+\end{minipage}
+\end{tabular}
+\end{figure}%\newpage
+\subsection*{Ajustes para colisiones $\textsc{$\bar{\textup{p}}$p}\rightarrow \textsc{$\bar{\textup{p}}$p}$ }
+\begin{figure}[H]
+%\centering
+\begin{tabular}{p{7.4cm}p{7.4cm}}
+\begin{minipage}[l]{7.4cm}
+\includegraphics[width=7.4cm]{Imagenes/figurastesis/graficas/graf19antiproton.pdf}
+\caption{Se muestra el ajuste a los datos de sección eficaz diferencial elástica en colisiones antiprot\'on-prot\'on a $\sqrt{s}=19\textup{.}4$ GeV. La curva es el modelo $qQ$ con pomer\'on elástico en todo el rango de $|t|$.}
+\label{figpp5_11}
+\end{minipage}
+&
+\begin{minipage}[r]{7.4cm}
+\includegraphics[width=7.4cm]{Imagenes/figurastesis/graficas/graf53antiproton.pdf}
+\caption{Se muestra el ajuste a los datos de sección eficaz diferencial elástica en colisiones antiprot\'on-prot\'on a $\sqrt{s}=53$ GeV. La curva es el modelo $qQ$ con pomer\'on elástico en todo el rango de $|t|$.}
+\label{figpp5_12}
+\end{minipage}
+\end{tabular}
+\end{figure}
+\newpage
+\begin{figure}[H]
+%\centering
+\begin{tabular}{p{7.4cm}p{7.4cm}}
+\begin{minipage}[l]{7.4cm}
+\includegraphics[width=7.4cm]{Imagenes/figurastesis/graficas/graf546antiproton.pdf}
+\caption{Se muestra el ajuste a los datos de sección eficaz diferencial elástica en colisiones antiprot\'on-prot\'on a $\sqrt{s}=546$ GeV. La curva es el modelo $qQ$ con pomer\'on elástico en todo el rango de $|t|$.}
+\label{figpp5_13}
+\end{minipage}
+&
+\begin{minipage}[r]{7.4cm}
+\includegraphics[width=7.4cm]{Imagenes/figurastesis/graficas/graf630antiproton.pdf}
+\caption{Se muestra el ajuste a los datos de sección eficaz diferencial elástica en colisiones antiprot\'on-prot\'on a $\sqrt{s}=630$ GeV. La curva es el modelo $qQ$ con pomer\'on elástico en todo el rango de $|t|$.}
+\label{figpp5_14}
+\end{minipage}
+\end{tabular}
+\end{figure}
+\begin{figure}[H]
+%\centering
+\begin{tabular}{p{7.4cm}p{7.4cm}}
+\begin{minipage}[l]{7.4cm}
+\includegraphics[width=7.4cm]{Imagenes/figurastesis/graficas/graf1800antiproton.pdf}
+\caption{Se muestra el ajuste a los datos de sección eficaz diferencial elástica en colisiones antiprot\'on-prot\'on a $\sqrt{s}=1800$ GeV. La curva es el modelo $qQ$ con pomer\'on elástico en todo el rango de $|t|$.}
+\label{figpp5_15}
+\end{minipage}
+&
+\begin{minipage}[r]{7.4cm}
+\includegraphics[width=7.4cm]{Imagenes/figurastesis/graficas/graf1960antiproton.pdf}
+\caption{Se muestra el ajuste a los datos de sección eficaz diferencial elástica en colisiones antiprot\'on-prot\'on a $\sqrt{s}=1960$ GeV. La curva es el modelo $qQ$ con pomer\'on elástico en todo el rango de $|t|$.}\label{figpp5_16}
+\end{minipage}
+\end{tabular}
+\end{figure}
+\subsection*{Radio del prot\'on en funci\'on de la energ\'ia}
+\newpage
+\begin{figure}[H]
+%\centering
+\begin{tabular}{p{7.4cm}p{7.4cm}}
+\begin{minipage}[l]{7.4cm}
+\includegraphics[width=7.4cm]{Imagenes/figurastesis/graficas/unnamedps.pdf}
+\caption{La dependencia de $r_{p}$ en $GeV^{-1}$ del $\ln\left(\sqrt{S/S_0}\right)$.}
+\label{lafig5_17}
+\end{minipage}
+&
+\begin{minipage}[r]{7.4cm}
+La figura \ref{lafig5_17} muestra un incremento en el radio del protón conforme la energía aumenta. Los cuadritos azules representan los par\'ametros que fueron arrojados durante los ajustes para cada una de las energ\'ias y las diferentes pendientes de la trayactoria del pomer\'on. En seguida veremos como es que cambia $\alpha'$ como funci\'on de la energ\'ia. La curva de color rojo es el modelo de predicci\'on y su representaci\'on matem\'atica est\'a dada por la parametrización: \begin{equation*}
+r_p=(3\textit{.}14\pm0\textup{.}10)+(0\textit{.}61\pm0\textup{.}03)\ln\left(\sqrt{{s}/{s_o}}\right)
+\end{equation*} 
+\end{minipage}
+\end{tabular}
+\end{figure}
+\subsection*{Pendiente de la trayectoria del pomer\'on }
+\begin{figure}[H]
+%\centering
+\begin{tabular}{p{7.4cm}p{7.4cm}}
+\begin{minipage}[l]{7.4cm}
+\includegraphics[width=7.4cm]{Imagenes/figurastesis/graficas/pendientepomeron.pdf}
+\caption{La dependencia de $\alpha'$ en GeV$^{-2}$ del logaritmo del logaritmo del logaritmo de $\left(\sqrt{s/s_{0}}\right)$.}
+\label{lafig5_18}
+\end{minipage}
+&
+\begin{minipage}[r]{7.4cm}
+También la pendiente de la trayectoria del pomer\'on $\alpha'$ cambia como función de la energía. La figura \ref{lafig5_18} muestra  el comportamiento de $\alpha'$  conforme la energía aumenta. Para  linealizar el ajuste se toma  el logaritmo a las energías tres veces, la tabla \ref{tablaPendientepomeron} muestra estos datos.\\ 
+
+La parametrizaci\'on de  $\alpha'$ en función de $\sqrt{s}$ es:
+\begin{align}\label{ecuacioPendientepomeron}
+\nonumber\alpha'(s)=(0\textup{.}232\pm 0\textup{.}002)-\\
+(0\textup{.}104\pm 0\textup{.}006) \ln\ln\ln\left(\sqrt{s/s_o}\right)
+\end{align}
+\end{minipage}
+\end{tabular}
+\end{figure}
+\newpage
+\begin{figure}[H]
+\begin{tabular}{p{4.4cm}p{9.2cm}}
+\begin{minipage}[l]{4.4cm}
+\begin{table}[H]\footnotesize
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline 
+$\sqrt{s}$(\scriptsize{GeV})& $ \alpha'(s)$\scriptsize{(GeV$^{-2}$)}\\ 
+\hline 
+23.5 & 0.22 $\pm$ 0.003 \\ 
+\hline 
+30.7 & 0.21 $\pm$ 0.003 \\ 
+\hline 
+44.7 & 0.20 $\pm$ 0.003 \\ 
+\hline
+53.0 & 0.20 $\pm$ 0.003 \\ 
+\hline
+62.5 & 0.19 $\pm$ 0.003 \\ 
+\hline
+7000 & 0.15 $\pm$ 0.003 \\ 
+\hline    
+630  &   0.17 $\pm$ 0.031\\
+\hline
+\end{tabular} 
+\caption{Se muestran los valores obtenidos de $\alpha'$ usados en los ajustes en colisiones prot\'on(antiprot\'on)-prot\'on.}
+\label{tablaPendientepomeron}
+\end{table}
+ \end{minipage}
+&
+\begin{minipage}[h]{10.4cm}
+Los primeros 5 valores de $\alpha'$ mostrados en la tabla \ref{tablaPendientepomeron} se calculan a partir de
+\begin{equation}\label{lafaprimaPomero}
+\alpha'(s)=(0\textit{.}215\pm 0\textit{.}011)
+ -(0\textit{.}031\pm 0\textit{.}012)\log(s/549)
+\end{equation}
+el cual se encuentra en la referencia \cite{schlein}, y  surge como consecuencia de fits a datos experimentales  correspondientes a las energías  entre 23.5 GeV a 62.5 GeV para colisiones protón-protón. Los valores de $\alpha'=$0.17 GeV$^{-2}$ y $\alpha'=$0.15  GeV$^{-2}$ se obtienen de las referencias \cite{schlein} y \cite{grichine} respectivamente. Los valores de $\alpha'$ (para las otras  energías) que no se muestran en la tabla \ref{tablaPendientepomeron}   se predicen por medio de la ecuación (\ref{ecuacioPendientepomeron}) el cual se obtiene mediante el ajuste a los datos de la tabla \ref{tablaPendientepomeron}. 
+\end{minipage}
+\end{tabular} 
+\end{figure}
+\subsection*{Parámetros obtenidos en ajustes prot\'on-prot\'on y antiprot\'on-prot\'on}
+En las tablas \ref{tabla5_1} y \ref{tabla5_2} se muestran cada uno de los parámetros arrojados en los fits a los datos experimentales. Es claro que para algunas energías,  algunos de estos parámetros no son los m\'as adecuados, debido a que, como podemos ver en las gráficas (ver las figuras 6.4 a 6.8), solo los datos para $|t|<1$ GeV$^2$ aproximadamente, se ajustan correctamente al modelo, luego, estos parámetros no pueden ser los que mejor describen los datos para el cual $|t|>1$ en el modelo de Grichine. Los valores obtenidos para  $|\alpha_{p}|$ (el valor absoluto se debe a que un valor positivo o negativo es indiferente en los ajustes), dan información de la profundidad del minino de difracción, si $|\alpha_{p}|<1$ implica una mayor profundidad y una menor profundidad si $|\alpha_{p}|>1$. Con respecto a los resultados arrojados  para $\chi^2/ndf$ que deben ser próximos 1 (ver Apéndice A), algunos no son  buenos (ver Tablas \ref{tabla5_1} y \ref{tabla5_2}), se encuentran muy alejados de 1  para las energías entre 23.5-62.5 GeV. Esto se debe a que el modelo $qQ$ con pomer\'on elástico no describe correctamente estos  datos, por lo que Minuit no puede hacer una buena aproximación a nuestra función chi-cuadrado. Los valores  para el coeficiente de pendiente nuclear  ($B_{13}$) mostrado en las tablas,  concuerda con lo  ya antes mencionado en el cap\'itulo anterior, es decir, $0<B_{13}<1$. En cuanto al radio del prot\'on se realiz\'o una gráfica donde se muestra el comportamiento a los datos obtenidos en los ajustes comportamiento.\newpage     
+\begin{table}[H]
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline 
+$\sqrt{s}$(\scriptsize{GeV})&$ B_{13}$& $r_p$(\scriptsize{GeV$^{-1}$}) &$ |\alpha_p|$ & $\chi^2/ndf$ \\ 
+\hline 
+4.62 & 0.042 $\pm$ 0.004 &    4.05  $\pm$ 0.07   & 6.7 $\pm$  0.2 & 1.2  \\ 
+\hline 
+9.78  & 0.0166 $\pm$ 0.0008 &    4.4 $\pm$ 0.3     &6.5 $\pm$ 0.3 & 1.7  \\ 
+\hline 
+13.76  & 0.0122 $\pm$ 0.0007 &  4.8 $\pm$ 0.4       &5.5 $\pm$ 0.4 & 1.8  \\ 
+\hline 
+19.4  & 0.0138 $\pm$ 0.0005 &    5.1 $\pm$ 0.4   &2.2 $\pm$ 0.2  & 1.6   \\ 
+\hline 
+23.5  & 0.0165 $\pm$ 0.0002 &   5.6  $\pm$ 0.3    & 0.7 $\pm$ 0.1 & 7.4 \\ 
+\hline 
+30.7 & 0.0152 $\pm$ 0.0002 & 5.4 $\pm$ 0.2       &  0.4 $\pm$ 0.1 & 7.2  \\ 
+\hline 
+44.7 & 0.0205  $\pm$ 0.0003 & 5.6 $\pm$ 0.2    & 1.3 $\pm$ 0.1 & 8.3  \\ 
+\hline
+53.0& 0.0276  $\pm$ 0.0002 &    5.1 $\pm$ 0.2   & 0.8 $\pm$ 0.1 & 12  \\ 
+\hline
+62.5 & 0.0268 $\pm$ 0.0004 &   5.7 $\pm$ 0.3    & 1.2 $\pm$ 0.1 & 4.9  \\ 
+\hline
+7000  &0.0631 $\pm$ 0.0012 &   8.5 $\pm$ 0.3   & 7.9 $\pm$ 0.6 & 1.1  \\ 
+\hline    
+\end{tabular} 
+\caption{Se muestran los parámetros obtenidos  y los valores para $\sigma_{tot}$, $\sqrt{s}$ y $\alpha'$ usados en los ajustes en colisiones prot\'on-prot\'on.}
+\label{tabla5_1}
+\end{table}
+ \begin{table}[H]
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+$\sqrt{s}$(GeV)&$ B_{13}$& $r_p$(\scriptsize{GeV$^{-1}$})&$ |\alpha_p|$ & $\scriptsize {\chi^2/ndf}$ \\ 
+\hline 
+19.4 & 0.026 $\pm$ 0.008 & 5.3 $\pm$  0.26      &8.8 $\pm$ 1.9 & 1.4 \\ 
+\hline 
+53 &0.013 $\pm$ 0.002     & 5.7 $\pm$ 1.7  & 6.0 $\pm$ 0.8& 0.6 \\ 
+\hline 
+546  &  0.026 $\pm$ 0.001    & 6.8  $\pm$ 0.7   & 6.2 $\pm$ 0.2 & 1.5 \\ 
+\hline 
+630  & 0.022 $\pm$ 0.001   &  7.1 $\pm$ 0.5  & 5.2 $\pm$ 0.4 &0.5 \\ 
+\hline 
+1800 & 0.039 $\pm$ 0.001   & 7.6 $\pm$ 0.7  & 8.5 $\pm$ 0.4  &1.5 \\ 
+\hline 
+1960 &  0.04 $\pm$ 0.01     & 7.4 $\pm$ 2.0  & 9.2 $\pm$ 0.5  &0.6 \\ 
+\hline 
+\end{tabular} 
+\caption{Se muestran los parámetros obtenidos  y los valores para $\sigma_{tot}$, $\sqrt{s}$ y $\alpha'$ usados en los ajustes en colisiones antiprot\'on-prot\'on.}
+\label{tabla5_2}
+\end{table}
+
+\section{Ajustes introduciendo una normalización global}
+Se dijo que introducir un nuevo parámetro libre ayuda a mejorar  los fits, este nuevo parámetro multiplica la amplitud de dispersión (Ecu.  (\ref{amplitudFcap4})) de la siguiente forma:
+\begin{equation}\label{neuvaF}
+F(s,t)=A(s)[F_1(s,t)-F_2(s,t)-F_3(s,t)]
+\end{equation}
+donde $A(s)$ es el nuevo parámetro libre que depende de la energía. La función chi-cuadrado se construye al igual que la ecuación (\ref{chicuadrado}) pero ahora nuestra función $F(s,t)$ est\'a dada por la ecuación (\ref{neuvaF}). El método de minimización es el mismo que se mencion\'o anteriormente. \\
+
+En los ajustes se obtuvo el valor del parámetro  $A(s)$ para cada energía, estos se muestran en las tablas \ref{tabla5_3parA} y \ref{tabla5_4parA}.
+Los valores de $A(s)$ se  ajustan (ver Figuras \ref{figpp5_36} y \ref{figpp5_37}) en función de $\sigma_{tot}$ y $\sqrt{s}$, de este modo se puede expresar $A(s)$ como una función de $\sigma_{tot}$ o de $\sqrt{s}$ (Ecuaciones \ref{parametriax_J} y \ref{parametrizacionglobal_J})
+\begin{figure}[H]
+%\centering
+\begin{tabular}{p{7.4cm}p{7.4cm}}
+\begin{minipage}[l]{7.4cm}
+\includegraphics[width=7.4cm]{Imagenes/figurastesis/graficas/normalizacion.pdf}
+\caption{La dependencia de  $A$ de  $\sigma_{tot}$. La curva es el modelo de predicción y est\'a dada por la parametrizaci\'on (\ref{parametriax_J}) }
+\label{figpp5_36}
+\end{minipage}
+&
+\begin{minipage}[r]{7.4cm}
+ \includegraphics[width=7.4cm]{Imagenes/figurastesis/graficas/normalizacionenergia.pdf}
+\caption{La dependencia de  $A$ de  $\sqrt{s}$. La curva es el modelo de predicción y est\'a dada por la parametrizaci\'on (\ref{parametrizacionglobal_J})}
+\label{figpp5_37}
+\end{minipage}
+\end{tabular}
+\end{figure}
+%\begin{fleqn}
+\begin{align}\label{parametriax_J}
+A(\sigma_{tot})&=\frac{(85\textup{.}97\pm 7\textup{.}61)\exp[(4\textup{.}19\pm 0\textup{.}43)/(\sigma_{tot}-(37\textup{.}05\pm 0\textup{.}20))]}{\sigma_{tot}-(37\textup{.}05\pm 0\textup{.}20)}\\
+\label{parametrizacionglobal_J} A(s)&=\frac{(40\textup{.}74\pm 5\textup{.}76)\exp\left[\frac{
+(-13\textup{.}46\pm 1\textup{.}06)}{
+(\sqrt{\frac{s}{s_o}}-(6\textup{.}08\pm 0\textup{.}78))}-(0\textup{.}61\pm 0\textup{.}03)\ln(\sqrt{\frac{s}{s_o}})\right]}{\sqrt{\frac{s}{s_o}}-(6\textup{.}08\pm 0\textup{.}78)}
+\end{align}
+%\end{fleqn}
+Las ecuaciones (\ref{parametriax_J}) y (\ref{parametrizacionglobal_J}) son parametrizaciones empíricas que permiten encontrar una apropiada descripción de la amplitud de dispersión a cualquier energía. Aún falta un entendimiento físico de este parámetro.
+\begin{figure}[H]
+%\centering
+\begin{tabular}{p{7.4cm}p{7.4cm}}
+\begin{minipage}[l]{7.4cm}
+ \begin{table}[H]
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline 
+$\sqrt{s}$(\scriptsize{GeV})&$A(s)$\\ 
+\hline 
+4.62  & 3.7  $\pm$ 0.9\\ 
+\hline 
+9.78   & 1.4 $\pm$ 0.2\\ 
+\hline 
+13.76   & 2.9 $\pm$ 1.0 \\ 
+\hline 
+19.4 & 6.4 $\pm$ 1.3 \\ 
+\hline 
+23.5 & 6.9 $\pm$ 0.5 \\ 
+\hline 
+30.7  & 7.2 $\pm$ 0.3\\ 
+\hline 
+44.7   & 7.5 $\pm$ 0.1\\ 
+\hline
+53.0  &7.2 $\pm$ 0.1 \\ 
+\hline
+62.5  & 7.2 $\pm$ 0.1 \\ 
+\hline
+7000  &  1.4 $\pm$ 0.1 \\ 
+\hline    
+\end{tabular} 
+\caption{Parámetro normalizaci\'on global colisiones prot\'on-prot\'on.}
+\label{tabla5_3parA}
+\end{table}
+\end{minipage}
+&
+\begin{minipage}[r]{7.4cm}
+ \begin{table}[H]
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline 
+$\sqrt{s}$(\scriptsize{GeV}) &$A(s)$ \\ 
+\hline 
+19.4 &  7.1 $\pm$ 0.8  \\ 
+\hline 
+53  & 6.3  $\pm$ 1.0 \\ 
+\hline 
+546   &  2.3 $\pm$ 1.0  \\ 
+\hline 
+630   &  2.7 $\pm$ 1.5  \\ 
+\hline 
+1800   & 1.7 $\pm$ 0.4  \\ 
+\hline 
+1960   &  2.17 $\pm$ 0.9 \\ 
+\hline 
+\end{tabular} 
+\caption{Parámetro normalizaci\'on global en colisiones antiprot\'on-prot\'on.}
+\label{tabla5_4parA}
+\end{table}
+\end{minipage}
+\end{tabular}
+\end{figure}
+%############################
+Finalmente, para los fits a datos experimentales  que se mostraran a continuación, la función $F(s,t)$ con la cual se construye la función $\chi^2$ es:
+\begin{equation}\label{estaeslaquees}
+F(s,t)=\underbrace{\frac{(85\textup{.}97\pm 7\textup{.}61)\exp\left[\frac{ (4\textup{.}19\pm 0\textup{.}43)}{\sigma_{tot}-(37\textup{.}05\pm 0\textup{.}20)}\right]}{\sigma_{tot}-(37\textup{.}05\pm 0\textup{.}20)}}_{=A \ \ \ \textup{Ecu. (\ref{parametriax_J})}}\{F_{1}(s,t)-F_{2}(s,t)-F_{3}(s,t)\}
+\end{equation}
+\subsection*{Ajustes para colisiones pp$\rightarrow$pp}
+\begin{figure}[H]
+%\centering
+\begin{tabular}{p{7.4cm}p{7.4cm}}
+\begin{minipage}[l]{7.4cm}
+\includegraphics[width=7.4cm]{Imagenes/figurastesis/graficas/lasgradocument/graf4GeVproton.pdf}
+\caption{ Se muestra el ajuste  a los datos de sección eficaz diferencial elástica en colisiones prot\'on-prot\'on a $\sqrt{s}=4\textup{.}62$ GeV. La curva es el modelo $qQ$ con pomer\'on elástico en todo el rango de $|t|$ .}
+\label{figpp5_19}
+\end{minipage}
+&
+\begin{minipage}[r]{7.4cm}
+\includegraphics[width=7.4cm]{Imagenes/figurastesis/graficas/lasgradocument/graf9GeVproton.pdf}
+\caption{ Se muestra el ajuste  a los datos de sección eficaz diferencial elástica en colisiones prot\'on-prot\'on a $\sqrt{s}=9\textup{.}78$ GeV.  La curva es el modelo $qQ$ con pomer\'on elástico en todo el rango de $|t|$ .}
+\label{figpp5_20}
+\end{minipage}
+\end{tabular}
+\end{figure}\newpage
+ \begin{figure}[H]
+%\centering
+\begin{tabular}{p{7.4cm}p{7.4cm}}
+\begin{minipage}[l]{7.4cm}
+\includegraphics[width=7.4cm]{Imagenes/figurastesis/graficas/lasgradocument/graf13GeVproton.pdf}
+\caption{ Se muestra el ajuste  a los datos de sección eficaz diferencial elástica en colisiones prot\'on-prot\'on a $\sqrt{s}=13\textup{.}76$ GeV.  La curva es el modelo $qQ$ con pomer\'on elástico en todo el rango de $|t|$ .}
+\label{figpp5_21}
+\end{minipage}
+&
+\begin{minipage}[r]{7.4cm}
+\includegraphics[width=7.4cm]{Imagenes/figurastesis/graficas/lasgradocument/graf19GeVproton.pdf}
+\caption{ Se muestra el ajuste  a los datos de sección eficaz diferencial elástica en colisiones prot\'on-prot\'on a $\sqrt{s}=19\textup{.}4$ GeV.  La curva es el modelo $qQ$ con pomer\'on elástico en todo el rango de $|t|$ .}
+\label{figpp5_22}
+\end{minipage}
+\end{tabular}
+\end{figure}
+\begin{figure}[H]
+%\centering
+\begin{tabular}{p{7.4cm}p{7.4cm}}
+\begin{minipage}[l]{7.4cm}
+\includegraphics[width=7.4cm]{Imagenes/figurastesis/graficas/lasgradocument/graf23GeVproton.pdf}
+\caption{Se muestra el ajuste  a los datos de sección eficaz diferencial elástica en colisiones prot\'on-prot\'on a $\sqrt{s}=23\textup{.}5$ GeV. La curva es el modelo $qQ$ con pomer\'on elástico en todo el rango de $|t|$ .}
+\label{figpp5_23}
+\end{minipage}
+&
+\begin{minipage}[r]{7.4cm}
+\includegraphics[width=7.4cm]{Imagenes/figurastesis/graficas/lasgradocument/graf30GeVproton.pdf}
+\caption{Se muestra el ajuste  a los datos de sección eficaz diferencial elástica en colisiones prot\'on-prot\'on a $\sqrt{s}=30\textup{.}7$ GeV.  La curva es el modelo $qQ$ con pomer\'on elástico en todo el rango de $|t|$ .}
+\label{figpp5_24}
+\end{minipage}
+\end{tabular}
+\end{figure}\newpage
+\begin{figure}[H]
+%\centering
+\begin{tabular}{p{7.4cm}p{7.4cm}}
+\begin{minipage}[l]{7.4cm}
+\includegraphics[width=7.4cm]{Imagenes/figurastesis/graficas/lasgradocument/graf44GeVproton.pdf}
+\caption{Se muestra el ajuste  a los datos de sección eficaz diferencial elástica en colisiones prot\'on-prot\'on a $\sqrt{s}=44\textup{.}7$ GeV.  La curva es el modelo $qQ$ con pomer\'on elástico en todo el rango de $|t|$ .}
+\label{figpp5_25}
+\end{minipage}
+&
+\begin{minipage}[r]{7.4cm}
+\includegraphics[width=7.4cm]{Imagenes/figurastesis/graficas/lasgradocument/graf53GeVproton.pdf}
+\caption{Se muestra el ajuste  a los datos de sección eficaz diferencial elástica en colisiones prot\'on-prot\'on a $\sqrt{s}=53$ GeV.  La curva es el modelo $qQ$ con pomer\'on elástico en todo el rango de $|t|$ .}
+\label{figpp5_26}
+\end{minipage}
+\end{tabular}
+\end{figure}
+\begin{figure}[H]
+%\centering
+\begin{tabular}{p{7.4cm}p{7.4cm}}
+\begin{minipage}[l]{7.4cm}
+\includegraphics[width=7.4cm]{Imagenes/figurastesis/graficas/lasgradocument/graf62GeVproton.pdf}
+\caption{Se muestra el ajuste  a los datos de sección eficaz diferencial elástica en colisiones prot\'on-prot\'on a $\sqrt{s}=62\textup{.}5$ GeV.  La curva es el modelo $qQ$ con pomer\'on elástico en todo el rango de $|t|$ .}
+\label{figpp5_27}
+\end{minipage}
+&
+\begin{minipage}[r]{7.4cm}
+\includegraphics[width=7.4cm]{Imagenes/figurastesis/graficas/lasgradocument/graf7000GeVproton.pdf}
+\caption{Se muestra el ajuste  a los datos de sección eficaz diferencial elástica en colisiones prot\'on-prot\'on a $\sqrt{s}=7000$ GeV.  La curva es el modelo $qQ$ con pomer\'on elástico en todo el rango de $|t|$ .}
+\label{figpp5_28}
+\end{minipage}
+\end{tabular}
+\end{figure}\newpage
+\subsection*{Ajustes para colisiones $\bar{\textup{p}}$p$\rightarrow$ $\bar{\textup{p}}$p}
+\begin{figure}[H]
+%\centering
+\begin{tabular}{p{7.4cm}p{7.4cm}}
+\begin{minipage}[l]{7.4cm}
+\includegraphics[width=6.8cm]{Imagenes/figurastesis/graficas/lasgradocument/graf19GeVantiproton.pdf}
+\caption{Se muestra el ajuste  a los datos de sección eficaz diferencial elástica en colisiones antiprot\'on-prot\'on a $\sqrt{s}=19\textup{.}4$ GeV.  La curva es el modelo $qQ$ con pomer\'on elástico en todo el rango de $|t|$ .}
+\label{figpp5_27}
+\end{minipage}
+&
+\begin{minipage}[r]{7.4cm}
+\includegraphics[width=6.8cm]{Imagenes/figurastesis/graficas/lasgradocument/graf53GeVantiproton.pdf}
+\caption{Se muestra el ajuste  a los datos de sección eficaz diferencial elástica en colisiones antiprot\'on-prot\'on a $\sqrt{s}=7000$ GeV.  La curva es el modelo $qQ$ con pomer\'on elástico en todo el rango de $|t|$ .}
+\label{figpp5_28}
+\end{minipage}
+\end{tabular}
+\end{figure}
+\begin{figure}[H]
+%\centering
+\begin{tabular}{p{7.4cm}p{7.4cm}}
+\begin{minipage}[l]{7.4cm}
+\includegraphics[width=6.8cm]{Imagenes/figurastesis/graficas/lasgradocument/graf546GeVantiproton.pdf}
+\caption{Se muestra el ajuste  a los datos de sección eficaz diferencial elástica en colisiones antiprot\'on-prot\'on a $\sqrt{s}=546$ GeV.  La curva es el modelo $qQ$ con pomer\'on elástico en todo el rango de $|t|$ .}
+\label{figpp5_27}
+\end{minipage}
+&
+\begin{minipage}[r]{7.4cm}
+\includegraphics[width=6.8cm]{Imagenes/figurastesis/graficas/lasgradocument/graf630GeVantiproton.pdf}
+\caption{Se muestra el ajuste  a los datos de sección eficaz diferencial elástica en colisiones antiprot\'on-prot\'on a $\sqrt{s}=630$ GeV.  La curva es el modelo $qQ$ con pomer\'on elástico en todo el rango de $|t|$ .}
+\label{figpp5_28}
+\end{minipage}
+\end{tabular}
+\end{figure}\newpage
+\begin{figure}[H]
+%\centering
+\begin{tabular}{p{7.4cm}p{7.4cm}}
+\begin{minipage}[l]{7.4cm}
+\includegraphics[width=6.8cm]{Imagenes/figurastesis/graficas/lasgradocument/graf1800GeVantiproton.pdf}
+\caption{Se muestra el ajuste  a los datos de sección eficaz diferencial elástica en colisiones antiprot\'on-prot\'on a $\sqrt{s}=1800$ GeV.  La curva es el modelo $qQ$ con pomer\'on elástico en todo el rango de $|t|$ .}
+\label{figpp5_27}
+\end{minipage}
+&
+\begin{minipage}[r]{7.4cm}
+\includegraphics[width=6.8cm]{Imagenes/figurastesis/graficas/lasgradocument/graf1960GeVantiproton.pdf}
+\caption{Se muestra el ajuste  a los datos de sección eficaz diferencial elástica en colisiones antiprot\'on-prot\'on a $\sqrt{s}=1960$ GeV.  La curva es el modelo $qQ$ con pomer\'on elástico en todo el rango de $|t|$ .}
+\label{figpp5_28}
+\end{minipage}
+\end{tabular}
+\end{figure}
+\subsection*{Radio del prot\'on introduciendo una normalización global}
+\begin{figure}[H]
+%\centering
+\begin{tabular}{p{7.4cm}p{7.4cm}}
+\begin{minipage}[l]{7.4cm}
+\includegraphics[width=6.8cm]{Imagenes/figurastesis/graficas/radioproton.pdf}
+\caption{La dependencia de $r_p$ en GeV$^{-1}$ de $\ln\left(\sqrt{s/s_o}\right)$}
+\label{figpp5_35}
+\end{minipage}
+&
+\begin{minipage}[r]{7.4cm}
+En la figura \ref{figpp5_35} también se puede apreciar un incremento en
+el radio del protón conforme la energía
+aumenta. Los cuadros peque\~nos azules representan los parámetros que fueron arrojados
+durante los ajustes para cada una de las
+energías. La
+curva de color rojo es el modelo de predicción y su representación matemática est\'a
+dada por la parametrización:\begin{equation*}
+r_p=(3\textup{.}63\pm 0\textup{.}07+(0\textup{.}55\pm 0\textup{.}02)\ln\left(\sqrt{\frac{s}{s_{o}}}\right)
+\end{equation*}
+\end{minipage}
+\end{tabular}
+\end{figure}
+
+%############################
+   \subsection*{Parámetros obtenidos en ajustes prot\'on-prot\'on y antiprot\'on-prot\'on considerando la normalizaci\'on global A(s) }
+Como podemos ver, los resultados mostrados en las tablas  \ref{tabla5_3} y \ref{tabla5_4} para $\chi^2/ndf$ son un poco m\'as confiables, estos valores son respaldados por la buena descripción del modelo a los datos experimentales,  el cual se puede apreciar en cada una de las gráficas. Las características de los parámetros $B_{13}$, $r_p$ y $|\alpha'|$ ya se mencionaron anteriormente. Sin embargo, sus valores cambiaron, la razón se debe a la mejora en los fits, es decir, para la nueva función chi-cuadrado que se construye ahora, Minuit puede hacer una mejor aproximación, esto implica valores de chi-cuadrado m\'as bajos, y as\'i, los parámetros que se obtienen para esta  nueva función chi-cuadrado son m\'as adecuados.  
+ \begin{table}[H]
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline 
+$\sqrt{s}$(\scriptsize{GeV})&$ B_{13}$& $r_p$(\scriptsize{GeV$^{-1}$}) &$ |\alpha_p|$& $\scriptsize {\chi^2/ndf}$ \\ 
+\hline 
+4.62  & 0.12 $\pm$ 0.01 &  4.47 $\pm$ 0.08&                5.7 $\pm$ 0.7 & 1.6 \\ 
+\hline 
+9.78  & 0.0171 $\pm$ 0.0009&5.3 $\pm$ 0.3  &                3.2 $\pm$ 0.3&1.8  \\ 
+\hline 
+13.76  &0.0145 $\pm$ 0.0007 & 4.8 $\pm$ 0.3 &                3.4 $\pm$ 0.3&1.7 \\ 
+\hline 
+19.4 & 0.0172 $\pm$ 0.0005&   5.5 $\pm$  0.1&                1.7 $\pm$ 0.1& 0.8 \\ 
+\hline 
+23.5 & 0.0213 $\pm$ 0.0002 & 5.37 $\pm$ 0.01 &                0.78 $\pm$ 1.4&0.9 \\ 
+\hline 
+30.7  &0.0186 $\pm$ 0.0003  & 5.5 $\pm$ 0.1&                    0.8 $\pm$ 0.06& 1.8 \\ 
+\hline 
+44.7  & 0.043 $\pm$ 0.001 &  5.6 $\pm$  0.2&                   1.42 $\pm$ 0.06 &3.0\\ 
+\hline
+53.0 &0.048 $\pm$ 0.002 & 5.8 $\pm$ 0.2 &                      1.68 $\pm$ 0.07&2.8  \\ 
+\hline
+62.5  & 0.039 $\pm$ 0.002 & 5.8 $\pm$  0.3&                    1.7 $\pm$ 0.1 &1.9 \\ 
+\hline
+7000  &0.0489 $\pm$ 0.0008 &8.7 $\pm$  0.1   &                 8.0 $\pm$ 0.6  &0.9 \\ 
+\hline    
+\end{tabular} 
+\caption{En la tabla se muestran parámetros obtenidos en los ajustes prot\'on-prot\'on y los valores para $\sigma_{tot}$ y $\sqrt{s}$ usados en los ajustes.}
+\label{tabla5_3}
+\end{table}
+\begin{table}[H]
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline 
+$\sqrt{s}$(\scriptsize{GeV})&$ B_{13}$& $r_p$(\scriptsize{GeV$^{-1}$})  &$ |\alpha_p|$& $\scriptsize {\chi^2/ndf}$ \\ 
+\hline 
+19.4 & 0.04 $\pm$ 0.02 & 5.7 $\pm$  0.4& 2.6 $\pm$ 3.3      & 2.0 \\ 
+\hline 
+53 &0.021 $\pm$ 0.004     & 5.5 $\pm$ 0.3 &                 3.9 $\pm$ 0.7 & 0.6 \\ 
+\hline 
+546  &  0027 $\pm$ 0.001    & 7.5  $\pm$ 0.4&                6.1 $\pm$ 0.3      & 1.5 \\ 
+\hline 
+630  & 0.03 $\pm$ 0.01   &  7.2 $\pm$ 0.1 &                  5.8 $\pm$ 0.8     &0.9 \\ 
+\hline 
+1800  & 0.028 $\pm$ 0.003   &  8.3 $\pm$ 0.6 &              9.4 $\pm$ 0.5             &1.9 \\ 
+\hline 
+1960  &  0.050 $\pm$ 0.008     & 7.5 $\pm$ 0.2&             8.7 $\pm$ 0.5          &0.6 \\ 
+\hline 
+\end{tabular} 
+\caption{En la tabla se muestran parámetros obtenidos en los ajustes antiprot\'on-prot\'on y los valores para $\sigma_{tot}$ y $\sqrt{s}$ usados en los ajustes.}
+\label{tabla5_4}
+\end{table}
+%############################
+

@@ -1,0 +1,103 @@
+\usepackage{epsfig,bm,epsf,float}
+\usepackage{mathrsfs}
+\usepackage[latin1]{inputenc}
+\usepackage{graphicx}
+\usepackage{times}
+\usepackage{eqlist}
+\usepackage{amssymb}
+\setlength{\parindent}{0cm} 
+\usepackage{titlesec}
+\usepackage{cancel}
+\usepackage{hyperref}
+\usepackage[spanish]{babel}
+\usepackage{lettrine}
+\usepackage{eso-pic}
+\usepackage{amsmath}
+\usepackage[left=4cm,top=2.5cm,right=2.5cm,bottom=2.5cm]{geometry}
+\usepackage[Sonny]{fncychap}
+\usepackage{graphicx}
+\usepackage{graphicx}
+\usepackage{fancybox}
+\usepackage{textcomp}
+\usepackage{anyfontsize}
+\usepackage{amsthm,amsfonts,amssymb}
+\newcommand{\mathsym}[1]{{}}
+\newcommand{\unicode}[1]{{}}
+\usepackage{anyfontsize}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{pst-plot}
+\usepackage{pst-all}
+\usepackage{pstricks}
+\usepackage{float}
+%\fancyhead[RE]{\rightmark}
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername \thechapter. #1}{}}
+
+\titleformat{\chapter}[display]
+{\normalfont\Huge\bfseries}{\chaptertitlename\thechapter}{0pt}{\Huge}
+\titlespacing*{\chapter}{0cm}{0cm}{0.5cm}
+  
+%\renewcommand\thechapter{\large\arabic{chapter}}
+\titleformat{\chapter}[display]
+{\bfseries\Large}
+{\large\rmfamily\bfseries\selectfont\color{gris}
+\filleft\MakeUppercase{\chaptertitlename} \large\rmfamily\bfseries\thechapter}{1cm}
+{\Huge\rmfamily\bfseries\selectfont\scshape\color{black}
+\vspace{0ex}\filleft}
+[\titlerule\vspace{0.1cm}\titlerule\vspace{0cm}
+\titlerule\vspace{0cm}\titlerule\vspace{0cm}\titlerule\titlerule]
+%fin formato titulo
+
+
+
+
+
+
+
+
+
+\definecolor{gris}{gray}{0.4}
+
+%formato titulo
+
+
+\renewcommand{\LettrineFontHook}{\color{amarilloM}}
+
+
+\usepackage{titlesec, blindtext, color}  
+%----------------------------------------------------------------------------------------
+%	Numeración de las secciones -- en el margen
+%----------------------------------------------------------------------------------------
+ \definecolor{amarilloM}{RGB}{240,40,0}
+ 
+\makeatletter
+\renewcommand{\@seccntformat}[1]{{\textcolor{gris}{\csname the#1\endcsname}\hspace{1em}}} 
+
+                   
+\renewcommand{\section}{\@startsection{section}{1}{\z@}
+{0.3cm \@plus -1cm \@minus -0.4ex}
+{0.1cm \@plus.2ex }
+{\normalfont\large\sffamily\bfseries\selectfont\color{amarilloM}}}
+
+
+\renewcommand{\subsection}{\@startsection {subsection}{2}{\z@}
+{0.3cm \@plus -0.1ex \@minus -.4ex}
+{0.01cm \@plus.2ex }
+{\normalfont\sffamily\bfseries\selectfont\color{amarilloM}}}
+
+\renewcommand{\subsubsection}{\@startsection {subsubsection}{3}{\z@}
+{0.1cmm \@plus -0.1ex \@minus -.2ex}
+{0.03 \@plus.2ex }
+{\normalfont\small\sffamily\bfseries\selectfont\color{amarilloM}}}                        
+
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}
+{-2ex \@plus-.2ex \@minus .2ex}
+{0.1ex}
+{\normalfont\small\sffamily\bfseries\selectfont\color{amarilloM}}}
+\makeatother
+% Fin numeración secciones
+
+
+

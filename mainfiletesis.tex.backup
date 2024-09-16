@@ -1,0 +1,47 @@
+\documentclass[12pt,twoside,final]{mainfiletesis}
+\include{packages}
+
+\fancyhf{}
+
+%% Now begin customising things. See the fancyhdr docs for more info.
+
+\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{#1}}{}}
+\renewcommand{\sectionmark}[1]{\markright{\MakeUppercase{#1}}{}}
+
+
+\fancyhead[RO]{{{\small\sffamily\selectfont\scshape capitulo} 
+\footnotesize\sffamily\selectfont\scshape\thechapter 
+\hspace{0.3cm}\scriptsize{\leftmark}}\hspace{0.3cm}\footnotesize\sffamily\bfseries\thepage}
+\setcounter{tocdepth}{2}
+\fancyhead[LE]{\thepage\hspace{2em}\scriptsize{\leftmark}}
+\fancyhead[RE,LO]{}
+\fancyhead[LE]{{{\footnotesize\sffamily\bfseries\thepage} \hspace{0.3cm}
+\scriptsize\sffamily\selectfont\scshape\footnotesize\rightmark} }
+
+%\small\sffamily\selectfont\scshape\chaptertitlename\thechapter
+
+\begin{document}
+
+
+
+% Portada:
+%\include{Portada/portada}
+
+
+
+% Capítulos:
+
+
+\include{Capitulos/capitulo1}
+\include{Capitulos/capitulo2}
+%\include{Capitulos/capitulo3}
+%\include{Capitulos/capitulo4}
+%\include{Capitulos/capitulo5}
+%\include{Capitulos/capitulo5}
+%\include{Capitulos/capitulo7}
+%\include{Capitulos/capitulo8}
+%\include{Anexos/anexo1}
+
+% Bibliografía:
+%\bibliography{Bibliografia/bibliography}
+\end{document}

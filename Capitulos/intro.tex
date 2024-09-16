@@ -1,0 +1,36 @@
+\chapter{INTRODUCCI\'ON}
+Actualmente se sabe que los quarks tienen carga eléctrica y carga de color: rojo ( R ), verde ( G )  o azul ( B ), de modo que interactúan por intercambio de fotones (fuerza el\'ectrica) y por intercambio de gluones (fuerza fuerte), que  también generan acoplamientos glu\'on-glu\'on  debido a que tienen carga de color \cite{Mazzitelli}. Los quarks son los constituyentes de los hadrones  (por ejemplo, protones y  neutrones), y por lo tanto, también  están gobernados por la interacción fuerte; tema de estudio de la cromodinámica cuántica (QCD). El acoplamiento directo gluón-gluón hace que la QCD sea mucho más complicada que la electrodinámica cuántica (QED), pero también mucho más rica, permitiendo, por ejemplo, la posibilidad de glueballs (estados ligados solamente entre gluones) \cite{particulasgriphys}.  Por otro lado, cuando se estudian las interacciones entre partículas elementales, al calcular las amplitudes de dispersión  a orden superior utilizando la técnica de los diagramas de Feynman, nos encontramos con integrales que divergen. Para solucionar este problema, se hace necesario renormalizar la constante de acoplamiento ($\alpha_s$), el cual permite hacer cálculos perturbativos  siempre que  $\alpha_s<1$  (región perturbativa).  De esta manera, en un proceso hadr\'onico, el régimen perturbativo consistirá en calcular las interacciones entre los constituyentes de los hadrones a partir de los diagramas de Feynman. Mientras que el comportamiento no perturbativo para el cual $\alpha_s>1$ es estudiado a partir de modelos fenomenologicos, como por ejemplo la teoría de Regge \cite{Mazzitelli}.\\
+
+\sp Uno de los escenarios donde se analizan procesos dispersivos de partículas elementales  es en aceleradores de partículas. Los aceleradores m\'as representativos son el TEVATRON  y el gran colisionador de hadrones (LHC) en el CERN. El TEVATRON lleva ya varios años apagado (desde octubre de 2011), mientras que que el LCH se encuentra en pleno funcionamiento y actualmente hace colisionar partículas hasta una energía de 13 TeV \cite{ivan}. El LHC cuenta con diferentes experimentos para diferentes propósitos, entre estos nos encontramos con el experimento TOTEM ubicado cerca del detector CMS diseñado para medir la sección eficaz diferencial y  total elástica en colisiones prot\'on-prot\'on. Adicionalmente TOTEM estudia dispersión difractiva, donde uno o ambos protones salen intactos después de la colisión, en este caso, colocando detectores a ambos lados del detector CMS para cubrir ángulos muy pequeños se puede verificar que se detecta un protón a un lado y no protón al otro lado, consistente con un evento de difracción simple. Si bien a altas energías los procesos dominantes son inel\'asticos, entre el 20\% y 25\% de las colisiones entre hadr\'ones son elásticas, y su principal observable es la sección eficaz diferencial elástica\footnote{El subíndice en $d\sigma_{el}/dt$ es para aclarar que se est\'a hablando de la sección eficaz diferencial elástica ($el$) } ($d\sigma_{el}/dt$). Las mediciones que existen para $d\sigma_{el}/dt$ son más abundantes para colisiones pp y p$\bar{\textup{p}}$, donde hay cubrimiento de energía desde unos pocos GeV hasta 7 TeV \cite{carlosavila}. Del mismo modo, el cubrimiento para el cuadrimomento transferido al cuadrado\footnote{En el cap\'itulo 3  hablaremos con un poco m\'as detalle sobre esta variable.} $|t|$ va desde valores muy bajos de $|t| \approx$ 0.0001 GeV$^2$ hasta $|t| \approx 12$ GeV$^2$. A valores de
+$|t|>$ 0.005 GeV$^2$ domina ampliamente la dispersión
+nuclear y se observa un decaimiento exponencial hasta
+llegar a un mínimo de difracción (Fig. \ref{figuraminimo}),  que es de interés porque significa interferencia entre amplitudes de dispersión que se presentan en la interacción nuclear. Posterior al mínimo de difracción se puede también  apreciar un
+nuevo decaimiento exponencial con una pendiente más
+pequeña \cite{carlosavila}. 
+\begin{figure}[H]
+%\centering
+\begin{tabular}{p{7cm}p{7.4cm}}
+\begin{minipage}[l]{7cm}
+\includegraphics[width=7cm]{Imagenes/figurastesis/graficas/lasgradocument/graf7Tev.pdf}
+\caption{M\'inino de difracción mostrado en el interior  del c\'irculo de color rojo para datos TOTEM 7 TeV}
+\label{figuraminimo}
+\end{minipage}
+&
+\begin{minipage}[r]{7.4cm}
+Para  la descripción de datos  de 
+$d\sigma_{el}/dt$ registrados en los diferentes experimentos, entre ellos TOTEM en el acelerador LHC, existen muchos modelos fenomenológicos (Parte  de estos modelos se basan en la teoría de Regge) que tratan de ajustar esta evidencia experimental y son mejorados conforme aumentan los datos que son accesibles, aproximándonos cada vez m\'as a los fenómenos internos que ocurren en los hadr\'ones en el momento de la colisión.
+De esto podemos inferir que la sección eficaz diferencial elástica es la herramienta que tenemos para poder descifrar la dinámica interna del proceso de dispersión elástica. 
+\end{minipage}
+\end{tabular}
+\end{figure}
+Medir $d\sigma_{el}/dt$ nos permite obtener variables experimentales como: la sección eficaz elástica ($\sigma_{el}$), la sección eficaz total ($\sigma_{tot}$), el cociente entre la parte real e imaginaria de la amplitud de dispersión en la región frontal ($\theta=0$) $\rho$     y el parámetro de pendiente nuclear $B$. Estas variables se describen con m\'as detalle en el cap\'itulo \ref{dispersionelastica} \cite{carlosavila}. \\
+
+\sp En el presente trabajo se tiene como objetivo encontrar una parametrizaci\'on que permita describir la estructura de la sección eficaz diferencial el\'astica para colisiones prot\'on-prot\'on y prot\'on-antiprot\'on para todos los rangos de energías superiores a los 20 GeV. Nuestro estudio est\'a basado en la propuesta de Grichine \cite{grichine}, este modelo mejora la descripción de los datos en  el mínimo de difracción que es donde el trabajo desarrollado en la referencia \cite{modeloqQ} falla en determinar su posición correcta (Fig. \ref{minimodifrac}), introduciendo un nuevo parámetro empírico denominado la elasticidad del pomer\'on. Trataremos de familiarizar al lector en conceptos relevantes que fueron necesarios para  el  desarrollo de este proyecto. En principio, lo que se hizo fue un estudio cr\'itico a  un modelo fenomenológico de dispersión elástica de nucleones, demostrando que la amplitud de dispersión propuesta por Grichine en \cite{grichine} no ajusta correctamente los datos experimentales de $d\sigma_{el}/dt$ en un cierto rango de energías en colisiones pp y p$\bar{\textup{p}}$. Las ideas generales que se pueden inferir del modelo se extienden con un poco m\'as de detalle en el cap\'itulo 3, los dem\'as capítulos se enfocan en conceptos de dispersión elástica, aceleradores de partículas y detectores, ajustes de datos, la presentación del modelo en estudio propuesto por Grichine, y algunas conclusiones (En este trabajo usamos el sistema de unidades naturales con $\hbar=c=1$).
+\begin{figure}[H]\centering
+\includegraphics[width=7cm]{Imagenes/figurastesis/graficas/lasgradocument/graf7000GeVproton2.pdf}
+\caption{Se muestra una sobre-estimaci\'on en el m\'inimo de difracci\'on a datos de $d\sigma_{el}/dt$ a una energ\'ia de centro de masa de 7 TeV.}
+\label{minimodifrac}
+\end{figure}
+
+
+

@@ -1,0 +1,174 @@
+
+
+% -----------------------------------------------------------------------------------------------------------------
+% Cambiar los nombres...
+% -----------------------------------------------------------------------------------------------------------------
+
+% Nombre de tesis
+%\title{Modelo de Redes Neuronales para pronóstico de Series de Tiempo}
+
+% Autor
+%\author{Tejeda Medrano, Brucele Rod}
+
+% Mes
+%\degreemonth{Octubre}
+
+% Año
+%\degreeyear{2006}
+
+% Título profesional
+\degree{Ingeniero de Sistemas}
+
+% Asesor
+\advisor{Samuel Oporto Díaz}
+
+% Nombre de la tesis en inglés
+\engtitle{Neural Network Models for Time Series Forecasts}
+
+\maketitle
+
+\copyrightpage
+
+
+
+
+
+
+
+% #####################################################
+% OBS: Se modifican la parte de las 'xxx xxx xxxxx'   #
+% #####################################################
+
+
+
+% -----------------------------------------------------------------------------------------------------------------
+% Cambiar resumen en español...
+% -----------------------------------------------------------------------------------------------------------------
+
+\begin{abstract}
+\begin{itshape}
+\dsp
+
+xxx xxxxx xxxxx xxxxxxx xxxxxxxx xxxxxxxx xxxxx x xxxxx xxxxxxxx
+xxxxxx xxxxx xxxxxx xxxxxxxxx xxxxxxxxxxxx xxxxxx xxxxxxxx xxxxx
+xxxxx xxx xxxxxxxxxxx xxxxx xxxxx xxxx x xxx xxx xxxxxxxx xxxxx xxx
+x xx xxxx xx xxxxx xxxxxx xxxxx xxxx x xxx xxxxxx xxxxxxxx xxxxx
+xxxxxx x xxxxxxxx xxx xxxxx xxxxxxx xxxxx xxxxxx xxxx xxxxx xxxxx
+xxx x xxx xxxx xxxx xxxxx
+
+\bigskip
+
+xxx xxxxx xxxxx xxxxxxx xxxxxxxx xxxxxxxx xxxxx x xxxxx xxxxxxxx
+xxxxxx xxxxx xxxxxx xxxxxxxxx xxxxxxxxxxxx xxxxxx xxxxxxxx xxxxx
+xxxxx xxx xxxxxxxxxxx xxxxx xxxxx xxxx x xxx xxx xxxxxxxx xxxxx xxx
+x xx xxxx xx xxxxx xxxxxx xxxxx xxxx x xxx xxxxxx xxxxxxxx xxxxx
+xxxxxx x xxxxxxxx xxx xxxxx xxxxxxx xxxxx xxxxxx xxxx xxxxx xxxxx
+xxx x xxx xxxx xxxx xxxxx
+
+\bigskip
+
+xxx xxxxx xxxxx xxxxxxx xxxxxxxx xxxxxxxx xxxxx x xxxxx xxxxxxxx
+xxxxxx xxxxx xxxxxx xxxxxxxxx xxxxxxxxxxxx xxxxxx xxxxxxxx xxxxx
+xxxxx xxx xxxxxxxxxxx xxxxx xxxxx xxxx x xxx xxx xxxxxxxx xxxxx xxx
+x xx xxxx xx xxxxx xxxxxx xxxxx xxxx x xxx xxxxxx xxxxxxxx xxxxx
+xxxxxx x xxxxxxxx xxx xxxxx xxxxxxx xxxxx xxxxxx xxxx xxxxx xxxxx
+xxx x xxx xxxx xxxx xxxxx
+
+\end{itshape}
+\end{abstract}
+
+
+
+
+
+
+
+% -----------------------------------------------------------------------------------------------------------------
+% Cambiar resumen en inglés...
+% -----------------------------------------------------------------------------------------------------------------
+
+\begin{engabstract}
+\begin{itshape}
+\dsp
+
+xxx xxxxx xxxxx xxxxxxx xxxxxxxx xxxxxxxx xxxxx x xxxxx xxxxxxxx
+xxxxxx xxxxx xxxxxx xxxxxxxxx xxxxxxxxxxxx xxxxxx xxxxxxxx xxxxx
+xxxxx xxx xxxxxxxxxxx xxxxx xxxxx xxxx x xxx xxx xxxxxxxx xxxxx xxx
+x xx xxxx xx xxxxx xxxxxx xxxxx xxxx x xxx xxxxxx xxxxxxxx xxxxx
+xxxxxx x xxxxxxxx xxx xxxxx xxxxxxx xxxxx xxxxxx xxxx xxxxx xxxxx
+xxx x xxx xxxx xxxx xxxxx
+
+\bigskip
+
+xxx xxxxx xxxxx xxxxxxx xxxxxxxx xxxxxxxx xxxxx x xxxxx xxxxxxxx
+xxxxxx xxxxx xxxxxx xxxxxxxxx xxxxxxxxxxxx xxxxxx xxxxxxxx xxxxx
+xxxxx xxx xxxxxxxxxxx xxxxx xxxxx xxxx x xxx xxx xxxxxxxx xxxxx xxx
+x xx xxxx xx xxxxx xxxxxx xxxxx xxxx x xxx xxxxxx xxxxxxxx xxxxx
+xxxxxx x xxxxxxxx xxx xxxxx xxxxxxx xxxxx xxxxxx xxxx xxxxx xxxxx
+xxx x xxx xxxx xxxx xxxxx
+
+\bigskip
+
+xxx xxxxx xxxxx xxxxxxx xxxxxxxx xxxxxxxx xxxxx x xxxxx xxxxxxxx
+xxxxxx xxxxx xxxxxx xxxxxxxxx xxxxxxxxxxxx xxxxxx xxxxxxxx xxxxx
+xxxxx xxx xxxxxxxxxxx xxxxx xxxxx xxxx x xxx xxx xxxxxxxx xxxxx xxx
+x xx xxxx xx xxxxx xxxxxx xxxxx xxxx x xxx xxxxxx xxxxxxxx xxxxx
+xxxxxx x xxxxxxxx xxx xxxxx xxxxxxx xxxxx xxxxxx xxxx xxxxx xxxxx
+xxx x xxx xxxx xxxx xxxxx
+
+\end{itshape}
+\end{engabstract}
+
+
+
+
+\newpage
+\addcontentsline{toc}{section}{Tabla de contenidos}
+
+\tableofcontents
+
+\listoffigures
+
+\listoftables
+
+
+
+
+% -----------------------------------------------------------------------------------------------------------------
+% Cambiar agradecimientos...
+% -----------------------------------------------------------------------------------------------------------------
+
+\begin{acknowledgments}
+
+xxxxxx xxxx xxxxx xxx xxxx xxxx xxxxx xxxxx x xxxx xxx xxxx xxxx
+xxxx xxx xxx xxxx xxx xxxx xxx xxx x xxxxxx xxxxxx x xxxxxx xxxxx
+xxxx xxxxx xxxxx xxxxx x xxxxxxxx xxxxxx xxxxx xxxxx xxxxx xxxx xxxx
+xxxx xxxxx xxxxx xxxx xxxx xxxxx xxxxx xxxxxx xxxxxx xxxxx xxxx
+
+\end{acknowledgments}
+
+
+
+
+
+
+
+% -----------------------------------------------------------------------------------------------------------------
+% Cambiar dedicatoria...
+% -----------------------------------------------------------------------------------------------------------------
+
+
+\dedication
+
+\begin{quote}
+\hsp \em \raggedleft
+
+En esta parte se coloca la,\\
+dedicatoria... xxx xxx xxxx xx,\\
+xxx xxxxxxx xxxxxx.
+
+\end{quote}
+
+\newpage
+
+\startarabicpagination

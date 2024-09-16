@@ -1,0 +1,1327 @@
+
+\chapter{teor\'{\i}a de chern-simons $U\left( 1\right) $ pura} 
+Generalmente, el t\'{e}rmino topol\'{o}gico de masa de Chern-Simons (C-S) en 
+$\left( 2+1\right) $ dimensiones, es estudiado como un elemento adicional de
+las densidades Lagrangianas de determinadas teor\'{\i}as gauge, tal como la
+teor\'{\i}a electromagn\'{e}tica de Maxwell. Esto se debe particularmente a
+que la inclusi\'{o}n de la densidad Lagrangiana de C-S a las densidades
+Lagrangianas de Maxwell y de la electr\'{o}din\'{a}mica cu\'{a}ntica
+bidimensional , $Q.E.D_{\left( 2+1\right) d}$, da origen a un t\'{e}rmino
+topol\'{o}gico de masa asociado al campo bos\'{o}nico fundamental $A_{\alpha
+}$ \cite{Dunne,Chinos,Martinez}.\newline
+\newline
+Aunque la relevancia del t\'{e}rmino de Chern-Simons se evidencia tras su
+acoplamiento a determinadas teor\'{\i}as que tratan sistemas f\'{\i}sicos en
+el espacio bidimensional, este t\'{e}rmino puede ser considerado
+individualmente como una teor\'{\i}a gauge completa en $\left( 2+1\right) $
+dimensiones.\newline
+\newline
+La densidad Lagrangiana que describe la teor\'{\i}a de C-S es:%
+\begin{equation}
+\mathcal{L}_{CS}\equiv \frac{k}{4\pi }\varepsilon ^{\alpha \beta \gamma }\left(
+\partial _{\alpha }A_{\beta }\right) A_{\gamma } ,\label{1}
+\end{equation}%
+donde $k$ es una constante de acomplamiento adimensional y $A_{\alpha }$ es el campo vectorial fundamental, tal que $\alpha =0,1,2,$
+denota sus componentes espacio-temporales. Además, $\varepsilon
+^{\alpha \beta \gamma }$ denota el tensor ant\'{\i}simetrico Levi-Civita. cuyas
+propiedades en $\left( 2+1\right) d,$ se estudian en el \textbf{Ap\'{e}ndice
+A}.\newline
+\newline
+Inicialmente se puede resaltar que esta densidad Lagrangiana contiene expl%
+\'{\i}citamente en su estructura al campo $A_{\alpha }$ en lugar del tensor
+de campo electromagn\'{e}tico $F_{\alpha \beta }$. No obstante, cumple con
+el criterio de invariancia gauge local \cite{Dunne}. Por otra parte, la densidad Lagrangiana de C-S es de primer orden en las
+derivadas espacio temporales. As\'{\i} pues, la estructura can\'{o}nica de
+esta teor\'{\i}a difiere significativamente de la teor\'{\i}a electromagn%
+\'{e}tica de Maxwell.\newline
+\newline
+En adici\'{o}n, a las anteriores caracteristicas, se puede mencionar que
+debido a la presencia del tensor antisim\'{e}trico de Levi-Civita, la
+densidad Lagrangiana (\ref{1}) no puede ser escrita como un t\'{e}rmino en el
+espacio-tiempo usual de $\left( 3+1\right) $ dimensiones. Generalmente, es
+posible escribir el t\'{e}rmino de C-S en cualquier dimensi\'{o}n impar del
+espacio-tiempo, pero solamente en $\left( 2+1\right) $ dimensiones la
+densidad Lagrangiana es cuadr\'{a}tica en el campo gauge $A_{\alpha }$
+\cite{Dunne}.\newline
+\newline
+Finalmente, es importante tener en cuenta que la teor\'{\i}a de C-S pura es
+descrita por una densidad Lagrangiana singular, lo que implica para este
+caso en particular, el surjumiento tanto de v\'{\i}nculos de primera clase
+como v\'{\i}nculos de segunda clase \cite{Chinos}. Por tal motivo, el an\'{a}lisis cl\'{a}%
+sico y el tratamiento de los v\'{\i}nculos de esta teor\'{\i}a se efectuar%
+\'{a} en el gauge de radiaci\'{o}n, en virtud a los lineamientos del m\'{e}%
+todo de Dirac \cite{Dirac,Dirac2}.
+
+\section{Invariancia Gauge}
+Obs\'{e}rvese que a partir de el car\'{a}cter antisim\'{e}trico del tensor
+de Levi-Civita y la estructura del tensor de campo electromagn\'{e}tico, es
+posible reescribir la densidad Lagrangiana (\ref{B.1}) del siguiente modo:%
+\begin{eqnarray}
+\mathcal{L} &\mathcal{=}&\frac{k}{8\pi }\left[ \varepsilon ^{\alpha \beta
+\gamma }\left( \partial _{\alpha }A_{\beta }\right) A_{\gamma }+\varepsilon
+^{\alpha \beta \gamma }\left( \partial _{\alpha }A_{\beta }\right) A_{\gamma
+}\right]  \notag \\
+&=&\frac{k}{8\pi }\varepsilon ^{\alpha \beta \gamma }\left( \partial
+_{\alpha }A_{\beta }-\partial _{\beta }A_{\alpha }\right) A_{\gamma }
+\label{B.2}
+\end{eqnarray}%
+Bajo una transformaci\'{o}n gauge de la forma (\ref{A.4}), la densidad
+Lagrangiana de C-S ser\'{a}: 
+\begin{equation*}
+\mathcal{L}^{\prime }\mathcal{=}\frac{k}{8\pi }\varepsilon ^{\alpha \beta
+\gamma }F_{\alpha \beta }^{\prime }A_{\gamma }^{\prime }
+\end{equation*}%
+Debido a que el tensor de campo electromagn\'{e}tico $F_{\alpha \beta }$ es
+invariante bajo este tipo de transformaciones, es evidente que:%
+\begin{eqnarray*}
+\mathcal{L}^{\prime } &=&\frac{k}{8\pi }\varepsilon ^{\alpha \beta \gamma
+}F_{\alpha \beta }\left( A_{\gamma }+\frac{1}{e}\partial _{\gamma }\Lambda
+\right) \\
+&=&\frac{k}{8\pi }\varepsilon ^{\alpha \beta \gamma }F_{\alpha \beta
+}A_{\gamma }+\frac{k}{8e\pi }\varepsilon ^{\alpha \beta \gamma }F_{\alpha
+\beta }\partial _{\gamma }\Lambda \\
+&=&\mathcal{L+}\partial _{\gamma }\left( \frac{k}{8e\pi }\varepsilon
+^{\alpha \beta \gamma }F_{\alpha \beta }\Lambda \right) -\frac{k}{8e\pi }%
+\varepsilon ^{\alpha \beta \gamma }\left( \partial _{\alpha }F_{\beta \gamma
+}\right) \Lambda .
+\end{eqnarray*}%
+Cabe anotar que para la consecuci\'{o}n del resultado previo se hizo uso de
+la antisimetr\'{\i}a del tensor de Levi-Civita y del tensor de campo
+electromagn\'{e}tico.\newline
+\newline
+Sin embargo, de la identidad mostrada a continuaci\'{o}n $\left( \text{v\'{e}%
+ase Ap\'{e}ndice B}\right) $: \newline
+\begin{equation}
+\varepsilon ^{\alpha \beta \gamma }\partial _{\alpha }F_{\beta \gamma }=0,
+\label{B.3}
+\end{equation}%
+la densidad Lagrangiana del sistema bajo una transformaci\'{o}n de gauge se
+reduce a:%
+\begin{equation}
+\mathcal{L}^{\prime }\mathcal{=L+}\partial _{\gamma }\left( \frac{k}{8e\pi }%
+\varepsilon ^{\alpha \beta \gamma }F_{\alpha \beta }\Lambda \right) .
+\label{B.4}
+\end{equation}%
+Teniendo en cuenta que la densidad Lagrangiana de un sistema no es \'{u}%
+nica, puede eliminarse el t\'{e}rmino presente en el segundo sumando de la
+relaci\'{o}n preliminar \cite{Goldstein}. Es relevante resaltar que bajo
+este procedimiento se seguir\'{a}n obteniendo las mismas ecuaciones de
+movimiento, esto ocurre debido a que una vez definida la integral de acci%
+\'{o}n asociada a la densidad Lagrangiana (\ref{B.4}), su segundo sumando se
+anula por motivo de las condiciones de frontera del campo $A_{\alpha }$ \cite%
+{Dunne}. Por lo tanto se concluye que: 
+\begin{equation*}
+\mathcal{L}^{\prime }\mathcal{=L}.
+\end{equation*}%
+Se dice entonces que la densidad Lagrangiana de la teor\'{\i}a de
+Chern-Simons $U\left( 1\right) $ pura es invariante bajo transformaciones
+gauge.
+
+\section{Formalismo Lagrangiano}
+N\'{o}tese que la densidad Lagrangiana citada en (\ref{B.1}) es funci\'{o}n
+del campo fundamental $A_{\alpha }$ y de sus derivadas espacio-temporales en 
+$\left( 2+1\right) d.$ Luego, la integral de acci\'{o}n asociada a la
+densidad Lagrangiana de la teor\'{\i}a de C-S $U\left( 1\right) $ pura vendr%
+\'{a} definida por \cite{Greiner,Hassani}: 
+\begin{equation*}
+\mathcal{A}\left[ A_{\beta }\right] =\int d^{3}x\mathcal{L}\left[ A_{\beta },%
+\mathbf{\partial }_{\alpha }A_{\beta }\right] .
+\end{equation*}%
+Para deducir las ecuaciones de campo de la teor\'{\i}a, se considerar\'{a}
+la variaci\'{o}n de la acci\'{o}n presente en la ecuaci\'{o}n inmediatamente
+anterior, considerando variaciones arbitrarias e independientes del
+potencial $A_{\alpha }$. Cabe anotar que para los procedimientos matem\'{a}%
+ticos que prosiguen ser\'{a} necesario establecer las condiciones de
+frontera satisfechas por el campo $A_{\alpha }$ \cite{Greiner}$:$%
+\begin{eqnarray}
+\delta A_{\alpha }(\boldsymbol{x},t_{1}) &=&\delta A_{\alpha }(\boldsymbol{x,%
+}t_{2})=0,  \label{B.5} \\
+\lim_{|\mathbf{x}|\rightarrow \infty }A_{\alpha }(\boldsymbol{x},t) &=&0
+\label{B.6}
+\end{eqnarray}%
+Con esto en mente, la variaci\'{o}n de la integral de acci\'{o}n es:%
+\begin{equation*}
+\delta \mathcal{A}\left[ A_{\beta }\right] =\delta \int d^{3}x\mathcal{L}%
+\left[ A_{\beta },\mathbf{\partial }_{\alpha }A_{\beta }\right] .
+\end{equation*}%
+Como se han tenido en cuenta variaciones arbitrarias e independientes del
+campo $A_{\alpha }$ m\'{a}s no de las coordenadas, es posible escribir la
+anterior relaci\'{o}n como sigue:%
+\begin{equation}
+\delta \mathcal{A}\left[ A_{\beta }\right] =\int d^{3}x\delta \mathcal{L}%
+\left[ A_{\beta },\mathbf{\partial }_{\alpha }A_{\beta }\right] .
+\label{B.7}
+\end{equation}%
+Se sabe que la densidad Lagrangiana es funci\'{o}n del campo gauge $A_{\beta
+}$ y de sus derivadas espacio-temporales $\mathbf{\partial }_{\alpha
+}A_{\beta }$. Por consiguiente, la variaci\'{o}n de dicha densidad
+Lagrangiana debida a variaciones arbitrarias e independientes del potencial
+gauge se escribe como:%
+\begin{equation}
+\delta \mathcal{L}\left[ A_{\beta },\mathbf{\partial }_{\alpha }A_{\beta }%
+\right] =\frac{\partial \mathcal{L}}{\partial A_{\beta }}\delta A_{\beta }+%
+\frac{\partial \mathcal{L}}{\partial \left( \partial _{\alpha }A_{\beta
+}\right) }\delta \left( \partial _{\alpha }A_{\beta }\right) .  \label{B.8}
+\end{equation}%
+Introduciendo este resultado en (\ref{B.7}), se observa que la variaci\'{o}n
+de la integral de acci\'{o}n de la teor\'{\i}a en cuesti\'{o}n es ahora:%
+\begin{equation}
+\delta \mathcal{A}\left[ A_{\beta }\right] =\int d^{3}x\left[ \frac{\partial 
+\mathcal{L}}{\partial A_{\beta }}\delta A_{\beta }+\frac{\partial \mathcal{L}%
+}{\partial \left( \partial _{\alpha }A_{\beta }\right) }\delta \left(
+\partial _{\alpha }A_{\beta }\right) \right] .  \label{B.9}
+\end{equation}%
+Pese a que solamente se han considerado variaciones del campo $A_{\alpha }$
+y no de las coordenadas, se puede establecer que:%
+\begin{equation*}
+\delta \left( \partial _{\alpha }A_{\beta }\right) =\partial _{\alpha
+}\left( \delta A_{\beta }\right) .
+\end{equation*}%
+Bajo esta resultado, se expresar\'{a} el segundo sumando de la ecuaci\'{o}n (%
+\ref{B.9}) del siguiente modo:%
+\begin{eqnarray}
+\frac{\partial \mathcal{L}}{\partial \left( \partial _{\alpha }A_{\beta
+}\right) }\delta \left( \partial _{\alpha }A_{\beta }\right) &=&\frac{%
+\partial \mathcal{L}}{\partial \left( \partial _{\alpha }A_{\beta }\right) }%
+\partial _{\alpha }\left( \delta A_{\beta }\right)  \notag \\
+&=&\partial _{\alpha }\left[ \frac{\partial \mathcal{L}}{\partial \left(
+\partial _{\alpha }A_{\beta }\right) }\delta A_{\beta }\right] -\partial
+_{\alpha }\left( \frac{\partial \mathcal{L}}{\partial \left( \partial
+_{\alpha }A_{\beta }\right) }\right) \delta A_{\beta }.  \label{B.10}
+\end{eqnarray}%
+Tras reemplazar (\ref{B.10}) en la variaci\'{o}n de la integral de acci\'{o}%
+n (\ref{B.9}), se puede verificar que:%
+\begin{equation}
+\delta \mathcal{A}\left[ A_{\beta }\right] =\int d^{3}x\left[ \frac{\partial 
+\mathcal{L}}{\partial A_{\beta }}-\partial _{\alpha }\left( \frac{\partial 
+\mathcal{L}}{\partial \left( \partial _{\alpha }A_{\beta }\right) }\right) %
+\right] \delta A_{\beta }+\int d^{3}x\partial _{\alpha }\left[ \frac{%
+\partial \mathcal{L}}{\partial \left( \partial _{\alpha }A_{\beta }\right) }%
+\delta A_{\beta }\right] .  \label{B.11}
+\end{equation}%
+A continuaci\'{o}n, se mostrar\'{a} que la integral del segundo sumando de
+la expresi\'{o}n previa se anula como consecuencia de las condiciones de
+frontera impuestas sobre el campo gauge $A_{\alpha }$. Para ello, n\'{o}tese
+que al expandir el indice $\alpha $ en dicha expresi\'{o}n, esta puede
+reordenarse como se muestra en la relaci\'{o}n que prosigue:%
+\begin{eqnarray}
+\int d^{3}x\partial _{\alpha }\left[ \frac{\partial \mathcal{L}}{\partial
+\left( \partial _{\alpha }A_{\beta }\right) }\delta A_{\beta }\right]
+&=&\int d^{2}x\int_{t_{1}}^{t_{2}}dt\partial _{0}\left[ \frac{\partial 
+\mathcal{L}}{\partial \left( \partial _{0}A_{\beta }\right) }\delta A_{\beta
+}\right] +  \notag \\
+&&\int dt\int d^{2}x\partial _{i}\left[ \frac{\partial \mathcal{L}}{\partial
+\left( \partial _{i}A_{\beta }\right) }\delta A_{\beta }\right]  \notag \\
+&=&\int d^{2}x\left[ \frac{\partial \mathcal{L}}{\partial \left( \partial
+_{0}A_{\beta }\right) }\delta A_{\beta }\right] _{t_{1}}^{t_{2}}+  \notag \\
+&&\int dt\oint dr_{i}\left[ \frac{\partial \mathcal{L}}{\partial \left(
+\partial _{i}A_{\beta }\right) }\delta A_{\beta }\right] .  \label{B.12}
+\end{eqnarray}%
+Cabe anotar que en el c\'{a}lculo previo se hizo uso del teorema de Gauss
+restringido a dos dimensiones. De aqu\'{\i} inmediatamente se comprueba que
+la integral presente en el primer sumando de la expresi\'{o}n (\ref{B.12})
+es cero en virtud de la condici\'{o}n de extremos fijos citada en (\ref{B.5}%
+). Por otro lado, el segundo sumando de la misma expresi\'{o}n est\'{a}
+constituido de una integral cerrada calculada sobre el contorno de una
+superficie extendida hacia el infinito, y como es de esperar, de acuerdo a
+la condici\'{o}n de frontera (\ref{B.6}), el campo $A_{\alpha }$ tiende a
+cero en dicha regi\'{o}n. Por tales argumentos, el c\'{a}lculo de la variaci%
+\'{o}n de la integral de acci\'{o}n de la teor\'{\i}a de C-S $U\left(
+1\right) $ pura se reduce a:%
+\begin{equation*}
+\delta \mathcal{A}\left[ A_{\beta }\right] =\int d^{3}x\left[ \frac{\partial 
+\mathcal{L}}{\partial A_{\beta }}-\partial _{\alpha }\left( \frac{\partial 
+\mathcal{L}}{\partial \left( \partial _{\alpha }A_{\beta }\right) }\right) %
+\right] \delta A_{\beta }.
+\end{equation*}%
+El prinicipio de Hamilton establece que la trayectoria real seguida por el
+sistema es aquella que extremiza la integral de acci\'{o}n de la teor\'{\i}a 
+\cite{Greiner}, matem\'{a}ticamente esto puede sinterizarse como sigue:
+
+\begin{equation}
+\delta \mathcal{A}\left[ A_{\beta }\right] =\int d^{3}x\left[ \frac{\partial 
+\mathcal{L}}{\partial A_{\beta }}-\partial _{\alpha }\left( \frac{\partial 
+\mathcal{L}}{\partial \left( \partial _{\alpha }A_{\beta }\right) }\right) %
+\right] \delta A_{\beta }=0.  \label{B.13}
+\end{equation}%
+Nuevamente, haciendo hincap\'{\i}e en que la variaci\'{o}n de la integral de
+acci\'{o}n es debida solamente a variaciones arbitrarias e independientes de
+las componentes de $A_{\alpha }$, bajo el lema fundamental del c\'{a}lculo
+de variaci\'{o}nes, la igualdad en (\ref{B.13}) se cumple s\'{\i}:%
+\begin{equation}
+\frac{\partial \mathcal{L}}{\partial A_{\beta }}-\partial _{\alpha }\left( 
+\frac{\partial \mathcal{L}}{\partial \left( \partial _{\alpha }A_{\beta
+}\right) }\right) =0.  \label{B.14}
+\end{equation}%
+Estas relaciones son las ecuaciones cl\'{a}sicas de Euler-Lagrange de la teor%
+\'{\i}a de C-S $U\left( 1\right) $ pura.\newline
+\newline
+Se emplear\'{a}n las ecuaciones de Euler-Lagrange preliminares para
+encontrar las ecuaciones de campo de la teor\'{\i}a en desarrollo. Luego, a
+partir de la densidad Lagrangiana (\ref{B.1}), se determinan las siguientes
+derivadas:%
+\begin{eqnarray}
+\frac{\partial \mathcal{L}}{\partial A_{\beta }} &=&\frac{k}{4\pi }%
+\varepsilon ^{\mu \nu \rho }\left( \partial _{\mu }A_{\nu }\right) \frac{%
+\partial A_{\rho }}{\partial A_{\beta }}  \notag \\
+&=&\frac{k}{4\pi }\varepsilon ^{\mu \nu \rho }\left( \partial _{\mu }A_{\nu
+}\right) \delta _{\rho }^{\beta }  \notag \\
+&=&-\frac{k}{4\pi }\varepsilon ^{\beta \alpha \gamma }\partial _{\gamma
+}A_{\alpha }.  \label{B.15}
+\end{eqnarray}%
+Para este razonamiento se ha empleado el car\'{a}ter antisim\'{e}trico del
+tensor de Levi-Civita.\newline
+\newline
+De forma an\'{a}loga se puede deducir que:%
+\begin{eqnarray}
+\frac{\partial \mathcal{L}}{\partial \left( \partial _{\alpha }A_{\beta
+}\right) } &=&\frac{k}{4\pi }\varepsilon ^{\mu \nu \rho }\frac{\partial
+\left( \partial _{\mu }A_{\nu }\right) }{\partial \left( \partial _{\alpha
+}A_{\beta }\right) }A_{\rho }  \notag \\
+&=&\frac{k}{4\pi }\varepsilon ^{\mu \nu \rho }A_{\rho }\delta _{\mu
+}^{\alpha }\delta _{\nu }^{\beta }  \notag \\
+&=&-\frac{k}{4\pi }\varepsilon ^{\beta \alpha \gamma }A_{\gamma }.
+\label{B.16}
+\end{eqnarray}%
+Cabe anotar que nuevamente se ha considerado la antisimetr\'{\i}a del tensor 
+$\varepsilon ^{\alpha \beta \gamma }$ en los indices $\alpha ,\beta ,\gamma $%
+.\newline
+\newline
+Sustituyendo las deducciones realizadas en (\ref{B.15}) y (\ref{B.16}) en
+las ecuaciones de Euler-Lagrange (\ref{B.14}), se encuentra que las
+ecuaciones de campo cl\'{a}sicas de la teor\'{\i}a C-S $U\left( 1\right) $
+pura son:%
+\begin{equation}
+\varepsilon ^{\beta \alpha \gamma }\left( \partial _{\alpha }A_{\gamma
+}-\partial _{\gamma }A_{\alpha }\right) =\varepsilon ^{\beta \alpha \gamma
+}F_{\alpha \gamma }=0.  \label{B.17}
+\end{equation}%
+N\'{o}tese que la invariancia gauge de la densidad Lagrangiana de la teor%
+\'{\i}a de C-S $U\left( 1\right) $ pura se ve reflejada en que las
+ecuaciones de movimiento deducidas a partir de la integral de acci\'{o}n del
+sistema son claramente invariantes gauge, esto debido a la presencia del
+tensor de campo electromagn\'{e}tico $F_{\alpha \gamma }$.
+
+\section{Formalismo Hamiltoniano}
+Ahora, se proceder\'{a} a realizar un estudio can\'{o}nico de la teor\'{\i}a 
+\cite{Greiner}. Para tal objetivo, primero se definir\'{a} el momento can%
+\'{o}nico asociado al campo $A_{\alpha }$, de la siguiente manera:
+
+\begin{equation}
+\pi ^{\beta }=\pi ^{\beta }\left( \boldsymbol{x},t\right) \equiv \frac{%
+\partial \mathcal{L}}{\partial \left( \partial _{0}A_{\beta }\right) }=\frac{%
+k}{4\pi }\varepsilon ^{0\beta \gamma }A_{\gamma }.  \label{C.1}
+\end{equation}%
+Al estudiar la componente temporal del momento can\'{o}nico, se observa que:%
+\begin{equation}
+\pi _{0}=\frac{k}{4\pi }\varepsilon ^{00\gamma }A_{\gamma }=0.  \label{C.2}
+\end{equation}%
+Del mismo modo, para $\beta =i$ se puede verificar:%
+\begin{equation*}
+\pi ^{i}=\frac{k}{4\pi }\varepsilon ^{0i\gamma }A_{\gamma }.
+\end{equation*}%
+N\'{o}tese que como consecuencia del car\'{a}cter antisim\'{e}trico del
+tensor $\varepsilon ^{0i\gamma },$ el \'{u}nico valor no nulo ocurre cuando $%
+\gamma =j$, por tal raz\'{o}n:%
+\begin{equation}
+\pi ^{i}(\boldsymbol{x},t)=\frac{k}{4\pi }\varepsilon ^{ij}A_{j}\left( 
+\boldsymbol{x},t\right) .  \label{C.3}
+\end{equation}%
+Donde se ha utilizado la notaci\'{o}n $\varepsilon ^{0i\gamma }=\varepsilon
+^{i\gamma }$ $\left( \text{\textbf{ver Ap\'{e}ndice A}}\right) .$\newline
+\newline
+Debido a que ni en la expresi\'{o}n (\ref{C.2}) ni en la expresi\'{o}n (\ref%
+{C.3}) se presentan velocidades, se verifica que ambas relaciones son v\'{\i}%
+nculos primarios, pues dichas estructuras son consecuencia de la definici%
+\'{o}n de los momentos can\'{o}nicos de la teor\'{\i}a \cite{Dirac}. Se
+denotar\'{a}n los v\'{\i}nculos primarios de la teor\'{\i}a de C-S $U\left(
+1\right) $ pura como se muestra a continuaci\'{o}n:%
+\begin{eqnarray}
+\pi _{0} &=&\pi _{0}\left( \boldsymbol{x},t\right) \approx 0,  \label{C.4} \\
+\chi _{i} &=&\chi _{i}\left( \boldsymbol{x},t\right) \equiv \pi _{i}+\frac{k%
+}{4\pi }\varepsilon _{ij}A_{j}\approx 0.  \label{C.5}
+\end{eqnarray}%
+A\'{u}n cuando los momentos can\'{o}nicos del sistema no pueden ser
+expresados en t\'{e}rminos de coordenadas y velocidades, es posible
+construir bajo la transformaci\'{o}n de Legendre \cite{Regge}, la densidad
+Hamiltoniana can\'{o}nica de la teor\'{\i}a del siguiente modo:%
+\begin{equation*}
+\mathcal{H}_{c}=\partial _{0}A_{\beta }\pi ^{\beta }-\mathcal{L}\left[
+A_{\beta },\mathbf{\partial }_{\alpha }A_{\beta }\right] .
+\end{equation*}%
+De la estructura de la densidad Lagrangiana de la teor\'{\i}a de C-S pura (%
+\ref{B.1}) y del momento can\'{o}nico asociado al campo gauge $A_{\alpha }$ (%
+\ref{C.1}), se encuentra que la densidad Hamiltoniana can\'{o}nica del
+sistema es:%
+\begin{equation*}
+\mathcal{H}_{c}\mathcal{=}\frac{k}{4\pi }\left[ \varepsilon _{ij}\left(
+\partial _{0}A_{i}\right) A_{j}-\varepsilon ^{0\beta \gamma }\left( \partial
+_{0}A_{\beta }\right) A_{\gamma }-\varepsilon ^{i\beta \gamma }\left(
+\partial _{i}A_{\beta }\right) A_{\gamma }\right] .
+\end{equation*}%
+Expandiendo ahora los indices $\beta $, $\gamma $ y utilizando la antisimetr%
+\'{\i}a del tensor de Levi-Civita, se obtiene que: 
+\begin{equation}
+\mathcal{H}_{c}=\frac{k}{4\pi }\left[ \varepsilon _{ij}\left( \partial
+_{i}A_{0}\right) A_{j}-\varepsilon _{ij}\left( \partial _{i}A_{j}\right)
+A_{0}-\varepsilon ^{ijm}\left( \partial _{i}A_{j}\right) A_{m}\right] .
+\label{C.6}
+\end{equation}%
+Sin embargo, debido a que la teor\'{\i}a se restringe a $\left( 2+1\right) d$%
+, el \'{u}ltimo sumando de la relaci\'{o}n preliminar es nulo (v\'{e}ase ap%
+\'{e}ndice B), por esta raz\'{o}n, la densidad Hamiltoniana can\'{o}nica de
+C-S se reduce a:%
+\begin{equation}
+\mathcal{H}_{c}\mathcal{=}\frac{k}{4\pi }\left[ \varepsilon _{ij}\left(
+\partial _{i}A_{0}\right) A_{j}-\varepsilon _{ij}\left( \partial
+_{i}A_{j}\right) A_{0}\right] .  \label{C.7}
+\end{equation}%
+El Hamiltoniano can\'{o}nico de la teor\'{\i}a de C-S, vendr\'{a} dada por 
+\cite{Greiner}:%
+\begin{eqnarray}
+H_{c} &=&\int d^{2}x\mathcal{H}_{c}  \notag \\
+&=&\frac{k}{4\pi }\int d^{2}x\left[ \varepsilon _{ij}\left( \partial
+_{i}A_{0}\right) A_{j}-\varepsilon _{ij}\left( \partial _{i}A_{j}\right)
+A_{0}\right] .  \label{C.8}
+\end{eqnarray}%
+A fin de presentar de forma m\'{a}s compacta la estructura del Hamiltoniano
+can\'{o}nico del sistema, se reescribir\'{a} utilizando la siguiente
+identidad:%
+\begin{equation*}
+\left( \partial _{i}A_{0}\right) A_{j}=\partial _{i}\left( A_{0}A_{j}\right)
+-\left( \partial _{i}A_{j}\right) A_{0}.
+\end{equation*}%
+Introduciendo esta relaci\'{o}n en (\ref{C.8}), se puede verificar que:%
+\begin{eqnarray}
+H_{c} &=&-\frac{k}{2\pi }\int d^{2}x\varepsilon _{ij}\left( \partial
+_{i}A_{j}\right) A_{0}+\frac{k}{4\pi }\int d^{2}x\varepsilon _{ij}\partial
+_{i}\left( A_{0}A_{j}\right)   \notag \\
+&=&-\frac{k}{2\pi }\int d^{2}x\varepsilon _{ij}\left( \partial
+_{i}A_{j}\right) A_{0}+\frac{k}{4\pi }\varepsilon _{ij}\oint dr_{i}\left(
+A_{0}A_{j}\right) .  \label{C.9}
+\end{eqnarray}%
+Cabe anotar que para llegar al segundo sumando de la deducci\'{o}n
+preliminar, se empleo el teorema de Gauss en dos dimensiones, dicho sumando
+no es m\'{a}s que una integral cerrada realizada sobre el contorno de una
+superficie que se extiende hacia el infinito, luego, de acuerdo a la condici%
+\'{o}n de frontera (\ref{B.6}), se comprueba que la integral de camino en
+cuesti\'{o}n es cero. Con estos lineamientos, se concluye entonces que el
+Hamiltoniano can\'{o}nico de la teor\'{\i}a de C-S pura es:%
+\begin{equation}
+H_{c}=-\frac{k}{2\pi }\int d^{2}x\varepsilon _{ij}\left( \partial
+_{i}A_{j}\right) A_{0}.  \label{C.10}
+\end{equation}%
+\newline
+Sin embargo, el Hamiltoniano can\'{o}nico est\'{a} bien definido solo en el
+subespacio de fase de los v\'{\i}nculos y por tanto se puede extender
+arbitrariamente fuera de la superficie de estos, dicho de otro modo, el
+Hamiltoniano can\'{o}nico no est\'{a} un\'{\i}vocamente determinado, pues es
+posible a\~{n}adirle cualquier combinaci\'{o}n lineal de los v\'{\i}nculos
+del sistema \cite{Dirac}. Por ende si se a\~{n}ade una combinaci\'{o}n
+lineal de los dos v\'{\i}nculos primarios $\pi _{0}$ y $\chi _{i}$, se
+deduce que el Hamiltoniano primario de la teor\'{\i}a de C-S es: 
+\begin{eqnarray}
+H_{p} &=&H_{c}+\int d^{2}x\left[ \lambda _{0}\pi _{0}+\lambda _{i}\chi _{i}%
+\right]   \notag \\
+&=&\int d^{2}x\left[ -\frac{k}{2\pi }\varepsilon _{ij}\left( \partial
+_{i}A_{j}\right) A_{0}+\lambda _{0}\pi _{0}+\lambda _{i}\chi _{i}\right] .
+\label{C.11}
+\end{eqnarray}%
+Expresi\'{o}n en la que los t\'{e}rminos $\lambda _{0}=\lambda _{0}\left( 
+\boldsymbol{x},t\right) $ y $\lambda _{i}=\lambda _{i}\left( \boldsymbol{x}%
+,t\right) ,$ son funciones arbitrarias del espacio y del tiempo, conocidas
+como multiplicadores de Lagrange.\newline
+\newline
+Para continuar con el analisis can\'{o}nico de la teor\'{\i}a de C-S ser\'{a}
+necesario construir los parentesis de Poisson entre variables del espacio de
+fase. El espacio de fase del sistema est\'{a} definido por el par can\'{o}%
+nico $\left( A_{\alpha },\pi ^{\alpha }\right) $, luego, si $C\left( 
+\boldsymbol{x},t\right) \equiv C\left( A_{\alpha },\pi ^{\alpha }\right) $ y 
+$D\left( \boldsymbol{x},t\right) \equiv D\left( A_{\alpha },\pi ^{\alpha
+}\right) $ son dos variables din\'{a}micas de dicho espacio, el parentesis
+de Poisson en tiempos iguales $\left( \text{PP}\right) $ entre ellas se
+define como \cite{Greiner}:%
+\begin{equation}
+\left\{ C\left( \boldsymbol{x},t\right) ,D\left( \boldsymbol{y},t\right)
+\right\} \equiv \int d^{2}z\left[ \frac{\delta C\left( \boldsymbol{x}%
+,t\right) }{\delta A_{\alpha }\left( \boldsymbol{z},t\right) }\frac{\delta
+D\left( \boldsymbol{y},t\right) }{\delta \pi ^{\alpha }\left( \boldsymbol{z}%
+,t\right) }-\frac{\delta C\left( \boldsymbol{x},t\right) }{\delta \pi
+^{\alpha }\left( \boldsymbol{z},t\right) }\frac{\delta D\left( \boldsymbol{y}%
+,t\right) }{\delta A_{\alpha }\left( \boldsymbol{z},t\right) }\right] .
+\label{C.12}
+\end{equation}%
+Los PP fundamentales entre las variables din\'{a}micas, calculados mediante
+la definici\'{o}n previa son:%
+\begin{equation}
+\text{ }\left\{ A_{\alpha }\left( \boldsymbol{x},t\right) ,\pi _{\beta
+}\left( \boldsymbol{y},t\right) \right\} =\eta _{\alpha \beta }\delta
+^{2}\left( \boldsymbol{x}-\boldsymbol{y}\right) \text{,}  \label{C.13}
+\end{equation}%
+\begin{equation}
+\left\{ A_{\alpha }\left( \boldsymbol{x},t\right) ,A_{\beta }\left( 
+\boldsymbol{y},t\right) \right\} =0=\left\{ \pi _{\alpha }\left( \boldsymbol{%
+x},t\right) ,\pi _{\beta }\left( \boldsymbol{y},t\right) \right\} .
+\label{C.14}
+\end{equation}%
+Ahora, la evoluci\'{o}n din\'{a}mica de cualquier variable del espacio de
+fase $R\left( \boldsymbol{x},t\right) \equiv R\left( A_{\alpha },\pi
+^{\alpha }\right) ,$ estar\'{a} dada por la ecuaci\'{o}n de movimiento de
+Hamilton \cite{Greiner}:%
+\begin{equation}
+\overset{\cdot }{R}\left( \boldsymbol{x},t\right) \approx \left\{ R\left( 
+\boldsymbol{x},t\right) ,H\,_{p}\left( \boldsymbol{y},t\right) \right\} .
+\label{C.15}
+\end{equation}
+
+\subsection{Análisis de consistencia de vínculos}
+Por consistencia, se debe garantizar que los v\'{\i}nculos de la teor\'{\i}a
+de C-S se conserven durante toda la evoluci\'{o}n din\'{a}mica del sistema.
+Este an\'{a}lisis permitir\'{a} establecer adem\'{a}s, si surgir\'{a}n o no
+nuevos v\'{\i}nculos \cite{Dirac,Merylin}. Si como resultado de este
+requerimiento se originan nuevas estructuras que relacionen las variables
+del espacio de fase entre s\'{\i}, es de gran importancia estudiar tamb\'{\i}%
+en la consistencia de cada uno de los nuevos v\'{\i}nculos surgidos, esto
+con el fin de lograr establecer el conjunto completo de v\'{\i}nculos de la
+teor\'{\i}a en desarrollo. Por tal raz\'{o}n, se determinar\'{a} a continuaci%
+\'{o}n las condiciones de consistencia de los v\'{\i}nculos primarios $\pi
+_{0}$ y $\chi _{i}$.\newline
+\newline
+Por consistencia, el v\'{\i}nculo $\pi _{0},$ de acuerdo a la relaci\'{o}n (%
+\ref{C.15}), deber\'{a} satisfacer:%
+\begin{eqnarray}
+\dot{\pi}_{0} &=&\left\{ \pi _{0}\left( \boldsymbol{x},t\right)
+,H\,_{p}\left( \boldsymbol{y},t\right) \right\} \approx 0  \notag \\
+&=&\left\{ \pi _{0}\left( \boldsymbol{x},t\right) ,H\,_{c}\left( \boldsymbol{%
+y},t\right) \right\} +\int d^{2}y\left\{ \pi _{0}\left( \boldsymbol{x}%
+,t\right) ,\lambda _{0}\left( \boldsymbol{y},t\right) \pi _{0}\left( 
+\boldsymbol{y},t\right) +\lambda _{i}\left( \boldsymbol{y},t\right) \chi
+_{i}\left( \boldsymbol{y},t\right) \right\}  \notag \\
+&\approx &0.  \label{C.16}
+\end{eqnarray}%
+Con el prop\'{o}sito de simplificar los calculos concernientes a la condici%
+\'{o}n de consistencia del v\'{\i}nculo $\pi _{0}$, se proceder\'{a} a
+resolver por aparte cada uno de los sumandos presentes en la ecuaci\'{o}n (%
+\ref{C.16}). Luego, a partir de la estructura (\ref{C.4}), la estructura del
+Hamiltoniano can\'{o}nico dada por (\ref{C.10}) y las propiedades de los PP,
+se obtiene:\newline
+\begin{equation}
+\left\{ \pi _{0}\left( \boldsymbol{x},t\right) ,H\,_{c}\left( \boldsymbol{y}%
+,t\right) \right\} \approx \frac{k}{2\pi }\varepsilon _{ij}\partial
+_{i}A_{j}.  \label{C.20}
+\end{equation}%
+Por otro lado, en virtud a los PP fundamentales se encuentra que:%
+\begin{equation}
+\left\{ \pi _{0}\left( \boldsymbol{x},t\right) ,\pi _{0}\left( \boldsymbol{y}%
+,t\right) \right\} \approx 0.  \label{C.21}
+\end{equation}%
+\newline
+Bajo este resultado, es evidente que el PP presente en el segundo sumando de
+la ecuaci\'{o}n (\ref{C.16}) se anula debilmente:%
+\begin{equation}
+\left\{ \pi _{0}\left( \boldsymbol{x},t\right) ,\lambda _{0}\left( 
+\boldsymbol{y},t\right) \pi _{0}\left( \boldsymbol{y},t\right) \right\}
+\approx \lambda _{0}\left( \boldsymbol{y},t\right) \left\{ \pi _{0}\left( 
+\boldsymbol{x},t\right) ,\pi _{0}\left( \boldsymbol{y},t\right) \right\}
+\approx 0.  \label{C.22}
+\end{equation}%
+\newline
+Finalmente, de la estructura del v\'{\i}nculo $\chi _{i}$ presente en (\ref%
+{C.5}) y los PP fundamentales, se determina:%
+\begin{eqnarray}
+\left\{ \pi _{0}\left( \boldsymbol{x},t\right) ,\chi _{i}\left( \boldsymbol{y%
+},t\right) \right\} &\approx &\left\{ \pi _{0}\left( \boldsymbol{x},t\right)
+,\pi _{i}(\boldsymbol{y},t)+\frac{k}{4\pi }\varepsilon _{ij}A_{j}\left( 
+\boldsymbol{y},t\right) \right\}  \notag \\
+&\approx &0.  \label{C.23}
+\end{eqnarray}%
+A partir de la relaci\'{o}n (\ref{C.23}), se comprueba que:%
+\begin{equation}
+\left\{ \pi _{0}\left( \boldsymbol{x},t\right) ,\lambda _{i}\left( 
+\boldsymbol{y},t\right) \chi _{i}\left( \boldsymbol{y},t\right) \right\}
+\approx \lambda _{i}\left( \boldsymbol{y},t\right) \left\{ \pi _{0}\left( 
+\boldsymbol{x},t\right) ,\chi _{i}\left( \boldsymbol{y},t\right) \right\}
+\approx 0.  \label{C.24}
+\end{equation}%
+Introduciendo lo obtenido en las f\'{o}rmulas (\ref{C.20}), (\ref{C.22}) y (%
+\ref{C.24}) en (\ref{C.16}), se encuentra que la consistencia del v\'{\i}%
+nculo primario $\pi _{0}$ es:%
+\begin{equation}
+\dot{\pi}_{0}\left( \boldsymbol{x},t\right) =\frac{k}{2\pi }\varepsilon
+_{ij}\partial _{i}^{x}A_{j}\left( \boldsymbol{x},t\right) \approx 0.
+\label{C.25}
+\end{equation}%
+La forma de esta ecuaci\'{o}n presenta nuevamente relaciones entre las
+variables del espacio de fase, de all\'{\i} que el requerimiento de
+consistencia para $\pi _{0}$ ha dado como resultado un v\'{\i}nculo
+secundario \cite{Dirac,Merylin}, que se definir\'{a} como:%
+\begin{equation}
+\xi =\xi \left( \boldsymbol{x},t\right) \equiv \varepsilon _{ij}\partial
+_{i}^{x}A_{j}\left( \boldsymbol{x},t\right) \approx 0.  \label{C.26}
+\end{equation}%
+Debido a que ha surgido un nuevo v\'{\i}nculo en la teor\'{\i}a, se estudiar%
+\'{a} su requerimiento de consistencia \cite{Dirac}, en otras palabras se
+debe garantizar que dicho v\'{\i}nculo se conserve durante la evoluci\'{o}n
+din\'{a}mica del sistema, dicho de otro modo se debe cumplir:%
+\begin{eqnarray}
+\overset{\cdot }{\xi }\left( \boldsymbol{x},t\right) &=&\left\{ \xi \left( 
+\boldsymbol{x},t\right) ,H\,_{p}\left( \boldsymbol{y},t\right) \right\}
+\approx 0  \notag \\
+&=&\left\{ \xi \left( \boldsymbol{x},t\right) ,H\,_{c}\left( \boldsymbol{y}%
+,t\right) \right\} +  \notag \\
+&&\int d^{2}y\left\{ \xi \left( \boldsymbol{x},t\right) ,\lambda _{0}\left( 
+\boldsymbol{y},t\right) \pi ^{0}\left( \boldsymbol{y},t\right) +\lambda
+_{j}\left( \boldsymbol{y},t\right) \chi _{j}\left( \boldsymbol{y},t\right)
+\right\}  \notag \\
+&\approx &0.  \label{C.27}
+\end{eqnarray}%
+Tomando como punto de partida los PP fundamentales y las ecuaciones tanto
+del v\'{\i}nculo $\xi $ como del Hamiltoniano can\'{o}nico de C-S situadas
+en (\ref{C.26}) y (\ref{C.10}) respectivamente, inmediatamente se observa
+que: 
+\begin{equation}
+\left\{ \xi \left( \boldsymbol{x},t\right) ,H\,_{c}\left( \boldsymbol{y}%
+,t\right) \right\} \approx 0.  \label{C.28}
+\end{equation}%
+De la misma manera, en virtud a estas f\'{o}rmulas se comprueba: 
+\begin{equation}
+\left\{ \xi \left( \boldsymbol{x},t\right) ,\pi _{0}\left( \boldsymbol{y}%
+,t\right) \right\} \approx 0.  \label{C.29}
+\end{equation}%
+Relaci\'{o}n que se emplear\'{a} para resolver el PP que prosigue:%
+\begin{equation}
+\left\{ \xi \left( \boldsymbol{x},t\right) ,\lambda _{0}\left( \boldsymbol{y}%
+,t\right) \pi _{0}\left( \boldsymbol{y},t\right) \right\} \approx \lambda
+_{0}\left( \boldsymbol{y},t\right) \left\{ \xi \left( \boldsymbol{x}%
+,t\right) ,\pi _{0}\left( \boldsymbol{y},t\right) \right\} \approx 0.
+\label{C.30}
+\end{equation}%
+De forma an\'{a}loga, a partir de los PP fundamentales (\ref{B.13}) y (\ref%
+{B.14}), se encuentra que PP calculado entre el v\'{\i}nculo secundario $\xi 
+$ y el v\'{\i}nculo primario $\chi _{i}$ $\left( \text{v\'{e}ase Ap\'{e}%
+ndice C}\right) $, es dado por: 
+\begin{equation}
+\left\{ \xi \left( \boldsymbol{x},t\right) ,\chi _{j}\left( \boldsymbol{y}%
+,t\right) \right\} \approx \varepsilon _{ji}\partial _{i}^{x}\delta
+^{2}\left( \boldsymbol{x}-\boldsymbol{y}\right) .  \label{C.31}
+\end{equation}%
+Usando este resultado, es posible deducir:%
+\begin{equation}
+\left\{ \xi \left( \boldsymbol{x},t\right) ,\lambda _{j}\left( \boldsymbol{y}%
+,t\right) \chi _{j}\left( \boldsymbol{y},t\right) \right\} \approx \lambda
+_{j}\left( \boldsymbol{y},t\right) \left\{ \xi \left( \boldsymbol{x}%
+,t\right) ,\chi _{j}\left( \boldsymbol{y},t\right) \right\} \approx
+\varepsilon _{ji}\lambda _{j}\left( \boldsymbol{y},t\right) \partial
+_{i}^{x}\delta ^{2}\left( \boldsymbol{x}-\boldsymbol{y}\right) .
+\label{C.32}
+\end{equation}%
+Tras sustituir los razonamientos llevados a cabo en los procedimientos matem%
+\'{a}ticos (\ref{C.28}), (\ref{C.30}) y (\ref{C.32}) en (\ref{C.27}), se
+verifica que el requerimiento de consistencia del v\'{\i}nculo secundario $%
+\xi $ da como resultado:%
+\begin{equation}
+\overset{\cdot }{\xi }\left( \boldsymbol{x},t\right) =\varepsilon
+_{ji}\partial _{i}^{x}\lambda _{j}\left( \boldsymbol{x},t\right) \approx 0.
+\label{C.33}
+\end{equation}%
+La ecuaci\'{o}n (\ref{C.33}) no da origen a nuevos v\'{\i}nculos pues
+permite establecer condiciones sobre el multiplicador de Lagrange $\lambda
+_{i}$ \cite{Dirac,Merylin}. \newline
+\newline
+Continuando con el an\'{a}lisis de consistencia de los v\'{\i}nculos del
+sistema, se precisa ahora encontrar la consistencia para el v\'{\i}nculo
+primario $\chi _{i}$, luego, su derivada temporal debe anularse debilmente,
+esto es:%
+\begin{eqnarray}
+\overset{\cdot }{\chi }_{i}\left( \boldsymbol{x},t\right) &=&\left\{ \chi
+_{i}\left( \boldsymbol{x},t\right) ,H\,_{p}\left( \boldsymbol{y},t\right)
+\right\}  \notag \\
+&=&\left\{ \chi _{i}\left( \boldsymbol{x},t\right) ,H\,_{c}\left( 
+\boldsymbol{y},t\right) \right\} +  \notag \\
+&&\int d^{2}y\left\{ \chi _{i}\left( \boldsymbol{x},t\right) ,\lambda
+_{0}\left( \boldsymbol{y},t\right) \pi _{0}\left( \boldsymbol{y},t\right)
++\lambda _{j}\left( \boldsymbol{y},t\right) \chi _{j}\left( \boldsymbol{y}%
+,t\right) \right\}  \notag \\
+&\approx &0.  \label{C.34}
+\end{eqnarray}%
+Mediante las propiedades de los PP y las estructuras y (\ref{C.10})
+referentes al v\'{\i}nculo $\chi _{i}$ y el Hamiltoniano can\'{o}nico de la
+teor\'{\i}a respectivamente, se deduce que:%
+\begin{equation}
+\left\{ \chi _{i}\left( \boldsymbol{x},t\right) ,H\,_{c}\left( \boldsymbol{y}%
+,t\right) \right\} \approx -\frac{k}{2\pi }\varepsilon _{ij}\partial
+_{j}^{x}A_{0}\left( \boldsymbol{x},t\right) .  \label{C.35}
+\end{equation}%
+Cabe anotar que para la obtenci\'{o}n del resultado previo se empleo la
+antisimetr\'{\i}a del tensor de Levi-Civita y se tuvo en cuenta adem\'{a}s,
+que la derivada de una funci\'{o}n cuyo argumento depende de la diferencia
+de dos variables (para este caso la funci\'{o}n delta de Dirac en dos
+dimensiones) satisface la propiedad mostrada a continuaci\'{o}n:%
+\begin{equation}
+\partial _{j}^{y}\delta \left( \boldsymbol{x}-\boldsymbol{y}\right)
+=-\partial _{j}^{x}\delta ^{2}\left( \boldsymbol{x}-\boldsymbol{y}\right) .
+\label{C.36}
+\end{equation}%
+Para el calculo de (\ref{C.35}) se recomienda estudiar los PP deducidos en
+el \textbf{Ap\'{e}ndice C}.\newline
+\newline
+Para fijar completamente el requerimiento de consistencia del v\'{\i}nculo $%
+\chi _{i},$ resta tener en cuenta que el PP entre los dos v\'{\i}nculos
+primarios $\chi _{i}$ y $\pi _{0}$ se anula debilmente, es decir:%
+\begin{equation}
+\left\{ \chi _{i}\left( \boldsymbol{x},t\right) ,\pi _{0}\left( \boldsymbol{y%
+},t\right) \right\} \approx 0.  \label{C.37}
+\end{equation}%
+Este resultado implica en efecto que:%
+\begin{equation}
+\left\{ \chi _{i}\left( \boldsymbol{x},t\right) ,\lambda _{0}\left( 
+\boldsymbol{y},t\right) \pi _{0}\left( \boldsymbol{y},t\right) \right\}
+\approx \lambda _{0}\left( \boldsymbol{y},t\right) \left\{ \chi _{i}\left( 
+\boldsymbol{x},t\right) ,\pi _{0}\left( \boldsymbol{y},t\right) \right\}
+\approx 0.  \label{C.38}
+\end{equation}%
+Similarmente, utilizando los PP fundamentales (\ref{C.13}) y (\ref{C.14}) y
+aprovechando la antisimetr\'{\i}a del tensor $\varepsilon _{ij}$, se
+comrpueba el PP mostrado a continuaci\'{o}n:%
+\begin{equation}
+\left\{ \chi _{i}\left( \boldsymbol{x},t\right) ,\chi _{j}\left( \boldsymbol{%
+y},t\right) \right\} \approx -\frac{k}{2\pi }\varepsilon _{ij}\delta
+^{2}\left( \boldsymbol{x}-\boldsymbol{y}\right) .  \label{C.39}
+\end{equation}%
+Para observar los calculos pertinientes para la resoluci\'{o}n del PP
+anterior dirigirse al \textbf{Ap\'{e}ndice C}.\newline
+\newline
+Como consecuencia de la relaci\'{o}n preliminar se puede verificar que:%
+\begin{equation}
+\left\{ \chi _{i}\left( \boldsymbol{x},t\right) ,\lambda _{j}\left( 
+\boldsymbol{y},t\right) \chi _{j}\left( \boldsymbol{y},t\right) \right\}
+\approx \lambda _{j}\left( \boldsymbol{y},t\right) \left\{ \chi _{i}\left( 
+\boldsymbol{x},t\right) ,\chi _{j}\left( \boldsymbol{y},t\right) \right\}
+\approx -\frac{k}{2\pi }\varepsilon _{ij}\lambda _{j}\left( \boldsymbol{y}%
+,t\right) \delta ^{2}\left( \boldsymbol{x}-\boldsymbol{y}\right) .
+\label{C.40}
+\end{equation}%
+Reemplazando (\ref{C.35}), (\ref{C.38}) y (\ref{C.40}) en (\ref{C.34}), se
+llega a que la condici\'{o}n de consistencia del v\'{\i}nculo primario $\chi
+_{i}$ es dada por:%
+\begin{equation}
+\overset{\cdot }{\chi }_{i}\left( \boldsymbol{x},t\right) =-\frac{k}{2\pi }%
+\varepsilon _{ij}\left[ \partial _{j}^{x}A_{0}\left( \boldsymbol{x},t\right)
++\lambda _{j}\left( \boldsymbol{x},t\right) \right] \approx 0.  \notag
+\end{equation}%
+Si ahora, se multiplica a ambos lados de la f\'{o}rmula previa por el tensor 
+$\varepsilon _{im}$, (v\'{e}ase Ap\'{e}ndice A), se comprueba que:%
+\begin{eqnarray*}
+-\frac{k}{2\pi }\delta _{mj}\left( \partial _{j}^{x}A_{0}\left( \boldsymbol{x%
+},t\right) +\lambda _{j}\left( \boldsymbol{x},t\right) \right) &\approx &0 \\
+-\frac{k}{2\pi }\left[ \partial _{m}^{x}A_{0}\left( \boldsymbol{x},t\right)
++\lambda _{m}\left( \boldsymbol{x},t\right) \right] &\approx &0.
+\end{eqnarray*}%
+Luego, se concluye que el requerimiento de consistencia del v\'{\i}nculo
+primario $\chi _{i}$, arroj\'{a} como resultado la siguiente ecuaci\'{o}n:%
+\begin{equation}
+\partial _{i}^{x}A_{0}\left( \boldsymbol{x},t\right) +\lambda _{i}\left( 
+\boldsymbol{x},t\right) \approx 0.  \label{C.41}
+\end{equation}%
+Esta ecuaci\'{o}n permite fijar condiciones sobre el multiplicador de
+Lagrange $\lambda _{i},$ por tal motivo es posible afirmar que no constituye
+un v\'{\i}nculo \cite{Dirac,Merylin,Sundermeyer}. Esto se evidencia tamb%
+\'{\i}en, en que (\ref{C.33}) es inmediatamente satisfecha por (\ref{C.41}),
+este hecho puede ser observardo si a partir (\ref{C.41}) se despeja:%
+\begin{equation*}
+\lambda _{j}\left( \boldsymbol{x},t\right) \approx -\partial
+_{j}^{x}A_{0}\left( \boldsymbol{x},t\right) .
+\end{equation*}%
+Sustituyendo este resultado en (\ref{C.33}), se encuentra que:%
+\begin{equation}
+-\varepsilon _{ij}\partial _{i}^{x}\partial _{j}^{x}A_{0}\left( \boldsymbol{x%
+},t\right) \approx 0.  \notag
+\end{equation}%
+Que es una expresi\'{o}n v\'{a}lida, pues se sabe que $\varepsilon _{ij}$ es
+un tensor antisim\'{e}trico en los indices $i,j$, mientras que $\partial
+_{i}^{x}\partial _{j}^{x}$ es sim\'{e}trico en los mismos indices, por tal
+raz\'{o}n el producto entre los dos tensores es nulo.\newline
+\newline
+Se puede concluir parcialmente que el conjunto de v\'{\i}nculos de la teor%
+\'{\i}a de C-S $U\left( 1\right) $ pura est\'{a} conformado por:%
+\begin{equation*}
+\left\{ 
+\begin{array}{c}
+\pi _{0}\approx 0 \\ 
+\chi _{i}=\pi _{i}+\frac{k}{4\pi }\varepsilon _{ij}A_{j}\approx 0 \\ 
+\xi =\varepsilon _{ij}\partial _{i}A_{j}\approx 0%
+\end{array}%
+\right.
+\end{equation*}
+
+\subsection{Clasificación de vínculos de primera y segunda clase}
+La distinci\'{o}n de v\'{\i}nculos primarios y secundarios no es relevante,
+pues todos ellos son vistos como elementos de un mismo conjunto. Por lo
+tanto, el siguiente paso en el an\'{a}lisis can\'{o}nico de la teoria de
+C-S, consiste en la clasificaci\'{o}n de los v\'{\i}nculos encontrados, en v%
+\'{\i}nculos de primera y segunda clase. Para tal objetivo, se debe tener en
+cuenta que de anularse todos los PP calculados entre un v\'{\i}nculo
+determinado y el resto de v\'{\i}nculos que conforman el sistema, este ser%
+\'{a} clasificado como de primera clase, si por otra parte, existe almenos
+un PP que no se anule debilmente, se dir\'{a} entonces que se trata de un v%
+\'{\i}nculo de segunda clase \cite{Dirac,Merylin}. \newline
+\newline
+Recurriendo a las estructuras (\ref{C.21}), (\ref{C.29}) y (\ref{C.37}), se
+comprueba que todos PP calculados entre $\pi _{0}$ y el conjunto de v\'{\i}%
+nculos de la teor\'{\i}a son debilmente iguales a cero, bajo este resultado,
+se puede inferir que el v\'{\i}nculo primario $\pi _{0}$ es de primera clase.%
+\newline
+\newline
+Por otro lado, a partir las ecuaciones (\ref{C.31}) y (\ref{C.39}), se
+observa que no todos los PP entre $\chi _{i}$, $\xi $ y el conjunto total de
+v\'{\i}nculos son debilmente nulos. Por consiguiente, se determina que tanto
+el v\'{\i}nculo primario $\chi _{i}$ como el v\'{\i}nculo secundario $\xi $
+son de segunda clase.\newline
+\newline
+En virtud a los v\'{\i}nculos $\chi _{i}$ y $\xi $, cuyas estructuras se
+localizan en (\ref{C.5}) y en (\ref{C.26}), respectivamente, se comrpueba
+que en principio se cuenta con un total de tres v\'{\i}nculos de segunda
+clase, que ser\'{a}n denotados de la siguiente manera: 
+\begin{eqnarray*}
+\theta _{1}\left( \boldsymbol{x},t\right)  &\equiv &\chi _{1}\left( 
+\boldsymbol{x},t\right) , \\
+\theta _{2}\left( \boldsymbol{x},t\right)  &\equiv &\chi _{2}\left( 
+\boldsymbol{x},t\right) , \\
+\theta _{3}\left( \boldsymbol{x},t\right)  &\equiv &\xi \left( \boldsymbol{x}%
+,t\right) .
+\end{eqnarray*}%
+A fin de tratar los v\'{\i}nculos de segunda clase mediante los
+planteamientos del m\'{e}todo de Dirac, se proceder\'{a} a construir una
+matriz conformada por los PP entre los v\'{\i}nculos de segunda clase de la
+teor\'{\i}a de C-S, as\'{\i}:%
+\begin{equation}
+V\left( \boldsymbol{x},\boldsymbol{y}\right) \equiv \left\{ \theta
+_{l}\left( \boldsymbol{x},t\right) ,\theta _{m}\left( \boldsymbol{y}%
+,t\right) \right\} ,  \label{C.43}
+\end{equation}%
+con $l,m=1,2,3.$ Cuya forma expl\'{\i}cita $\left( \text{calculada en el Ap%
+\'{e}ndice D}\right) $ es dada por:\newline
+\begin{equation}
+V\left( \boldsymbol{x},\boldsymbol{y}\right) =\left( 
+\begin{array}{ccc}
+0 & -\frac{k}{2\pi } & \partial _{2}^{x} \\ 
+\frac{k}{2\pi } & 0 & -\partial _{1}^{x} \\ 
+\partial _{2}^{x} & -\partial _{1}^{x} & 0%
+\end{array}%
+\right) \delta ^{2}\left( \boldsymbol{x}-\boldsymbol{y}\right) .
+\label{C.44}
+\end{equation}%
+El m\'{e}todo de Dirac, establece que los v\'{\i}nculos de segunda clase
+surgen cuando la matriz (\ref{C.44}) no se anula sobre la superficie de v%
+\'{\i}nculos (no todos los PP son debilmente nulos). Sin embargo, los v\'{\i}%
+nculos de segunda clase pueden ser tratados bajo la definici\'{o}n de par%
+\'{e}ntesis de Dirac $\left( \text{PD}\right) $, siempre que la matriz de v%
+\'{\i}nculos de segunda clase sea regular \cite{Dirac,Merylin,Sundermeyer}. 
+\newline
+\newline
+Como se puede observar la matriz de v\'{\i}nculos de segunda clase (\ref%
+{C.44}), es una matriz funcional, pues en sus componente se localizan
+derivadas de la funci\'{o}n delta de Dirac. Con el objetivo de comprobar si
+se trata de una matriz regular o singular, se debe calcular su determinante.
+Para tal fin, se realizar\'{a} antes la transformada de Fourier de cada una
+de sus componentes $\left( \text{\textbf{v\'{e}ase Ap\'{e}ndice D}}\right) $%
+, procedimiento que da como resultado la siguiente matriz:\newline
+\begin{equation}
+\widetilde{V}\left( \boldsymbol{x},\boldsymbol{y}\right) =\left( 
+\begin{array}{ccc}
+0 & -\frac{k}{2\pi } & ip_{2} \\ 
+\frac{k}{2\pi } & 0 & -ip_{1} \\ 
+ip_{2} & -ip_{1} & 0%
+\end{array}%
+\right) .  \label{C.45}
+\end{equation}%
+\newline
+Esta matriz, a diferencia de (\ref{C.44}), presenta componentes con valores n%
+\'{u}mericos, luego, es posible calcular su determinante.\newline
+\newline
+Se puede comprobar que el determinante de la matriz (\ref{C.45}) es nulo, es
+decir:%
+\begin{equation*}
+\det \widetilde{V}\left( \boldsymbol{x},\boldsymbol{y}\right) =0.
+\end{equation*}%
+\newline
+De all\'{\i} que $\widetilde{V}\left( \boldsymbol{x},\boldsymbol{y}\right) $
+es una matriz singular. Este resultado implica necesariamente que la matriz
+de v\'{\i}nculos $V\left( \boldsymbol{x},\boldsymbol{y}\right) $ sea tamb%
+\'{\i}en una matriz singular y no invertible. Debido a que la inversa de la
+matriz de v\'{\i}nculos (\ref{C.44}) no puede ser determinada, los par\'{e}%
+ntesis de Dirac no estar\'{a}n bien definidos \cite%
+{Dirac,Merylin,Sundermeyer}. Por esta raz\'{o}n, se puede concluir que $\chi
+_{i}$ y $\xi $ no constituyen un n\'{u}mero m\'{\i}nimo de v\'{\i}nculos de
+segunda clase, esto es un indicador de que la teor\'{\i}a posee en realidad
+un v\'{\i}nculo de primera clase adicional que debe ser fijado \cite%
+{Sundermeyer}.
+
+\subsection{Construcción de un vínculo de primera clase}
+Con el fin de deducir el v\'{\i}nculo de primera clase, se propone la
+siguiente combinaci\'{o}n lineal:%
+\begin{equation}
+\overline{\xi }=\overline{\xi }\left( \boldsymbol{x},t\right) \equiv \int
+d^{2}y\left[ C_{i}\left( \boldsymbol{x},\boldsymbol{y}\right) \chi
+_{i}\left( \boldsymbol{y},t\right) +D\left( \boldsymbol{x},\boldsymbol{y}%
+\right) \xi \left( \boldsymbol{y},t\right) \right] \newline
+.  \label{D.1}
+\end{equation}%
+Donde los coeficientes $C_{i}\left( \boldsymbol{x},\boldsymbol{y}\right) $ y 
+$D\left( \boldsymbol{x},\boldsymbol{y}\right) $ son arbitrarios y se
+determinar\'{a}n teniendo en cuenta que si $\overline{\xi }\left( x\right) $
+es un v\'{\i}nculo de primera clase, entonces debe satisfacer:%
+\begin{eqnarray}
+\left\{ \overline{\xi }\left( \boldsymbol{x},t\right) ,\chi _{j}\left( 
+\boldsymbol{y},t\right) \right\} &\approx &0,  \label{D.2} \\
+\left\{ \overline{\xi }\left( \boldsymbol{x},t\right) ,\xi \left( 
+\boldsymbol{y},t\right) \right\} &\approx &0  \label{D.3}
+\end{eqnarray}%
+Inicialmente, a partir de la definici\'{o}n (\ref{D.1}), los PP deducidos en
+el \textbf{Ap\'{e}ndice C} y las propiedades de los PP, se verifica que:%
+\begin{eqnarray}
+\left\{ \overline{\xi }\left( \boldsymbol{x},t\right) ,\chi _{j}\left( 
+\boldsymbol{y},t\right) \right\} &\approx &\int d^{2}zC_{i}\left( 
+\boldsymbol{x},\boldsymbol{z}\right) \left\{ \chi _{i}\left( \boldsymbol{z}%
+,t\right) ,\chi _{j}\left( \boldsymbol{y},t\right) \right\} +  \notag \\
+&&\int d^{2}zD\left( \boldsymbol{x},\boldsymbol{z}\right) \left\{ \xi \left( 
+\boldsymbol{z},t\right) ,\chi _{j}\left( \boldsymbol{y},t\right) \right\} 
+\notag \\
+&\approx &\varepsilon _{ij}\left[ -\frac{k}{2\pi }C_{i}\left( \boldsymbol{x},%
+\boldsymbol{y}\right) +\partial _{i}^{y}D\left( \boldsymbol{x},\boldsymbol{y}%
+\right) \right] \approx 0.  \label{D.4}
+\end{eqnarray}%
+Para deducir la anterior relaci\'{o}n se empleo tamb\'{\i}en la propiedad (%
+\ref{C.36}). La ecuaci\'{o}n (\ref{D.4}) se satisface si:%
+\begin{equation*}
+-\frac{k}{2\pi }C_{i}\left( \boldsymbol{x},\boldsymbol{y}\right) +\partial
+_{i}^{y}D\left( \boldsymbol{x},\boldsymbol{y}\right) \approx 0.
+\end{equation*}%
+Expresi\'{o}n de la que se puede despejar:%
+\begin{equation}
+C_{i}\left( \boldsymbol{x},\boldsymbol{y}\right) \approx \frac{2\pi }{k}%
+\partial _{i}^{y}D\left( \boldsymbol{x},\boldsymbol{y}\right) .  \label{D.5}
+\end{equation}%
+De forma an\'{a}loga el PP (\ref{D.3}), puede ser resuelto mediante la
+definici\'{o}n (\ref{D.1}), del siguiente modo:%
+\begin{eqnarray}
+\left\{ \overline{\xi }\left( \boldsymbol{x},t\right) ,\xi \left( 
+\boldsymbol{y},t\right) \right\} &\approx &\int d^{2}z\left[ C_{i}\left( 
+\boldsymbol{x},\boldsymbol{z}\right) \left\{ \chi _{i}\left( \boldsymbol{z}%
+,t\right) ,\xi \left( \boldsymbol{y},t\right) \right\} +D\left( \boldsymbol{x%
+},\boldsymbol{z}\right) \left\{ \xi \left( \boldsymbol{z},t\right) ,\xi
+\left( \boldsymbol{y},t\right) \right\} \right] \approx 0  \notag \\
+&\approx &-\varepsilon _{ij}\partial _{j}^{y}C_{i}\left( \boldsymbol{x},%
+\boldsymbol{y}\right) \approx 0.  \label{D.6}
+\end{eqnarray}%
+Cabe anotar que para la consecuci\'{o}n del resultado previo se tuvo en
+cuenta los PP encontrados en el \textbf{Ap\'{e}ndice C}:\newline
+\newline
+Reemplazando en (\ref{D.6}) el coeficiente $C_{i}\left( \boldsymbol{x},%
+\boldsymbol{y}\right) $ encontrado en (\ref{D.5}), se deduce que:%
+\begin{equation}
+-\frac{2\pi }{k}\varepsilon _{ij}\partial _{j}^{y}\partial _{i}^{y}D\left( 
+\boldsymbol{x},\boldsymbol{y}\right) \approx 0.  \label{D.7}
+\end{equation}%
+El producto tensorial $\varepsilon _{ij}\partial _{j}^{y}\partial _{i}^{y}$
+no es m\'{a}s que el producto entre un tensor antisim\'{e}trico $\varepsilon
+_{ij}$ y un tensor sim\'{e}trico $\partial _{j}^{y}\partial _{i}^{y}$, cuyo
+resultado es cero. Por tal motivo, si se incluye este precepto en la ecuaci%
+\'{o}n (\ref{D.9}) se encuentra que el coeficiente\ $D\left( \boldsymbol{x},%
+\boldsymbol{y}\right) $ es completamente indeterminado. \newline
+\newline
+Se escoger\'{a} entonces un valor conveniente para la funci\'{o}n $D\left( 
+\boldsymbol{x},\boldsymbol{y}\right) ,$dado por:%
+\begin{equation}
+D\left( \boldsymbol{x},\boldsymbol{y}\right) \equiv \delta ^{2}\left( 
+\boldsymbol{x}-\boldsymbol{y}\right) .  \label{D.8}
+\end{equation}%
+Insertando esta elecci\'{o}n en (\ref{D.5}) y empleando la propiedad (\ref%
+{C.36}), se puede verificar que:%
+\begin{eqnarray}
+C_{i}\left( \boldsymbol{x},\boldsymbol{y}\right) &\approx &\frac{2\pi }{k}%
+\partial _{i}^{y}\delta ^{2}\left( \boldsymbol{x}-\boldsymbol{y}\right) 
+\notag \\
+&\approx &-\frac{2\pi }{k}\partial _{i}^{x}\delta ^{2}\left( \boldsymbol{x}-%
+\boldsymbol{y}\right) .  \label{D.9}
+\end{eqnarray}%
+Hasta este punto se han determinado ya los dos coeficientes de la combinaci%
+\'{o}n lineal asociada al v\'{\i}nculo $\overline{\xi }$. Sustituyendo
+entonces (\ref{D.8}) y (\ref{D.9}) en la definici\'{o}n (\ref{D.1}), se
+deduce que el v\'{\i}nculo de primera clase que se deseaba fijar es:%
+\begin{eqnarray}
+\overline{\xi }\left( \boldsymbol{x},t\right) &\equiv &-\frac{2\pi }{k}%
+\partial _{i}^{x}\int d^{2}y\delta ^{2}\left( \boldsymbol{x}-\boldsymbol{y}%
+\right) \chi _{i}\left( \boldsymbol{y},t\right) +\int d^{2}y\xi \left( 
+\boldsymbol{y},t\right) \delta ^{2}\left( \boldsymbol{x}-\boldsymbol{y}%
+\right)  \notag \\
+&=&\xi \left( \boldsymbol{x},t\right) -\frac{2\pi }{k}\partial _{i}^{x}\chi
+_{i}\left( \boldsymbol{x},t\right) \approx 0.  \label{D.10}
+\end{eqnarray}%
+Finalmente se tiene que la teor\'{\i}a de C-S est\'{a} conformada por el
+siguiente conjunto de v\'{\i}nculos:%
+\begin{equation*}
+\left\{ 
+\begin{array}{c}
+\pi _{0}\approx 0 \\ 
+\overline{\xi }=\xi -\frac{2\pi }{k}\partial _{i}\chi _{i}\approx 0 \\ 
+\chi _{i}=\pi _{i}+\frac{k}{4\pi }\varepsilon _{ij}A_{j}\approx 0%
+\end{array}%
+\right.
+\end{equation*}%
+Las dos primeras ecuaciones del conjunto ilustrado previamente son v\'{\i}%
+nculos de primera clase, mientras que la \'{u}ltima relaci\'{o}n del mismo
+conjunto es un v\'{\i}nculo de segunda clase.\newline
+
+\subsection{Tratamiento de vínculos de segunda clase}
+
+Inicialmente se proceder\'{a} a eliminar los v\'{\i}nculos de segunda clase
+dados por (\ref{C.5}), los cuales permiten reconocer que existe un n\'{u}%
+mero determinado de grados de libertad en la teor\'{\i}a, m\'{a}s no
+especifican cuales son. En consecuencia se debe definir unos nuevos PP entre
+los grados de libertad del sistema, denominados como Par\'{e}ntesis de Dirac
+en tiempos iguales $\left( \text{PD}\right) $ \cite%
+{Dirac,Merylin,Sundermeyer}, que son definidos por:\newline
+\begin{eqnarray}
+\left\{ M\left( \boldsymbol{x},t\right) ,N\left( \boldsymbol{y},t\right)
+\right\} _{D_{1}} &\equiv &\left\{ M\left( \boldsymbol{x},t\right) ,N\left( 
+\boldsymbol{y},t\right) \right\} -\int d^{2}ud^{2}v\left[ \left\{ M\left( 
+\boldsymbol{x},t\right) ,\chi _{i}\left( \boldsymbol{u},t\right) \right\}
+\right.   \notag \\
+&&\left. C_{ij}^{-1}\left( \boldsymbol{u},\boldsymbol{v}\right) \left\{ \chi
+_{j}\left( \boldsymbol{v},t\right) ,N\left( \boldsymbol{y},t\right) \right\} %
+\right] .  \label{E.1}
+\end{eqnarray}%
+Donde $M\left( \boldsymbol{x},t\right) \equiv M\left( A_{\alpha },\pi
+^{\alpha }\right) $ y $N\left( \boldsymbol{x},t\right) \equiv N\left(
+A_{\alpha },\pi ^{\alpha }\right) $ son dos variables din\'{a}micas
+arbitrarias del espacio de fase. Aqu\'{\i} $C_{ij}^{-1}\left( \boldsymbol{x},%
+\boldsymbol{y}\right) $ se interpreta como la inversa de la matriz de v\'{\i}%
+nculos $C_{ij}\left( \boldsymbol{x},\boldsymbol{y}\right) ,$ la cual es
+definida por:%
+\begin{equation}
+C_{ij}\left( \boldsymbol{x},\boldsymbol{y}\right) \equiv \left\{ \chi
+_{i}\left( \boldsymbol{x},t\right) ,\chi _{j}\left( \boldsymbol{y},t\right)
+\right\} .  \label{E.2}
+\end{equation}%
+Con $\chi _{i}$ dado por la ecuaci\'{o}n (\ref{C.5}). La matriz de v\'{\i}%
+nculos de segunda clase $C_{ij}\left( \boldsymbol{x},\boldsymbol{y}\right) $
+es, $\left( \text{v\'{e}ase Ap\'{e}ndice C}\right) $:%
+\begin{equation}
+C_{ij}\left( \boldsymbol{x},\boldsymbol{y}\right) =-\frac{k}{2\pi }%
+\varepsilon _{ij}\delta ^{2}\left( \boldsymbol{x}-\boldsymbol{y}\right) .
+\label{E.3}
+\end{equation}%
+Antes de poder especificar los PD entre los grados de libertad, ser\'{a}
+necesario construir la inversa de la matriz de v\'{\i}nculos $C_{ij}\left( 
+\boldsymbol{x},\boldsymbol{y}\right) $, matriz que se deducir\'{a} teniendo
+en cuenta que se debe satisfacer:%
+\begin{equation}
+\int d^{2}zC_{ij}\left( \boldsymbol{x},\boldsymbol{z}\right)
+C_{jm}^{-1}\left( z,\boldsymbol{y}\right) =\delta _{im}\delta ^{2}\left( 
+\boldsymbol{x}-\boldsymbol{y}\right) .  \label{E.4}
+\end{equation}%
+Reemplazando en esta relaci\'{o}n la estructura de la matriz de v\'{\i}%
+nculos dada en (\ref{E.3}), se observa que:%
+\begin{equation}
+-\frac{k}{2\pi }\varepsilon _{ij}C_{jm}^{-1}\left( \boldsymbol{x},%
+\boldsymbol{y}\right) =\delta _{im}\delta ^{2}\left( \boldsymbol{x}-%
+\boldsymbol{y}\right) .  \label{E.5}
+\end{equation}%
+Multiplicando ahora a ambos lados de la igualdad (\ref{E.5}) por el tensor $%
+\varepsilon _{in}$, se puede deducir:%
+\begin{eqnarray*}
+-\frac{k}{2\pi }\varepsilon _{in}\varepsilon _{ij}C_{jm}^{-1}\left( 
+\boldsymbol{x},\boldsymbol{y}\right)  &=&\varepsilon _{in}\delta _{im}\delta
+^{2}\left( \boldsymbol{x}-\boldsymbol{y}\right)  \\
+-\frac{k}{2\pi }C_{nm}^{-1}\left( \boldsymbol{x},\boldsymbol{y}\right) 
+&=&\varepsilon _{mn}\delta ^{2}\left( \boldsymbol{x}-\boldsymbol{y}\right) .
+\end{eqnarray*}%
+Cabe anotar que para el c\'{a}lculo previo se tuvo en cuenta que $%
+\varepsilon _{in}\varepsilon _{ij}=\delta _{nj}$ $\left( \text{\textbf{%
+observar Ap\'{e}ndice A}}\right) .$ A partir de esta expresi\'{o}n se puede
+especificar que la inversa de la matr\'{\i}z de v\'{\i}nculos $C_{ij}\left( 
+\boldsymbol{x},\boldsymbol{y}\right) $ est\'{a} dada por:%
+\begin{equation}
+C_{ij}^{-1}\left( \boldsymbol{x},\boldsymbol{y}\right) =\frac{2\pi }{k}%
+\varepsilon _{ij}\delta ^{2}\left( \boldsymbol{x}-\boldsymbol{y}\right) .
+\label{E.6}
+\end{equation}%
+Una vez encontrada la inversa de la matriz de v\'{\i}nculos, se estudiar\'{a}%
+n los PD entre los grados de libertad.\newline
+\newline
+Es imporante resaltar que bajo la definici\'{o}n de PD (\ref{E.1}), se
+cumple que el v\'{\i}nculo primario de segunda clase $\chi _{i}$ es
+fuertemente igual a cero, esto es: 
+\begin{equation}
+\pi _{i}+\frac{k}{4\pi }\varepsilon _{ij}A_{j}=0.  \label{E.7}
+\end{equation}%
+Como se menciono anteriormente, el v\'{\i}nculo (\ref{C.5}) da indicios la
+existencia de un determinado n\'{u}mero de grados de libertad en la teor%
+\'{\i}a, sin embargo la selecci\'{o}n de tales variables independientes es
+completamente arbitraria. Por este motivo, se escoger\'{a} como campos
+independientes a los campos fundamentales $\left( A_{\alpha },\pi
+_{0}\right) $, luego el nuevo espacio de fase para la teor\'{\i}a de C-S
+estar\'{a} constituido apenas por dicho campo, tal espacio se denomina
+espacio de fase reducido. \newline
+\newline
+En principio, a partir de la definici\'{o}n (\ref{E.1}), se proceder\'{a} a
+determinar el siguiente PD: 
+\begin{eqnarray}
+\left\{ A_{i}\left( \boldsymbol{x},t\right) ,A_{j}\left( \boldsymbol{y}%
+,t\right) \right\} _{D_{1}} &=&\left\{ A_{i}\left( \boldsymbol{x},t\right)
+,A_{j}\left( \boldsymbol{y},t\right) \right\} -\int d^{2}ud^{2}v\left[
+\left\{ A_{i}\left( \boldsymbol{x},t\right) ,\chi _{m}\left( \boldsymbol{u}%
+,t\right) \right\} \right.   \notag \\
+&&\left. C_{mn}^{-1}\left( \boldsymbol{u},\boldsymbol{v}\right) \left\{ \chi
+_{n}\left( \boldsymbol{v},t\right) ,A_{j}\left( \boldsymbol{y},t\right)
+\right\} \right] .  \label{E.8}
+\end{eqnarray}%
+Utilizando los par\'{e}ntesis de PP (\ref{C.13}) y (\ref{C.14}) y los PP
+entre el campo $A_{i}$ y el v\'{\i}nculo $\chi _{i}$, $\left( \text{\textbf{v%
+\'{e}ase Ap\'{e}ndice C}}\right) $, la relaci\'{o}n previa puede ser
+reescrita de la siguiente manera: 
+\begin{eqnarray}
+\left\{ A_{i}\left( \boldsymbol{x},t\right) ,A_{j}\left( \boldsymbol{y}%
+,t\right) \right\} _{D_{1}} &=&-\int d^{2}ud^{2}v\left( \eta _{im}\delta
+^{2}\left( \boldsymbol{x}-\boldsymbol{u}\right) \right) C_{mn}^{-1}\left( 
+\boldsymbol{u},\boldsymbol{v}\right) \left( -\eta _{jn}\delta ^{2}\left( 
+\boldsymbol{v}-\boldsymbol{y}\right) \right)   \notag \\
+&=&C_{ij}^{-1}\left( \boldsymbol{x},\boldsymbol{y}\right)   \notag \\
+&=&\frac{2\pi }{k}\varepsilon _{ij}\delta ^{2}\left( \boldsymbol{x}-%
+\boldsymbol{y}\right) .  \label{E.9}
+\end{eqnarray}%
+\newline
+Se deducir\'{a} ahora, el PD entre los campos $A_{0}$ y $\pi _{0}$, luego de
+la definici\'{o}n (\ref{E.1}) habr\'{a} que resolver:%
+\begin{eqnarray}
+\left\{ A_{0}\left( \boldsymbol{x},t\right) ,\pi _{0}\left( \boldsymbol{y}%
+,t\right) \right\} _{D_{1}} &=&\left\{ A_{0}\left( \boldsymbol{x},t\right)
+,\pi _{0}\left( \boldsymbol{y},t\right) \right\} -\int d^{2}ud^{2}v\left[
+\left\{ A_{0}\left( \boldsymbol{x},t\right) ,\chi _{m}\left( \boldsymbol{u}%
+,t\right) \right\} \right.   \notag \\
+&&\left. C_{mn}^{-1}\left( \boldsymbol{u},\boldsymbol{v}\right) \left\{ \chi
+_{n}\left( \boldsymbol{v},t\right) ,\pi _{0}\left( \boldsymbol{y},t\right)
+\right\} \right] .  \label{E.10}
+\end{eqnarray}%
+De acuerdo a los PP fundamentales es posibe deducir que:%
+\begin{eqnarray}
+\left\{ A_{0}\left( \boldsymbol{x},t\right) ,\pi _{0}\left( \boldsymbol{y}%
+,t\right) \right\} _{D_{1}} &=&\left\{ A_{0}\left( \boldsymbol{x},t\right)
+,\pi _{0}\left( \boldsymbol{y},t\right) \right\}   \notag \\
+&=&\delta ^{2}\left( \boldsymbol{x}-\boldsymbol{y}\right) .  \label{E.11}
+\end{eqnarray}%
+En sintesis los PD no nulos entre las variables can\'{o}nicas del espacio de
+fase, deducidos a partir de la definici\'{o}n (\ref{E.1}) son:%
+\begin{equation*}
+\left\{ 
+\begin{array}{c}
+\left\{ A_{0}\left( \boldsymbol{x},t\right) ,\pi _{0}\left( \boldsymbol{y}%
+,t\right) \right\} _{D_{1}}=\delta ^{2}\left( \boldsymbol{x}-\boldsymbol{y}%
+\right)  \\ 
+\left\{ A_{i}\left( \boldsymbol{x},t\right) ,A_{j}\left( \boldsymbol{y}%
+,t\right) \right\} _{D_{1}}=\frac{2\pi }{k}\varepsilon _{ij}\delta
+^{2}\left( \boldsymbol{x}-\boldsymbol{y}\right) 
+\end{array}%
+\right. 
+\end{equation*}%
+Relaciones bajo las cuales se han eliminado apenas los v\'{\i}nculos de
+segunda clase de la teor\'{\i}a de C-S.\newline
+\newline
+Para culminar en su totalidad el an\'{a}lisis can\'{o}nico de la teor\'{\i}a
+de C-S pura es de inter\'{e}s ahora, estudiar los v\'{\i}nculos de primera
+clase $\pi _{0}$ y $\overline{\xi }$ que no son m\'{a}s que generadores de
+transformaciones gauge \cite{Sundermeyer}, luego, esta situaci\'{o}n
+naturalmente inducir\'{a} la imposici\'{o}n de un total de dos condiciones
+de gauge adicionales \cite{Dirac,Merylin,Sundermeyer}.\newline
+
+\subsection{Tratamiento de vínculos de primera clase y fijación de condiciones gauge}
+
+Hasta esta parte se han tratado convenientemente los v\'{\i}nculos de
+segunda clase $\chi _{i}$ con $i=1,2$, dados por la ecuaci\'{o}n (\ref{C.5}%
+). Para resolver completamente la teor\'{\i}a de C-S, en esta subsecci\'{o}n
+se estudiar\'{a} los v\'{\i}nculos de primera clase $\pi _{0}$ y $\overline{%
+\xi }$. La idea fundamental del tratamiento de estos v\'{\i}nculos es que a
+trav\'{e}s de la inclusi\'{o}n de dos v\'{\i}nculos adicionales, conocidos
+como condiciones gauge, se logre obtener un conjunto constituido solamente
+por v\'{\i}nculos de segunda clase, esto es, que no todos los PP entre los v%
+\'{\i}nculos del nuevo conjunto sean debilmente nulos. \cite{[6]},\cite{[8]},%
+\cite{[9]}.\newline
+\newline
+Dado que la imposici\'{o}n de condiciones gauge es completamente arbitraria,
+se recurrir\'{a} a analizar la teor\'{\i}a de C-S en el gauge de radiaci\'{o}%
+n,\cite{[9]}, condici\'{o}n que es definida imponiendo:%
+\begin{eqnarray}
+A_{0}\left( \boldsymbol{x},t\right)  &\approx &0.  \label{F.1} \\
+\partial _{i}A_{i}\left( \boldsymbol{x},t\right)  &\approx &0.  \label{F.2}
+\end{eqnarray}%
+Por consiguiente, el conjunto de v\'{\i}nculos del sistema vendr\'{a}
+determinado ahora, por las ecuaciones (\ref{C.4}), (\ref{D.10}) y el gauge
+de radiaci\'{o}n citado en los renglones previos, dicho de otro modo el
+conjunto en cuesti\'{o}n es:%
+\begin{eqnarray}
+\phi _{1}\left( \boldsymbol{x},t\right)  &\equiv &\pi _{0}\left( \boldsymbol{%
+x},t\right) \approx 0.  \label{F.3} \\
+\phi _{2}\left( \boldsymbol{x},t\right)  &\equiv &\xi \left( \boldsymbol{x}%
+,t\right) -\frac{2\pi }{k}\partial _{i}\chi _{i}\left( \boldsymbol{x}%
+,t\right) \approx 0.  \label{F.4} \\
+\phi _{3}\left( \boldsymbol{x},t\right)  &\equiv &A_{0}\left( \boldsymbol{x}%
+,t\right) \approx 0.  \label{F.5} \\
+\phi _{4}\left( \boldsymbol{x},t\right)  &\equiv &\partial _{i}A_{i}\left( 
+\boldsymbol{x},t\right) \approx 0.  \label{F.6}
+\end{eqnarray}%
+Teniendo en cuenta que ahora el sistema se constituye de un total de cuatro v%
+\'{\i}nculos de segunda clase $\left( \text{\textbf{v\'{e}ase Ap\'{e}ndice E}%
+}\right) $, se proceder\'{a} a estudiarlos de manera an\'{a}loga al
+tratamiento desarrollado en la subsecci\'{o}n anterior, es decir, bajo la
+definici\'{o}n de PD. \newline
+\newline
+Considerando entonces, dos variables din\'{a}micas arbitrarias del espacio
+de fase reducido $P\left( \boldsymbol{x},t\right) \equiv P\left( A_{\alpha
+},\pi _{0}\right) $ y $Q\left( \boldsymbol{x},t\right) \equiv Q\left(
+A_{\alpha },\pi _{0}\right) $, se define un segundo PD entre ellas por: 
+\begin{eqnarray}
+\left\{ P\left( \boldsymbol{x},t\right) ,Q\left( \boldsymbol{y},t\right)
+\right\} _{D} &\equiv &\left\{ P\left( \boldsymbol{x},t\right) ,Q\left( 
+\boldsymbol{y},t\right) \right\} _{D_{1}}-\int d^{2}ud^{2}v\left[ \left\{
+P\left( \boldsymbol{x},t\right) ,\phi _{l}\left( \boldsymbol{u},t\right)
+\right\} _{D_{1}}\right.   \notag \\
+&&\left. S_{lm}^{-1}\left( \boldsymbol{u},\boldsymbol{v}\right) \left\{ \phi
+_{m}\left( \boldsymbol{v},t\right) ,Q\left( \boldsymbol{y},t\right) \right\}
+_{D_{1}}\right] .  \label{F.7}
+\end{eqnarray}%
+Donde $S_{lm}^{-1}\left( \boldsymbol{x},\boldsymbol{y}\right) $ es la
+inversa de la matriz de v\'{\i}nculos $S_{lm}\left( \boldsymbol{x},%
+\boldsymbol{y}\right) $ definida por:%
+\begin{equation}
+S_{lm}\left( \boldsymbol{x},\boldsymbol{y}\right) \equiv \left\{ \phi
+_{l}\left( \boldsymbol{x},t\right) ,\phi _{m}\left( \boldsymbol{y},t\right)
+\right\} .  \label{F.8}
+\end{equation}%
+Con $l,m=1,...,4.$\newline
+\newline
+Cabe anotar que los par\'{e}ntesis de Dirac $\left\{ P\left( \boldsymbol{x}%
+,t\right) ,Q\left( \boldsymbol{y},t\right) \right\} _{D_{1}},$ ser\'{a}n
+calculados bajo la definici\'{o}n (\ref{E.1}).\newline
+\newline
+N\'{o}tese que con el prop\'{o}sito de simplificar los calculos
+concernientes al estudio de los v\'{\i}nculos de segunda clase de la teor%
+\'{\i}a de C-S, se procedi\'{o} a resolver inicialmente, bajo la definici%
+\'{o}n de PD (\ref{E.1}) los v\'{\i}nculos de segunda clase $\chi _{i}$ con $%
+i=1,2.$ Mientras que en esta subseccci\'{o}n, a partir de la definici\'{o}n
+de PD dada por (\ref{F.7}) se tratar\'{a}n los v\'{\i}nculos remanentes $%
+\phi _{l}$ con $l=1,...,4$. Es relevante resaltar que los resultados
+derivados de este m\'{e}todo iterativo, ser\'{\i}an exactamente los mismos a
+los computados si se tratase el total de seis v\'{\i}nculos de segunda clase
+de la teor\'{\i}a $\left( \chi _{i},\phi _{l}\right) ,$ en un solo paso \cite%
+{[9]}.\newline
+\newline
+La forma matricial de $S\left( \boldsymbol{x},\boldsymbol{y}\right) $ es
+dada por $\left( \text{\textbf{ver Ap\'{e}ndice F}}\right) :$\newline
+\begin{equation}
+S\left( \boldsymbol{x},\boldsymbol{y}\right) =\left( 
+\begin{array}{cccc}
+0 & 0 & -1 & 0 \\ 
+0 & 0 & 0 & \frac{2\pi }{k}\bigtriangledown _{x}^{2} \\ 
+1 & 0 & 0 & 0 \\ 
+0 & -\frac{2\pi }{k}\bigtriangledown _{x}^{2} & 0 & 0%
+\end{array}%
+\right) \delta ^{2}\left( \boldsymbol{x}-\boldsymbol{y}\right) .  \label{F.9}
+\end{equation}%
+\newline
+Donde $\bigtriangledown _{x}^{2}$ es el operador Laplaciano en dos
+dimensiones.\newline
+\newline
+Sin embargo, los PD (\ref{F.7}) est\'{a}n escritos en t\'{e}rminos de la
+inversa de la matriz de v\'{\i}nculos de segunda clase, luego, est\'{a} ser%
+\'{a} calculada a partir de la siguiente condici\'{o}n:%
+\begin{equation}
+\int d^{2}zS_{lr}\left( \boldsymbol{x},\boldsymbol{z}\right)
+S_{rm}^{-1}\left( \boldsymbol{z},\boldsymbol{y}\right) =\delta _{lm}\delta
+^{2}\left( \boldsymbol{x}-\boldsymbol{y}\right) .  \label{F.10}
+\end{equation}%
+La matriz $S^{-1}\left( \boldsymbol{x},\boldsymbol{y}\right) $, tiene la
+forma mostrada a continuaci\'{o}n, $\left( \text{\textbf{v\'{e}ase apendice F%
+}}\right) :$ 
+\begin{equation}
+S^{-1}\left( \boldsymbol{x},\boldsymbol{y}\right) =\left( 
+\begin{array}{cccc}
+0 & 0 & 1 & 0 \\ 
+0 & 0 & 0 & -\frac{k}{2\pi }\frac{1}{\bigtriangledown _{x}^{2}} \\ 
+-1 & 0 & 0 & 0 \\ 
+0 & \frac{k}{2\pi }\frac{1}{\bigtriangledown _{x}^{2}} & 0 & 0%
+\end{array}%
+\right) \delta ^{2}\left( \boldsymbol{x}-\boldsymbol{y}\right) .
+\label{F.11}
+\end{equation}%
+\newline
+Donde la expresi\'{o}n:%
+\begin{equation}
+F\left( \boldsymbol{x},\boldsymbol{y}\right) \equiv \frac{1}{%
+\bigtriangledown _{x}^{2}}\delta ^{2}\left( \boldsymbol{x}-\boldsymbol{y}%
+\right) ,  \label{F.12}
+\end{equation}%
+es la funci\'{o}n de Green asociada al operador Laplaciano en dos
+dimensiones. De la definici\'{o}n de funci\'{o}n de Green, se sabe que (\ref%
+{F.11}) satisface la siguiente ecuaci\'{o}n diferencial:%
+\begin{equation}
+\bigtriangledown _{x}^{2}F\left( \boldsymbol{x},\boldsymbol{y}\right)
+=\delta ^{2}\left( \boldsymbol{x}-\boldsymbol{y}\right) .  \label{F.13}
+\end{equation}%
+Por medio del m\'{e}todo de funciones de Green y de las condiciones de
+frontera de los campos, se encuentra que la funci\'{o}n de Green del
+operador Laplaciano en dos dimensiones es de la forma \cite{[7]}:\newline
+\begin{equation}
+F\left( \boldsymbol{x},\boldsymbol{y}\right) =\frac{1}{4\pi }\ln \left( 
+\boldsymbol{x}-\boldsymbol{y}\right) ^{2}.  \label{F.14}
+\end{equation}%
+\newline
+Debido a que la matriz $S^{-1}\left( \boldsymbol{x},\boldsymbol{y}\right) $
+ha sido determinada, se proceder\'{a} ahora, a calcular los PD entre las
+variables del espacio de fase reducido del sistema. Sin embargo, es
+necesario tener en cuenta que bajo la definici\'{o}n de PD (\ref{F.7}), los v%
+\'{\i}nculos de seguda clase $\phi _{l}$, ser\'{a}n ahora igualdades
+fuertes, es decir:\newline
+\begin{eqnarray*}
+\pi _{0}\left( \boldsymbol{x},t\right)  &=&0, \\
+\xi \left( \boldsymbol{x},t\right) -\frac{2\pi }{k}\partial _{i}\chi
+_{i}\left( \boldsymbol{x},t\right)  &=&0, \\
+A_{0}\left( \boldsymbol{x},t\right)  &=&0, \\
+\partial _{i}A_{i}\left( \boldsymbol{x},t\right)  &=&0.
+\end{eqnarray*}%
+Observes\'{e} que el espacio de fase reducido est\'{a} conformado por apenas
+cuatro campos $\left( A_{\alpha },\pi _{0}\right) $. Sin embargo, bajo la
+inclusi\'{o}n de las condiciones del gauge de radiaci\'{o}n, se tiene un
+total de cuatro v\'{\i}nculos que relacionan las variables del espacio de
+fase, esta situaci\'{o}n permite inferir que la teor\'{\i}a no posee grados
+de libertad. Cabe anotar que esta es una consecuencia del estudio de una teor%
+\'{\i}a en $\left( 2+1\right) d$. A\'{u}n as\'{\i}, se proceder\'{a} a
+determinar los PD entre los campos $A_{0},\pi _{0}$ y $A_{i}.$\newline
+\newline
+Usando la definici\'{o}n (\ref{F.7}), se encuentra que los PD calculados
+entre las variables del espacio de fase de la teor\'{\i}a de C-S en $\left(
+2+1\right) d$, bajo la condici\'{o}n del gauge de radiaci\'{o}n, son, $%
+\left( \text{\textbf{v\'{e}ase apendice G}}\right) :$%
+\begin{eqnarray}
+\left\{ A_{0}\left( \boldsymbol{x},t\right) ,\pi _{0}\left( \boldsymbol{y}%
+,t\right) \right\} _{D} &=&0,  \label{F.15} \\
+\left\{ A_{i}\left( \boldsymbol{x},t\right) ,A_{j}\left( \boldsymbol{y}%
+,t\right) \right\} _{D} &=&\frac{2\pi }{k}\varepsilon _{ij}\delta ^{2}\left( 
+\boldsymbol{x}-\boldsymbol{y}\right) -  \notag \\
+&&\frac{2\pi }{k}\left[ \varepsilon _{mj}\partial _{m}^{x}\partial
+_{i}^{x}-\varepsilon _{mi}\partial _{m}^{x}\partial _{j}^{x}\right] \frac{1}{%
+\bigtriangledown _{x}^{2}}\delta ^{2}\left( \boldsymbol{x}-\boldsymbol{y}%
+\right) .  \label{fF.16}
+\end{eqnarray}%
+\newline
+Cabe anotar que los PD y la fijaci\'{o}n de los multiplicadores de Lagrange,
+depender\'{a}n de la condici\'{o}n gauge en la que se desarrolle el sistema.
+Sin embargo, es relevante tener en cuenta que debido a las caracter\'{\i}%
+sticas de esta teor\'{\i}a en el plano, las condiciones gauge seleccionadas
+terminar\'{a}n anulando el Hamiltoniano can\'{o}nico. Raz\'{o}n por la cual,
+se concluye que en la teor\'{\i}a de C-S $U\left( 1\right) $ pura no existe
+din\'{a}mica para los campos can\'{o}nicos que se emplean en su descripci%
+\'{o}n. Este resultado verifica que la importancia y los efectos de esta teor%
+\'{\i}a se ven reflejados cuando es acoplada a otras teor\'{\i}as
+particulares que estudian sistemas en el espacio de $\left( 2+1\right) $
+dimensiones \cite{Dunne}. \newline
